@@ -1,105 +1,148 @@
 @import url('https://fonts.googleapis.com/css2?family=Material+Icons+Outlined');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat');
+* {
+    box-sizing: border-box;
+}
 body{
-    background-color: rgb(248, 248, 248);
     margin: 0;
     padding: 0;
-    
-    font-family: Montserrat ;
 }
-.header{
+.bg-header{
+    background-color:#904490 ;
+    position: relative;
     
-    background-color: #904490;
+    font-family: Montserrat;
+    color: floralwhite;
     padding: 10px;
-    color: floralwhite;
+    max-width: 100%;
+}
+h3#name{
+    margin-left: 5%;
+    font-weight: 800;
+}
+form{
+    position: relative;
     width: 100%;
-    
-    
-    
-
-}
-.icons-name{
-    position: absolute;
-    bottom: 2%;
-    margin: auto;
-    display: flex;
-    width: 100%;
-    margin-left: 4%;
-    
 }
 
-.icons-name a{
-    color: #735C5C;
-    margin-left: 10%;
-    margin-top: 1%;
-    font-size: 13px;
-    position: sticky;
-    font-weight: 700;
-    text-decoration: none;
-    list-style: none;
-    
-    
-}
-.span{
-    position: absolute;
-    margin-top: 1%;
-    
-    margin-left: 75%;
-}
-.span span{
-    font-size: 35px;
-}
-.icons{
-    margin-left: auto;
-     bottom: 6%;
-     position: absolute;
-     width: 100%;
-     margin-left: 4%;
-     opacity: 0.9;
-     border-top:1px rgba(119, 114, 114, 0.562) solid;
-     
-
-}
-.icons i{
-    color: #735C5C;
-    margin-left: 12%;
-    margin-top: 3%;
-}
-
-.title h3{
-    color: floralwhite;
-    margin-left: 3%;
-    font-weight: 700;
-    font-size: 28px;
-}
-.form{
-    margin-left: 3%;
-    width: 100%;
-    display: flex;
-}
-.form input{
-    
-    
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    outline: none;
-    border:none;
-    width: 60%;
-    background-color: floralwhite;
-
-}
-
-.form img{
-    margin-left: 4%;
+#input-center::placeholder{
+    font-family: Montserrat;
     font-size: 10px;
 }
-.form i{
-    padding: 8px;
-    
-    
-    color: #735C5C;
-    border-top-left-radius:5px ;
-    border-bottom-left-radius:5px ;
+i#i-left{
     background-color: floralwhite;
+    color: #735C5C;
+    padding: 4px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+input#input-center{
+    width: 60%;
+    padding: 5px;
+    transition:  width .5s;
+    float: left;
+    outline: none;
+    border: none;
+    border-top-right-radius:5px ;
+    border-bottom-right-radius: 5px;
+    
+}
+.flex:hover > input#input-center{
+    border: 1px #735C5C solid ;
+    width: 70%;
+}
+.flex:hover > #i-left{
+    background-color:#904490 ;
+    border: 1px floralwhite solid;
+    color: floralwhite;
+}
+.flex{
+    display: flex;
+    max-width: 90%;
+    
+}
+.group-icons{
+    position: relative;
+    width: 100%;
+}
+#span-right{
+     margin-left: 80%;
+     position: absolute;
+     margin-top: -12%;
+     transition: width .5s;
+     font-size: 28px;
+}
+#span-right:hover{
+    background-color: floralwhite;
+    padding: 4px;
+    border-radius: 5px;
+    color: #735C5C;
+}
+.box{
+    float: left;
+    font-family: Montserrat;
+    width:24.22%;
+    
+    border-top: 1px #735C5C solid ;
+    display: inline-flexbox;
+    
+}
+.box:hover > #home{
+    color: floralwhite;
+    background-color:#904490  ;
+    width: 90%;
+    border-radius: 2px;
+    opacity: 1;
+}
+.box:hover > #local{
+    color: floralwhite;
+    background-color:#904490  ;
+    width: 90%;
+    border-radius: 2px;
+}
+.box:hover > #store{
+    color: floralwhite;
+    background-color:#904490  ;
+    width: 90%;
+    border-radius: 2px;
+}
+.box:hover > #person{
+    color: floralwhite;
+    background-color:#904490  ;
+    width: 90%;
+    border-radius: 2px;
+}
+#home{
+    
+    display: flex;
+    
+    text-decoration: none;
+    color: #735C5C;
+    
+}
+
+
+#local{
+    display: block;
+    text-decoration: none;
+    color: #735C5C;
+}
+#store{
+    display: block;
+    text-decoration: none;
+    color: #735C5C;
+}
+#person{
+    display: block;
+    text-decoration: none;
+    color: #735C5C;
+}
+footer{
+    bottom: 1%;
+    margin-left: 2%;
+    padding: 3px;
+    position: absolute;
+    
+    width: 100%;
     
 }
