@@ -7,9 +7,7 @@ body{
     margin: 0px;
     padding: 0px;
 }
-div.center{
-    margin-left: 15%;
-}
+
 div.line{
     border-top: 1px solid #554155;
 }
@@ -29,6 +27,15 @@ div.line{
 form{
     position: relative;
     width: 100%;
+}
+i#home{
+    margin-left: 15%;
+}
+i#local{
+    margin-left: 12%;
+}
+i#store{
+    margin-left: 12%;
 }
 
 .input-center::placeholder{
