@@ -16,7 +16,7 @@ body{
     padding: 10px;
     max-width: 100%;
 }
-h3#name{
+#name{
     margin-left: 5%;
     font-weight: 800;
 }
@@ -25,29 +25,30 @@ form{
     width: 100%;
 }
 
-#input-center::placeholder{
+.input-center::placeholder{
     font-family: Montserrat;
     font-size: 10px;
 }
-i#i-left{
+#i-left{
     background-color: floralwhite;
     color: #735C5C;
     padding: 4px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
-input#input-center{
+.input-center{
     width: 60%;
-    padding: 5px;
+    padding: 10px;
     transition:  width .5s;
     float: left;
     outline: none;
     border: none;
-    border-top-right-radius:5px ;
+    font-family: Montserrat;
+    border-top-right-radius: 5px ;
     border-bottom-right-radius: 5px;
     
 }
-.flex:hover > input#input-center{
+.flex:hover > .input-center{
     border: 1px #735C5C solid ;
     width: 70%;
 }
@@ -68,7 +69,7 @@ input#input-center{
 #span-right{
      margin-left: 80%;
      position: absolute;
-     margin-top: -12%;
+     margin-top: -11%;
      transition: width .5s;
      font-size: 28px;
 }
@@ -83,32 +84,28 @@ input#input-center{
     font-family: Montserrat;
     width:24.22%;
     
-    border-top: 1px #735C5C solid ;
+    
     display: inline-flexbox;
     
 }
 .box:hover > #home{
-    color: floralwhite;
-    background-color:#904490  ;
+    color:#904490  ;
     width: 90%;
     border-radius: 2px;
     opacity: 1;
 }
 .box:hover > #local{
-    color: floralwhite;
-    background-color:#904490  ;
+    color:#904490  ;
     width: 90%;
     border-radius: 2px;
 }
 .box:hover > #store{
-    color: floralwhite;
-    background-color:#904490  ;
+    color:#904490  ;
     width: 90%;
     border-radius: 2px;
 }
 .box:hover > #person{
-    color: floralwhite;
-    background-color:#904490  ;
+    color:#904490  ;
     width: 90%;
     border-radius: 2px;
 }
