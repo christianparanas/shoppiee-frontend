@@ -4,8 +4,14 @@
     box-sizing: border-box;
 }
 body{
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
+}
+div.center{
+    margin-left: 15%;
+}
+div.line{
+    border-top: 1px solid #554155;
 }
 .bg-header{
     background-color:#904490 ;
@@ -30,7 +36,7 @@ form{
     font-size: 10px;
 }
 #i-left{
-    background-color: floralwhite;
+    background-color: white;
     color: #735C5C;
     padding: 4px;
     border-top-left-radius: 5px;
@@ -63,7 +69,7 @@ form{
     
 }
 .group-icons{
-    position: relative;
+    margin-left: 5%;
     width: 100%;
 }
 #span-right{
@@ -83,8 +89,8 @@ form{
     float: left;
     font-family: Montserrat;
     width:24.22%;
-    
-    
+    font-size: 15px;
+    font-weight: 700;
     display: inline-flexbox;
     
 }
@@ -136,7 +142,7 @@ form{
 }
 footer{
     bottom: 1%;
-    margin-left: 2%;
+    margin-left: 0;
     padding: 3px;
     position: absolute;
     
