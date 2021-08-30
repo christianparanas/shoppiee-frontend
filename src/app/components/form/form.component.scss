@@ -15,11 +15,12 @@ $btnColor:white;
 
 input,button{
     display:flex;
-    border-radius: 15px;
-    width:80%;
+    border-radius: 10px;
+    width:95%;
     height:3rem;
     margin:5px;
-    box-shadow: 0px 3px 5px $textHeaderColor;
+    box-shadow: 0px 3px 5px rgba(0,0,0,.5),
+                 0px 0px 1px rgba(0,0,0,.5);
     border:none;
     font-size: 1rem;
     outline:none;
@@ -32,10 +33,13 @@ input{
 .btnLogin{
     background-color: $btnBgColor;
     color:$btnColor;
+    border: 0.5px solid $btnColor;
 }
 
 .btnRegister{
     color:$btnBgColor;
+    background-color: $btnColor;
+    border: 0.5px solid $btnBgColor;
 }
 
 
@@ -59,8 +63,9 @@ input:focus{
             justify-content: center;
             align-items: center;
             font-weight: bold;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             text-shadow: 1px 1px 2px black;
+            cursor: pointer;
         }
         p{
             display:flex;
@@ -68,10 +73,14 @@ input:focus{
             justify-content: center;
             align-items: center;
             margin:5px;
+            a{
+                text-decoration: none;
+                color:black;
+            }
         }
         
-    .forget-link{
-        justify-content: flex-end;
-    }
+        .forget-link{
+            justify-content: flex-end;
+        }
     }
 }
