@@ -13,7 +13,6 @@ $shadow:black;
      margin:0;
     box-sizing: border-box;
 }
-<<<<<<< HEAD
 
 .bg-header{
     position: fixed;
@@ -24,12 +23,37 @@ $shadow:black;
     color: $color2;
     width: 100%; height: 15vh;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
     $shadow:black;
-    #name{
-        margin-left: 10%;
-        font-weight: bold;
-        text-shadow: 1px 1px 3px $shadow;
+    .container-logo-and-notification{
+        display: flex;
+        width: 80%;
+        justify-content: space-between;
+        align-items: center;
+        #name{
+            display: flex;
+            width:100%; height: 100%;
+            margin-left: 10%;
+            font-weight: bold;
+            pointer-events: none;
+            text-shadow: 1px 1px 3px $shadow;
+        }
+        .notification-container{
+            display:flex;
+            width:100%;
+            justify-content: space-around;
+            align-items: center;
+            align-items: center;
+            i{
+                flex:1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                font-size: 1.5em;
+            }
+        }
     }
     form{
         display:flex;
@@ -42,12 +66,13 @@ $shadow:black;
             align-items: center;
             width:80%;
             button{
-                border:none;
                 background-color: $bgColor;
                 width:3rem;
                 height: 2.3rem;
+                border:none;
                 i{
                     cursor:pointer;
+                    border-radius: 10px 0 0 10px;
                     display: flex;
                     justify-content: flex-end;
                     color:$bgColor;
@@ -77,169 +102,17 @@ $shadow:black;
             cursor: pointer;
         }     
     }
-=======
-body{
-    margin: 0px;
-    padding: 0px;
 }
 
-div.line{
-    border-top: 1px solid #554155;
-}
-.bg-header{
-    background-color:#904490 ;
-    position: relative;
-    
-    font-family: Montserrat;
-    color: floralwhite;
-    padding: 10px;
-    max-width: 100%;
-}
-#name{
-    margin-left: 5%;
-    font-weight: 800;
-}
-form{
-    position: relative;
-    width: 100%;
-}
-i#home{
-    margin-left: 15%;
-}
-i#local{
-    margin-left: 12%;
-}
-i#store{
-    margin-left: 12%;
-}
-
-.input-center::placeholder{
-    font-family: Montserrat;
-    font-size: 10px;
-}
-#i-left{
-    background-color: white;
-    color: #735C5C;
-    padding: 4px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-.input-center{
-    width: 60%;
-    padding: 10px;
-    transition:  width .5s;
-    float: left;
-    outline: none;
-    border: none;
-    font-family: Montserrat;
-    border-top-right-radius: 5px ;
-    border-bottom-right-radius: 5px;
-    
-}
-.flex:hover > .input-center{
-    border: 1px #735C5C solid ;
-    width: 70%;
-}
-.flex:hover > #i-left{
-    background-color:#904490 ;
-    border: 1px floralwhite solid;
-    color: floralwhite;
-}
-.flex{
-    display: flex;
-    max-width: 90%;
-    
-}
-.group-icons{
-    margin-left: 5%;
-    width: 100%;
-}
-#span-right{
-     margin-left: 80%;
-     position: absolute;
-     margin-top: -11%;
-     transition: width .5s;
-     font-size: 28px;
-}
-#span-right:hover{
-    background-color: floralwhite;
-    padding: 4px;
-    border-radius: 5px;
-    color: #735C5C;
-}
-.box{
-    float: left;
-    font-family: Montserrat;
-    width:24.22%;
-    font-size: 15px;
-    font-weight: 700;
-    display: inline-flexbox;
-    
-}
-.box:hover > #home{
-    color:#904490  ;
-    width: 90%;
-    border-radius: 2px;
-    opacity: 1;
-}
-.box:hover > #local{
-    color:#904490  ;
-    width: 90%;
-    border-radius: 2px;
-}
-.box:hover > #store{
-    color:#904490  ;
-    width: 90%;
-    border-radius: 2px;
-}
-.box:hover > #person{
-    color:#904490  ;
-    width: 90%;
-    border-radius: 2px;
-}
-#home{
-    
-    display: flex;
-    
-    text-decoration: none;
-    color: #735C5C;
-    
->>>>>>> dee75aee1b095e2cd9d6cd4379b5fded90ce7cd4
-}
-
-.flex:hover .Search{
-    box-shadow: 0px 0px 3px $shadow;
-} 
-
-<<<<<<< HEAD
-.flex:hover >button #i-left{
-    color:$color2;
+.flex:hover #i-left{
     background-color: $bgColor;
-    font-weight: bold;
-=======
-#local{
-    display: block;
-    text-decoration: none;
-    color: #735C5C;
-}
-#store{
-    display: block;
-    text-decoration: none;
-    color: #735C5C;
-}
-#person{
-    display: block;
-    text-decoration: none;
-    color: #735C5C;
-}
-footer{
-    bottom: 1%;
-    margin-left: 0;
-    padding: 3px;
-    position: absolute;
-    
-    width: 100%;
-    
->>>>>>> dee75aee1b095e2cd9d6cd4379b5fded90ce7cd4
+    color:$color2;
+    border:0.5px solid $color2;
 }
 
+.notification-container i:hover{
+    color:$hoverStyle;
+    text-shadow: 0px 0px 5px $color2,
+                 0px 0px 1px $color2,
+                0px 0px 3px $shadow;
+}
