@@ -4,6 +4,8 @@ $color:#735C5C;
 .content-container{
     display:flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 10rem;
     .each-item-container{
         position: relative;
