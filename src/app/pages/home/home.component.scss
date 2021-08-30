@@ -1,145 +1,90 @@
 @import url('https://fonts.googleapis.com/css2?family=Material+Icons+Outlined');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat');
+
+$fontStyle:Montserrat;
+$hoverStyle:#735C5C;
+$bgColor:#904490;
+$color:#735C5C;
+$color2:floralwhite;
+$shadow:black;
+
 * {
+    padding:0;
+     margin:0;
     box-sizing: border-box;
 }
-body{
-    margin: 0;
-    padding: 0;
-}
+
 .bg-header{
-    background-color:#904490 ;
-    position: relative;
-    
-    font-family: Montserrat;
-    color: floralwhite;
-    padding: 10px;
-    max-width: 100%;
-}
-#name{
-    margin-left: 5%;
-    font-weight: 800;
-}
-form{
-    position: relative;
-    width: 100%;
-}
-
-.input-center::placeholder{
-    font-family: Montserrat;
-    font-size: 10px;
-}
-#i-left{
-    background-color: floralwhite;
-    color: #735C5C;
-    padding: 4px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-.input-center{
-    width: 60%;
-    padding: 10px;
-    transition:  width .5s;
-    float: left;
-    outline: none;
-    border: none;
-    font-family: Montserrat;
-    border-top-right-radius: 5px ;
-    border-bottom-right-radius: 5px;
-    
-}
-.flex:hover > .input-center{
-    border: 1px #735C5C solid ;
-    width: 70%;
-}
-.flex:hover > #i-left{
-    background-color:#904490 ;
-    border: 1px floralwhite solid;
-    color: floralwhite;
-}
-.flex{
-    display: flex;
-    max-width: 90%;
-    
-}
-.group-icons{
-    position: relative;
-    width: 100%;
-}
-#span-right{
-     margin-left: 80%;
-     position: absolute;
-     margin-top: -11%;
-     transition: width .5s;
-     font-size: 28px;
-}
-#span-right:hover{
-    background-color: floralwhite;
-    padding: 4px;
-    border-radius: 5px;
-    color: #735C5C;
-}
-.box{
-    float: left;
-    font-family: Montserrat;
-    width:24.22%;
-    
-    
-    display: inline-flexbox;
-    
-}
-.box:hover > #home{
-    color:#904490  ;
-    width: 90%;
-    border-radius: 2px;
-    opacity: 1;
-}
-.box:hover > #local{
-    color:#904490  ;
-    width: 90%;
-    border-radius: 2px;
-}
-.box:hover > #store{
-    color:#904490  ;
-    width: 90%;
-    border-radius: 2px;
-}
-.box:hover > #person{
-    color:#904490  ;
-    width: 90%;
-    border-radius: 2px;
-}
-#home{
-    
-    display: flex;
-    
-    text-decoration: none;
-    color: #735C5C;
-    
+    position: fixed;
+    top:0; left:0;
+    background-color:$bgColor ;
+    display:flex;
+    font-family: $fontStyle;
+    color: $color2;
+    width: 100%; height: 15vh;
+    flex-direction: column;
+    justify-content: center;
+    $shadow:black;
+    #name{
+        margin-left: 10%;
+        font-weight: bold;
+        text-shadow: 1px 1px 3px $shadow;
+    }
+    form{
+        display:flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        .flex{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            width:80%;
+            button{
+                border:none;
+                background-color: $bgColor;
+                width:3rem;
+                height: 2.3rem;
+                i{
+                    cursor:pointer;
+                    display: flex;
+                    justify-content: flex-end;
+                    color:$bgColor;
+                    background-color: $color2;
+                    padding-right:10px;
+                    width:100%;
+                    height: 100%;
+                    justify-content: flex-end;
+                    align-items: center;
+                }
+            }
+            input{
+                width:95%;
+                justify-content: flex-start;
+                height: 2.3rem;
+                font-size: 1rem;
+                border:none;
+                border-radius: 0 15px 15px 0;
+                text-indent: 15px;
+                outline:none;
+                font-family: $fontStyle;
+            }
+        }
+        #span-right{
+            display:flex;
+            width: 15%;
+            cursor: pointer;
+        }     
+    }
 }
 
+.flex:hover .Search{
+    box-shadow: 0px 0px 3px $shadow;
+} 
 
-#local{
-    display: block;
-    text-decoration: none;
-    color: #735C5C;
+.flex:hover >button #i-left{
+    color:$color2;
+    background-color: $bgColor;
+    font-weight: bold;
 }
-#store{
-    display: block;
-    text-decoration: none;
-    color: #735C5C;
-}
-#person{
-    display: block;
-    text-decoration: none;
-    color: #735C5C;
-}
-footer{
-    bottom: 1%;
-    margin-left: 2%;
-    padding: 3px;
-    position: absolute;
-    
-    width: 100%;
-    
-}
+
