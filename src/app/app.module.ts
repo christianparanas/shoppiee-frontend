@@ -11,6 +11,8 @@ import { LogInPageComponent } from './pages/log-in-page/log-in-page.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FormComponent } from './components/form/form.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { HotsalesComponent } from './components/hotsales/hotsales.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { FooterComponent } from './components/footer/footer.component';
     LogInPageComponent,
     HeaderComponent,
     FormComponent,
-    FooterComponent
+    FooterComponent,
+    CarouselComponent,
+    HotsalesComponent
   ],
   imports: [
     BrowserModule,
