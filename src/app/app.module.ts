@@ -13,6 +13,7 @@ import { FormComponent } from './components/form/form.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { HotsalesComponent } from './components/hotsales/hotsales.component';
+import { DiscoverComponent } from './components/discover/discover.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { HotsalesComponent } from './components/hotsales/hotsales.component';
     FormComponent,
     FooterComponent,
     CarouselComponent,
-    HotsalesComponent
+    HotsalesComponent,
+    DiscoverComponent,
   ],
   imports: [
     BrowserModule,
