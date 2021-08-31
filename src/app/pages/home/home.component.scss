@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Material+Icons+Outlined');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;900&display=swap');
+
 
 $fontStyle:Montserrat;
 $hoverStyle:#735C5C;
@@ -9,100 +10,114 @@ $color2:floralwhite;
 $shadow:black;
 
 * {
-    padding:0;
-     margin:0;
-    box-sizing: border-box;
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
 }
 
 .bg-header{
-    z-index: 1;
-    position: fixed;
-    top:0; left:0;
-    background-color:$bgColor ;
-    display:flex;
-    font-family: $fontStyle;
-    color: $color2;
-    width: 100%; height: 7.5rem;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    $shadow:black;
+  z-index: 1;
+  position: fixed;
+  top:0; left:0;
+  padding: 20px;
+  background-color:$bgColor ;
+  display:flex;
+  font-family: $fontStyle;
+  color: $color2;
+  width: 100%; 
+  height: fit-content;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  $shadow:black;
+
     .container-logo-and-notification{
-        display: flex;
-        width: 80%;
-        justify-content: space-between;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      margin-bottom: 10px;
+
+      #name{
+        font-weight: 800;
+      }
+
+      .notification-container{
+        display: grid;
+        grid-template-columns: 40px 40px;
         align-items: center;
-        #name{
-            display: flex;
-            width:100%; height: 100%;
-            margin-left: 10%;
-            font-weight: bold;
-            pointer-events: none;
-            text-shadow: 1px 1px 3px $shadow;
+
+        i{
+          flex:1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          font-size: 1.5em;
         }
-        .notification-container{
-            display:flex;
-            width:100%;
-            justify-content: space-around;
-            align-items: center;
-            align-items: center;
-            i{
-                flex:1;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                cursor: pointer;
-                font-size: 1.5em;
-            }
-        }
+      }
     }
-    form{
+
+    form {
+      width: 100%;
+
+      .flex {
         display:flex;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
-        width: 100%;
-        .flex{
-            display:flex;
-            justify-content: center;
+        width:100%;
+
+        button {
+          background-color: $bgColor;
+          width: 3rem;
+          height: 2.5rem;
+          border: none;
+
+
+          border: 1px solid #904490;
+          box-sizing: border-box;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          border-radius: 10px;
+
+          i {
+            cursor:pointer;
+            border-radius: 10px 0 0 10px;
+            display: flex;
+            justify-content: flex-end;
+            color:$bgColor;
+            background-color: white;
+            padding-right:10px;
+            width:100%;
+            height: 100%;
+            justify-content: flex-end;
             align-items: center;
-            width:80%;
-            button{
-                background-color: $bgColor;
-                width:3rem;
-                height: 2.3rem;
-                border:none;
-                i{
-                    cursor:pointer;
-                    border-radius: 10px 0 0 10px;
-                    display: flex;
-                    justify-content: flex-end;
-                    color:$bgColor;
-                    background-color: white;
-                    padding-right:10px;
-                    width:100%;
-                    height: 100%;
-                    justify-content: flex-end;
-                    align-items: center;
-                }
-            }
-            input{
-                width:95%;
-                justify-content: flex-start;
-                height: 2.3rem;
-                font-size: 1rem;
-                border:none;
-                border-radius: 0 15px 15px 0;
-                text-indent: 15px;
-                outline:none;
-                font-family: $fontStyle;
-            }
+            font-size: 20px
+          }
         }
-        #span-right{
-            display:flex;
-            width: 15%;
-            cursor: pointer;
-        }     
-    }
+
+        input {
+          width: 100%;
+          font-size: 14px;
+          border:none;
+          border-radius: 0 8px 8px 0;
+          outline: none;
+          font-family: $fontStyle;
+          padding: 10px;
+
+          border: 1px solid #904490;
+          box-sizing: border-box;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          border-radius: 0 10px 10px 0;
+          position: relative;
+          left: -2px;
+        }
+      }
+
+    #span-right{
+      display:flex;
+      width: 15%;
+      cursor: pointer;
+    }     
+  }
 }
 
 .flex:hover #i-left{
