@@ -15,6 +15,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { HotsalesComponent } from './components/hotsales/hotsales.component';
 import { DiscoverComponent } from './components/discover/discover.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
+import { CategoryBtnComponent } from './components/category-btn/category-btn.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { CategoriesComponent } from './pages/categories/categories.component';
     HotsalesComponent,
     DiscoverComponent,
     CategoriesComponent,
+    CategoryBtnComponent,
   ],
   imports: [
     BrowserModule,

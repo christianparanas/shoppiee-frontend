@@ -9,50 +9,49 @@ $color2:floralwhite;
 $shadow:black;
 
 footer{
-    background-color: white;
-    z-index: 1;
-    width:100%;
+  background-color: white;
+  z-index: 1;
+  width:100%;
+  display:flex;
+  height: fit-content;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0; left:0;
+  border-top: 1px solid #e3e3e3;
+
+  .group-icons {
     display:flex;
-    height: 6rem;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    bottom: 0; left:0;
-    box-shadow: 0px 0px 5px rgba(0,0,0,.5);
-    .group-icons{
-        display:flex;
-        width:100%;
-        height: 100%;
-        .box{
-            flex:1;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            a{
-                cursor: pointer;
-                text-decoration: none;
-                justify-content: center;
-                text-align: center;
-                align-items: center;
-                display:flex;
-                flex-direction: column;
-                height: 100%; width:100%;
-                i{
-                    color:$hoverStyle;
-                    font-size: 1.5em;
-                }
-                h5{
-                    border:0;
-                    margin:0;
-                    box-sizing: border-box;
-                    font-family: $fontStyle;
-                }
-            }
+    width:100%;
+    height: 100%;
+
+    .box {
+      padding: 10px;
+      flex:1;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+
+
+
+        i {
+          color:$hoverStyle;
+          font-size: 20px;
+        }
+
+        h5{
+          border:0;
+          margin: 5px 0 0;
+          box-sizing: border-box;
+          font-family: $fontStyle;
         }
     }
+  }
 }
 
 a:hover{
-    color:$bgColor;
-    text-shadow: 0px 0px 1px $shadow;
+  color:$bgColor;
+  text-shadow: 0px 0px 1px $shadow;
 }
