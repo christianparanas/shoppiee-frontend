@@ -1,0 +1,14 @@
+.categoryBtn-container {
+	display: grid;
+	grid-gap: 5px;
+	place-items: center;
+	padding: 20px;
+	box-shadow: 0 10px 10px 0 RGB(43 80 237 / 20%);
+	border-radius: 8px;
+	border: 2px solid #f3f4f5;
+	color: #5c82a7;
+
+	i {
+		font-size: 20px;
+	}
+}

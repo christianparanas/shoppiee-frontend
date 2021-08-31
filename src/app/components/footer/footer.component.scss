@@ -31,16 +31,10 @@ footer{
       justify-content: center;
       align-items: center;
       text-align: center;
+      cursor: pointer;
+      text-decoration: none;
 
-      a {
-        cursor: pointer;
-        text-decoration: none;
-        justify-content: center;
-        text-align: center;
-        align-items: center;
-        display:flex;
-        flex-direction: column;
-        height: 100%; width:100%;
+
 
         i {
           color:$hoverStyle;
@@ -53,7 +47,6 @@ footer{
           box-sizing: border-box;
           font-family: $fontStyle;
         }
-      }
     }
   }
 }
