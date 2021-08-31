@@ -14,6 +14,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { HotsalesComponent } from './components/hotsales/hotsales.component';
 import { DiscoverComponent } from './components/discover/discover.component';
+import { CategoriesComponent } from './pages/categories/categories.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { DiscoverComponent } from './components/discover/discover.component';
     CarouselComponent,
     HotsalesComponent,
     DiscoverComponent,
+    CategoriesComponent,
   ],
   imports: [
     BrowserModule,
