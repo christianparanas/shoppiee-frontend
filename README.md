@@ -2,7 +2,6 @@
 # projectEventDriven
 
 
->>>>>>> 9d61d2a35554f9251c83aaef08b550c8d4a9a51e
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.2.
 
 ## Development server
