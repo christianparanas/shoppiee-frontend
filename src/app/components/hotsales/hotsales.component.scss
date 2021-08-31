@@ -1,41 +1,60 @@
 
 $color:#735C5C;
 
-.content-container{
-    display:flex;
+.topProducts-container {
+  
+
+  .container{
+    display: grid;
+    grid-gap: 10px;
+    grid-auto-flow: column;
     overflow-x:scroll;
-    .each-item-container{
-        position: relative;
-        min-width: 10rem; min-height: 15rem;
-        margin:5px 5px;
-        box-shadow: 0px 1px 3px rgba(0,0,0,.5),
-                    1px 3px 3px rgba(0,0,0,.5);
-        .image-container{
-            background:rgb(76, 105, 150);
-            width:100%; height: 10rem;
-            display:flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color:white;
-            font-weight: bold;
-        }
-        .title{
-            word-wrap:break-word;
-            margin:5px; height: 2.5rem;
-            font-size: 12px;
-            max-width: 10rem;
-        }
-        .price{
-            display: flex;
-            align-items: center;
-            margin:0 5px;
-            color:goldenrod;
-        }
+
+    .each-item-container:nth-child(1) {
+      margin-left: 20px;
     }
+
+    .each-item-container:nth-last-child(1) {
+      margin-right: 20px;
+    }
+    
+    .each-item-container{
+      position: relative;
+      min-width: 10rem; min-height: 15rem;
+      margin:5px 5px;
+      box-shadow: 0px 1px 3px rgba(0,0,0,.5),
+                  1px 3px 3px rgba(0,0,0,.5);
+
+    .image-container{
+      background:rgb(76, 105, 150);
+      width:100%; height: 10rem;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color:white;
+      font-weight: bold;
+    }
+
+    .title{
+      word-wrap:break-word;
+      margin:5px; height: 2.5rem;
+      font-size: 12px;
+      max-width: 10rem;
+    }
+
+    .price {
+      display: flex;
+      align-items: center;
+      margin:0 5px;
+      color:goldenrod;
+    }
+  }
 }
 
-.content-title{
-    margin:10px;
+  .content-title{
+    padding: 20px 20px 10px;
     color:$color;
+  } 
 }
+
