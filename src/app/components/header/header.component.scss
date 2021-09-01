@@ -18,6 +18,7 @@ header {
   }
 
   .logo-container{
+    pointer-events: none;
     margin-top: 50px;
     display: flex;
     justify-content: center;
@@ -39,6 +40,7 @@ header {
       display: flex;
       justify-content: center;
       align-items: center;
+      cursor: pointer;
 
       i {
         color: white;
