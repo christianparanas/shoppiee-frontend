@@ -35,21 +35,26 @@ footer{
       cursor: pointer;
       text-decoration: none;
 
+      i {
+        color:$hoverStyle;
+        font-size: 20px;
+      }
 
+      h5{
+        border:0;
+        margin: 5px 0 0;
+        box-sizing: border-box;
+        font-family: $fontStyle;
+        font-weight: 400;
+        color: #000;
+      }
+    }
 
-        i {
-          color:$hoverStyle;
-          font-size: 20px;
-        }
+    .currentPage {
 
-        h5{
-          border:0;
-          margin: 5px 0 0;
-          box-sizing: border-box;
-          font-family: $fontStyle;
-          font-weight: 400;
-          color: #000;
-        }
+      i, h5 {
+        color: violet;
+      }
     }
   }
 }
