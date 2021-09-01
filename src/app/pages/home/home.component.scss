@@ -20,7 +20,7 @@ $shadow:black;
   position: fixed;
   top:0; 
   left:0;
-  padding: 20px;
+  padding: 20px 20px 10px;
   background-color:$bgColor ;
   display:flex;
   font-family: $fontStyle;
@@ -36,7 +36,7 @@ $shadow:black;
       display: flex;
       width: 100%;
       justify-content: space-between;
-      margin-bottom: 10px;
+      
 
       #name{
         font-weight: 800;
@@ -60,6 +60,7 @@ $shadow:black;
 
     form {
       width: 100%;
+      margin: 10px 0 5px 0;
 
       .flex {
         display:flex;

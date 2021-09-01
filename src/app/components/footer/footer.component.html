@@ -1,10 +1,10 @@
 <footer>
   <div class="group-icons">
-    <a routerLink="/" class="box">
+    <a routerLink="/" class="box" [ngClass]="{'currentPage': currentRoute === 'home' }">
       <i id='home' class="far fa-home-alt"></i>
       <h5>Home</h5>
     </a>
-    <a routerLink="/categories" class="box">
+    <a routerLink="/categories" class="box" [ngClass]="{'currentPage': currentRoute === 'categories' }">
       <i id="local"class="far fa-tag"></i>
       <h5>Categories</h5>
     </a>
