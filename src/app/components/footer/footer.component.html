@@ -12,7 +12,7 @@
       <i id="store"class="far fa-store"></i>
       <h5>Store</h5>
     </a>
-    <a routerLink="/categories" class="box">
+    <a routerLink="/account" class="box" [ngClass]="{'currentPage': currentRoute === 'account' }">
       <i class="far fa-user"></i>
       <h5>Me</h5>
     </a>

@@ -17,6 +17,7 @@ import { DiscoverComponent } from './components/discover/discover.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { CategoryBtnComponent } from './components/category-btn/category-btn.component';
 import { ProductComponent } from './components/product/product.component';
+import { AccountComponent } from './pages/account/account.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { ProductComponent } from './components/product/product.component';
     CategoriesComponent,
     CategoryBtnComponent,
     ProductComponent,
+    AccountComponent,
   ],
   imports: [
     BrowserModule,
