@@ -7,9 +7,6 @@ $btnBgColor: #904490;
 	padding: 0 20px;
 
 	.container {
-
-		
-		
 		form {
 			display: grid;
 			grid-gap: 15px;
@@ -30,6 +27,7 @@ $btnBgColor: #904490;
 				font-size: 18px;
 				letter-spacing: 2px;
 				padding: 14px;
+				cursor: pointer;
 			}
 		}
 
@@ -51,6 +49,7 @@ $btnBgColor: #904490;
 			border-radius: 8px;
 			box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
 			text-align: center;
+			cursor: pointer;
 		}
 	}
 }
