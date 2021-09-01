@@ -31,16 +31,20 @@ header {
   .back-container {
     width: 100%;
 
-    .back-container-margin {
-
+    .container {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: $btnBgColor;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       i {
-        background-color: $btnBgColor;
-        border-radius: 999px;
-        overflow: hidden;
         color: white;
         text-align: center;
-        font-size: 45px;
+        font-size: 20px;
+
       }
     }
   }
