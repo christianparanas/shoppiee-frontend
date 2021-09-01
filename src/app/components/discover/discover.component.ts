@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./discover.component.scss']
 })
 export class DiscoverComponent implements OnInit {
+  fakeArray = new Array(10);
 
   constructor() { }
 

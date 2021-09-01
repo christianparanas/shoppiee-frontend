@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hotsales.component.scss']
 })
 export class HotsalesComponent implements OnInit {
+  fakeArray = new Array(10);
 
   constructor() { }
 
