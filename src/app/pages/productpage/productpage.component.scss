@@ -98,10 +98,12 @@
 
 						.increment {
 							border-radius: 0 8px 8px 0;
+							cursor: pointer;
 						}
 
 						.decrement {
 							border-radius: 8px 0 0 8px;
+							cursor: pointer;
 						}
 					}
 				}
@@ -115,6 +117,7 @@
 					font-weight: 700;
 					border-radius: 8px;
 					box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+					cursor: pointer;
 				}
 			}
 
@@ -157,6 +160,7 @@
 						align-items: center;
 						border-radius: 8px;
 						box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+						cursor: pointer;
 					}
 				}
 
