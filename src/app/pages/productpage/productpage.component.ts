@@ -21,5 +21,4 @@ export class ProductpageComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
-
 }
