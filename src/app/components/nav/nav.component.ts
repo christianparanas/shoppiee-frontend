@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class NavComponent implements OnInit {
   isSearchBarOpen: boolean = false
+  onScroll: boolean = false
   @Input() currentRoute : String;
 
   constructor() {
@@ -14,10 +15,18 @@ export class NavComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    window.addEventListener("scroll", this.listenScrollEvent)
   }
 
   openCloseSearchBar() {
     this.isSearchBarOpen === false ? this.isSearchBarOpen = true : this.isSearchBarOpen = false
+  }
+
+
+  listenScrollEvent = () => {
+    window.scrollY > 15
+      ? this.onScroll = true
+      : this.onScroll = false
   }
 
 }
