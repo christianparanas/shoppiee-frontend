@@ -1,4 +1,5 @@
 import { Component, OnInit , Input} from '@angular/core';
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-header',
@@ -10,9 +11,13 @@ export class HeaderComponent implements OnInit {
   @Input() backBtn : String = '';
 
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit(): void {
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }
