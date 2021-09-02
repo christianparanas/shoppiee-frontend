@@ -3,7 +3,7 @@
 $textHeadColor: #735c5c;
 $btnBgColor: #904490;
 
-.register-container {
+.recover-container {
   padding: 0 20px;
 
   .container {
@@ -13,7 +13,7 @@ $btnBgColor: #904490;
       input {
         padding: 15px;
         border: 1px solid #e3e3e3;
-        outline: 0;
+        outline: 1;
         width: 100%;
         border-radius: 8px;
         font-size: 12px;
@@ -31,10 +31,10 @@ $btnBgColor: #904490;
       }
     }
 
-    .separator {
-      text-align: center;
-      margin: 12px 0;
-    }
+    //.separator {
+    //  text-align: center;
+    //  margin: 12px 0;
+    //}
 
     .toLoginbtn {
       background: #fff;
