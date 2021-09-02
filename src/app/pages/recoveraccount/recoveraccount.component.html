@@ -1,12 +1,16 @@
 <div class="recover-container">
-    <div class="container">
-        <app-header title='RECOVER-PASSWORD' backBtn='recover'></app-header>
-        <form action="">
-            <input type="text" placeholder="Email">
-            <input type="submit" value="SUBMIT">
-        </form>
-        <app-footer></app-footer>
+  <div class="container">
+    <div class="backBtn" routerLink="/account/login">
+      <i class="far fa-arrow-left"></i>
     </div>
+
+    <h2>RECOVER ACCOUNT</h2>
+
+    <form action="">
+      <input type="email" placeholder="Enter you email">
+      <input type="submit" value="SUBMIT">
+    </form>
+  </div>
 
 </div>
 

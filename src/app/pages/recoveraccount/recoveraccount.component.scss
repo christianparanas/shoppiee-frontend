@@ -4,16 +4,37 @@ $textHeadColor: #735c5c;
 $btnBgColor: #904490;
 
 .recover-container {
-  padding: 0 20px;
+  padding: 20px;
 
   .container {
+
+    .backBtn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: $btnBgColor;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+      color: #fff;
+    }
+
+    h2 {
+      color: $textHeadColor;
+      text-align: center;
+      margin: 80px 20px 20px;
+    }
+
     form {
       display: grid;
       grid-gap: 15px;
+
       input {
         padding: 15px;
         border: 1px solid #e3e3e3;
-        outline: 1;
+        outline: 0;
         width: 100%;
         border-radius: 8px;
         font-size: 12px;
@@ -30,11 +51,6 @@ $btnBgColor: #904490;
         cursor: pointer;
       }
     }
-
-    //.separator {
-    //  text-align: center;
-    //  margin: 12px 0;
-    //}
 
     .toLoginbtn {
       background: #fff;
