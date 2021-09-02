@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./categories.component.scss']
 })
 export class CategoriesComponent implements OnInit {
-  fakeArray = new Array(10);
+  fakeArray = new Array(20);
 
   constructor() { }
 

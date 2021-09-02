@@ -18,6 +18,7 @@ import { CategoriesComponent } from './pages/categories/categories.component';
 import { CategoryBtnComponent } from './components/category-btn/category-btn.component';
 import { ProductComponent } from './components/product/product.component';
 import { AccountComponent } from './pages/account/account.component';
+import { NavComponent } from './components/nav/nav.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { AccountComponent } from './pages/account/account.component';
     CategoryBtnComponent,
     ProductComponent,
     AccountComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,

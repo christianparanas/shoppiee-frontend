@@ -1,0 +1,118 @@
+
+
+$textHeadColor: #735C5C;
+
+.nav__container {
+
+	.navDark__overlay {
+		position: fixed;
+		background: #000;
+		height: 100%;
+		width: 100%;
+		opacity: .5;
+		z-index: 21;
+		display: none;
+	}
+
+	.navDark__open_overlay {
+		display: block;
+	}
+
+
+
+	.upperNav__container {
+		position: fixed;
+		width: 100%;
+		padding: 15px 20px 10px;
+		background: fff;
+		box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+		background: #fff;
+		z-index: 22;
+
+		.upperNavIcons__container {
+			display: flex;
+			justify-content: space-between; 
+
+			h2 {
+				color: $textHeadColor;
+			}
+
+			.icons {
+				font-size: 23px;
+
+				display: grid;
+				grid-template-columns: repeat(3, 25px);
+				align-items: center;
+				grid-gap: 15px;
+
+				.selectedIcon {
+					color: violet;
+				}
+			} 
+		}
+
+		.searchBar {
+			position: absolute;
+			top: -100px;
+			left: 0;
+			transition: all .3s ease;
+			background: #fff;
+			box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+
+			padding: 10px 20px;
+			width: 100%;
+			z-index: 10;
+
+			i {
+				position: absolute;
+				top: 22px;
+				left: 32px;
+			}
+
+			input {
+				width: 100%;
+				padding: 10px 10px 10px 40px;
+				border-radius: 8px;
+				border: 1px solid #e3e3e3;
+				outline: 0;
+			}
+		}
+
+		.viewSearchBar {
+			top: 45px;
+		}
+	}
+
+	.lowerNav__container {
+		position: absolute;
+		z-index: 20;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		border-top: 1px solid #e3e3e3;
+		background: #fff;
+
+		.box {
+			display: grid;
+			place-items: center;
+			padding: 12px 10px 10px;
+			grid-gap: 8px;
+			text-decoration: none;
+			cursor: pointer;
+			color: #6f6363;
+
+			h5 {
+				font-weight: 400;
+			}
+		}
+
+    .currentPage {
+
+      i, h5 {
+        color: violet;
+      }
+    }
+	}	
+}
