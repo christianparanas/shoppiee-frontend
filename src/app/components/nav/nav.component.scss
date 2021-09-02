@@ -32,6 +32,7 @@ $textHeadColor: #735C5C;
 		.upperNavIcons__container {
 			display: flex;
 			justify-content: space-between; 
+<<<<<<< HEAD
 			.logo{
 				display:flex;
 				justify-content: center;
@@ -45,6 +46,11 @@ $textHeadColor: #735C5C;
 								 1px 1px 1px rgba(0,0,0,.5);
 					pointer-events: none;
 				}
+=======
+
+			h2 {
+				color: #000;
+>>>>>>> 80a3bc846ead1208b9a5ffb9061ad0fe8f441f1a
 			}
 
 			.icons {
@@ -57,7 +63,7 @@ $textHeadColor: #735C5C;
 				cursor: pointer;
 
 				.selectedIcon {
-					color: violet;
+					color: #ff4612;
 				}
 			} 
 		}
@@ -127,7 +133,7 @@ $textHeadColor: #735C5C;
     .currentPage {
 
       i, h5 {
-        color: violet;
+        color: #ff4612;
       }
     }
 	}	

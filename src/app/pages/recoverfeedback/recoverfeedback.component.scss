@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;900&display=swap");
+
+$textHeadColor: #735c5c;
+$btnBgColor: #904490;
+
+.recover-container {
+  padding: 20px;
+
+  h2 {
+    color: $textHeadColor;
+    text-align: center;
+    margin: 80px 20px 20px;
+  }
+
+  p {
+    color: $textHeadColor;
+    text-align: center;
+  }
+
+  input {
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    margin-top: 15px;
+    background: $btnBgColor;
+    font-weight: 550;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+    color: #fff;
+  }
+
+  .toLoginbtn {
+    background: #fff;
+    color: $btnBgColor;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 2px;
+    padding: 14px;
+    border: 1px solid $btnBgColor;
+    letter-spacing: 2px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+    text-align: center;
+    cursor: pointer;
+  }
+}

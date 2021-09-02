@@ -20,6 +20,8 @@ import { ProductComponent } from './components/product/product.component';
 import { AccountComponent } from './pages/account/account.component';
 import { NavComponent } from './components/nav/nav.component';
 import { ProductpageComponent } from './pages/productpage/productpage.component';
+import { RecoveraccountComponent } from './pages/recoveraccount/recoveraccount.component';
+import { RecoverfeedbackComponent } from './pages/recoverfeedback/recoverfeedback.component';
 
 
 @NgModule({
@@ -40,6 +42,8 @@ import { ProductpageComponent } from './pages/productpage/productpage.component'
     AccountComponent,
     NavComponent,
     ProductpageComponent,
+    RecoveraccountComponent,
+    RecoverfeedbackComponent,
   ],
   imports: [
     BrowserModule,

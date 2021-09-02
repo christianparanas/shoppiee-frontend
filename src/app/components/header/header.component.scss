@@ -24,7 +24,7 @@ header {
     justify-content: center;
     align-items: center;
     font-family: $font-family;
-    font-size: 1rem;
+    font-size: 12px;
     width:100%;
     text-align: center;
   }
@@ -41,6 +41,7 @@ header {
       justify-content: center;
       align-items: center;
       cursor: pointer;
+      box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
 
       i {
         color: white;

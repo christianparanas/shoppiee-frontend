@@ -21,10 +21,13 @@ export class ProductpageComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+<<<<<<< HEAD
 
   itemQuantity(event: number){
     if (this.quantity+event==-1) this.quantity = 0
     else this.quantity += event
   }
 
+=======
+>>>>>>> 80a3bc846ead1208b9a5ffb9061ad0fe8f441f1a
 }

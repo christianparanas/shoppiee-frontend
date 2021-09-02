@@ -7,7 +7,8 @@ import { LogInPageComponent } from './pages/log-in-page/log-in-page.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { AccountComponent } from './pages/account/account.component';
 import { ProductpageComponent } from './pages/productpage/productpage.component';
-
+import { RecoveraccountComponent } from './pages/recoveraccount/recoveraccount.component';
+import { RecoverfeedbackComponent } from './pages/recoverfeedback/recoverfeedback.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,6 +17,8 @@ const routes: Routes = [
   { path: 'product/:id', component: ProductpageComponent },
   { path: 'account/register', component: RegisterComponent },
   { path: 'account/login', component: LogInPageComponent },
+  { path: 'account/recover', component: RecoveraccountComponent },
+  { path: 'account/recover/feedback', component: RecoverfeedbackComponent },
 ];
 
 @NgModule({
