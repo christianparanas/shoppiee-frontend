@@ -1,12 +1,14 @@
-
 <div class="nav__container">
 	<div class="upperNav__container" [ngClass]="{upperNav__scrollShadow: onScroll}">
 		<div class="upperNavIcons__container">
-			<h2>SHOP</h2>
+			<div class='logo'>
+				<i class="fab fa-shopify"></i>
+				<h2>HOP</h2>
+			</div>
 			<div class="icons">
 				<i (click)="openCloseSearchBar(); searchInput.focus()"  class="far fa-search" [ngClass]="{selectedIcon: isSearchBarOpen}"></i>
 				<i  class="far fa-shopping-cart"></i>
-        <i  class="far fa-comment-alt"></i>
+        		<i  class="far fa-comment-alt"></i>
 			</div>
 
 		</div>

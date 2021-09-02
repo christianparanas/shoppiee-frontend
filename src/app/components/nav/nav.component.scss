@@ -32,9 +32,19 @@ $textHeadColor: #735C5C;
 		.upperNavIcons__container {
 			display: flex;
 			justify-content: space-between; 
-
-			h2 {
-				color: $textHeadColor;
+			.logo{
+				display:flex;
+				justify-content: center;
+				align-items: center;
+				i,h2{
+					font-size: 1.5rem;
+					color:white;
+					text-shadow: 0px 0px 1px rgba(0,0,0,.5),
+								 0px 1px 1px rgba(0,0,0,.5),
+								 1px 1px 1px rgba(0,0,0,.5),
+								 1px 1px 1px rgba(0,0,0,.5);
+					pointer-events: none;
+				}
 			}
 
 			.icons {
@@ -44,6 +54,7 @@ $textHeadColor: #735C5C;
 				grid-template-columns: repeat(3, 25px);
 				align-items: center;
 				grid-gap: 15px;
+				cursor: pointer;
 
 				.selectedIcon {
 					color: violet;
@@ -67,6 +78,7 @@ $textHeadColor: #735C5C;
 				position: absolute;
 				top: 22px;
 				left: 32px;
+				cursor: pointer;
 			}
 
 			input {

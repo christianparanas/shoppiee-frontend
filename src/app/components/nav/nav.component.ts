@@ -19,14 +19,11 @@ export class NavComponent implements OnInit {
   }
 
   openCloseSearchBar() {
-    this.isSearchBarOpen === false ? this.isSearchBarOpen = true : this.isSearchBarOpen = false
+    this.isSearchBarOpen =!this.isSearchBarOpen;
   }
 
 
   listenScrollEvent = () => {
-    window.scrollY > 15
-      ? this.onScroll = true
-      : this.onScroll = false
+    window.scrollY > 15 && this.onScroll !=this.onScroll;
   }
-
 }

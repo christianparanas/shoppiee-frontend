@@ -9,10 +9,10 @@ import { Location } from '@angular/common'
 })
 export class ProductpageComponent implements OnInit {
   fakeArray = new Array(5);
-
+  quantity:number = 0;
   constructor(
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
   ) { }
 
   ngOnInit(): void {
@@ -20,6 +20,11 @@ export class ProductpageComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  itemQuantity(event: number){
+    if (this.quantity+event==-1) this.quantity = 0
+    else this.quantity += event
   }
 
 }
