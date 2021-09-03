@@ -3,6 +3,57 @@
 <div class="account_setting__container">
 	
 
+	<div class="dark_overlay" (click)="openCloseAboutUsOverlay()" [ngClass]="{view_dark_overlay: isAboutUsOverlayOpen}"></div>
+	<div class="aboutus_overlay" [ngClass]="{view_aboutus_overlay: isAboutUsOverlayOpen}">
+		<div class="header">
+			<div class=""></div>
+			<div class="info">Our Team</div>
+			<div class="closeBtn">
+				<i class="far fa-times" (click)="openCloseAboutUsOverlay()"></i>
+			</div>
+		</div>
+
+		<div class="content">
+			<div class="team">
+				<div class="author">
+					<img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.6435-9/199538667_2560456557434428_6360688576988264847_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeFCeCiMWWK_2XyfhcKxOa3NHFEubb2h40AcUS5tvaHjQEUzOcbfvab928_6fbVtpOkr9THZLQr-B3SGZ8oLmM_q&_nc_ohc=tPftrWFfVVgAX88rset&tn=-wxwBP_WPyFetnlM&_nc_ht=scontent.fceb2-2.fna&oh=a23402726f4d7a4cc7007f7e6bf11747&oe=61583A67" alt="">
+					<div class="details">
+						<div class="name">Luigi Loreno</div>
+						<div class="role">Programmer</div>
+					</div>
+				</div>
+				<div class="author">
+					<img src="https://scontent.fceb2-1.fna.fbcdn.net/v/t1.6435-9/136094375_2836693853265362_4239328980175440235_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=174925&_nc_eui2=AeHdITDib4twvWPRdy95ItJP6gD151ms4J_qAPXnWazgnwPF2cQhpivxayib4Y73RmB7zLcG_K0N0tAE--B8Sul6&_nc_ohc=wO6yru7JXqEAX9pOaJ0&tn=-wxwBP_WPyFetnlM&_nc_ht=scontent.fceb2-1.fna&oh=c6f7f6e51612fe6b695fa36af6bd6090&oe=6158494F" alt="">
+					<div class="details">
+						<div class="name">Roger Abella</div>
+						<div class="role">Programmer</div>
+					</div>
+				</div>
+				<div class="author">
+					<img src="https://avatars.githubusercontent.com/u/78558096?v=4" alt="">
+					<div class="details">
+						<div class="name">Ruel Baldo</div>
+						<div class="role">Programmer</div>
+					</div>
+				</div>
+				<div class="author">
+					<img src="https://scontent.fceb2-1.fna.fbcdn.net/v/t39.30808-6/238918757_4005902089537555_8993149938043408021_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeGiN1zsNDI7b9RIAIZBKK9a0dvMPkXUtLPR28w-RdS0s_HO6jCWAs1HDYCSYQsdh4NMY6K2hFJkCowpIvN_PSjH&_nc_ohc=AUfKaHsgAYkAX8r47aT&_nc_ht=scontent.fceb2-1.fna&oh=6f67e6d13170c5f312a037b88c7dc0b7&oe=61370008" alt="">
+					<div class="details">
+						<div class="name">Christian Paranas</div>
+						<div class="role">Programmer</div>
+					</div>
+				</div>
+				<div class="author last">
+					<img src="https://avatars.githubusercontent.com/u/89246739?v=4" alt="">
+					<div class="details">
+						<div class="name">John Jefferson Lebasora</div>
+						<div class="role">Programmer</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="account_setting">
 		<div class="header">
 			<div class="backBtn" routerLink="/account">
@@ -40,8 +91,8 @@
 						<p>Help Centre</p>
 						<i class="far fa-chevron-right"></i>
 					</div>
-					<div class="item">
- 						<p>About</p>
+					<div class="item" (click)="openCloseAboutUsOverlay()">
+ 						<p>About Us</p>
 						<i class="far fa-chevron-right"></i>
 					</div>
 					<div class="item">
@@ -52,7 +103,7 @@
 			</div>
 		</div>
 
-		<div class="logout_btn">
+		<div class="logout_btn" routerLink="/account/login">
 			LOGOUT
 		</div>
 	</div>
