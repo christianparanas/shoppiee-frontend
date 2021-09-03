@@ -81,5 +81,20 @@
 				}
 			}
 		}
+
+		.userstore__container {
+			padding: 10px 20px;
+			display: grid;
+			place-items: end;
+
+			.toStore_btn {
+				font-size: 12px;
+				border: 1px solid #e3e3e3;
+				width: fit-content;
+				padding: 8px 10px;
+				box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+				border-radius: 8px;
+			}
+		}
 	}	
 }

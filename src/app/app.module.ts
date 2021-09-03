@@ -23,6 +23,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { ProductpageComponent } from './pages/productpage/productpage.component';
 import { RecoveraccountComponent } from './pages/recoveraccount/recoveraccount.component';
 import { RecoverfeedbackComponent } from './pages/recoverfeedback/recoverfeedback.component';
+import { UserstoreComponent } from './pages/userstore/userstore.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { RecoverfeedbackComponent } from './pages/recoverfeedback/recoverfeedbac
     ProductpageComponent,
     RecoveraccountComponent,
     RecoverfeedbackComponent,
+    UserstoreComponent,
   ],
   imports: [
     BrowserModule,
