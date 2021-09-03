@@ -14,10 +14,26 @@
 			padding: 20px;
 			align-items: flex-end;
 
-			img {
-				width: 80px;
-				height: 80px;
-				border-radius: 50%;
+			.user {
+				display: flex;
+
+				img {
+					width: 80px;
+					height: 80px;
+					border-radius: 50%;
+				}
+
+				.details {
+					color: #fff;
+					margin-left: 10px;
+					font-size: 14px;
+					padding-top: 20px;
+
+					.address {
+						font-size: 12px;
+						color: #a29f9f;
+					}
+				}
 			}
 
 			.account_options {
