@@ -10,13 +10,16 @@ import { ProductpageComponent } from './pages/productpage/productpage.component'
 import { RecoveraccountComponent } from './pages/recoveraccount/recoveraccount.component';
 import { RecoverfeedbackComponent } from './pages/recoverfeedback/recoverfeedback.component';
 import { UserstoreComponent } from './pages/userstore/userstore.component';
+import { AccountsettingComponent } from './pages/accountsetting/accountsetting.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'categories', component: CategoriesComponent },
-  { path: 'account', component: AccountComponent },
   { path: 'product/:id', component: ProductpageComponent },
+
+  { path: 'account', component: AccountComponent },
+  { path: 'account/setting', component: AccountsettingComponent },
   { path: 'account/register', component: RegisterComponent },
   { path: 'account/login', component: LogInPageComponent },
   { path: 'account/recover', component: RecoveraccountComponent },

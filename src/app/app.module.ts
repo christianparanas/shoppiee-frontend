@@ -24,6 +24,7 @@ import { ProductpageComponent } from './pages/productpage/productpage.component'
 import { RecoveraccountComponent } from './pages/recoveraccount/recoveraccount.component';
 import { RecoverfeedbackComponent } from './pages/recoverfeedback/recoverfeedback.component';
 import { UserstoreComponent } from './pages/userstore/userstore.component';
+import { AccountsettingComponent } from './pages/accountsetting/accountsetting.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { UserstoreComponent } from './pages/userstore/userstore.component';
     RecoveraccountComponent,
     RecoverfeedbackComponent,
     UserstoreComponent,
+    AccountsettingComponent,
   ],
   imports: [
     BrowserModule,
