@@ -24,6 +24,6 @@ export class NavComponent implements OnInit {
 
 
   listenScrollEvent = () => {
-    window.scrollY > 15 && this.onScroll !=this.onScroll;
+    window.scrollY > 15 ? this.onScroll = true : this.onScroll = false;
   }
 }
