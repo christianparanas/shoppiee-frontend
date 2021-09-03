@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./accountsetting.component.scss']
 })
 export class AccountsettingComponent implements OnInit {
+  isAboutUsOverlayOpen: boolean = false
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  openCloseAboutUsOverlay(): void {
+    this.isAboutUsOverlayOpen =! this.isAboutUsOverlayOpen
   }
 
 }
