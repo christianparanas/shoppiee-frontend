@@ -19,8 +19,6 @@ $textHeadColor: #735C5C;
 		display: block;
 	}
 
-
-
 	.upperNav__container {
 		position: fixed;
 		width: 100%;
@@ -32,11 +30,14 @@ $textHeadColor: #735C5C;
 		.upperNavIcons__container {
 			display: flex;
 			justify-content: space-between; 
-			.logo{
+
+			.logo {
 				display:flex;
 				justify-content: center;
 				align-items: center;
-				i,h2{
+				
+
+				i,h2 {
 					font-size: 1.5rem;
 					color:white;
 					text-shadow: 0px 0px 1px rgba(0,0,0,.5),
@@ -49,12 +50,14 @@ $textHeadColor: #735C5C;
 
 			.icons {
 				font-size: 23px;
-
 				display: grid;
 				grid-template-columns: repeat(3, 25px);
 				align-items: center;
 				grid-gap: 15px;
-				cursor: pointer;
+
+				 i {
+				 	cursor: pointer;
+				 }
 
 				.selectedIcon {
 					color: #ff4612;
@@ -78,7 +81,7 @@ $textHeadColor: #735C5C;
 				position: absolute;
 				top: 22px;
 				left: 32px;
-				cursor: pointer;
+				color: #b2b0b0;
 			}
 
 			input {

@@ -9,7 +9,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'learnangular';
 
-  handleClick() {
-    console.log('clicked');
-  }
+  
 }

@@ -7,7 +7,7 @@ import {RouterModule,Router} from '@angular/router'
   styleUrls: ['./account.component.scss']
 })
 export class AccountComponent implements OnInit {
-  userIsAuth: boolean = false;
+  userIsAuth: boolean = true;
 
   constructor(private router: Router) { }
 
