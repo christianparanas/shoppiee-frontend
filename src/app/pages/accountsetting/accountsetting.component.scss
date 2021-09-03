@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;900&display=swap");
+
+
+.account_setting__container {
+
+
+	.account_setting {
+		padding: 20px;
+
+		.header {
+			display: flex;
+			align-items: center;
+
+
+			.backBtn {
+	      width: 40px;
+	      height: 40px;
+	      border-radius: 50%;
+	      background: #904490;
+	      display: flex;
+	      justify-content: center;
+	      align-items: center;
+	      cursor: pointer;
+	      box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+	      color: #fff;
+	    }
+
+	    h2 {
+	    	margin-left: 15px;
+	    	font-size: 15px;
+	    }
+		}
+
+		.content__container {
+			margin-top: 30px;
+
+
+			.container {
+				font-size: 12px;
+
+				.header {
+					padding: 5px 10px;
+					font-size: 14px;
+				}
+
+				.items {
+					display: grid;
+					grid-gap: 2px;
+
+					.item {
+						font-size: 13px;
+						padding: 12px;
+						display: flex;
+						justify-content: space-between;
+						box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
+						border-radius: 4px;
+						cursor: pointer;
+
+						&:hover {
+							background: #904490;
+							color: #fff;
+						}
+
+						i {
+							color: #baafaf;
+						}
+					}
+				}
+			}
+
+			.container:nth-child(2) {
+				.header {
+					margin-top: 20px;
+				}
+			}
+		}
+
+		.logout_btn {
+			margin-top: 20px;
+			background: #e23d3d;
+			text-align: center;
+			padding: 10px;
+			color: #fff;
+			border-radius: 8px;
+			box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+		}
+	}	
+}
