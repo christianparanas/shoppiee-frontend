@@ -28,3 +28,15 @@ $color:#735C5C;
   } 
 }
 
+::-webkit-scrollbar{
+  height:5px;
+}
+
+::-webkit-scrollbar-track{
+  box-shadow: inset 0px 0px 5px rgb(3, 73, 18);
+  border:10px;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color:rgb(33, 114, 160);
+}
