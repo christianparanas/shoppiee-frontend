@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;900&display=swap');
+
+
+.storesPage_container {
+	padding-bottom: 5rem;
+
+	h4 {
+		padding: 80px 20px 0;
+		font-weight: 800;
+		color: #735C5C;
+	}
+
+	.container {
+		padding: 20px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 15px;
+
+
+		app-storepreview {
+			width: 100%;
+		}
+
+	}
+}

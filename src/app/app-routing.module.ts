@@ -12,12 +12,15 @@ import { RecoverfeedbackComponent } from './pages/recoverfeedback/recoverfeedbac
 import { UserstoreComponent } from './pages/userstore/userstore.component';
 import { AccountsettingComponent } from './pages/accountsetting/accountsetting.component';
 import { StoreComponent } from './pages/store/store.component';
+import { StoresComponent } from './pages/stores/stores.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'categories', component: CategoriesComponent },
   { path: 'product/:id', component: ProductpageComponent },
+
+  { path: 'stores', component: StoresComponent },
   { path: 'store/:storeId', component: StoreComponent },
   
   { path: 'account', component: AccountComponent },

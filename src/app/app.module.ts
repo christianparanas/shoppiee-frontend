@@ -25,6 +25,8 @@ import { RecoverfeedbackComponent } from './pages/recoverfeedback/recoverfeedbac
 import { UserstoreComponent } from './pages/userstore/userstore.component';
 import { AccountsettingComponent } from './pages/accountsetting/accountsetting.component';
 import { StoreComponent } from './pages/store/store.component';
+import { StoresComponent } from './pages/stores/stores.component';
+import { StorepreviewComponent } from './components/storepreview/storepreview.component';
 
 
 @NgModule({
@@ -49,6 +51,8 @@ import { StoreComponent } from './pages/store/store.component';
     UserstoreComponent,
     AccountsettingComponent,
     StoreComponent,
+    StoresComponent,
+    StorepreviewComponent,
   ],
   imports: [
     BrowserModule,

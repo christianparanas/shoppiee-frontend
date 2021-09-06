@@ -1,0 +1,37 @@
+
+.storepreview__container {
+	width: 100%;
+	box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+	border-radius: 8px;
+
+	img {
+		border-radius: 8px 8px 0 0;
+		width: 100%;
+		height: 100px;
+		object-fit: cover;
+	}
+
+	.store_details {
+		padding: 10px;
+		font-size: 12px;
+		display: grid;
+		grid-gap: 5px;
+
+		.visitShop_btn {
+			margin-top: 10px;
+			font-size: 12px;
+			padding: 8px;
+			border: 1px solid #f2efef;
+			border-radius: 8px;
+			box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+			cursor: pointer;
+			text-align: center;
+			transition: all .3s ease;
+
+			&:hover {
+				background: #000;
+				color: #fff;
+			}
+		}
+	}
+}
