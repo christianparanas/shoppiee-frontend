@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class StoreComponent implements OnInit {
   @Input() follow:string='follow';
+  @Input() storeName:String='centro guy San.O';
   constructor() { }
 
   ngOnInit(): void {
