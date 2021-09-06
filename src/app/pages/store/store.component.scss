@@ -103,5 +103,21 @@ app-nav{
                 grid-template-columns: 1fr;
                 grid-template-rows: 1fr 1fr;
             }
+            .store-details-and-activities{
+                .details-container{
+                    display:flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    flex-direction: column;
+                }
+            }
+
+            .store-signage{
+                div{
+                    .follow,.inbox{
+                        width:95%;
+                    }
+                }
+            }
         }
     }
