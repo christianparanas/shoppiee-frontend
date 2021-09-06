@@ -6,7 +6,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { LogInPageComponent } from './pages/log-in-page/log-in-page.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { AccountComponent } from './pages/account/account.component';
-import { ProductpageComponent } from './pages/productpage/productpage.component';
+import { ProductComponent } from './pages/product/product.component';
 import { RecoveraccountComponent } from './pages/recoveraccount/recoveraccount.component';
 import { RecoverfeedbackComponent } from './pages/recoverfeedback/recoverfeedback.component';
 import { UserstoreComponent } from './pages/userstore/userstore.component';
@@ -18,7 +18,7 @@ import { StoresComponent } from './pages/stores/stores.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'categories', component: CategoriesComponent },
-  { path: 'product/:id', component: ProductpageComponent },
+  { path: 'product/:id', component: ProductComponent },
 
   { path: 'stores', component: StoresComponent },
   { path: 'store/:storeId', component: StoreComponent },

@@ -1,8 +1,8 @@
 
-<div class="productpage__container">
+<div class="product__container">
 	<app-nav></app-nav>
 
-	<div class="productpage_content__container">
+	<div class="product_content__container">
 		<div class="product__container">
 			<div class="product_image__container">
 				<div class="backBtn" (click)="goBack()">
@@ -67,7 +67,7 @@
 			<h4>SIMILAR PRODUCTS</h4>
 
 			<div class="container">
-				<app-product *ngFor="let a of fakeArray"></app-product>
+				<app-productpreview *ngFor="let a of fakeArray"></app-productpreview>
 			</div>
 		</div>
 	</div>

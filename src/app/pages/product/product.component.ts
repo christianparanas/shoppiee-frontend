@@ -3,11 +3,11 @@ import { ActivatedRoute } from '@angular/router'
 import { Location } from '@angular/common'
 
 @Component({
-  selector: 'app-productpage',
-  templateUrl: './productpage.component.html',
-  styleUrls: ['./productpage.component.scss']
+  selector: 'app-product',
+  templateUrl: './product.component.html',
+  styleUrls: ['./product.component.scss']
 })
-export class ProductpageComponent implements OnInit {
+export class ProductComponent implements OnInit {
   fakeArray = new Array(5);
   quantity:number = 0;
   constructor(

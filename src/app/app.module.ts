@@ -15,11 +15,11 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { HotsalesComponent } from './components/hotsales/hotsales.component';
 import { DiscoverComponent } from './components/discover/discover.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
-import { CategoryBtnComponent } from './components/category-btn/category-btn.component';
-import { ProductComponent } from './components/product/product.component';
+import { CategorypreviewComponent } from './components/categorypreview/categorypreview.component';
+import { ProductpreviewComponent } from './components/productpreview/productpreview.component';
 import { AccountComponent } from './pages/account/account.component';
 import { NavComponent } from './components/nav/nav.component';
-import { ProductpageComponent } from './pages/productpage/productpage.component';
+import { ProductComponent } from './pages/product/product.component';
 import { RecoveraccountComponent } from './pages/recoveraccount/recoveraccount.component';
 import { RecoverfeedbackComponent } from './pages/recoverfeedback/recoverfeedback.component';
 import { UserstoreComponent } from './pages/userstore/userstore.component';
@@ -41,11 +41,11 @@ import { StorepreviewComponent } from './components/storepreview/storepreview.co
     HotsalesComponent,
     DiscoverComponent,
     CategoriesComponent,
-    CategoryBtnComponent,
-    ProductComponent,
+    CategorypreviewComponent,
+    ProductpreviewComponent,
     AccountComponent,
     NavComponent,
-    ProductpageComponent,
+    ProductComponent,
     RecoveraccountComponent,
     RecoverfeedbackComponent,
     UserstoreComponent,
