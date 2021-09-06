@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-discover',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./discover.component.scss']
 })
 export class DiscoverComponent implements OnInit {
+  @Input() contentName:string='';
   fakeArray = new Array(10);
 
   constructor() { }

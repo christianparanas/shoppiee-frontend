@@ -98,7 +98,7 @@ app-nav{
         .store-content-container{
             display:grid;
             margin:0px 20px;
-            grid-template-rows: 3.4rem 1fr 1fr;
+            grid-template-rows: 3.4rem auto 1fr;
             .store-header{
                 grid-template-columns: 1fr;
                 grid-template-rows: 1fr 1fr;
