@@ -11,7 +11,6 @@ import { RegisterComponent } from './pages/register/register.component';
 import { LogInPageComponent } from './pages/log-in-page/log-in-page.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FormComponent } from './components/form/form.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { HotsalesComponent } from './components/hotsales/hotsales.component';
 import { DiscoverComponent } from './components/discover/discover.component';
@@ -25,6 +24,7 @@ import { RecoveraccountComponent } from './pages/recoveraccount/recoveraccount.c
 import { RecoverfeedbackComponent } from './pages/recoverfeedback/recoverfeedback.component';
 import { UserstoreComponent } from './pages/userstore/userstore.component';
 import { AccountsettingComponent } from './pages/accountsetting/accountsetting.component';
+import { StoreComponent } from './pages/store/store.component';
 
 
 @NgModule({
@@ -35,7 +35,6 @@ import { AccountsettingComponent } from './pages/accountsetting/accountsetting.c
     LogInPageComponent,
     HeaderComponent,
     FormComponent,
-    FooterComponent,
     CarouselComponent,
     HotsalesComponent,
     DiscoverComponent,
@@ -49,6 +48,7 @@ import { AccountsettingComponent } from './pages/accountsetting/accountsetting.c
     RecoverfeedbackComponent,
     UserstoreComponent,
     AccountsettingComponent,
+    StoreComponent,
   ],
   imports: [
     BrowserModule,

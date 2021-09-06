@@ -11,12 +11,14 @@ import { RecoveraccountComponent } from './pages/recoveraccount/recoveraccount.c
 import { RecoverfeedbackComponent } from './pages/recoverfeedback/recoverfeedback.component';
 import { UserstoreComponent } from './pages/userstore/userstore.component';
 import { AccountsettingComponent } from './pages/accountsetting/accountsetting.component';
+import { StoreComponent } from './pages/store/store.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'categories', component: CategoriesComponent },
   { path: 'product/:id', component: ProductpageComponent },
+  { path: 'store', component: StoreComponent },
 
   { path: 'account', component: AccountComponent },
   { path: 'account/setting', component: AccountsettingComponent },
