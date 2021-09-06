@@ -18,8 +18,8 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'categories', component: CategoriesComponent },
   { path: 'product/:id', component: ProductpageComponent },
-  { path: 'store', component: StoreComponent },
-
+  { path: 'store/:storeId', component: StoreComponent },
+  
   { path: 'account', component: AccountComponent },
   { path: 'account/setting', component: AccountsettingComponent },
   { path: 'account/register', component: RegisterComponent },
