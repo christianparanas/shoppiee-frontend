@@ -1,11 +1,13 @@
 
 <div class="storesPage_container">
 		<app-nav currentRoute="stores"></app-nav>
-	<h4>STORES</h4>
-	
 
-	<div class="container">
-		<app-storepreview *ngFor="let store of storesArr">
-		</app-storepreview>
-	</div>
+		<div class="wrapper">
+			<h4>STORES</h4>
+	
+			<div class="container">
+				<app-storepreview *ngFor="let store of storesArr">
+				</app-storepreview>
+			</div>
+		</div>
 </div>

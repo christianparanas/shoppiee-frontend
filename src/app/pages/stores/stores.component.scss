@@ -4,22 +4,44 @@
 .storesPage_container {
 	padding-bottom: 5rem;
 
-	h4 {
-		padding: 80px 20px 0;
-		font-weight: 800;
-		color: #735C5C;
-	}
+	.wrapper {
 
-	.container {
-		padding: 20px;
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-gap: 15px;
-
-
-		app-storepreview {
-			width: 100%;
+		h4 {
+			padding: 80px 20px 0;
+			font-weight: 800;
+			color: #735C5C;
 		}
 
+		.container {
+			padding: 20px;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 15px;
+
+
+			app-storepreview {
+				width: 100%;
+			}
+
+		}
+	}
+}
+
+
+@media only screen and (min-width: 999px) {
+
+
+	.storesPage_container {
+
+
+		.wrapper {
+			max-width: 1200px;
+			margin: 0 auto;
+
+			.container {
+				grid-template-columns: repeat(5, 1fr);
+				grid-gap: 20px;
+			}
+		}
 	}
 }
