@@ -1,13 +1,15 @@
 
 <div class="categoriesPage-container">
 		<app-nav currentRoute="categories"></app-nav>
-	<h4>CATEGORIES</h4>
-	
 
-	
-	<div class="container">
-		<app-categorypreview *ngFor="let a of fakeArray"></app-categorypreview>
-	</div>
+		<div class="wrapper">
+			<h4>CATEGORIES</h4>
+
+			
+			<div class="container">
+				<app-categorypreview *ngFor="let a of fakeArray"></app-categorypreview>
+			</div>
+		</div>
 	
 <!-- 	<app-footer currentRoute='categories'></app-footer> -->
 </div>
