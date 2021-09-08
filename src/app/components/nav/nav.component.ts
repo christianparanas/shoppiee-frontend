@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class NavComponent implements OnInit {
   isSearchBarOpen: boolean = false
+  isSideBarOpen: boolean = false
   onScroll: boolean = false
   @Input() currentRoute : String;
 
@@ -19,7 +20,11 @@ export class NavComponent implements OnInit {
   }
 
   openCloseSearchBar() {
-    this.isSearchBarOpen =!this.isSearchBarOpen;
+    this.isSearchBarOpen =! this.isSearchBarOpen;
+  }
+
+  openCloseSideBar() {
+    this.isSideBarOpen =! this.isSideBarOpen;
   }
 
 

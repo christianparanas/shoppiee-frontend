@@ -9,6 +9,7 @@
 				<i (click)="openCloseSearchBar(); searchInput.focus()"  class="far fa-search" [ngClass]="{selectedIcon: isSearchBarOpen}"></i>
 				<i  class="far fa-shopping-cart"></i>
         <i  class="far fa-comment-alt"></i>
+        <i class="fal fa-bars" (click)="openCloseSideBar()"></i>
 			</div>
 
 		</div>
@@ -19,7 +20,22 @@
 		</div>
 	</div>
 
-	<div (click)="openCloseSearchBar()" class="navDark__overlay" [ngClass]="{navDark__open_overlay: isSearchBarOpen}"></div>
+	<div class="sidebar" [ngClass]="{open_sidebar: isSideBarOpen}">
+		<div class="sidebar_header">
+			<div class=""></div>
+			<i  class="far fa-times" (click)="openCloseSideBar()"></i>
+		</div>
+		<div class="content">
+			<div routerLink="/" class="items" [ngClass]="{'currentPage': currentRoute === 'home' }"><i class="fal fa-home"></i> Home</div>
+			<div routerLink="/categories" class="items" [ngClass]="{'currentPage': currentRoute === 'categories' }"><i class="fal fa-tag"></i> Categories</div>
+			<div routerLink="/stores" class="items" [ngClass]="{'currentPage': currentRoute === 'stores' }"><i class="fal fa-store"></i> Stores</div>
+			<div routerLink="/account" class="items" [ngClass]="{'currentPage': currentRoute === 'account' }"><i class="fal fa-user"></i> Account</div>
+		</div>
+	</div>
+
+	<div (click)="openCloseSearchBar()" class="search_navDark__overlay" [ngClass]="{search_navDark__open_overlay: isSearchBarOpen}"></div>
+
+	<div (click)="openCloseSideBar()" class="sidebar_navDark__overlay" [ngClass]="{sidebar_navDark__open_overlay: isSideBarOpen}"></div>
 
 
 	<div class="lowerNav__container">

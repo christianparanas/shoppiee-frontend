@@ -5,7 +5,7 @@ $textHeadColor: #735C5C;
 
 .nav__container {
 
-	.navDark__overlay {
+	.search_navDark__overlay, .sidebar_navDark__overlay {
 		position: fixed;
 		background: #000;
 		height: 100%;
@@ -15,7 +15,60 @@ $textHeadColor: #735C5C;
 		display: none;
 	}
 
-	.navDark__open_overlay {
+	.sidebar {
+		width: 300px;
+		height: 100%;
+		position: fixed;
+		right: -300px;
+		background: #fff;
+		z-index: 24;
+		padding: 20px;
+		transition: all .3s ease;
+
+		.sidebar_header {
+			display: flex;
+			justify-content: space-between; 
+
+			i {
+				cursor: pointer;
+			}
+		}
+
+		.content {
+			margin-top: 40px;
+			display: grid;
+			grid-gap: 10px;
+
+			.items {
+				padding: 10px 12px;
+				border: 1px solid #fff;
+				transition: all .3s ease;
+				cursor: pointer;
+
+				&:hover {
+					border: 1px solid #000;
+					box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
+				}
+			}
+
+			.currentPage {
+				background: #000;
+				color:#fff;
+				box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
+				border: 1px solid #000;
+			}
+		}
+	}
+
+	.open_sidebar {
+		right: 0;
+	}
+
+	.sidebar_navDark__overlay {
+		z-index: 23;
+	}
+
+	.search_navDark__open_overlay, .sidebar_navDark__open_overlay {
 		display: block;
 	}
 
@@ -62,6 +115,10 @@ $textHeadColor: #735C5C;
 
 				.selectedIcon {
 					color: #ff4612;
+				}
+
+				.fa-bars {
+					display: none;
 				}
 			} 
 		}
@@ -135,4 +192,38 @@ $textHeadColor: #735C5C;
       }
     }
 	}	
+}
+
+
+@media only screen and (min-width: 999px) {
+
+	.nav__container {
+
+
+		.upperNav__container {
+
+
+			.upperNavIcons__container {
+
+
+				.icons {
+					font-size: 23px;
+					display: grid;
+					grid-template-columns: repeat(4, 25px);
+					align-items: center;
+					grid-gap: 15px;
+
+
+					.fa-bars {
+						display: block;
+					}
+				}
+			}
+		}
+
+		.lowerNav__container {
+			display: none;
+		}
+	}
+
 }
