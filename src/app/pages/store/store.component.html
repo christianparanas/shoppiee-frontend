@@ -4,17 +4,17 @@
     <div class='store-header'>
         <div class='store-signage'>
             <div class='img-container'>
-                <img src="https://www.thelogocreative.co.uk/wp-content/uploads/2017/08/wFSbHvw-1024x640.jpg" alt="">
-                <p>APPLE STORE</p>
+                <img src="https://avatars.githubusercontent.com/u/59472122?v=4" alt="store profile">
+                <p>{{storeName}}</p>
             </div>
             <div class='popularity-event'>
-                <div>
-                    <div class='follow'>
+                <div class='btn-container'>
+                    <div (click)='isFollowed()' class='follow'>
                         <i class="fas fa-smile-plus"></i>
-                        <p>follow</p>
+                        <p>{{follow}}</p>
                     </div>
                 </div>
-                <div>
+                <div class='btn-container'>
                     <div class='inbox'>
                         <i class="fas fa-inbox-in"></i>
                         <p>Message Us</p>
