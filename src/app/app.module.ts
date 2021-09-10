@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 import { HomeComponent } from './pages/home/home.component'
 import { RegisterComponent } from './pages/register/register.component';
@@ -56,7 +56,8 @@ import { StorepreviewComponent } from './components/storepreview/storepreview.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxSkeletonLoaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
