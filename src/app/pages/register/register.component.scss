@@ -6,6 +6,19 @@ $btnBgColor: #904490;
 .register-container {
   padding: 0 20px;
 
+  .main-container {
+    .visual {
+     display: none;
+      width: 100%;
+      text-align: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
   .container {
 
     h2 {
@@ -25,7 +38,7 @@ $btnBgColor: #904490;
         width: 100%;
         border-radius: 8px;
         font-size: 12px;
-        box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+        box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
       }
 
       input[type="submit"] {
@@ -58,6 +71,33 @@ $btnBgColor: #904490;
       box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
       text-align: center;
       cursor: pointer;
+    }
+
+
+  }
+  }
+
+}
+
+
+@media only screen and (min-width: 999px) { 
+
+  .register-container {
+
+
+    .main-container {
+      width: 100%;
+      max-width: 1400px;
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      margin: 50px auto; 
+
+      .visual {
+        display: block;
+        height: 700px;
+        width: 700px;
+      }
+
     }
   }
 }
