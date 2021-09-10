@@ -47,9 +47,23 @@ $shadow:black;
           width: 100%;
           overflow-x: scroll;
           display: grid;
-          grid-template-columns: repeat(7, 165px);
+          grid-template-columns: repeat(8, 165px);
           grid-gap: 15px;
           padding: 20px;
+
+          .seemorebtn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p {
+              height: fit-content;
+              padding: 10px;
+              border: 1px solid #e3e3e3;
+              box-shadow: 2px 8px 8px 0px RGB(43 80 237 / 20%);
+              border-radius: 8px;
+            }
+          }
         }
       }
     }
@@ -64,7 +78,6 @@ $shadow:black;
         justify-content: space-between;
 
         .sort {
-          border: 1px solid #e3e3e3;
           font-size: 12px;
           padding: 5px;
           border-radius: 4px;
@@ -72,6 +85,7 @@ $shadow:black;
           select {
             font-size: 12px;
             outline: 0;
+            background: #fff;
           }
         }
       }
