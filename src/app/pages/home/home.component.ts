@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  newProductsArr = new Array(7)
+  topProductsArr = new Array(7)
+  discoverProductsArr = new Array(22)
 
   constructor() { }
 

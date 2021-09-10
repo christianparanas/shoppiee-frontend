@@ -29,19 +29,21 @@ $color:#735C5C;
 }
 
 ::-webkit-scrollbar{
-  height:7px;
+  height: 10px;
+  cursor: pointer;
 }
 
 ::-webkit-scrollbar-track{
-  box-shadow: inset 0px 0px 5px rgb(3, 73, 18);
+  
 }
 
 ::-webkit-scrollbar-thumb{
-  background-color:rgb(33, 114, 160);
+  background-color: #000;
+  cursor: pointer;
 }
 
 @media only screen and (max-width:480px){
   ::-webkit-scrollbar{
-    height:1px;
+    height:0;
   }
 }

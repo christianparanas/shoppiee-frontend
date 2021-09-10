@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DiscoverComponent implements OnInit {
   @Input() contentName:string='';
-  fakeArray = new Array(10);
+  fakeArray = new Array(22);
 
   constructor() { }
 

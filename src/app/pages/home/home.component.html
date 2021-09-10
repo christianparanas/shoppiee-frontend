@@ -1,8 +1,55 @@
 
 <div class="home-container">
   <app-nav currentRoute="home"></app-nav>
+
+  <div class="main-container">
     <app-carousel></app-carousel>
-    <app-hotsales></app-hotsales>
-    <app-discover contentName='DISCOVER'></app-discover> 
+
+    <div class="topnew__container">
+      <div class="top_products__container">
+        <div class="options">
+          <h4>TOP PRODUCTS</h4>
+          <div class="see_more">See more</div>
+        </div>
+
+        <div class="container">
+          <app-productpreview  *ngFor="let a of topProductsArr"></app-productpreview>
+        </div>
+      </div>
+
+      <div class="new_products__container">
+        <div class="options">
+          <h4>NEW PRODUCTS</h4>
+          <div class="see_more">See more</div>
+        </div>
+
+        <div class="container">
+          <app-productpreview  *ngFor="let a of newProductsArr"></app-productpreview>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="discover__container">
+      <div class="options">
+        <h4>DISCOVER</h4>
+        <div class="sort">
+          <label for="op">Sort by:</label>
+
+        <select id="op">
+          <option value="priceasc">Price - ASC</option>
+          <option value="pricedsc">Price - DESC</option>
+          <option value="nameasc">Name - ASC</option>
+          <option value="namedsc">Name - DESC</option>
+        </select>
+        </div>
+      </div>
+
+      <div class="container">
+        <app-productpreview  *ngFor="let a of discoverProductsArr"></app-productpreview>
+      </div>
+    </div>    
+<!--     <app-discover contentName='DISCOVER'></app-discover>  -->
+  </div>
 <!--     <app-footer currentRoute="home"></app-footer> -->
 </div>
