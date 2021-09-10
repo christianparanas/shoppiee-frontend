@@ -28,23 +28,10 @@
   	.product-price {
   		margin-top: 10px;
   		font-size: 13px;
-  		
+  		color: #ff4612;
   	}
 
-    .rating {
-      margin-top: 10px;
-      display: grid;
-      grid-template-columns: repeat(5, 20px);
-
-      i {
-        color: #eef11e;
-        font-size: 14px;
-      }
-
-      .fal {
-        color: #e3e3e3;
-      }
-    }
+    
   }
 
   &:hover {
