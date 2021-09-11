@@ -17,7 +17,7 @@
 			</div>
 		</div>
 		<div class="upperNavIcons__container">
-			<div class='logo'>
+			<div class='logo' routerLink="/">
 				<i class="fab fa-shopify"></i>
 
 				<h2>HOP</h2>
@@ -34,6 +34,9 @@
 		<div class="searchBar" [ngClass]="{viewSearchBar: isSearchBarOpen}">
 			<i class="far fa-search"></i>
 			<input #searchInput type="text" placeholder="Search stores or items">
+			<div class="btn">
+				<i class="far fa-search"></i>
+			</div>
 		</div>
 	</div>
 

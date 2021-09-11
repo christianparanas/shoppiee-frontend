@@ -155,6 +155,10 @@ $textHeadColor: #735C5C;
 				border: 1px solid #e3e3e3;
 				outline: 0;
 			}
+
+			.btn {
+				display: none;
+			}
 		}
 
 		.viewSearchBar {
@@ -305,6 +309,26 @@ $textHeadColor: #735C5C;
 
 				input {
 					border-radius: 2px;
+				}
+
+				.btn {
+					display: flex;
+					align-items: center;
+					position: absolute;
+					top: 13px;
+					right: 22px;
+					background-color: #8d00ca;
+					padding: 10px;
+					height: 33px;
+					width: 40px;
+					cursor: pointer;
+
+					i {
+						position: absolute;
+						top: 9px;
+						left: 10px; 
+						color: #fff;
+					}
 				}
 			}
 
