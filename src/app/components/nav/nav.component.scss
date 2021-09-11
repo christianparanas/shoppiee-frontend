@@ -81,6 +81,10 @@ $textHeadColor: #735C5C;
 		z-index: 22;
 		border-bottom: 1px solid #e3e3e3;
 
+		.upperOptions {
+			display: none;
+		}
+
 		.upperNavIcons__container {
 			width: 100%;
 			display: flex;
@@ -204,6 +208,61 @@ $textHeadColor: #735C5C;
 
 
 		.upperNav__container {
+			background: #8d00ca;
+			color: #fff;
+			border-bottom: 0 solid #e3e3e3;
+
+			.upperOptions {
+				display: flex;
+				justify-content: space-between;
+				max-width: 1400px;
+				margin: 0 auto;
+				padding: 0 20px 30px;
+				font-size: 13px;
+
+				.container {
+					display: flex;
+
+					.item {
+						display: flex;
+						margin-right: 10px;
+						align-items: center;
+						cursor: pointer;
+
+						i {
+							margin-right: 5px;
+						}
+					}
+
+					.as {
+						border-right: 1px solid #f4f4f475;
+						padding-right: 10px;
+					}
+
+					.auth {
+
+						.a:nth-child(1) {
+							padding-right: 5px;
+							border-right: 1px solid #f4f4f475;
+						}
+
+						.a:nth-child(2) {
+							padding-left: 5px;
+							
+						}
+					}
+
+					.as:nth-child(3) {
+						border: 0;
+
+						i:nth-child(1) {
+							margin-left: 10px;
+						}
+					}
+
+				}
+
+			}
 			
 
 			.upperNavIcons__container {
@@ -231,7 +290,7 @@ $textHeadColor: #735C5C;
 
 			.searchBar {
 				position: absolute;
-				top: 0;
+				top: 45px;
 				left: 0;				
 				background: transparent;
 				box-shadow: 0 0 0 0 RGB(43 80 237 / 20%);
@@ -242,6 +301,10 @@ $textHeadColor: #735C5C;
 				padding: 10px 20px;
 				width: 800px;
 				z-index: 10;
+
+				input {
+					border-radius: 0;
+				}
 			}
 
 		}
