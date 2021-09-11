@@ -82,6 +82,7 @@ $textHeadColor: #735C5C;
 		border-bottom: 1px solid #e3e3e3;
 
 		.upperNavIcons__container {
+			width: 100%;
 			display: flex;
 			justify-content: space-between; 
 
@@ -195,21 +196,25 @@ $textHeadColor: #735C5C;
 }
 
 
-@media only screen and (min-width: 999px) {
+
+@media only screen and (min-width: 999px) { 
+
 
 	.nav__container {
 
 
 		.upperNav__container {
-
+			
 
 			.upperNavIcons__container {
-
+				max-width: 1400px;
+				margin: 0 auto;
+				padding: 0 20px;
 
 				.icons {
 					font-size: 23px;
 					display: grid;
-					grid-template-columns: repeat(4, 25px);
+					grid-template-columns: repeat(3, 25px);
 					align-items: center;
 					grid-gap: 20px;
 
@@ -217,13 +222,32 @@ $textHeadColor: #735C5C;
 					.fa-bars {
 						display: block;
 					}
+
+					.fa-search {
+						display: none;
+					}
 				}
 			}
+
+			.searchBar {
+				position: absolute;
+				top: 0;
+				left: 0;				
+				background: transparent;
+				box-shadow: 0 0 0 0 RGB(43 80 237 / 20%);
+				margin-left: auto;
+				margin-right: auto;
+				right: 0;
+
+				padding: 10px 20px;
+				width: 800px;
+				z-index: 10;
+			}
+
 		}
 
 		.lowerNav__container {
 			display: none;
 		}
 	}
-
 }
