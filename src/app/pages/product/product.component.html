@@ -10,27 +10,34 @@
 				</div>
 				<img src="https://avatars.githubusercontent.com/u/59472122?v=4" alt="">
 			</div>
-			<div class="product_details__container">
-				<div class="description">
-					Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
-				</div>
-				<div class="price_stock__container">
-					<div class="container">₱76,348</div>
-					<div class="container">STOCKS: 12</div>
-				</div>
-			</div>
-			<div class="product_options__container">
-				<div class="orderQuantity_changer__container">
-					<div class="title">QUANTITY</div>
-					<div class="changer">
-						<div class="decrement" (click)="itemQuantity(-1)">-</div>
-						<div class="">{{quantity}}</div>
-						<div class="increment" (click)="itemQuantity(1)">+</div>
+			<div class="product_interact">
+				<div class="product_details__container">
+					<div class="name">
+						<div class="aaa">Product name:</div>
+						<p>Lorem Ipsum</p>
+					</div>
+					<div class="description">
+						<div class="aaa">Product Description</div>
+						<p>Humayo ka kaibigang tom sawyer, maglakbay kung saan mo man naisin</p>
+					</div>
+					<div class="price_stock__container">
+						<div class="container">₱76,348</div>
+						<div class="container">STOCKS: 12</div>
 					</div>
 				</div>
+				<div class="product_options__container">
+					<div class="orderQuantity_changer__container">
+						<div class="title">QUANTITY</div>
+						<div class="changer">
+							<div class="decrement" (click)="itemQuantity(-1)">-</div>
+							<div class="">{{quantity}}</div>
+							<div class="increment" (click)="itemQuantity(1)">+</div>
+						</div>
+					</div>
 
-				<div class="addtocart_btn">
-					Add to cart
+					<div class="addtocart_btn">
+						Add to cart
+					</div>
 				</div>
 			</div>
 

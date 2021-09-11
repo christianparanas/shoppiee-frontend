@@ -8,7 +8,7 @@ import { Location } from '@angular/common'
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
-  fakeArray = new Array(5);
+  fakeArray = new Array(11);
   quantity:number = 0;
   constructor(
     private route: ActivatedRoute,

@@ -44,18 +44,19 @@ $textHeadColor: #735C5C;
 				border: 1px solid #fff;
 				transition: all .3s ease;
 				cursor: pointer;
+				border-radius: 2px;
 
 				&:hover {
-					border: 1px solid #000;
+					border: 1px solid #8d00ca;
 					box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
 				}
 			}
 
 			.currentPage {
-				background: #000;
+				background: #8d00ca;
 				color:#fff;
 				box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
-				border: 1px solid #000;
+				border: 1px solid #8d00ca;
 			}
 		}
 	}
@@ -303,7 +304,7 @@ $textHeadColor: #735C5C;
 				z-index: 10;
 
 				input {
-					border-radius: 0;
+					border-radius: 2px;
 				}
 			}
 
