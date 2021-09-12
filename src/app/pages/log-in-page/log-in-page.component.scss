@@ -75,6 +75,17 @@ $btnBgColor: #904490;
         padding: 14px;
         cursor: pointer;
       }
+
+      .forgotpass {
+        font-size: 12px;
+        
+
+        p {
+            width: fit-content;
+            cursor: pointer;
+            margin-left: auto;
+        }
+      }
     }
 
     .separator {
