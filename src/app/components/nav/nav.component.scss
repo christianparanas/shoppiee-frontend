@@ -63,10 +63,12 @@ $textHeadColor: #735C5C;
 
 	.open_sidebar {
 		right: 0;
+		top: 0;
 	}
 
 	.sidebar_navDark__overlay {
 		z-index: 23;
+		top: 0;
 	}
 
 	.search_navDark__open_overlay, .sidebar_navDark__open_overlay {
@@ -76,6 +78,7 @@ $textHeadColor: #735C5C;
 	.upperNav__container {
 		position: fixed;
 		width: 100%;
+		top: 0;
 		padding: 15px 20px 10px;
 		background: fff;
 		background: #fff;
@@ -225,6 +228,7 @@ $textHeadColor: #735C5C;
 				padding: 0 20px 30px;
 				font-size: 13px;
 
+
 				.container {
 					display: flex;
 
@@ -278,7 +282,7 @@ $textHeadColor: #735C5C;
 			.upperNavIcons__container {
 				max-width: 1400px;
 				margin: 0 auto;
-				padding: 0 20px;
+				padding: 0 20px 5px;
 
 				.icons {
 					font-size: 23px;

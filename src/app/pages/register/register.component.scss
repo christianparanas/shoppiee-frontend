@@ -1,12 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;900&display=swap");
 
 $textHeadColor: #735c5c;
-$btnBgColor: #904490;
+$btnBgColor: #8d00ca;
 
 .register-container {
-  padding: 0 20px;
 
   .main-container {
+    padding: 120px 20px 20px;
+
     .visual {
      display: none;
       width: 100%;
@@ -24,7 +25,7 @@ $btnBgColor: #904490;
     h2 {
       color: $textHeadColor;
       text-align: center;
-      margin: 80px 20px 20px;
+      margin: 20px;
     }
 
     form {
@@ -55,6 +56,7 @@ $btnBgColor: #904490;
     .separator {
       text-align: center;
       margin: 12px 0;
+      font-size: 12px;
     }
 
     .toLoginbtn {
@@ -87,17 +89,23 @@ $btnBgColor: #904490;
 
     .main-container {
       width: 100%;
-      max-width: 1400px;
+      max-width: 1200px;
       display: grid;
       grid-template-columns: 1fr 400px;
       margin: 50px auto; 
 
       .visual {
         display: block;
-        height: 700px;
-        width: 700px;
+        height: 550px;
+        width: 550px;
       }
 
+      .container {
+        h2 {
+          font-size: 40px;
+          margin-bottom: 40px;
+        }
+      }
     }
   }
 }
