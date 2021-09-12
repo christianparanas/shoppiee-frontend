@@ -28,22 +28,22 @@ $color:#735C5C;
   } 
 }
 
-::-webkit-scrollbar{
-  height: 10px;
-  cursor: pointer;
-}
+// ::-webkit-scrollbar{
+//   height: 10px;
+//   cursor: pointer;
+// }
 
-::-webkit-scrollbar-track{
+// ::-webkit-scrollbar-track{
   
-}
+// }
 
-::-webkit-scrollbar-thumb{
-  background-color: #000;
-  cursor: pointer;
-}
+// ::-webkit-scrollbar-thumb{
+//   background-color: #000;
+//   cursor: pointer;
+// }
 
-@media only screen and (max-width:480px){
-  ::-webkit-scrollbar{
-    height:0;
-  }
-}
+// @media only screen and (max-width:480px){
+//   ::-webkit-scrollbar{
+//     height:0;
+//   }
+// }

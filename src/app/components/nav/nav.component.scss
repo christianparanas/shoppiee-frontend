@@ -234,6 +234,11 @@ $textHeadColor: #735C5C;
 						align-items: center;
 						cursor: pointer;
 
+
+						&:hover {
+							color: #e3e3e3;
+						}
+
 						i {
 							margin-right: 5px;
 						}
@@ -281,6 +286,12 @@ $textHeadColor: #735C5C;
 					grid-template-columns: repeat(3, 25px);
 					align-items: center;
 					grid-gap: 20px;
+
+					i {
+						&:hover {
+							color: #e3e3e3;
+						}
+					}
 
 
 					.fa-bars {

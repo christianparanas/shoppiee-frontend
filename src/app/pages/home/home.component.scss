@@ -17,11 +17,12 @@ $shadow:black;
 .home-container {
   ::-webkit-scrollbar{
     height:0;
+    
   }
 
 
   .main-container {
-
+    
 
     .topnew__container {
 
@@ -45,8 +46,18 @@ $shadow:black;
             font-size: 12px;
             padding: 5px 8px;
             border-radius: 4px;
-            box-shadow: 0px 4px 4px 0px RGB(43 80 237 / 20%);
+            box-shadow: 0px 2px 2px 0px RGB(43 80 237 / 20%);
             border-radius: 8px;
+            cursor: pointer;
+
+            &:hover {
+              background: #8d00ca;
+              color: #fff;
+            }
+
+            i {
+              font-size: 10px;
+            }
           }
         }
 
@@ -62,6 +73,8 @@ $shadow:black;
             display: flex;
             justify-content: center;
             align-items: center;
+
+
 
             p {
               height: fit-content;
@@ -89,14 +102,28 @@ $shadow:black;
           border: 1px solid #e3e3e3;
           font-size: 12px;
           padding: 5px 8px;
-          border-radius: 4px;
-          box-shadow: 0px 4px 4px 0px RGB(43 80 237 / 20%);
+          border-radius: 8px;
+          box-shadow: 0px 2px 2px 0px RGB(43 80 237 / 20%);
+          cursor: pointer;
+
+          
 
           select {
             font-size: 12px;
             outline: 0;
             background: #fff;
+            cursor: pointer;
           }
+
+          &:hover {
+              background: #8d00ca;
+              color: #fff;
+
+              select {
+                 background: #8d00ca;
+              color: #fff;
+              }
+            }
         }
       }
 
