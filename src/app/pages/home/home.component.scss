@@ -29,6 +29,7 @@ $shadow:black;
 
       .new_products__container, .top_products__container {
 
+
         .options {
           display: flex;
           justify-content: space-between;
@@ -173,6 +174,7 @@ app-carousel{
           width: 100%; 
           height: 8rem;
           margin-top: 100px;
+          
       }
 
       .topnew__container {
@@ -180,20 +182,24 @@ app-carousel{
         grid-template-columns: 1fr 1fr;
         grid-gap: 20px;
         width: 100%;
-        max-width: 1400px;
+        max-width: 1360px;
         margin: 50px auto 20px;
 
         .new_products__container, .top_products__container {
+          background: #fff;
           width: 100%;
 
           .options {
             .see_more {
               display: block;
+              border-radius: 0;
             }
+
           }
 
           .container {
             grid-template-columns: repeat(3, 1fr);
+            grid-gap: 2px;
 
             app-productpreview:nth-of-type(1n+4), .seemorebtn {
               display: none;
@@ -207,10 +213,40 @@ app-carousel{
         max-width: 1400px;
         margin: 50px auto 20px;
 
+        .options {
+          padding: 20px 20px 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .sort {
+            border: 1px solid #e3e3e3;
+            font-size: 12px;
+            padding: 5px 8px;
+            border-radius: 0;
+            box-shadow: 0px 2px 2px 0px RGB(43 80 237 / 20%);
+            cursor: pointer;
+            transition: all .3s ease;
+            background: #fff;
+
+            
+
+            select {
+              font-size: 12px;
+              outline: 0;
+              background: #fff;
+              cursor: pointer;
+            }
+
+            &:hover {
+                border: 1px solid #8d00ca;
+              }
+          }
+        }
 
         .container {
-          grid-template-columns: repeat(7, 1fr);
-          grid-gap: 20px;
+          grid-template-columns: repeat(6, 1fr);
+          grid-gap: 20px 2px;
         }
       }
     }

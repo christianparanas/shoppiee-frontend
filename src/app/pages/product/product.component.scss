@@ -13,6 +13,7 @@
 
 			.product_image__container {
 				position: relative;
+				height: 100%;
 
 				.backBtn {
 					position: absolute;
@@ -37,13 +38,14 @@
 				img {
 					width: 100%;
 					height: 360px;
-					box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+					// box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
 					object-fit: cover;
 				}
 			}
 
 			.product_details__container {
 				padding: 10px 20px;
+				background: #fff;
 
 				.description, .name {
 					font-size: 15px;
@@ -64,6 +66,7 @@
 				}
 
 				.price_stock__container {
+					background: #fff;
 					font-size: 15px;
 					margin-top: 30px;
 					display: flex;
@@ -77,6 +80,7 @@
 
 			.product_options__container {
 				padding: 20px;
+							background: #fff;
 
 				.orderQuantity_changer__container {
 
@@ -131,13 +135,14 @@
 					padding: 15px;
 					font-weight: 700;
 					border-radius: 8px;
-					box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+					box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
 					cursor: pointer;
 				}
 			}
 
 			.product_owner__container {
 				padding: 30px 20px;
+				background: #fff;
 
 				.shop__container {
 					display: flex;
@@ -239,13 +244,14 @@
 			.product__container {
 				display: grid;
 				grid-template-columns: 1fr 1fr;
-				grid-gap: 20px;
+				grid-gap: 20px 0;
 
 
 				.product_interact {
-
+					background: #fff;
 
 					.product_details__container {
+						padding: 20px;
 
 
 						.price_stock__container {
@@ -255,6 +261,39 @@
 							}
 						}
 					}
+
+					.product_options__container {
+						padding: 12px 20px;
+
+						.orderQuantity_changer__container {
+							.changer {
+								border-radius: 0;
+
+								.increment, .decrement {
+									border-radius: 0;
+								}
+							}	
+						}
+
+						.addtocart_btn {
+							border-radius: 0;
+						}
+					}
+
+
+
+				}
+
+				.product_owner__container {
+					grid-area: 2/2;
+
+					.shop__container {
+
+						.viewshop_btn {
+							border-radius: 0;
+							font-size: 12px;
+						}
+					}
 				}
 			}
 
@@ -262,12 +301,9 @@
 
 				.container {
 					grid-template-columns: repeat(6, 1fr);
+					grid-gap: 20px 2px;
 				}
 			}
-		}
-
-		.product_owner__container {
-			grid-area: 2/2;
 		}
 	}
 }

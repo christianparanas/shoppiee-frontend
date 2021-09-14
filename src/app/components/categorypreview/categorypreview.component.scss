@@ -21,3 +21,32 @@
 		box-shadow: 0 8px 8px 0 RGB(43 80 237 / 20%);
 	}
 }
+
+
+@media only screen and (min-width: 999px) {
+	.categorypreview-container {
+		display: grid;
+		grid-gap: 5px;
+		place-items: center;
+		padding: 20px;
+		box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+		border-radius: 0;
+		border: 2px solid #f3f4f5;
+		color: #5c82a7;
+		font-size: 14px;
+		transition: all .5s ease;
+		cursor: pointer;
+	        -webkit-tap-highlight-color: transparent;
+	    background: #fff;
+
+		i {
+			font-size: 20px;
+		}
+
+
+		&:hover {
+			box-shadow: 0 8px 8px 0 RGB(43 80 237 / 20%);
+			transform: scale(1.1);
+		}
+}
+}
