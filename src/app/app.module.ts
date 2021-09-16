@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import {  ReactiveFormsModule} from '@angular/forms'
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -62,7 +63,8 @@ import { StorepreviewComponent } from './components/storepreview/storepreview.co
     AppRoutingModule,
     HttpClientModule,
     NgxSkeletonLoaderModule,
-    NgxSplideModule
+    NgxSplideModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

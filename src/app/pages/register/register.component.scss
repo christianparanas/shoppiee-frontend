@@ -41,6 +41,7 @@ $btnBgColor: #8d00ca;
         border-radius: 8px;
         font-size: 12px;
         box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
+        color: #000;
       }
 
       input[type="submit"] {
@@ -96,7 +97,7 @@ $btnBgColor: #8d00ca;
       max-width: 1200px;
       display: grid;
       grid-template-columns: 1fr 400px;
-      margin: 50px auto; 
+      margin: 50px auto;
 
       .visual {
         display: block;
@@ -113,3 +114,4 @@ $btnBgColor: #8d00ca;
     }
   }
 }
+
