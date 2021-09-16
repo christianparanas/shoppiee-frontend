@@ -9,11 +9,13 @@
 	<div class="container">
 		<h2>SIGN UP</h2>
 
-		<form action="">
-			<input type="text" placeholder="Email">
-			<input type="text" placeholder="Password">
-			<input type="text" placeholder="Confirm Password">
-			<input type="submit" value="SIGN UP">
+		<form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+			<input type="text" formControlName="name" placeholder="Name" required>
+			<input type="email" formControlName="email" placeholder="Email" required>
+			<input type="text" (input)="checkPass()" formControlName="password" placeholder="Password" required>
+			<input type="text" (input)="checkPass()" formControlName="confirmPassword" placeholder="Confirm Password" required>
+			<div class="" *ngIf="!isPasswordMatch">Unmatched</div>
+			<input type="submit" value="SIGN UP" >
 		</form>
 
 		<div class="separator">OR</div>
