@@ -160,6 +160,7 @@ color:black;
 }
 .head-tittle-flex h4{/*chnages*/
     padding: 10px ;
+    display: none; /* hide headtitle*/
     background-color: #f5f5f5;
     font-weight: 900;
     border-radius: 5px;
@@ -320,6 +321,7 @@ color:black;
     }
     .head-tittle-flex h4{ /*changes*/
         font-size: 23px;
+        display: block;/*show head-tittle*/
         padding: 10px 10px 0px 90px;
     }
     .sort{/*changes*/
