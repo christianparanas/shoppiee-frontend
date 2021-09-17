@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./userstore.component.scss']
 })
 export class UserstoreComponent implements OnInit {
-
+  
+  discoverProductsArr = new Array(11)
+  
   constructor() { }
 
   ngOnInit(): void {
