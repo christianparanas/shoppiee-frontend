@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Icons+Outlined');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+.color{
+color:Montserrat;
+color:#735C5C;
+color:#904490;
+color:#735C5C;
+color:floralwhite;
+color:black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.user-header{
+    position: relative;
+    width: 100%;
+    overflow: auto;
+    height: auto;
+    box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+}
+.user-back{
+    
+    float: left;
+    cursor: pointer;
+    width: 10%;
+    transition: .5s;
+    font-size: 23px;
+    color: #000;
+    
+}
+.user-back i{
+    padding: 10px;
+    transition: .5s;
+    
+}
+.user-back i:hover{
+    background-color: #735C5C;
+    border-radius: 50%;
+    color: floralwhite;
+}
+.user-setting{
+    float: right;
+    width: 20%;
+    transition: .5s;
+    padding: 15px 0px 10px 0px;
+}
+.user-setting a{
+    
+    margin-left: 10%;
+    font-size: 23px;
+    text-decoration: none;
+    color: #000;
+}
+.user-setting a:hover{
+    color: #904490;
+}
+.user-store-container{
+    width: 100%;
+    position: relative;
+    display: flex;
+    margin: 0;
+    padding: 2px 0px 0px 20px;
+   
+}
+.store-profile-image{
+    float: left;
+    width: 10%;
+    padding: 10px 10px 30px 0px;
+}
+.store-profile-image img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.store-content{
+    font-family: Montserrat;
+    padding: 10px 0px 30px 30px;
+    float: left;
+    
+    width: 70%;
+}
+.store-content sub{
+    opacity: 0.6;
+    font-size: 10px;
+}
+.user-addproduct{
+    width: 100%;
+    position: relative;
+    display: block;
+    justify-content: center;
+}
+.selling-btn{
+    
+    width: 100%;
+    text-align: center;
+    padding: 40px 100px 10px 100px;
+}
+.selling-btn button{
+    width: 100%;
+    background-color: #fff;
+    color: #555;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: .5s;
+    font-family: Montserrat;
+    box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+
+}
+.selling-btn button:hover{
+    background-color: #904490;
+    color: #fff;
+}
+.selling-btn p{
+    color: #555;
+    width: 100%;
+    font-size: 13px;
+    font-family: Montserrat;
+}
+.selling-image{
+    text-align: center;
+    width: 100%;
+    position: relative;
+    display: block;
+}
+.selling-image img{
+    opacity: 0.6;
+    border-radius: 50%;
+    width: 50%;
+    margin-top: 10%;
+}
