@@ -18,7 +18,22 @@
 
 </div>
 <!--if user store have already products ,execute productreview-->
-<br>
+<!--Changes-->
+<div class="my-products">
+     <div class="head-tittle-flex">
+         <h4>My Products</h4>
+     </div>
+     <div class="sort">
+      <label for="op">Sort by:</label>
+
+    <select id="op">
+      <option value="priceasc">Price - ASC</option>
+      <option value="pricedsc">Price - DESC</option>
+      <option value="nameasc">Name - ASC</option>
+      <option value="namedsc">Name - DESC</option>
+    </select>
+    </div>
+</div><br><br>
 <div class="container">
      <app-productpreview  *ngFor="let a of discoverProductsArr"></app-productpreview>
 </div>
