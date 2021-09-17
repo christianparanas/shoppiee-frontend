@@ -15,15 +15,14 @@ color:black;
     box-sizing: border-box;
 }
 .container{
-          width: 100%;
-          overflow-x: scroll;
-          display: grid;
-          grid-template-columns: repeat(8, 165px);
-          grid-gap: 15px;
-          padding: 20px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
 }
 .user-header{
-    position: relative;
+    position: sticky;
+    top: 0;
     width: 100%;
     overflow: auto;
     height: auto;
@@ -41,11 +40,16 @@ color:black;
 }
 .user-back i{
     padding: 10px;
-    transition: .5s;
+    background-color: #735C5C;
+    transition: .1s;
+    color: floralwhite;
+    border-radius: 50%;
+
     
 }
+
 .user-back i:hover{
-    background-color: #735C5C;
+    background-color: #904490;
     border-radius: 50%;
     color: floralwhite;
 }
@@ -257,5 +261,9 @@ color:black;
         width: 20%;
         margin-top: 10%;
     }
+    .container {
+        grid-template-columns: repeat(6, 1fr);
+        grid-gap: 20px 2px;
+      }
     
 }
