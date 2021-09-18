@@ -22,10 +22,8 @@ $shadow:black;
 
 
   .main-container {
-    
 
     .topnew__container {
-
 
       .new_products__container, .top_products__container {
 
@@ -92,6 +90,37 @@ $shadow:black;
               border-radius: 8px;
             }
           }
+        }
+      }
+    }
+
+    .menWomen_container {
+      margin-top: 50px;
+      width: 100%;
+      padding: 20px;
+      display: grid;
+      grid-gap: 20px;
+
+      .asc {
+        width: 100%;
+        box-shadow: 0px 4px 4px 0px RGB(43 80 237 / 20%);
+        border-radius: 8px;
+        position: relative;
+        border: 1px solid RGB(43 80 237 / 20%);
+        cursor: pointer;
+
+        .label {
+          position: absolute;
+          top: 40px;
+          left: 20px;
+          font-size: 25px;
+          font-weight: 800;
+          color: #0000008a;
+        }
+
+        img {
+          width: 100%;
+          border-radius: 8px;
         }
       }
     }
@@ -199,13 +228,44 @@ app-carousel{
 
           .container {
             grid-template-columns: repeat(3, 1fr);
-            grid-gap: 2px;
+            grid-gap: 5px;
 
             app-productpreview:nth-of-type(1n+4), .seemorebtn {
               display: none;
             }
           }
         }
+      }
+
+      .menWomen_container {
+        max-width: 1400px;
+        margin: 10px auto 20px;
+        padding: 10px 20px 20px;
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 1fr 1fr;
+
+        .asc {
+          border: 4px solid #fff;
+          transition: all .3s ease;
+          border-radius: 0; 
+          box-shadow: 0;
+          box-shadow: 0px 0 0 0px 0;
+
+          &:hover {
+            border: 5px solid #8d00ca;
+          }
+
+          img {
+            border-radius: 0;
+          }
+
+          .label {
+            font-size: 40px;
+            top: 50px;
+          }
+        }
+
       }
 
       .discover__container {
@@ -246,7 +306,7 @@ app-carousel{
 
         .container {
           grid-template-columns: repeat(6, 1fr);
-          grid-gap: 20px 2px;
+          grid-gap: 20px 5px;
         }
       }
     }
