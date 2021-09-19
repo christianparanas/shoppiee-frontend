@@ -75,14 +75,11 @@ export class RegisterComponent implements OnInit {
 
   // check password if match to the confirm password input
   checkPass() {
-    if(this.registerForm.value.password != '' && this.registerForm.value.password == this.registerForm.value.confirmPassword) {
+    if(this.registerForm.value.password != '' && this.registerForm.value.password == this.registerForm.value.confirmPassword || this.registerForm.value.confirmPassword == '' || this.registerForm.value.password == '') {
       this.isPasswordMatch = true;
     }
     else if(this.registerForm.value.confirmPassword != '' && this.registerForm.value.password != this.registerForm.value.confirmPassword) {
       this.isPasswordMatch = false;
-    }
-    else if(this.registerForm.value.confirmPassword == '' || this.registerForm.value.password == '') {
-      this.isPasswordMatch = true;
     }
   }
 }
