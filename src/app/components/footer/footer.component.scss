@@ -20,6 +20,10 @@
 	 		font-size: 25px;
 	 		display: flex;
 	 		justify-content: center;
+
+	 		i {
+	 			cursor: pointer;
+	 		}
 	 		
 	 		i:nth-child(1) {
 	 			margin-right: 10px;
