@@ -33,11 +33,11 @@
     </div>
 
     <div class="menWomen_container">
-      <div class="asc">
+      <div class="asc" routerLink="/categories/men">
         <div class="label">Men</div>
         <img src="../../../assets/imgs/men.jpg" alt="">
       </div>
-      <div class="asc">
+      <div class="asc" routerLink="/categories/women">
         <div class="label">Women</div>
         <img src="../../../assets/imgs/women.jpg" alt="">
       </div>
@@ -50,10 +50,8 @@
           <label for="op">Sort by:</label>
 
         <select id="op">
-          <option value="priceasc">Price - ASC</option>
-          <option value="pricedsc">Price - DESC</option>
-          <option value="nameasc">Name - ASC</option>
-          <option value="namedsc">Name - DESC</option>
+          <option value="priceasc">Price - High to Low</option>
+          <option value="pricedsc">Price - Low to High</option>
         </select>
         </div>
       </div>
@@ -65,3 +63,4 @@
     <app-footer></app-footer> 
   </div>
 </div>
+

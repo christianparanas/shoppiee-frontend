@@ -13,11 +13,14 @@ import { UserstoreComponent } from './pages/userstore/userstore.component';
 import { AccountsettingComponent } from './pages/accountsetting/accountsetting.component';
 import { StoreComponent } from './pages/store/store.component';
 import { StoresComponent } from './pages/stores/stores.component';
+import { CategoryComponent } from './pages/category/category.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'categories', component: CategoriesComponent },
+  { path: 'categories/:id', component: CategoryComponent },
+
   { path: 'product/:id', component: ProductComponent },
 
   { path: 'stores', component: StoresComponent },

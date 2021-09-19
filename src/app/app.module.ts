@@ -34,6 +34,7 @@ import { StoreComponent } from './pages/store/store.component';
 import { StoresComponent } from './pages/stores/stores.component';
 import { StorepreviewComponent } from './components/storepreview/storepreview.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CategoryComponent } from './pages/category/category.component';
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import { FooterComponent } from './components/footer/footer.component';
     StoresComponent,
     StorepreviewComponent,
     FooterComponent,
+    CategoryComponent,
   ],
   imports: [
     BrowserModule,

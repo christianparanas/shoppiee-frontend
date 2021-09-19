@@ -181,7 +181,7 @@ app-carousel{
   display: flex;
   width: 100%; 
   height: 8rem;
-  margin: 55px 0 280px;
+  margin: 55px 0 250px;
 }
 
 
@@ -200,17 +200,18 @@ app-carousel{
       padding-bottom: 0;
 
       app-carousel{
-          margin-top: 110px;
+        height: fit-content;
+        margin: 55px 0 5px;
           
       }
 
       .topnew__container {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap: 20px;
+        grid-gap: 10px;
         width: 100%;
         max-width: 1360px;
-        margin: 0 auto 20px;
+        margin: 0 auto 10px;
 
         .new_products__container, .top_products__container {
           background: #fff;
@@ -240,7 +241,7 @@ app-carousel{
         margin: 0 auto 20px;
         padding: 0 20px 20px;
         display: grid;
-        grid-gap: 20px;
+        grid-gap: 10px;
         grid-template-columns: 1fr 1fr;
 
         .asc {
