@@ -11,13 +11,16 @@
   <div class="container">
     <h2>SIGN IN</h2>
 
-    <form action="">
-      <input type="text" placeholder="Email">
-      <input type="text" placeholder="Password">
+    <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+      <input type="email" placeholder="Email" formControlName="email">
+      <input type="text" placeholder="Password" formControlName="password">
       <div class="forgotpass">
         <p>Forgot your password?</p>
       </div>
-      <input type="submit" value="SIGN IN">
+      <button>
+        <span class="text" *ngIf="!submitLoading">SIGN UP</span>
+        <div class="loader" *ngIf="submitLoading"></div>
+      </button>
     </form>
 
     <div class="separator">OR</div>
@@ -25,4 +28,5 @@
 
   </div>
   </div>
+  <app-footer></app-footer>
 </div>

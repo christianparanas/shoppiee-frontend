@@ -33,6 +33,7 @@ import { AccountsettingComponent } from './pages/accountsetting/accountsetting.c
 import { StoreComponent } from './pages/store/store.component';
 import { StoresComponent } from './pages/stores/stores.component';
 import { StorepreviewComponent } from './components/storepreview/storepreview.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -59,6 +60,7 @@ import { StorepreviewComponent } from './components/storepreview/storepreview.co
     StoreComponent,
     StoresComponent,
     StorepreviewComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

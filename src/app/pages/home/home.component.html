@@ -32,6 +32,17 @@
 
     </div>
 
+    <div class="menWomen_container">
+      <div class="asc">
+        <div class="label">Men</div>
+        <img src="../../../assets/imgs/men.jpg" alt="">
+      </div>
+      <div class="asc">
+        <div class="label">Women</div>
+        <img src="../../../assets/imgs/women.jpg" alt="">
+      </div>
+    </div>
+
     <div class="discover__container">
       <div class="options">
         <h4>DISCOVER</h4>
@@ -50,8 +61,7 @@
       <div class="container">
         <app-productpreview  *ngFor="let a of discoverProductsArr"></app-productpreview>
       </div>
-    </div>    
-<!--     <app-discover contentName='DISCOVER'></app-discover>  -->
+    </div>
+    <app-footer></app-footer> 
   </div>
-<!--     <app-footer currentRoute="home"></app-footer> -->
 </div>

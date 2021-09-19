@@ -34,7 +34,7 @@ export class AccountService {
   }
 
   login(data: any): Observable<any> {
-    return this.http.post(baseUrl, data);
+    return this.http.post(`${baseUrl}/api/auth/login`, data);
   }
 
 }

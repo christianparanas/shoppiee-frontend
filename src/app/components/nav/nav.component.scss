@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Icons+Outlined');
 
 
 $textHeadColor: #735C5C;
@@ -131,6 +132,10 @@ $textHeadColor: #735C5C;
 					display: none;
 				}
 			} 
+
+			.desktop-searchbar {
+				display: none;
+			}
 		}
 
 		.searchBar {
@@ -235,7 +240,7 @@ $textHeadColor: #735C5C;
 
 					.item {
 						display: flex;
-						margin-right: 10px;
+						margin-right: 15px;
 						align-items: center;
 						cursor: pointer;
 
@@ -255,6 +260,11 @@ $textHeadColor: #735C5C;
 					}
 
 					.auth {
+						cursor: default;
+
+						&:hover {
+							color: #fff;
+						}
 
 						.a:nth-child(1) {
 							padding-right: 5px;
@@ -263,7 +273,14 @@ $textHeadColor: #735C5C;
 
 						.a:nth-child(2) {
 							padding-left: 5px;
-							
+						}
+
+						.a {
+							cursor: pointer;
+
+							&:hover {
+								color: #e3e3e3;
+							}
 						}
 					}
 
@@ -284,6 +301,8 @@ $textHeadColor: #735C5C;
 				max-width: 1400px;
 				margin: 0 auto;
 				padding: 0 20px 5px;
+				display: flex;
+				justify-content: space-between;
 
 				.icons {
 					font-size: 23px;
@@ -307,45 +326,48 @@ $textHeadColor: #735C5C;
 						display: none;
 					}
 				}
-			}
 
-			.searchBar {
-				position: absolute;
-				top: 45px;
-				left: 0;				
-				background: transparent;
-				box-shadow: 0 0 0 0 RGB(43 80 237 / 20%);
-				margin-left: auto;
-				margin-right: auto;
-				right: 0;
+				.desktop-searchbar {
+					display: block;
+					min-width: fit-content;
+					margin: 0 auto;
+					position: relative;
 
-				padding: 10px 20px;
-				width: 800px;
-				z-index: 10;
 
-				input {
-					border-radius: 2px;
-				}
-
-				.btn {
-					display: flex;
-					align-items: center;
-					position: absolute;
-					top: 13px;
-					right: 22px;
-					background-color: #8d00ca;
-					padding: 10px;
-					height: 33px;
-					width: 40px;
-					cursor: pointer;
+					input {
+						width: 700px;
+						min-width: 400px;
+						padding: 10px 10px 10px 40px;
+						border-radius: 0;
+						border: 1px solid #e3e3e3;
+						outline: 0;
+					}
 
 					i {
 						position: absolute;
-						top: 9px;
-						left: 10px; 
-						color: #fff;
+						color: #b2b0b0;
+						top: 11px;
+						left: 10px;
+					}
+
+					.btns {
+						cursor: pointer;
+						position: absolute;
+						background: #8d00ca;
+						width: 40px;
+						height: 34px;
+						top: 2px;
+						right: 2px;
+
+						 i {
+						 	color: #fff;
+						 }
 					}
 				}
+			}
+
+			.searchBar {
+				display: none;
 			}
 
 		}

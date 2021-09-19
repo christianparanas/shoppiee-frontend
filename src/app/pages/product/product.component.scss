@@ -2,8 +2,7 @@
 
 .product__container {
 	position: relative;
-
-
+	padding-bottom: 62px;
 
 
 	.product_content__container {
@@ -234,12 +233,14 @@
 @media only screen and (min-width: 999px) { 
 
 	.product__container {
-
+		padding-bottom: 0;
 
 		.product_content__container {
 			max-width: 1400px;
 			margin: 0 auto;
 			padding: 140px 20px;
+			height: fit-content;
+      min-height: 95vh;
 
 			.product__container {
 				display: grid;
