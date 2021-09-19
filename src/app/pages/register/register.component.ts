@@ -112,7 +112,7 @@ export class RegisterComponent implements OnInit {
     if(this.registerForm.value.password != '' && this.registerForm.value.password == this.registerForm.value.confirmPassword || this.registerForm.value.confirmPassword == '' || this.registerForm.value.password == '') {
       this.isPasswordMatch = true;
     }
-    else if(this.registerForm.value.password != '' && this.registerForm.value.confirmPassword != '' && this.registerForm.value.password != this.registerForm.value.confirmPassword) {
+    else{
       this.isPasswordMatch = false;
     }
   }
