@@ -1,9 +1,12 @@
 
 .account_container {
-
+	padding-bottom: 62px;
 
 	.account_content__container {
 		padding-top: 54px;
+		padding-bottom: 200px;
+		height: fit-content;
+		min-height: 95vh;
 
 		.account_header__container {
 			background: #000;
@@ -108,4 +111,12 @@
 			}
 		}
 	}	
+}
+
+
+@media only screen and (min-width: 999px) {
+
+	.account_container {
+		padding-bottom: 0;
+	}
 }

@@ -22,6 +22,15 @@
 
 				<h2>hoppiee</h2>
 			</div>
+
+			<div class="desktop-searchbar">
+				<i class="far fa-search"></i>
+				<input type="text" #searchInput type="text" placeholder="Search stores or items">
+				<div class="btns">
+					<i class="far fa-search"></i>
+				</div>	
+			</div>
+
 			<div class="icons">
 				<i (click)="openCloseSearchBar(); searchInput.focus()"  class="far fa-search" [ngClass]="{selectedIcon: isSearchBarOpen}"></i>
 				<i  class="far fa-shopping-cart"></i>

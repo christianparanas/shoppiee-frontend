@@ -2,9 +2,12 @@
 
 
 .storesPage_container {
-	padding-bottom: 5rem;
+	padding-bottom: 62px;
 
 	.wrapper {
+		padding-bottom: 200px;
+		height: fit-content;
+		min-height: 95vh;
 
 		h4 {
 			padding: 80px 20px 0;
@@ -32,7 +35,7 @@
 
 
 	.storesPage_container {
-
+		padding-bottom: 0;
 
 		.wrapper {
 			max-width: 1200px;
