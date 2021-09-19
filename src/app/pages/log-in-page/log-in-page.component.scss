@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;900&display=swap");
 
 $textHeadColor: #735c5c;
-$btnBgColor: #904490;
+$btnBgColor: #8d00ca;
 
 .login-container {
   background: #fff;
@@ -47,14 +47,60 @@ $btnBgColor: #904490;
         box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
       }
 
-      input[type="submit"] {
-        background: #8d00ca;
+            button {
+        background: $btnBgColor;
         color: #fff;
         font-weight: 600;
         font-size: 18px;
         letter-spacing: 2px;
         padding: 14px;
         cursor: pointer;
+        border-radius: 8px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        height: 52px;
+
+        .loader, .loader:after {
+          border-radius: 50%;
+          width: 20px;
+          height: 20px;
+        }
+
+        .loader {
+          font-size: 10px;
+          position: relative;
+          border-top: 3px solid rgba(255, 255, 255, 0.2);
+          border-right: 3px solid rgba(255, 255, 255, 0.2);
+          border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+          border-left: 3px solid #ffffff;
+          -webkit-transform: translateZ(0);
+          -ms-transform: translateZ(0);
+          transform: translateZ(0);
+          -webkit-animation: load8 1.1s infinite linear;
+          animation: load8 1.1s infinite linear;
+        }
+
+        @-webkit-keyframes load8 {
+          0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+          }
+          100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+          }
+        }
+        @keyframes load8 {
+          0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+          }
+          100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+          }
+        }
       }
 
       .forgotpass {

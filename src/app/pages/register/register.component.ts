@@ -29,7 +29,6 @@ export class RegisterComponent implements OnInit {
     confirmpass: false
   }
 
-
   constructor(
     private accountService: AccountService, 
     public router: Router,
@@ -50,6 +49,7 @@ export class RegisterComponent implements OnInit {
     });
   }
 
+  // check if the inputs have value if the user click the subnit btn
   checkInputs(): void {
     this.submitValidate = {
       name: (this.registerForm.controls.name.value == "" ? true : false),
@@ -57,10 +57,9 @@ export class RegisterComponent implements OnInit {
       password: (this.registerForm.controls.password.value == "" ? true : false),
       confirmpass: (this.registerForm.controls.confirmPassword.value == "" ? true : false)
     }
-
-    console.log(this.submitValidate)
   }
 
+  // this removes the input warnings based on where the user type something
   removeWarns(val: number) {
     if(val == 1) this.submitValidate.name = false
     if(val == 2) this.submitValidate.email = false
@@ -70,7 +69,7 @@ export class RegisterComponent implements OnInit {
 
   // submit form
   onSubmit() {
-    console.log(this.registerForm)
+    // check inputs if valid
     this.checkInputs()
 
     if(this.registerForm.status == 'VALID' && this.isPasswordMatch == true) {
