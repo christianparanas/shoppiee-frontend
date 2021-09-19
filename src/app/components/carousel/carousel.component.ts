@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { array } from 'joi';
+// import { array } from 'joi';
 
 @Component({
   selector: 'app-carousel',
