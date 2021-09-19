@@ -1,23 +1,3 @@
-// .login-container{
-//     padding: 0 20px;
-//     display:flex;
-//     width:100%; height: 100%;
-//     position: relative;
-//     align-items: center;
-//     flex-direction: column;
-
-//     app-header{
-//         width:100%;
-//     }
-
-//     app-form{
-//         display:flex;
-//         width: 100%;
-//         flex-direction: column;
-//         align-items: center;
-//     }
-// }
-
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;900&display=swap");
 
 $textHeadColor: #735c5c;
@@ -25,13 +5,13 @@ $btnBgColor: #904490;
 
 .login-container {
   background: #fff;
-
-  app-nav {
-
-  }
+  position: relative;
+  padding-bottom: 62px;
 
   .main-container {
-    padding: 120px 20px 20px;
+    padding: 120px 20px 200px;
+    height: fit-content;
+    min-height: 100vh;
 
     .visual {
      display: none;
@@ -121,14 +101,21 @@ $btnBgColor: #904490;
 @media only screen and (min-width: 999px) { 
 
   .login-container {
-
+    position: relative;
+    background: #fff;
+    height: 100%;
+    padding-bottom: 0;
 
     .main-container {
       width: 100%;
+      height: fit-content;
+      min-height: 95vh;
       max-width: 1200px;
       display: grid;
       grid-template-columns: 1fr 400px;
-      margin: 50px auto; 
+      margin: 0 auto; 
+      padding: 200px 0 200px;
+      background: #fff;
 
       .visual {
         display: block;

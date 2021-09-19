@@ -4,10 +4,13 @@ $textHeadColor: #735c5c;
 $btnBgColor: #8d00ca;
 
 .register-container {
-
+  position: relative;
+  padding-bottom: 62px;
 
   .main-container {
-    padding: 120px 20px 20px;
+    padding: 120px 20px 200px;
+    height: fit-content;
+    min-height: 100vh;
 
     .visual {
      display: none;
@@ -87,17 +90,22 @@ $btnBgColor: #8d00ca;
 @media only screen and (min-width: 999px) { 
 
   .register-container {
-
+    position: relative;
     background: #fff;
+    height: 100%;
+    padding-bottom: 0;
 
 
     .main-container {
       width: 100%;
-      height: 100%;
+      height: fit-content;
+      min-height: 95vh;
       max-width: 1200px;
       display: grid;
       grid-template-columns: 1fr 400px;
-      margin: 50px auto;
+      margin: 0 auto; 
+      padding: 200px 0 200px;
+      background: #fff;
 
       .visual {
         display: block;
