@@ -1,4 +1,3 @@
-
 <div class="home-container">
   <app-nav currentRoute="home"></app-nav>
 
@@ -9,11 +8,15 @@
       <div class="top_products__container">
         <div class="options">
           <h4>TOP PRODUCTS</h4>
-          <div class="see_more">See more <i class="fal fa-chevron-right"></i></div>
+          <div class="see_more">
+            See more <i class="fal fa-chevron-right"></i>
+          </div>
         </div>
 
         <div class="container">
-          <app-productpreview  *ngFor="let a of topProductsArr"></app-productpreview>
+          <app-productpreview
+            *ngFor="let a of topProductsArr"
+          ></app-productpreview>
           <div class="seemorebtn"><p>See More</p></div>
         </div>
       </div>
@@ -21,25 +24,28 @@
       <div class="new_products__container">
         <div class="options">
           <h4>NEW PRODUCTS</h4>
-          <div class="see_more">See more <i class="fal fa-chevron-right"></i></div>
+          <div class="see_more">
+            See more <i class="fal fa-chevron-right"></i>
+          </div>
         </div>
 
         <div class="container">
-          <app-productpreview  *ngFor="let a of newProductsArr"></app-productpreview>
+          <app-productpreview
+            *ngFor="let a of newProductsArr"
+          ></app-productpreview>
           <div class="seemorebtn"><p>See More</p></div>
         </div>
       </div>
-
     </div>
 
     <div class="menWomen_container">
       <div class="asc" routerLink="/categories/men">
         <div class="label">Men</div>
-        <img src="../../../assets/imgs/men.jpg" alt="">
+        <img src="../../../assets/imgs/men.jpg" alt="" />
       </div>
       <div class="asc" routerLink="/categories/women">
         <div class="label">Women</div>
-        <img src="../../../assets/imgs/women.jpg" alt="">
+        <img src="../../../assets/imgs/women.jpg" alt="" />
       </div>
     </div>
 
@@ -49,18 +55,19 @@
         <div class="sort">
           <label for="op">Sort by:</label>
 
-        <select id="op">
-          <option value="priceasc">Price - High to Low</option>
-          <option value="pricedsc">Price - Low to High</option>
-        </select>
+          <select id="op">
+            <option value="priceasc">Price - High to Low</option>
+            <option value="pricedsc">Price - Low to High</option>
+          </select>
         </div>
       </div>
 
       <div class="container">
-        <app-productpreview  *ngFor="let a of discoverProductsArr"></app-productpreview>
+        <app-productpreview
+          *ngFor="let a of discoverProductsArr"
+        ></app-productpreview>
       </div>
     </div>
-    <app-footer></app-footer> 
+    <app-footer></app-footer>
   </div>
 </div>
-
