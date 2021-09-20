@@ -1,15 +1,13 @@
-
 <div class="storesPage_container">
-		<app-nav currentRoute="stores"></app-nav>
+  <app-nav currentRoute="stores"></app-nav>
 
-		<div class="wrapper">
-			<h4>STORES</h4>
-	
-			<div class="container">
-				<app-storepreview *ngFor="let store of storesArr">
-				</app-storepreview>
-			</div>
-		</div>
+  <div class="wrapper">
+    <h4>STORES</h4>
 
-		<app-footer></app-footer>
+    <div class="container">
+      <app-storepreview *ngFor="let store of storesArr"> </app-storepreview>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
 </div>

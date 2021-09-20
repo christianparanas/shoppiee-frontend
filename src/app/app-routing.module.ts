@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './pages/home/home.component'
+import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { LogInPageComponent } from './pages/log-in-page/log-in-page.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
@@ -15,7 +15,6 @@ import { StoreComponent } from './pages/store/store.component';
 import { StoresComponent } from './pages/stores/stores.component';
 import { CategoryComponent } from './pages/category/category.component';
 
-
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'categories', component: CategoriesComponent },
@@ -25,21 +24,22 @@ const routes: Routes = [
 
   { path: 'stores', component: StoresComponent },
   { path: 'store/:storeId', component: StoreComponent },
-  
+
   { path: 'account', component: AccountComponent },
   { path: 'account/setting', component: AccountsettingComponent },
   { path: 'account/register', component: RegisterComponent },
   { path: 'account/login', component: LogInPageComponent },
   { path: 'account/recover', component: RecoveraccountComponent },
   { path: 'account/recover/feedback', component: RecoverfeedbackComponent },
-  { path: 'account/store', component: UserstoreComponent }
+  { path: 'account/store', component: UserstoreComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    scrollPositionRestoration: 'enabled'
-  })],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'enabled',
+    }),
+  ],
+  exports: [RouterModule],
 })
-
-export class AppRoutingModule { }
+export class AppRoutingModule {}

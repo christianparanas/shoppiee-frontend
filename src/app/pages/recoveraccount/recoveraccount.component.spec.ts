@@ -8,9 +8,8 @@ describe('RecoveraccountComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RecoveraccountComponent ]
-    })
-    .compileComponents();
+      declarations: [RecoveraccountComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

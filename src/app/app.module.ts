@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule} from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +12,7 @@ import { NgxSplideModule } from 'ngx-splide';
 import { HotToastModule } from '@ngneat/hot-toast';
 
 // compoenets
-import { HomeComponent } from './pages/home/home.component'
+import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { LogInPageComponent } from './pages/log-in-page/log-in-page.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -35,7 +35,6 @@ import { StoresComponent } from './pages/stores/stores.component';
 import { StorepreviewComponent } from './components/storepreview/storepreview.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CategoryComponent } from './pages/category/category.component';
-
 
 @NgModule({
   declarations: [
@@ -71,9 +70,9 @@ import { CategoryComponent } from './pages/category/category.component';
     NgxSkeletonLoaderModule,
     NgxSplideModule,
     ReactiveFormsModule,
-    HotToastModule.forRoot()
+    HotToastModule.forRoot(),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

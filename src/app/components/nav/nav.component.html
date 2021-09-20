@@ -1,88 +1,145 @@
 <div class="nav__container">
-	<div class="upperNav__container" [ngClass]="{upperNav__scrollShadow: onScroll}">
+  <div
+    class="upperNav__container"
+    [ngClass]="{ upperNav__scrollShadow: onScroll }"
+  >
+    <div class="upperOptions">
+      <div class="container">
+        <div class="item as">Seller Centre</div>
+        <div class="item as">Sell on Shoppiee</div>
+        <div class="item as">Source<i class="fab fa-github"></i></div>
+      </div>
+      <div class="container">
+        <div class="item"><i class="fad fa-bell"></i> Notifications</div>
+        <div class="item"><i class="fad fa-question-circle"></i> Help</div>
+        <div class="item auth">
+          <div class="a" routerLink="/account/register">Sign Up</div>
+          <div class="a" routerLink="/account/login">Login</div>
+        </div>
+      </div>
+    </div>
+    <div class="upperNavIcons__container">
+      <div class="logo" routerLink="/">
+        <i class="fab fa-shopify"></i>
 
-		<div class="upperOptions">
-			<div class="container">
-				<div class="item as">Seller Centre</div>
-				<div class="item as">Sell on Shoppiee</div>
-				<div class="item as">Source<i class="fab fa-github"></i></div>
-			</div>
-			<div class="container">
-				<div class="item"><i class="fad fa-bell"></i> Notifications</div>
-				<div class="item"><i class="fad fa-question-circle"></i> Help</div>
-				<div class="item auth">
-					<div class="a" routerLink="/account/register">Sign Up</div>
-					<div class="a" routerLink="/account/login">Login</div>
-				</div>
-			</div>
-		</div>
-		<div class="upperNavIcons__container">
-			<div class='logo' routerLink="/">
-				<i class="fab fa-shopify"></i>
+        <h2>hoppiee</h2>
+      </div>
 
-				<h2>hoppiee</h2>
-			</div>
+      <div class="desktop-searchbar">
+        <i class="far fa-search"></i>
+        <input
+          type="text"
+          #searchInput
+          type="text"
+          placeholder="Search stores or items"
+        />
+        <div class="btns">
+          <i class="far fa-search"></i>
+        </div>
+      </div>
 
-			<div class="desktop-searchbar">
-				<i class="far fa-search"></i>
-				<input type="text" #searchInput type="text" placeholder="Search stores or items">
-				<div class="btns">
-					<i class="far fa-search"></i>
-				</div>	
-			</div>
-
-			<div class="icons">
-				<i (click)="openCloseSearchBar(); searchInput.focus()"  class="far fa-search" [ngClass]="{selectedIcon: isSearchBarOpen}"></i>
-				<i  class="far fa-shopping-cart"></i>
+      <div class="icons">
+        <i
+          (click)="openCloseSearchBar(); searchInput.focus()"
+          class="far fa-search"
+          [ngClass]="{ selectedIcon: isSearchBarOpen }"
+        ></i>
+        <i class="far fa-shopping-cart"></i>
         <i class="material-icons-outlined">chat_bubble_outline</i>
         <i class="fal fa-bars" (click)="openCloseSideBar()"></i>
-			</div>
+      </div>
+    </div>
 
-		</div>
+    <div class="searchBar" [ngClass]="{ viewSearchBar: isSearchBarOpen }">
+      <i class="far fa-search"></i>
+      <input #searchInput type="text" placeholder="Search stores or items" />
+      <div class="btn">
+        <i class="far fa-search"></i>
+      </div>
+    </div>
+  </div>
 
-		<div class="searchBar" [ngClass]="{viewSearchBar: isSearchBarOpen}">
-			<i class="far fa-search"></i>
-			<input #searchInput type="text" placeholder="Search stores or items">
-			<div class="btn">
-				<i class="far fa-search"></i>
-			</div>
-		</div>
-	</div>
+  <div class="sidebar" [ngClass]="{ open_sidebar: isSideBarOpen }">
+    <div class="sidebar_header">
+      <div class=""></div>
+      <i class="far fa-times" (click)="openCloseSideBar()"></i>
+    </div>
+    <div class="content">
+      <div
+        routerLink="/"
+        class="items"
+        [ngClass]="{ currentPage: currentRoute === 'home' }"
+      >
+        <i class="fal fa-home"></i> Home
+      </div>
+      <div
+        routerLink="/categories"
+        class="items"
+        [ngClass]="{ currentPage: currentRoute === 'categories' }"
+      >
+        <i class="fal fa-tag"></i> Categories
+      </div>
+      <div
+        routerLink="/stores"
+        class="items"
+        [ngClass]="{ currentPage: currentRoute === 'stores' }"
+      >
+        <i class="fal fa-store"></i> Stores
+      </div>
+      <div
+        routerLink="/account"
+        class="items"
+        [ngClass]="{ currentPage: currentRoute === 'account' }"
+      >
+        <i class="fal fa-user"></i> Account
+      </div>
+    </div>
+  </div>
 
-	<div class="sidebar" [ngClass]="{open_sidebar: isSideBarOpen}">
-		<div class="sidebar_header">
-			<div class=""></div>
-			<i  class="far fa-times" (click)="openCloseSideBar()"></i>
-		</div>
-		<div class="content">
-			<div routerLink="/" class="items" [ngClass]="{'currentPage': currentRoute === 'home' }"><i class="fal fa-home"></i> Home</div>
-			<div routerLink="/categories" class="items" [ngClass]="{'currentPage': currentRoute === 'categories' }"><i class="fal fa-tag"></i> Categories</div>
-			<div routerLink="/stores" class="items" [ngClass]="{'currentPage': currentRoute === 'stores' }"><i class="fal fa-store"></i> Stores</div>
-			<div routerLink="/account" class="items" [ngClass]="{'currentPage': currentRoute === 'account' }"><i class="fal fa-user"></i> Account</div>
-		</div>
-	</div>
+  <div
+    (click)="openCloseSearchBar()"
+    class="search_navDark__overlay"
+    [ngClass]="{ search_navDark__open_overlay: isSearchBarOpen }"
+  ></div>
 
-	<div (click)="openCloseSearchBar()" class="search_navDark__overlay" [ngClass]="{search_navDark__open_overlay: isSearchBarOpen}"></div>
+  <div
+    (click)="openCloseSideBar()"
+    class="sidebar_navDark__overlay"
+    [ngClass]="{ sidebar_navDark__open_overlay: isSideBarOpen }"
+  ></div>
 
-	<div (click)="openCloseSideBar()" class="sidebar_navDark__overlay" [ngClass]="{sidebar_navDark__open_overlay: isSideBarOpen}"></div>
-
-
-	<div class="lowerNav__container">
-		<a routerLink="/" class="box" [ngClass]="{'currentPage': currentRoute === 'home' }">
-      <i id='home' class="far fa-home-alt"></i>
+  <div class="lowerNav__container">
+    <a
+      routerLink="/"
+      class="box"
+      [ngClass]="{ currentPage: currentRoute === 'home' }"
+    >
+      <i id="home" class="far fa-home-alt"></i>
       <h5>Home</h5>
     </a>
-    <a routerLink="/categories" class="box" [ngClass]="{'currentPage': currentRoute === 'categories' }">
-      <i id="local"class="far fa-tag"></i>
+    <a
+      routerLink="/categories"
+      class="box"
+      [ngClass]="{ currentPage: currentRoute === 'categories' }"
+    >
+      <i id="local" class="far fa-tag"></i>
       <h5>Categories</h5>
     </a>
-    <a routerLink="/stores"  class="box" [ngClass]="{'currentPage': currentRoute === 'stores'}">
-      <i id="store"class="far fa-store"></i>
+    <a
+      routerLink="/stores"
+      class="box"
+      [ngClass]="{ currentPage: currentRoute === 'stores' }"
+    >
+      <i id="store" class="far fa-store"></i>
       <h5>Stores</h5>
     </a>
-    <a routerLink="/account" class="box" [ngClass]="{'currentPage': currentRoute === 'account' }">
+    <a
+      routerLink="/account"
+      class="box"
+      [ngClass]="{ currentPage: currentRoute === 'account' }"
+    >
       <i class="far fa-user"></i>
       <h5>Me</h5>
     </a>
-	</div>
+  </div>
 </div>

@@ -1,122 +1,116 @@
-
 .account_container {
-	padding-bottom: 62px;
+  padding-bottom: 62px;
 
-	.account_content__container {
-		padding-top: 54px;
-		padding-bottom: 200px;
-		height: fit-content;
-		min-height: 95vh;
+  .account_content__container {
+    padding-top: 54px;
+    padding-bottom: 200px;
+    height: fit-content;
+    min-height: 95vh;
 
-		.account_header__container {
-			background: #000;
-			width: 100%;
-			height: 130px;
-			display: flex;
-			justify-content: space-between;
-			padding: 20px;
-			align-items: flex-end;
-			
+    .account_header__container {
+      background: #000;
+      width: 100%;
+      height: 130px;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      align-items: flex-end;
 
-			.user {
-				display: flex;
+      .user {
+        display: flex;
 
-				img {
-					width: 80px;
-					height: 80px;
-					border-radius: 50%;
-				}
+        img {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+        }
 
-				.details {
-					color: #fff;
-					margin-left: 10px;
-					font-size: 14px;
-					padding-top: 20px;
+        .details {
+          color: #fff;
+          margin-left: 10px;
+          font-size: 14px;
+          padding-top: 20px;
 
-					.address {
-						font-size: 12px;
-						color: #a29f9f;
-					}
-				}
-			}
+          .address {
+            font-size: 12px;
+            color: #a29f9f;
+          }
+        }
+      }
 
-			.account_options {
-				color: #fff;
+      .account_options {
+        color: #fff;
 
-				i {
-					font-size: 25px;
-				}
-			}
-		}
+        i {
+          font-size: 25px;
+        }
+      }
+    }
 
-		.purchase__container {
+    .purchase__container {
+      .header {
+        font-size: 12px;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px;
+        border-bottom: 1px solid #e3e3e3;
+        align-items: center;
 
+        i {
+          font-size: 15px;
+        }
 
-			.header {
-				font-size: 12px;
-				display: flex;
-				justify-content: space-between;
-				padding: 10px 20px;
-				border-bottom: 1px solid #e3e3e3;
-				align-items: center;
+        .seeall_purchase_btn {
+          font-size: 12px;
+          border: 1px solid #e3e3e3;
+          width: fit-content;
+          padding: 8px 10px;
+          box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+          border-radius: 8px;
+        }
+      }
 
-				i {
-					font-size: 15px;
-				}
+      .content {
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border-bottom: 1px solid #e3e3e3;
 
-				.seeall_purchase_btn {
-					font-size: 12px;
-					border: 1px solid #e3e3e3;
-					width: fit-content;
-					padding: 8px 10px;
-					box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
-					border-radius: 8px;
-				}
-			}
+        .item {
+          text-align: center;
 
-			.content {
-				padding: 20px;
-				display: grid;
-				grid-template-columns: repeat(4, 1fr);
-				border-bottom: 1px solid #e3e3e3;
+          i {
+            font-size: 25px;
+            margin-bottom: 10px;
+            color: #7a6a6a;
+          }
 
-				.item {
-					text-align: center;
+          p {
+            font-size: 10px;
+          }
+        }
+      }
+    }
 
-					i {
-						font-size: 25px;
-						margin-bottom: 10px;
-						color: #7a6a6a;
-					}
+    .userstore__container {
+      padding: 10px 20px;
+      display: grid;
+      place-items: end;
 
-					p {
-						font-size: 10px; 
-					}
-				}
-			}
-		}
-
-		.userstore__container {
-			padding: 10px 20px;
-			display: grid;
-			place-items: end;
-
-			.toStore_btn {
-				font-size: 12px;
-				border: 1px solid #e3e3e3;
-				width: fit-content;
-				padding: 8px 10px;
-				box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
-				border-radius: 8px;
-			}
-		}
-	}	
+      .toStore_btn {
+        font-size: 12px;
+        border: 1px solid #e3e3e3;
+        width: fit-content;
+        padding: 8px 10px;
+        box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+        border-radius: 8px;
+      }
+    }
+  }
 }
 
-
 @media only screen and (min-width: 999px) {
-
-	.account_container {
-		padding-bottom: 0;
-	}
+  .account_container {
+    padding-bottom: 0;
+  }
 }
