@@ -27,7 +27,6 @@ export class NavComponent implements OnInit {
     this.isSideBarOpen =! this.isSideBarOpen;
   }
 
-
   listenScrollEvent = () => {
     window.scrollY > 15 ? this.onScroll = true : this.onScroll = false;
   }
