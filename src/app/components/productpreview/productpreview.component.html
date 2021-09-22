@@ -1,4 +1,4 @@
-<!-- <div class="productpreview-container" routerLink="/product/23">
+<div *ngIf="isProductPreviewLoaded" class="productpreview-container" routerLink="/product/23">
   <div class="product-image">
     <img src="../../../assets/imgs/men.jpg" alt="Can't load the image" />
   </div>
@@ -6,9 +6,9 @@
     <div class="product-description">Iphone</div>
     <div class="product-price">PHP 12345</div>
   </div>
-</div> -->
+</div>
 
-<div class="productpreview_skeleton">
+<div *ngIf="!isProductPreviewLoaded" class="productpreview_skeleton">
 	<div class="skel_img" style="width: 100%;">
 		<ngx-skeleton-loader
 		count="1"
