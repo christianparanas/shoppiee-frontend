@@ -12,7 +12,7 @@ import {
 import { HotToastService } from '@ngneat/hot-toast';
 
 // services
-import { AccountService } from '../../shared/services/account.service';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
   };
 
   constructor(
-    private accountService: AccountService,
+    private authService: AuthService,
     public router: Router,
     private http: HttpClient,
     private toast: HotToastService
@@ -84,7 +84,7 @@ export class RegisterComponent implements OnInit {
       formData.append('email', this.registerForm.value.email);
       formData.append('password', this.registerForm.value.password);
 
-      this.accountService.register(formData).subscribe(
+      this.authService.register(formData).subscribe(
         (response) => {
           this.submitLoading = false;
           this.toast.success(response.message, { position: 'top-right' });

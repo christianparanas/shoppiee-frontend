@@ -52,6 +52,22 @@
   }
 }
 
+.productpreview_skeleton {
+  background: #fff;
+  box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
+  border-radius: 8px;
+
+  .skel_img {
+    margin: 0;
+
+    ngx-skeleton-loader {
+      span {
+        margin: 0;
+      }
+    }
+  }
+}
+
 
 @media only screen and (min-width: 999px) { 
 
