@@ -1,3 +1,108 @@
+.account_container {
+  .account_content__container {
+    padding-top: 54px;
+
+    .account_header__container {
+      background: #000;
+      width: 100%;
+      height: 130px;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      align-items: flex-end;
+
+      .user {
+        display: flex;
+
+        img {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+        }
+
+        .details {
+          color: #fff;
+          margin-left: 10px;
+          font-size: 14px;
+          padding-top: 20px;
+
+          .address {
+            font-size: 12px;
+            color: #a29f9f;
+          }
+        }
+      }
+
+      .account_options {
+        color: #fff;
+
+        i {
+          font-size: 25px;
+        }
+      }
+    }
+
+    .purchase__container {
+      .header {
+        font-size: 12px;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px;
+        border-bottom: 1px solid #e3e3e3;
+        align-items: center;
+
+        i {
+          font-size: 15px;
+        }
+
+        .seeall_purchase_btn {
+          font-size: 12px;
+          border: 1px solid #e3e3e3;
+          width: fit-content;
+          padding: 8px 10px;
+          box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+          border-radius: 8px;
+        }
+      }
+
+      .content {
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border-bottom: 1px solid #e3e3e3;
+
+        .item {
+          text-align: center;
+
+          i {
+            font-size: 25px;
+            margin-bottom: 10px;
+            color: #7a6a6a;
+          }
+
+          p {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+
+    .userstore__container {
+      padding: 10px 20px;
+      display: grid;
+      place-items: end;
+
+      .toStore_btn {
+        font-size: 12px;
+        border: 1px solid #e3e3e3;
+        width: fit-content;
+        padding: 8px 10px;
+        box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+        border-radius: 8px;
+      }
+    }
+  }
+}
 // desktop view
 @media only screen and (min-width: 999px) {
   .account_container {
