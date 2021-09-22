@@ -10,7 +10,7 @@ const baseUrl = environment.baseURL;
 @Injectable({
   providedIn: 'root',
 })
-export class AccountService {
+export class AuthService {
   constructor(private http: HttpClient) {}
 
   // Http Options
