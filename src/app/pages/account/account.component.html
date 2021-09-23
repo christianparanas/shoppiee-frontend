@@ -1,61 +1,58 @@
-
 <div class="account_container">
-	<app-nav currentRoute="account"></app-nav>
+  <app-nav currentRoute="account"></app-nav>
+
+  <div class="account_content__container">
+    <div class="account_header__container">
+      <div class="user">
+        <img
+          src="https://avatars.githubusercontent.com/u/59472122?v=4"
+          alt="Can't load the image"
+        />
+        <div class="details">
+          <div class="name">Lorem Ipsum</div>
+          <div class="address">Tacloban City</div>
+        </div>
+      </div>
+      <div class="account_options">
+        <i routerLink="/account/setting" class="fal fa-cog"></i>
+      </div>
+    </div>
+
+    <div class="purchase__container">
+      <div class="header">
+        <div class="title">
+          <i class="fal fa-clipboard-list"></i>
+          My Purchases
+        </div>
+        <div class="seeall_purchase_btn">View Purchase History</div>
+      </div>
+      <div class="content">
+        <div class="item">
+          <i class="fal fa-wallet"></i>
+          <p>To Pay</p>
+        </div>
+        <div class="item">
+          <i class="fal fa-box-alt"></i>
+          <p>To Ship</p>
+        </div>
+        <div class="item">
+          <i class="fal fa-truck"></i>
+          <p>To Recieve</p>
+        </div>
+        <div class="item">
+          <i class="fal fa-star"></i>
+          <p>To Rate</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="userstore__container">
+      <div class="toStore_btn" routerLink="/account/store">
+        Go to your store
+      </div>
+    </div>
+  </div>
 
 
-
-	<div class="account_content__container">
-		<div class="account_header__container">
-			<div class="user">
-				<img src="https://avatars.githubusercontent.com/u/59472122?v=4" alt="Can't load the image">
-				<div class="details">
-					<div class="name">Lorem Ipsum</div>
-					<div class="address">Tacloban City</div>
-				</div>
-			</div>
-			<div class="account_options">
-				<i routerLink="/account/setting" class="fal fa-cog"></i>
-			</div>
-		</div>
-
-		<div class="purchase__container">
-			<div class="header">
-				<div class="title">
-					<i class="fal fa-clipboard-list"></i> 
-				  My Purchases
-				</div>
-				<div class="seeall_purchase_btn">
-					View Purchase History
-				</div>
-			</div>
-			<div class="content">
-				<div class="item">
-					<i class="fal fa-wallet"></i>
-					<p>To Pay</p>
-				</div>
-				<div class="item">
-					<i class="fal fa-box-alt"></i> 
-					<p>To Ship</p>
-				</div>
-				<div class="item">
-					<i class="fal fa-truck"></i>
-					<p>To Recieve</p>
-				</div>
-				<div class="item">
-					<i class="fal fa-star"></i>
-					<p>To Rate</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="userstore__container">
-			<div class="toStore_btn" routerLink="/account/store">
-				Go to your store
-			</div>
-		</div>
-	</div>
-
-	<div class="item">
-  <ngx-skeleton-loader count="5" appearance="circle"></ngx-skeleton-loader>
-</div>
+  <app-footer></app-footer>
 </div>

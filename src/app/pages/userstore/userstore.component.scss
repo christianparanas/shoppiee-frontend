@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Icons+Outlined');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+.color{
+font-family:Montserrat;
+color:#735C5C;
+color:#904490;
+color:#735C5C;
+color:floralwhite;
+color:black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+}
+.user-header{
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    width: 100%;
+    overflow: auto;
+    height: auto;
+    box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+}
+.user-back{/*changes*/
+    
+    float: left;
+    cursor: pointer;
+    width: 10%;
+    transition: .5s;
+    font-size: 23px;
+    color: #000;
+    margin:10px 10px 10px 10px ;
+}
+.user-back i{ /*changes*/
+    padding:10px ;
+    background-color: #8d00ca;
+    transition: .2s;
+    color: floralwhite;
+    border-radius: 50%;
+
+    
+}
+
+.user-back i:hover{
+    background-color: #904490;
+    border-radius: 50%;
+    color: floralwhite;
+}
+.user-setting{ /*changes*/
+    float: right;
+    width: 30%;
+    transition: .5s;
+    padding: 20px 0px 10px 0px;
+}
+.user-setting i{
+    font-size: 30px; /*changes*/
+}
+.user-setting a{
+    
+    margin-left: 10%;
+    font-size: 23px;
+    text-decoration: none;
+    color: #000;
+}
+.user-setting a:hover{
+    color: #904490;
+}
+.user-store-container{
+    width: 100%;
+    position: relative;
+    display: flex;
+    margin: 0;
+    padding: 2px 0px 0px 20px;
+   
+}
+.store-profile-image{
+    float: left;
+    width: 10%;
+    padding: 10px 10px 30px 0px;
+}
+.store-profile-image img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.store-content{
+    font-family: Montserrat;
+    padding: 10px 0px 30px 30px;
+    float: left;
+    
+    width: 70%;
+}
+.store-content sub{
+    opacity: 0.6;
+    font-size: 10px;
+}
+.user-addproduct{
+    width: 100%;
+    position: relative;
+    display: block;
+    justify-content: center;
+}
+.selling-btn{
+    
+    width: 100%;
+    text-align: center;
+    padding: 30px 100px 10px 100px;
+}
+.selling-btn button{
+    width: 100%;
+    background-color: #fff;
+    color: #555;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: .5s;
+    font-family: Montserrat;
+    box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+
+}
+.selling-btn button:hover{
+    background-color: #904490;
+    color: #fff;
+}
+.selling-btn p{
+    color: #555;
+    width: 100%;
+    padding-bottom: 5px;
+    font-size: 11px;
+    font-family: Montserrat;
+}
+.selling-image{
+    text-align: center;
+    width: 100%;
+    position: relative;
+    display: block;
+}
+.selling-image img{
+    opacity: 0.6;
+    border-radius: 50%;
+    width: 50%;
+    margin-top: 10%;
+}
+.my-products{ /*chnages*/
+    position: static;
+    width: 100%;
+}
+.head-tittle-flex{/*chnages*/
+    float: left;
+    width: 40%;
+    
+    font-family: Montserrat;
+}
+.head-tittle-flex h4{/*chnages*/
+    padding: 10px ;
+    display: none; /* hide headtitle*/
+    background-color: #f5f5f5;
+    font-weight: 900;
+    border-radius: 5px;
+    font-size: 17px;
+    color: #555;
+}
+.sort{/*chnages*/
+    position: static;
+    display: flex;
+    font-family: Montserrat;
+    float: right;
+    margin-top: 1%;
+    cursor: pointer;
+    border: 1px solid #e3e3e3;
+    font-size: 12px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 2px 0px RGB(43 80 237 / 20%);
+    width: 50%;
+    padding: 12px 6px 8px 20px;
+    transition: .3s;
+    
+}
+.sort select{ /*chnages*/
+    display: flex;
+    width: 60%;
+    background-color: #fff;
+    font-family: Montserrat;
+    font-size: 12px;
+    outline: none;
+    border: none;
+}
+.sort:hover{
+    border:1px solid #8d00ca;
+}
+@media only screen and (min-width: 999px) {
+    body{
+        font-family: Montserrat;
+    }
+    .user-header{
+        
+        position: sticky;
+        width: 100%;
+        top: 0;
+        color: floralwhite;
+        overflow: unset;
+        height: 90px;
+        transition: .5s;
+        background-color: #8d00ca;
+        box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+        padding: 0px;
+    }
+    
+    .user-back{
+        margin-left: 1%;
+        margin-top: 12%;
+        position: fixed;
+        width: 2%;
+      
+        color: #555;
+        
+        
+        
+    }
+    .store-content{
+        position: fixed; /*c*/
+        top: 2.1%;
+        left: 6%;
+        transition: .5s;
+    }
+    .user-setting{
+        margin-left: 30%;
+        width: 50%;
+    }
+    .user-setting i:hover{
+        color: floralwhite;
+        border-radius: 50%;
+        background-color: #904490;
+        border:1px floralwhite solid;
+    }
+    .user-setting i{
+        font-size: 36px;
+        position: fixed; /*c*/
+        top: 3.4%;
+        margin-left: 30%;
+        padding: 5px;
+        transition: .5s;
+    }
+    .user-setting a{
+        
+        color: floralwhite;
+    }
+    .store-profile-image{
+        position: fixed;/*c*/
+        top: 1%;
+    }
+    .user-addproduct{
+        margin-top: 20%;
+
+    }
+    .user-addproduct{
+        width: 100%;
+        position: relative;
+        display: block;
+        justify-content: center;
+    }
+    .selling-btn{
+        
+        width: 100%;
+        text-align: center;
+        padding: 30px 100px 10px 100px;/*changes*/
+    }
+    .selling-btn button{
+        width: 50%;
+        background-color: #fff;
+        color: #555;
+        padding: 15px;
+        border-radius: 10px;
+        font-size: 20px;
+        border: none;
+        cursor: pointer;
+        transition: .5s;
+        font-family: Montserrat;
+        box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+    
+    }
+    .selling-btn button:hover{
+        background-color: #904490;
+        color: #fff;
+    }
+    .selling-btn p{
+        color: #555;
+        width: 100%;
+        padding-bottom: 7px; /*changes*/
+        font-size: 15px;
+        font-family: Montserrat;
+    }
+    .selling-image{
+        text-align: center;
+        width: 100%;
+        position: relative;
+        display: block;
+    }
+    .selling-image img{
+        opacity: 0.6;
+        border-radius: 50%;
+        width: 20%;
+        margin-top: 10%;
+    }
+    .container {
+        grid-template-columns: repeat(6, 1fr);
+        grid-gap: 20px 2px;
+      }
+    .user-back i{ /*changes*/
+        background-color: #735C5C;
+        color: #fff;
+    }
+    .head-tittle-flex h4{ /*changes*/
+        font-size: 23px;
+        display: block;/*show head-tittle*/
+        padding: 10px 10px 0px 90px;
+    }
+    .sort{/*changes*/
+        width: 20%;
+        background-color: #fff;
+    }
+    .store-content sub{/*changes*/
+        font-size: 14px;
+    }
+    .sort select{
+        background-color: #fff;
+    }
+}

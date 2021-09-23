@@ -1,28 +1,23 @@
 <div class="carousel-container">
   <div class="car-container">
     <div class="carousel" id="car">
-      <splide  [options]="{ type: 'loop', perPage: 1, keyboard: false, autoplay: true }">
-        <splide-slide >
-            <img src="https://cf.shopee.sg/file/13cb60436d5be6c7a35ef29695ac42a0" alt="">
+      <splide
+        [options]="{
+          type: 'loop',
+          perPage: 1,
+          keyboard: false,
+          autoplay: true
+        }"
+      >
+        <splide-slide *ngFor="let photo of photo_slides">
+          <img src="{{ photo }}" alt="{{ photo }}" />
         </splide-slide>
-        <splide-slide >
-            <img src="https://cf.shopee.sg/file/0e4011ba6cefb06abbc4e65c1497fe2e" alt="">
-        </splide-slide>
-        <splide-slide >
-            <img src="https://cf.shopee.sg/file/4d058ac92540b91cdf31f6d99af8046c" alt="">
-        </splide-slide>
-    </splide>
+      </splide>
     </div>
     <div class="car-boxes">
-        <div class="box">
-          <img src="https://cf.shopee.sg/file/f415b00d16b0b5499d9e2ee955f00471" alt="">
-        </div>
-        <div class="box">
-          <img src="https://cf.shopee.sg/file/8c837767f9bc05fcc8e02d996cda35fe" alt="">
-        </div>
+      <div class="box" *ngFor="let box_image of boxes_images">
+        <img src="{{ box_image }}" alt="{{ box_image }}" />
+      </div>
     </div>
   </div>
-    
-
-
 </div>

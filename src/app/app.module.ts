@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+// vendors
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { NgxSplideModule } from 'ngx-splide';
+import { HotToastModule } from '@ngneat/hot-toast';
 
-import { HomeComponent } from './pages/home/home.component'
+// compoenets
+import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { LogInPageComponent } from './pages/log-in-page/log-in-page.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -30,7 +33,8 @@ import { AccountsettingComponent } from './pages/accountsetting/accountsetting.c
 import { StoreComponent } from './pages/store/store.component';
 import { StoresComponent } from './pages/stores/stores.component';
 import { StorepreviewComponent } from './components/storepreview/storepreview.component';
-
+import { FooterComponent } from './components/footer/footer.component';
+import { CategoryComponent } from './pages/category/category.component';
 
 @NgModule({
   declarations: [
@@ -56,15 +60,19 @@ import { StorepreviewComponent } from './components/storepreview/storepreview.co
     StoreComponent,
     StoresComponent,
     StorepreviewComponent,
+    FooterComponent,
+    CategoryComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgxSkeletonLoaderModule,
-    NgxSplideModule
+    NgxSplideModule,
+    ReactiveFormsModule,
+    HotToastModule.forRoot(),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

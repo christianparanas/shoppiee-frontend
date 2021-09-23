@@ -1,81 +1,88 @@
-
 <div class="product__container">
-	<app-nav></app-nav>
+  <app-nav></app-nav>
 
-	<div class="product_content__container">
-		<div class="product__container">
-			<div class="product_image__container">
-				<div class="backBtn" (click)="goBack()">
-					<i class="far fa-arrow-left"></i>
-				</div>
-				<img src="https://cf.shopee.ph/file/1215ba2b2585db792c2674cb3d8def3c_tn" alt="">
-			</div>
-			<div class="product_interact">
-				<div class="product_details__container">
-					<div class="name">
-						<div class="aaa">Product name:</div>
-						<p>Lorem Ipsum</p>
-					</div>
-					<div class="description">
-						<div class="aaa">Product Description</div>
-						<p>Humayo ka kaibigang tom sawyer, maglakbay kung saan mo man naisin</p>
-					</div>
-					<div class="price_stock__container">
-						<div class="container">₱76,348</div>
-						<div class="container">STOCKS: 12</div>
-					</div>
-				</div>
-				<div class="product_options__container">
-					<div class="orderQuantity_changer__container">
-						<div class="title">QUANTITY</div>
-						<div class="changer">
-							<div class="decrement" (click)="itemQuantity(-1)">-</div>
-							<div class="">{{quantity}}</div>
-							<div class="increment" (click)="itemQuantity(1)">+</div>
-						</div>
-					</div>
+  <div class="product_content__container">
+    <div class="product__container">
+      <div class="product_image__container">
+        <div class="backBtn" (click)="goBack()">
+          <i class="far fa-arrow-left"></i>
+        </div>
+        <img
+          src="https://cf.shopee.ph/file/1215ba2b2585db792c2674cb3d8def3c_tn"
+          alt=""
+        />
+      </div>
+      <div class="product_interact">
+        <div class="product_details__container">
+          <div class="name">
+            <div class="aaa">Product name:</div>
+            <p>Lorem Ipsum</p>
+          </div>
+          <div class="description">
+            <div class="aaa">Product Description</div>
+            <p>
+              Humayo ka kaibigang tom sawyer, maglakbay kung saan mo man naisin
+            </p>
+          </div>
+          <div class="price_stock__container">
+            <div class="container">₱76,348</div>
+            <div class="container">STOCKS: 12</div>
+          </div>
+        </div>
+        <div class="product_options__container">
+          <div class="orderQuantity_changer__container">
+            <div class="title">QUANTITY</div>
+            <div class="changer">
+              <div class="decrement" (click)="itemQuantity(-1)">-</div>
+              <div class="">{{ quantity }}</div>
+              <div class="increment" (click)="itemQuantity(1)">+</div>
+            </div>
+          </div>
 
-					<div class="addtocart_btn">
-						Add to cart
-					</div>
-				</div>
-			</div>
+          <div class="addtocart_btn">Add to cart</div>
+        </div>
+      </div>
 
-			<div class="product_owner__container">
-				<div class="shop__container">
-					<div class="shop_details">
-						<img src="https://avatars.githubusercontent.com/u/59472122?v=4" alt="">
-						<div class="shop_name_address">
-							<div class="name">Christian Shop</div>
-							<div class="address">Tacloban City</div>
-						</div>
-					</div>
-					<div class="viewshop_btn">View Shop</div>
-				</div>
+      <div class="product_owner__container">
+        <div class="shop__container">
+          <div class="shop_details">
+            <img
+              src="https://avatars.githubusercontent.com/u/59472122?v=4"
+              alt=""
+            />
+            <div class="shop_name_address">
+              <div class="name">Christian Shop</div>
+              <div class="address">Tacloban City</div>
+            </div>
+          </div>
+          <div class="viewshop_btn">View Shop</div>
+        </div>
 
-				<div class="shop_interactions_details">
-					<div class="container">
-						<h4>69</h4>
-						<p>Products</p>
-					</div>
-					<div class="container">
-						<h4>2.5</h4>
-						<p>Rating</p>
-					</div>
-					<div class="container">
-						<h4>12%</h4>
-						<p>Chat Response</p>
-					</div>
-				</div>
-			</div>
-		</div>
+        <div class="shop_interactions_details">
+          <div class="container">
+            <h4>69</h4>
+            <p>Products</p>
+          </div>
+          <div class="container">
+            <h4>2.5</h4>
+            <p>Rating</p>
+          </div>
+          <div class="container">
+            <h4>12%</h4>
+            <p>Chat Response</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-		<div class="similar_products__container">
-			<h4>SIMILAR PRODUCTS</h4>
+    <div class="similar_products__container">
+      <h4>SIMILAR PRODUCTS</h4>
 
-			<div class="container">
-				<app-productpreview *ngFor="let a of fakeArray"></app-productpreview>
-			</div>
-		</div>
-	</div>
+      <div class="container">
+        <app-productpreview *ngFor="let a of fakeArray"></app-productpreview>
+      </div>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
 </div>

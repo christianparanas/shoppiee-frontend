@@ -1,1 +1,51 @@
-<p>userstore works!</p>
+<div class="user-header">
+    <div class="user-back">
+         <i routerLink="/account"class="material-icons-outlined">arrow_back</i>
+    </div>
+    <div class="user-setting">
+         <a href=""><i class="material-icons-outlined">settings</i></a>
+         <a href=""><i class="material-icons-outlined">chat_bubble_outline</i></a>
+    </div>
+    <div class="user-store-container">
+          <div class="store-profile-image">
+               <img src="https://avatars.githubusercontent.com/u/59472122?v=4" alt="No image">
+          </div>
+          <div class="store-content">
+               <h3>Baldo123**</h3>
+               <sub>Followers 6  |</sub> <sub> Following 22</sub>
+          </div>
+    </div>
+
+</div>
+<!--if user store have already products ,execute productreview-->
+<!--Changes-->
+<div class="my-products">
+     <div class="head-tittle-flex">
+         <h4>My Products</h4>
+     </div>
+     <div class="sort">
+      <label for="op">Sort by:</label>
+
+    <select id="op">
+      <option value="priceasc">Price - ASC</option>
+      <option value="pricedsc">Price - DESC</option>
+      <option value="nameasc">Name - ASC</option>
+      <option value="namedsc">Name - DESC</option>
+    </select>
+    </div>
+</div><br><br>
+<div class="container">
+     <app-productpreview  *ngFor="let a of discoverProductsArr"></app-productpreview>
+</div>
+<br><br>
+<!--if user store have'nt yet product ,execute this elements-->
+<div class="user-addproduct">
+      <div class="selling-image">
+            <img src="https://addevice.io/wp-content/uploads/2020/08/how-to-make-online-selling-app_tech-business-details-technologiesprocesses-2020.png" alt="">
+       <div class="selling-btn">
+            <p>Start selling on Shoppiee</p>
+            <button type="submit"name="add">Add Products</button>
+       </div>
+      </div>
+
+</div>

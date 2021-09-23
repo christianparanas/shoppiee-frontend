@@ -6,11 +6,10 @@
 
     <h2>RECOVER ACCOUNT</h2>
 
-    <form action="">
-      <input type="email" placeholder="Enter you email">
-      <input type="submit" value="SUBMIT">
+    <form [formGroup]='emailValidation'>
+      <input type="email" name='email' formControlName='email' placeholder="Enter you email" required/>
+      <p *ngIf='notify'>EMAIL INVALID</p>
+      <input (click)="recoverFeedBack()" type="submit" value="SUBMIT" />
     </form>
   </div>
-
 </div>
-

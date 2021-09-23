@@ -1,24 +1,93 @@
-
 <div class="register-container">
-	<app-nav></app-nav>
+  <app-nav></app-nav>
 
-	<div class="main-container">
-		<div class="visual">
-		<img src="https://www.pngplay.com/wp-content/uploads/6/E-Commerce-Shopping-PNG-Clipart-Background.png" alt="" loading="eager">
-	`</div>
-	<div class="container">
-		<h2>SIGN UP</h2>
+  <div class="main-container">
+    <div class="visual">
+      <img
+        src="https://www.pngplay.com/wp-content/uploads/6/E-Commerce-Shopping-PNG-Clipart-Background.png"
+        alt=""
+        loading="eager"
+      />
+      `
+    </div>
+    <div class="container">
+      <h2>SIGN UP</h2>
 
-		<form action="">
-			<input type="text" placeholder="Email">
-			<input type="text" placeholder="Password">
-			<input type="text" placeholder="Confirm Password">
-			<input type="submit" value="SIGN UP">
-		</form>
+      <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+        <div class="ar">
+          <input
+            type="text"
+            (input)="removeWarns(1)"
+            formControlName="name"
+            placeholder="Name"
+            required
+          />
+          <div class="errorNotify4" *ngIf="submitValidate.name">
+            This field is required!
+          </div>
+        </div>
 
-		<div class="separator">OR</div>
-		<div class="toLoginbtn" routerLink="/account/login">SIGN IN</div>
+        <div class="ar">
+          <input
+            type="email"
+            (input)="removeWarns(2)"
+            formControlName="email"
+            placeholder="Email"
+            required
+          />
+          <div class="errorNotify4" *ngIf="submitValidate.email">
+            This field is required!
+          </div>
+          <div
+            class="errorNotify4"
+            *ngIf="
+              registerForm.controls.email.status != 'VALID' &&
+              registerForm.controls.email.value != ''
+            "
+          >
+            Please enter a valid email.
+          </div>
+        </div>
 
-	</div>
-	</div>
+        <div class="ar">
+          <input
+            type="text"
+            (input)="removeWarns(3)"
+            (input)="checkPass()"
+            formControlName="password"
+            placeholder="Password"
+            required
+          />
+          <div class="errorNotify4" *ngIf="submitValidate.password">
+            This field is required!
+          </div>
+        </div>
+
+        <div class="ar">
+          <input
+            type="text"
+            (input)="removeWarns(4)"
+            (input)="checkPass()"
+            formControlName="confirmPassword"
+            placeholder="Confirm Password"
+            required
+          />
+          <div class="errorNotify4" *ngIf="!isPasswordMatch">
+            Password unmatched!
+          </div>
+          <div class="errorNotify4" *ngIf="submitValidate.confirmpass">
+            This field is required!
+          </div>
+        </div>
+        <button>
+          <span class="text" *ngIf="!submitLoading">SIGN UP</span>
+          <div class="loader" *ngIf="submitLoading"></div>
+        </button>
+      </form>
+
+      <div class="separator">OR</div>
+      <div class="toLoginbtn" routerLink="/account/login">SIGN IN</div>
+    </div>
+  </div>
+  <app-footer></app-footer>
 </div>
