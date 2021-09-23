@@ -11,8 +11,7 @@ export class NavComponent implements OnInit {
   onScroll: boolean = false
   @Input() currentRoute : String;
   //notification event pop-out
-  ItemNotEmpty:boolean=true
-  @Input() AddedToCart:number=11;
+  @Input() AddedToCart:any=11;
 
   constructor() {
     this.currentRoute = ''
