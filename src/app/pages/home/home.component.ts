@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     Aos.init({
-      once: false, // whether animation should happen only once - );
+      once: true, // whether animation should happen only once - );
     });
   }
 }
