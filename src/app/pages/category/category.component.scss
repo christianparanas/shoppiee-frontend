@@ -1,27 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;900&display=swap");
 
 .category__container {
-   padding-bottom: 62px;
+  padding-bottom: 62px;
 
-   .category_main__container {
-      padding: 55px 0 200px;
-      height: fit-content;
-      min-height: 95vh;
+  .category_main__container {
+    padding: 55px 0 200px;
+    height: fit-content;
+    min-height: 95vh;
 
-      .category_header__container {
-         width: 100%;
+    .category_header__container {
+      width: 100%;
 
-         img {
-            width: 100%;
-         }
+      img {
+        width: 100%;
       }
-   }
+    }
+  }
 }
 
-
-
 @media only screen and (min-width: 999px) {
-   .category__container {
-      padding-bottom: 0;
-   } 
+  .category__container {
+    padding-bottom: 0;
+  }
 }

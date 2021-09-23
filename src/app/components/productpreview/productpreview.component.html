@@ -1,4 +1,8 @@
-<div *ngIf="isProductPreviewLoaded" class="productpreview-container" routerLink="/product/23">
+<div
+  *ngIf="isProductPreviewLoaded"
+  class="productpreview-container"
+  routerLink="/product/23"
+>
   <div class="product-image">
     <img src="../../../assets/imgs/men.jpg" alt="Can't load the image" />
   </div>
@@ -9,32 +13,32 @@
 </div>
 
 <div *ngIf="!isProductPreviewLoaded" class="productpreview_skeleton">
-	<div class="skel_img" style="width: 100%;">
-		<ngx-skeleton-loader
-		count="1"
-		[theme]="{
-			height: '100%',
-			'min-height': '165px',
-			width: '100%'
-		}"
-		></ngx-skeleton-loader>
-	</div>
-	<div class="skel_details" style="display: grid; padding-left: 10px;">
-		<ngx-skeleton-loader
-		count="1"
-		[theme]="{
-			'border-radius': '5px',
-			height: '10px',
-			width: '80px'
-		}"
-		></ngx-skeleton-loader>
-		<ngx-skeleton-loader
-		count="1"
-		[theme]="{
-			'border-radius': '5px',
-			height: '10px',
-			width: '70px'
-		}"
-		></ngx-skeleton-loader>
-	</div>
+  <div class="skel_img" style="width: 100%">
+    <ngx-skeleton-loader
+      count="1"
+      [theme]="{
+        height: '100%',
+        'min-height': '165px',
+        width: '100%'
+      }"
+    ></ngx-skeleton-loader>
+  </div>
+  <div class="skel_details" style="display: grid; padding-left: 10px">
+    <ngx-skeleton-loader
+      count="1"
+      [theme]="{
+        'border-radius': '5px',
+        height: '10px',
+        width: '80px'
+      }"
+    ></ngx-skeleton-loader>
+    <ngx-skeleton-loader
+      count="1"
+      [theme]="{
+        'border-radius': '5px',
+        height: '10px',
+        width: '70px'
+      }"
+    ></ngx-skeleton-loader>
+  </div>
 </div>
