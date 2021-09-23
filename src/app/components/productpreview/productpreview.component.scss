@@ -1,12 +1,12 @@
 .productpreview-container {
   width: 100%;
   box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
-
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
   -webkit-tap-highlight-color: transparent;
   background: #fff;
+  border-top: 1px solid #e3e3e3;
 
   .product-image {
     overflow: hidden;
@@ -40,8 +40,11 @@
     box-shadow: 2px 8px 8px 0px RGB(43 80 237 / 20%);
 
     .product-image {
+      overflow: hidden;
+
       img {
         transform: scale(1.1);
+        
       }
     }
   }
@@ -108,6 +111,22 @@
       .product-image {
         img {
           transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  .productpreview_skeleton {
+    background: #fff;
+    box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
+    border-radius: 0;
+  
+    .skel_img {
+      margin: 0;
+  
+      ngx-skeleton-loader {
+        span {
+          margin: 0;
         }
       }
     }

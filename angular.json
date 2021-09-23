@@ -34,6 +34,7 @@
 
               "node_modules/@splidejs/splide/dist/css/splide.min.css",
               "node_modules/@splidejs/splide/dist/css/themes/splide-default.min.css",
+              "node_modules/aos/dist/aos.css",
               "src/styles.scss"
             ],
             "scripts": [
