@@ -39,11 +39,21 @@
     </div>
 
     <div class="menWomen_container">
-      <div class="asc" routerLink="/categories/men">
+      <div
+        class="asc"
+        routerLink="/categories/men"
+        data-aos="fade-up"
+        data-aos-offset="100"
+      >
         <div class="label">Men</div>
         <img src="../../../assets/imgs/men.jpg" alt="" />
       </div>
-      <div class="asc" routerLink="/categories/women">
+      <div
+        class="asc"
+        routerLink="/categories/women"
+        data-aos="fade-up"
+        data-aos-offset="100"
+      >
         <div class="label">Women</div>
         <img src="../../../assets/imgs/women.jpg" alt="" />
       </div>
@@ -64,6 +74,8 @@
 
       <div class="container">
         <app-productpreview
+          data-aos="fade-up"
+          data-aos-offset="400"
           *ngFor="let a of discoverProductsArr"
         ></app-productpreview>
       </div>
