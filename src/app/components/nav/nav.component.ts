@@ -10,6 +10,9 @@ export class NavComponent implements OnInit {
   isSideBarOpen: boolean = false
   onScroll: boolean = false
   @Input() currentRoute : String;
+  //notification event pop-out
+  ItemNotEmpty:boolean=true
+  @Input() AddedToCart:number=11;
 
   constructor() {
     this.currentRoute = ''

@@ -121,6 +121,19 @@ $textHeadColor: #735c5c;
 
         i {
           cursor: pointer;
+          p{
+            position: absolute;
+            transform:translateY(-33px) translateX(15px);
+            font-size: 12px;
+            border-radius: 999px;
+            background-color: red; 
+            color:black;
+            width:20px; height: 20px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 3;
+          }
         }
 
         .selectedIcon {

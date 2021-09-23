@@ -40,6 +40,13 @@ $btnBgColor: #904490;
         box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
       }
 
+      p{
+        padding-top: 2px;
+        text-indent: 10px;
+        font-size: 10px;
+        color: red;
+      }
+
       input[type="submit"] {
         background: $btnBgColor;
         color: #fff;
