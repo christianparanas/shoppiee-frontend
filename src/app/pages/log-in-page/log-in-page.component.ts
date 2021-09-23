@@ -12,7 +12,7 @@ import {
 import { HotToastService } from '@ngneat/hot-toast';
 
 // services
-import { AccountService } from '../../shared/services/account.service';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-log-in-page',
@@ -24,7 +24,7 @@ export class LogInPageComponent implements OnInit {
   submitLoading: boolean = false;
 
   constructor(
-    private accountService: AccountService,
+    private authService: AuthService,
     public router: Router,
     private http: HttpClient,
     private toast: HotToastService
@@ -52,7 +52,7 @@ export class LogInPageComponent implements OnInit {
       formData.append('email', this.loginForm.value.email);
       formData.append('password', this.loginForm.value.password);
 
-      this.accountService.login(formData).subscribe(
+      this.authService.login(formData).subscribe(
         (response) => {
           this.submitLoading = false;
           this.toast.success(response.message, { position: 'top-right' });

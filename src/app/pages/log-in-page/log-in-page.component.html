@@ -16,7 +16,7 @@
         <input type="email" placeholder="Email" formControlName="email" />
         <input type="text" placeholder="Password" formControlName="password" />
         <div class="forgotpass">
-          <p>Forgot your password?</p>
+          <p><a routerLink="/account/recover">Forgot your password?</a></p>
         </div>
         <button>
           <span class="text" *ngIf="!submitLoading">SIGN IN </span>
