@@ -1,7 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;900&display=swap");
 $shadow:rgba(0,0,0,.5);
 
+app-add-to-cart-nav{
+    z-index: 1;
+    position: fixed;
+    width:100%;
+    left:0; top:0;
+}
 .content-container{
+    margin-top:4rem;
     display:flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -40,16 +47,14 @@ $shadow:rgba(0,0,0,.5);
             grid-template-columns: auto 50% 1fr;
             .product-image {
                 overflow: hidden;
-                height: 165px;
-            
                 img {
-                width: 100%;
-                min-height: 165px;
-                border-radius: 8px 8px 0 0;
-                max-height: 200px;
-                object-fit: cover;
-                transition: transform 0.5s ease;
-                transform: scale(1.1);
+                    width: 100%;
+                    min-height: 165px;
+                    border-radius: 8px 8px 0 0;
+                    max-height: 200px;
+                    object-fit: cover;
+                    transition: transform 0.5s ease;
+                    transform: scale(1.1);
                 }
             }
             
@@ -95,6 +100,40 @@ $shadow:rgba(0,0,0,.5);
                     border-radius: 8px 0 0 8px;
                     cursor: pointer;
                     }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:700px){
+    .content-container{
+        display:grid;
+        grid-template-columns: 1fr;
+        .items-list{
+            max-height: 200px;
+            display: grid;
+            .item-info{
+                grid-gap: 30px;
+                display: grid;
+                grid-template-rows: 1fr;
+                grid-template-columns: auto auto 1fr;   
+                .product-image{
+                    display: flex;
+                    justify-content: center;
+                    align-content: center;
+                    max-height: 100px;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    img{
+                        transform: none;
+                        width: 100%;
+                        min-height: 100%;
+                    }
+                }
+                .item-details{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
                 }
             }
         }
