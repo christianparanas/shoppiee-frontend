@@ -54,18 +54,11 @@ $font-color-contras:black;
     }
 }
 
-app-add-to-cart-footer{
-    position: fixed;
-    bottom: 0;
-    left:0;
-    width:100%;
-}
-
 
 @media only screen and (max-width:800px){
     $header-background:white;
     .header-container{
         background:white;
         color:$font-color-contras;
-    }    
+    }
 }

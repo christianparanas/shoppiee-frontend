@@ -2,13 +2,13 @@
 $shadow:rgba(0,0,0,.5);
 
 app-add-to-cart-nav{
-    z-index: 1;
+    z-index: 2;
     position: fixed;
     width:100%;
     left:0; top:0;
 }
 .content-container{
-    margin-top:4rem;
+    margin:4rem 0px;
     display:flex;
     justify-content: space-around;
     flex-wrap: wrap;
