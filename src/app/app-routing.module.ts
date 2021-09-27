@@ -14,6 +14,7 @@ import { AccountsettingComponent } from './pages/accountsetting/accountsetting.c
 import { StoreComponent } from './pages/store/store.component';
 import { StoresComponent } from './pages/stores/stores.component';
 import { CategoryComponent } from './pages/category/category.component';
+import { AddToCartComponent } from './pages/add-to-cart/add-to-cart.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,6 +22,8 @@ const routes: Routes = [
   { path: 'categories/:id', component: CategoryComponent },
 
   { path: 'product/:id', component: ProductComponent },
+
+  {path: 'add-to-cart', component: AddToCartComponent},
 
   { path: 'stores', component: StoresComponent },
   { path: 'store/:storeId', component: StoreComponent },

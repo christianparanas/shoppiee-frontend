@@ -1,0 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;900&display=swap");
+
+.each-product-container{
+    display: grid;
+    grid-template-columns: repeat(1fr 1fr 1fr);
+}

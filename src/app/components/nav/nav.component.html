@@ -44,7 +44,11 @@
           class="far fa-search"
           [ngClass]="{ selectedIcon: isSearchBarOpen }"
         ></i>
-        <i class="far fa-shopping-cart"><p *ngIf='AddedToCart'>{{AddedToCart}}</p></i>
+        <a routerLink='add-to-cart'>
+          <i class="far fa-shopping-cart">
+            <p *ngIf='AddedToCart'>{{AddedToCart}}</p>
+          </i>
+        </a>
         <i class="material-icons-outlined">chat_bubble_outline</i>
         <i class="fal fa-bars" (click)="openCloseSideBar()"></i>
       </div>
