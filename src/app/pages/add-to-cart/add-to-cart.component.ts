@@ -6,7 +6,10 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./add-to-cart.component.scss']
 })
 export class AddToCartComponent implements OnInit {
-  @Input() quantity:number=0;
+  @Input() quantity:number=0
+  @Input() shopName:string='Black market'
+  @Input() productName:string='hello world'
+  productArray= new Array(10)
 
   constructor() { }
 

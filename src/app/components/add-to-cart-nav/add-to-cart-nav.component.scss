@@ -16,15 +16,20 @@ $font-color-contras:black;
         display: grid;
         grid-template-columns: 1fr 1fr;
         .go-back{
-            text-indent: 20px;
             color:$font-color-contras;
             font-size: 16px;
+            i{
+                text-indent: 20px;
+            }
         }
         .edit-message-container{
             display:grid;
             grid-template-columns: 1fr 1fr;
             .edit{
                 text-indent: 60%;
+            }
+            .messages{
+                font-size:1.3rem;
             }
         }
     }
@@ -34,6 +39,7 @@ $font-color-contras:black;
         ul{
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
+            padding:0;
             li{
                 text-align: center;
                 list-style: none;
