@@ -1,6 +1,6 @@
 <app-add-to-cart-nav></app-add-to-cart-nav>
 <div class='content-container'>
-    <div class='items-list' *ngFor='let iitem of productArray'>
+    <div class='items-list' *ngFor='let productId of productArray' ng-attr-id='productId.id'>
         <div class='about-items'>
             <div class='item-header'>
                 <input type="checkbox" name="selectItem" id="selectItem">
@@ -19,9 +19,9 @@
                 <p class='product-name'>{{productName}}</p>
                 <div>price: 200 php</div>
                 <div class="changer">
-                    <div class="decrement" (click)="itemQuantity(-1)">-</div>
-                    <div class="">{{ quantity }}</div>
-                    <div class="increment" (click)="itemQuantity(1)">+</div>
+                    <div class="decrement" (click)="itemQuantity(-1,productId.id)">-</div>
+                    <div class="">{{ productId.quantity }}</div>
+                    <div class="increment" (click)="itemQuantity(1,productId.id)">+</div>
                 </div>
             </div>
         </div>

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { number } from 'joi';
 
 @Component({
   selector: 'app-add-to-cart',
@@ -6,19 +7,30 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./add-to-cart.component.scss']
 })
 export class AddToCartComponent implements OnInit {
-  @Input() quantity:number=0
   @Input() shopName:string='Black market'
   @Input() productName:string='hello world'
-  productArray= new Array(10)
+  @Input() productArray:any=[]
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() { 
   }
 
-  itemQuantity(event: number) {
-    if (this.quantity + event == -1) this.quantity = 0;
-    else this.quantity += event;
+  ngOnInit(): void {
+    this.productArray=[
+    {id:1,quantity:0},
+    {id:2,quantity:0},
+    {id:3,quantity:0},
+    {id:4,quantity:0},
+    {id:5,quantity:0},
+    {id:6,quantity:0},]
+  }
+
+  itemQuantity(qtyControl: number,id:number) {
+      return this.productArray.map((product:any)=>{
+        if(product.id==id){
+          if (product.quantity + qtyControl == -1) product.quantity = 0;
+          else product.quantity += qtyControl;
+        }
+      })
   }
 
 }
