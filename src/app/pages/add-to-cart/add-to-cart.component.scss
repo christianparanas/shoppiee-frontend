@@ -13,13 +13,17 @@ $shadow:rgba(0,0,0,.5);
         box-shadow: 0px 0px 3px $shadow;
         .about-items{
             display:grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr auto;
             margin:10px;
             padding-bottom: 10px;
             border-bottom:2px solid $shadow;
             .item-header{
-                i{
+                display:flex;
+                i,p{
                     text-indent: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                 }
             }
             .edit{

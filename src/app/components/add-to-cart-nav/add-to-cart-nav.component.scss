@@ -53,3 +53,12 @@ $font-color-contras:black;
         }
     }
 }
+
+
+@media only screen and (max-width:800px){
+    $header-background:white;
+    .header-container{
+        background:white;
+        color:$font-color-contras;
+    }    
+}
