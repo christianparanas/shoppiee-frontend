@@ -1,5 +1,4 @@
 import { Component, OnInit,Input, Output,EventEmitter } from '@angular/core';
-import { boolean } from 'joi';
 
 @Component({
   selector: 'app-add-to-cart-footer',
