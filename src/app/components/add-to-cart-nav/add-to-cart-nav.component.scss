@@ -1,0 +1,64 @@
+$header-background:#8d00ca;
+$shadow:rgba(0,0,0,.5);
+$font-color:white;
+$font-color-contras:black;
+.header-container{
+    display:grid;
+    height: 5rem;
+    font-size: 12px;
+    align-items: center;
+    grid-template-columns:1fr;
+    grid-template-rows: 1fr 1fr;
+    background-color: $header-background;
+    box-shadow: 0px 1px 2px $shadow;
+    color:$font-color;
+    .upper-content{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        .go-back{
+            color:$font-color-contras;
+            font-size: 16px;
+            i{
+                text-indent: 20px;
+            }
+        }
+        .edit-message-container{
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+            .edit{
+                text-indent: 60%;
+                font-size:14px;
+            }
+            .messages{
+                font-size:1.3rem;
+            }
+        }
+    }
+    .lower-content{
+        display: grid;
+        grid-template-columns: 1fr;
+        ul{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            padding:0;
+            li{
+                text-align: center;
+                list-style: none;
+            }
+            li:nth-child(2){
+                border:1px solid $shadow;
+                border-top:none;
+                border-bottom:none;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width:800px){
+    $header-background:white;
+    .header-container{
+        background:white;
+        color:$font-color-contras;
+    }
+}

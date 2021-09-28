@@ -1,0 +1,29 @@
+<app-add-to-cart-nav></app-add-to-cart-nav>
+<div class='content-container'>
+    <div class='items-list' *ngFor='let productId of productArray'>
+        <div class='about-items'>
+            <div class='item-header'>
+                <input type="checkbox" name="selectItem" id="selectItem">
+                <i class="fal fa-cart-arrow-down"></i>
+                <p>{{shopName}}</p>
+                <i class="fal fa-greater-than"></i>
+            </div>
+            <p class='edit'>Edit</p>
+        </div>
+        <div class='item-info'>
+            <input type="checkbox" name="item" id="item">
+            <div class='product-image'>
+                <img src="data:image/webp;base64,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" alt="item">
+            </div>
+            <div class='item-details'>
+                <p class='product-name'>{{productName}}</p>
+                <div>price: 200 php</div>
+                <div class="changer">
+                    <div class="decrement" (click)="itemQuantity(-1,productId.id)">-</div>
+                    <div class="">{{ productId.quantity }}</div>
+                    <div class="increment" (click)="itemQuantity(1,productId.id)">+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

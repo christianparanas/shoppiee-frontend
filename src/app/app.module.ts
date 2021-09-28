@@ -35,6 +35,9 @@ import { StoresComponent } from './pages/stores/stores.component';
 import { StorepreviewComponent } from './components/storepreview/storepreview.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CategoryComponent } from './pages/category/category.component';
+import { AddToCartComponent } from './pages/add-to-cart/add-to-cart.component';
+import { AddToCartNavComponent } from './components/add-to-cart-nav/add-to-cart-nav.component';
+import { AddToCartFooterComponent } from './components/add-to-cart-footer/add-to-cart-footer.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +65,9 @@ import { CategoryComponent } from './pages/category/category.component';
     StorepreviewComponent,
     FooterComponent,
     CategoryComponent,
+    AddToCartComponent,
+    AddToCartNavComponent,
+    AddToCartFooterComponent,
   ],
   imports: [
     BrowserModule,
