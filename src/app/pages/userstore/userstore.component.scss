@@ -26,81 +26,50 @@ color:black;
     top: 0;
     background-color: #fff;
     width: 100%;
-    overflow: auto;
     height: auto;
-    box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
-}
-.user-back{/*changes*/
-    
-    float: left;
-    cursor: pointer;
-    width: 10%;
-    transition: .5s;
-    font-size: 23px;
-    color: #000;
-    margin:10px 10px 10px 10px ;
-}
-.user-back i{ /*changes*/
-    padding:10px ;
-    transition: .2s;
-    color: #555;
-    border-radius: 50%;
-
     
 }
 
-.user-back i:hover{
-    background-color: #8d00ca;
-    border-radius: 50%;
-    color: floralwhite;
-}
-.user-setting{ /*changes*/
-    float: right;
-    width: 30%;
-    transition: .5s;
-    padding: 20px 0px 10px 0px;
-}
-.user-setting i{
-    font-size: 30px; /*changes*/
-}
-.user-setting a{
-    
-    margin-left: 10%;
-    font-size: 23px;
-    text-decoration: none;
-    color: #000;
-}
-.user-setting a:hover{
-    color: #904490;
-}
 .user-store-container{
     width: 100%;
     position: relative;
-    display: flex;
     margin: 0;
-    padding: 2px 0px 0px 20px;
+    height: 80px;
+    background: #735C5C;
+    padding: 2px 0px 0px 10px;
+    box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
    
 }
 .store-profile-image{
     float: left;
     width: 10%;
-    padding: 10px 10px 30px 0px;
+    position: absolute;
+    top: 40px;
 }
 .store-profile-image img{
     width: 60px;
+    border-top: #f5f5f5 2px solid;
+    border-left: #f5f5f5 2px solid;
+    border-right: #735C5C 2px solid;
+    border-bottom: #735C5C 2px solid;
     height: 60px;
     border-radius: 50%;
 }
 .store-content{
     font-family: Montserrat;
-    padding: 10px 0px 30px 30px;
-    float: left;
-    
+    position: absolute;
+    float:right ;
+    top: 30px;
+    left: 75px;
     width: 70%;
+    color: #f5f5f5;
 }
 .store-content sub{
-    opacity: 0.6;
+    opacity: 0.9 ;
     font-size: 10px;
+}
+.store-content h3{
+    
 }
 .user-addproduct{
         width: 100%;
@@ -199,12 +168,57 @@ color:black;
 .sort:hover{
     border:1px solid #8d00ca;
 }
+.top-header{
+    margin: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    height: 40px;
+    font-family: Montserrat;
+    padding: 5px;
+    box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+}
+.arrow-icons i{
+    font-size: 23px;
+    color: #555;
+    cursor: pointer;
+}
+.my-store h3{
+    padding-top: 5px;
+    font-size: 16px;
+}
+.icons-setting i{
+    cursor: pointer;
+    font-size: 30px;
+}
+.badge{
+    position: fixed;
+    background: #ee4242;
+    color: #f5f5f5;
+    border-radius: 50%;
+    left: 93%;
+    top: -0.4%;
+    width: 17px;
+    height: 22px;
+    
+}
+.badge h5{
+    color: #f5f5f5;
+    display: flex;
+    font-size: 10px;
+    padding: 5px;
+    align-items:center ;
+    justify-content: center;
+
+}
+
 @media only screen and (min-width: 999px) {
     body{
         font-family: Montserrat;
     }
     .user-header{
-        
         position: sticky;
         width: 100%;
         top: 0;
@@ -212,48 +226,58 @@ color:black;
         overflow: unset;
         height: 90px;
         transition: .5s;
-        background-color: #8d00ca;
-        box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+        box-shadow:unset;
         padding: 0px;
+        height: 80px;
+        background-color: #8d00ca;
+
+    }
+    .top-header{
+        box-shadow: unset;
+        height: 20px;
+        background: unset;
+   }
+    .arrow-icons i{
+        position: fixed;
+        background: #735c5c94;
+        border-radius: 50%;
+        top: 16%;
+        left: 1%;
+        transition: .3s;
+        color: #fff;
+        border-radius: 50%;
+        
+    }
+    .arrow-icons i:hover{
+        color: #fff;
+    }
+    .badge{
+        left: 96.777%;
+        position: fixed;
+        top: 2%;
+    }
+    .my-store{
+        display: none;
+    }
+    .user-store-container{
+        background: unset;
+        box-shadow: unset;
+    }
+    .store-profile-image img{
+        border-right: 2px #8d00ca solid;
+        border-bottom: 2px #8d00ca solid;
+    }
+    .arrow-icons i{
+        color: #e3e3e3;
+        cursor: pointer;
+        padding: 10px;
+    }
+    .icons-setting i{
+        padding: 20px 20px 0px 0px;
     }
     
-    .user-back{
-        top: 15%;
-        position: fixed;
-        width: 2%;
-        color: #555;
-    }
     .store-content{
-        position: fixed; /*c*/
-        top: 2.1%;
-        left: 6%;
-        transition: .5s;
-    }
-    .user-setting{
-        margin-left: 30%;
-        width: 50%;
-    }
-    .user-setting i:hover{
-        color: floralwhite;
-        border-radius: 50%;
-        background-color: #904490;
-        border:1px floralwhite solid;
-    }
-    .user-setting i{
-        font-size: 36px;
-        position: fixed; /*c*/
-        top: 3.4%;
-        margin-left: 30%;
-        padding: 5px;
-        transition: .5s;
-    }
-    .user-setting a{
-        
-        color: floralwhite;
-    }
-    .store-profile-image{
-        position: fixed;/*c*/
-        top: 1%;
+        top: 10px;
     }
     
     .user-addproduct{
