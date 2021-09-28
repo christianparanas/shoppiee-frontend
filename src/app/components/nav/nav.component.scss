@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Material+Icons+Outlined");
 
 $textHeadColor: #735c5c;
 
@@ -45,6 +44,10 @@ $textHeadColor: #735c5c;
         transition: all 0.3s ease;
         cursor: pointer;
         border-radius: 2px;
+
+        i {
+          margin-right: 10px;
+        }
 
         &:hover {
           border: 1px solid #8d00ca;
@@ -121,15 +124,17 @@ $textHeadColor: #735c5c;
 
         i {
           cursor: pointer;
-          p{
+
+          p {
             position: absolute;
-            transform:translateY(-33px) translateX(15px);
+            transform: translateY(-33px) translateX(15px);
             font-size: 10px;
             border-radius: 999px;
-            background-color: red;
-            width:20px; height: 20px; 
-            color:black;
-            display:flex;
+            background-color: #fa6238;
+            width: 20px;
+            height: 20px;
+            color: #fff;
+            display: flex;
             justify-content: center;
             align-items: center;
             z-index: 3;

@@ -7,7 +7,12 @@
       <div class="container">
         <div class="item as">Seller Centre</div>
         <div class="item as">Sell on Shoppiee</div>
-        <a class="item as" href="https://github.com/christianparanas/project-eventdriven" target="_blank">Source<i class="fab fa-github"></i></a>
+        <a
+          class="item as"
+          href="https://github.com/christianparanas/project-eventdriven"
+          target="_blank"
+          >Source<i class="fab fa-github"></i
+        ></a>
       </div>
       <div class="container">
         <div class="item"><i class="fad fa-bell"></i> Notifications</div>
@@ -44,12 +49,14 @@
           class="far fa-search"
           [ngClass]="{ selectedIcon: isSearchBarOpen }"
         ></i>
-        <a routerLink='/add-to-cart'>
+        <a routerLink="/add-to-cart">
           <i class="far fa-shopping-cart">
-            <p *ngIf='AddedToCart'>{{AddedToCart}}</p>
+            <p *ngIf="AddedToCart">{{ AddedToCart }}</p>
           </i>
         </a>
-        <i class="material-icons-outlined">chat_bubble_outline</i>
+        <i class="far fa-comment-alt">
+          <p *ngIf="AddedToCart">{{ AddedToCart }}</p>
+        </i>
         <i class="fal fa-bars" (click)="openCloseSideBar()"></i>
       </div>
     </div>
