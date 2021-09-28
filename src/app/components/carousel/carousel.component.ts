@@ -16,9 +16,19 @@ export class CarouselComponent implements OnInit {
     'https://cf.shopee.sg/file/f415b00d16b0b5499d9e2ee955f00471',
     'https://cf.shopee.sg/file/8c837767f9bc05fcc8e02d996cda35fe',
   ];
+
+  isProductImgsLoaded: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.showSkel()
+  }
+
+  showSkel() {
+    setTimeout(() => {
+      this.isProductImgsLoaded = true;
+    }, 3000);
   }
 
 }
