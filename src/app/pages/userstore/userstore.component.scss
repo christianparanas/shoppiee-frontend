@@ -239,7 +239,7 @@ color:black;
         position: fixed;
         background: #735c5c94;
         border-radius: 50%;
-        top: 19%;
+        top: 16%;
         left: 1%;
         transition: .3s;
         color: #fff;
@@ -264,6 +264,9 @@ color:black;
     .store-profile-image img{
         border-right: 2px #8d00ca solid;
         border-bottom: 2px #8d00ca solid;
+    }
+    .store-profile-image{
+        top: 15px;
     }
     .arrow-icons i{
         color: #e3e3e3;
