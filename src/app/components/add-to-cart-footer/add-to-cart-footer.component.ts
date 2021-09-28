@@ -34,14 +34,6 @@ export class AddToCartFooterComponent implements OnInit {
   clickAll(){
     this.isAll=!this.isAll
     this.clickedAll.emit(this.isAll)
-    this.all=0
-    this.totalPrice=0
-    this.productArray.map((product:any)=>{
-      if(product.isCheck=='checked'){
-        this.all+=1
-        this.totalPrice+=(product.quantity*product.price)
-      }
-    })
   }
 
 }

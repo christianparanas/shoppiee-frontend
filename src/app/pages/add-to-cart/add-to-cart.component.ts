@@ -14,21 +14,24 @@ export class AddToCartComponent implements OnInit {
 
   ngOnInit(): void {
     this.productArray=[
-    {id:1,quantity:0,isCheck:'',price:200,storeName:'Paranas',productName:'knife'},
-    {id:2,quantity:0,isCheck:'',price:255,storeName:'Baldo',productName:'axe'},
-    {id:3,quantity:0,isCheck:'',price:244,storeName:'Loreno',productName:'sword'},
-    {id:4,quantity:0,isCheck:'',price:233,storeName:'Lebasora',productName:'water gun'},
-    {id:5,quantity:0,isCheck:'',price:222,storeName:'Shoppiee',productName:'cell phone'},
-    {id:6,quantity:0,isCheck:'',price:211,storeName:'angular',productName:'bags'}]
-    this.all = this.productArray.length
+    {id:1,quantity:0,qtyAvailable:11,isCheck:'',price:200,storeName:'Paranas',productName:'knife'},
+    {id:2,quantity:0,qtyAvailable:11,isCheck:'',price:255,storeName:'Baldo',productName:'axe'},
+    {id:3,quantity:0,qtyAvailable:11,isCheck:'',price:244,storeName:'Loreno',productName:'sword'},
+    {id:4,quantity:0,qtyAvailable:11,isCheck:'',price:233,storeName:'Lebasora',productName:'water gun'},
+    {id:5,quantity:0,qtyAvailable:11,isCheck:'',price:222,storeName:'Shoppiee',productName:'cell phone'},
+    {id:6,quantity:0,qtyAvailable:11,isCheck:'',price:211,storeName:'angular',productName:'bags'}]
   }
 
   //product quantity control
   itemQuantity(qtyControl: number,id:number) {
       return this.productArray.map((product:any)=>{
         if(product.id==id){
-            if (product.quantity + qtyControl == -1) product.quantity = 0;
-            else product.quantity += qtyControl;
+          //if product reach the maximum available item it will stop the quantityControl in increasing
+            if(product.qtyAvailable>product.quantity){
+              //increase and decrease if the quantity is not equal to -1 
+              if (product.quantity + qtyControl == -1) product.quantity = 0;
+              else product.quantity += qtyControl;
+            }
         }
       })
   }
