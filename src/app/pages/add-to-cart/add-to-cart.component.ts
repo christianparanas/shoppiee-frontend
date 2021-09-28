@@ -20,6 +20,7 @@ export class AddToCartComponent implements OnInit {
     {id:4,quantity:0,qtyAvailable:11,isCheck:'',price:233,storeName:'Lebasora',productName:'water gun'},
     {id:5,quantity:0,qtyAvailable:11,isCheck:'',price:222,storeName:'Shoppiee',productName:'cell phone'},
     {id:6,quantity:0,qtyAvailable:11,isCheck:'',price:211,storeName:'angular',productName:'bags'}]
+    this.all = this.productArray.length
   }
 
   //product quantity control
