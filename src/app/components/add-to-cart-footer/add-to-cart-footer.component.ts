@@ -24,7 +24,7 @@ export class AddToCartFooterComponent implements OnInit {
     this.isAll=!this.isAll
     if(this.isAll){
       this.productArray.map((product:any)=>{
-        this.totalPrice+=product.price
+        this.totalPrice+=(product.price*product.quantity)
         console.log(product.price)
       }) 
       this.all = this.productArray.length
