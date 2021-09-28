@@ -28,7 +28,7 @@ export class CarouselComponent implements OnInit {
   showSkel() {
     setTimeout(() => {
       this.isProductImgsLoaded = true;
-    }, 3000);
+    }, 2500);
   }
 
 }
