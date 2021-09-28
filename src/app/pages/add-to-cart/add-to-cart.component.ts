@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { number } from 'joi';
 
 @Component({
   selector: 'app-add-to-cart',
