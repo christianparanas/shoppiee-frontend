@@ -10,30 +10,35 @@
     .account_header__container {
       background: #000;
       width: 100%;
-      height: 130px;
-      display: flex;
-      justify-content: space-between;
-      padding: 20px;
-      align-items: flex-end;
+      min-height: 130px;
 
-      .user {
+      .header_inner {
+        max-width: 1400px;
+        margin: 0 auto;
         display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        align-items: flex-end;
 
-        img {
-          width: 80px;
-          height: 80px;
-          border-radius: 50%;
-        }
+        .user {
+          display: flex;
 
-        .details {
-          color: #fff;
-          margin-left: 10px;
-          font-size: 14px;
-          padding-top: 20px;
+          img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+          }
 
-          .address {
-            font-size: 12px;
-            color: #a29f9f;
+          .details {
+            color: #fff;
+            margin-left: 10px;
+            font-size: 14px;
+            padding-top: 20px;
+
+            .address {
+              font-size: 12px;
+              color: #a29f9f;
+            }
           }
         }
       }
@@ -43,6 +48,11 @@
 
         i {
           font-size: 25px;
+          cursor: pointer;
+
+          &:hover {
+            color: #fa6238;
+          }
         }
       }
     }
@@ -67,6 +77,7 @@
           padding: 8px 10px;
           box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
           border-radius: 8px;
+          cursor: pointer;
         }
       }
 
@@ -78,6 +89,10 @@
 
         .item {
           text-align: center;
+          width: fit-content;
+          margin: 0 auto;
+          padding: 10px;
+          cursor: pointer;
 
           i {
             font-size: 25px;
@@ -87,6 +102,14 @@
 
           p {
             font-size: 10px;
+            width: fit-content;
+          }
+
+          &:hover {
+            
+            i, p {
+              color: #8d00ca;;
+            }
           }
         }
       }
@@ -116,6 +139,83 @@
     .account_content__container {
       padding-top: 95px;
       padding-bottom: 200px;
+
+      .account_header__container {
+        padding-top: 100px;
+
+        .header_inner {
+          .user {
+            img {
+              width: 100px;
+              height: 100px;
+              border-radius: 50%;
+            }
+
+            .details {
+              padding-top: 30px;
+
+              .name {
+                font-size: 18px;
+              }
+
+              .address {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+
+      .purchase__container {
+        max-width: 1360px;
+        margin: 10px auto;
+        background: #fff;
+
+        .header {
+          .seeall_purchase_btn {
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+              border: 1px solid #8d00ca;
+            }
+          }
+        }
+
+        .content {
+          border-bottom: 1px solid #fff;
+
+          .item {
+
+            i {
+              font-size: 40px;
+            }
+          }
+        }
+      }
+
+      .userstore__container {
+        max-width: 1360px;
+        margin: 10px auto;
+        background: #fff;
+        padding: 20px;
+
+        .toStore_btn {
+          font-size: 12px;
+          border: 1px solid #e3e3e3;
+          width: fit-content;
+          padding: 8px 10px;
+          box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+          border-radius: 2px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover {
+            border: 1px solid #8d00ca;
+          }
+        }
+      }
     }
   }
 }
