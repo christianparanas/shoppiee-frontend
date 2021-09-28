@@ -1,4 +1,5 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input, Output,EventEmitter } from '@angular/core';
+import { boolean } from 'joi';
 
 @Component({
   selector: 'app-add-to-cart-footer',
@@ -10,28 +11,38 @@ export class AddToCartFooterComponent implements OnInit {
   @Input() all:number = 0;
   @Input() productArray:any=[];
   @Input() isAll:boolean=false;
+  @Output() clickedAll = new EventEmitter();
 
-  constructor() { 
+  constructor() {
     
   }
-
-  ngOnInit(): void {
-    
-  }
-
   
+  ngOnInit(): void {
+    //every 2s the system will check each checkbox if it`s check the price will show
+    setInterval(()=>{
+      this.all=0
+      this.totalPrice=0
+      this.productArray.map((product:any)=>{
+          if(product.isCheck=='checked'){
+            this.all+=1
+            if(this.all!=0) {this.totalPrice+=(product.quantity*product.price)}
+          }
+        })
+      },2000)
+  }
+  
+  // select all checkbox it either uncheck or check
   clickAll(){
     this.isAll=!this.isAll
-    if(this.isAll){
-      this.productArray.map((product:any)=>{
-        this.totalPrice+=(product.price*product.quantity)
-        console.log(product.price)
-      }) 
-      this.all = this.productArray.length
-    }else{
-      this.totalPrice=0
-      this.all = 0
-    }
+    this.clickedAll.emit(this.isAll)
+    this.all=0
+    this.totalPrice=0
+    this.productArray.map((product:any)=>{
+      if(product.isCheck=='checked'){
+        this.all+=1
+        this.totalPrice+=(product.quantity*product.price)
+      }
+    })
   }
 
 }

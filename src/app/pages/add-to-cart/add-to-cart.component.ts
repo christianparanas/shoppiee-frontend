@@ -7,29 +7,44 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class AddToCartComponent implements OnInit {
   @Input() productArray:any=[]
-  @Input() all:number=0;
+  @Input() all:number=0
 
   constructor() { 
   }
 
   ngOnInit(): void {
     this.productArray=[
-    {id:1,quantity:0,price:200,storeName:'Paranas',productName:'knife'},
-    {id:2,quantity:0,price:255,storeName:'Baldo',productName:'axe'},
-    {id:3,quantity:0,price:244,storeName:'Loreno',productName:'sword'},
-    {id:4,quantity:0,price:233,storeName:'Lebasora',productName:'water gun'},
-    {id:5,quantity:0,price:222,storeName:'Shoppiee',productName:'cell phone'},
-    {id:6,quantity:0,price:211,storeName:'angular',productName:'bags'}]
+    {id:1,quantity:0,isCheck:'',price:200,storeName:'Paranas',productName:'knife'},
+    {id:2,quantity:0,isCheck:'',price:255,storeName:'Baldo',productName:'axe'},
+    {id:3,quantity:0,isCheck:'',price:244,storeName:'Loreno',productName:'sword'},
+    {id:4,quantity:0,isCheck:'',price:233,storeName:'Lebasora',productName:'water gun'},
+    {id:5,quantity:0,isCheck:'',price:222,storeName:'Shoppiee',productName:'cell phone'},
+    {id:6,quantity:0,isCheck:'',price:211,storeName:'angular',productName:'bags'}]
     this.all = this.productArray.length
   }
 
+  //product quantity control
   itemQuantity(qtyControl: number,id:number) {
       return this.productArray.map((product:any)=>{
         if(product.id==id){
-          if (product.quantity + qtyControl == -1) product.quantity = 0;
-          else product.quantity += qtyControl;
+            if (product.quantity + qtyControl == -1) product.quantity = 0;
+            else product.quantity += qtyControl;
         }
       })
   }
+  //check only the specific product using id
+  check(id:number){
+    return this.productArray.map((product:any)=>{
+      if(product.id == id ){ 
+        product.isCheck= product.isCheck ? '' : 'checked'
+      }
+    })
+  }
 
+  // if the btn select all is check every product will be uncheck
+  toggleAllClick(status:boolean){
+    return this.productArray.map((product:any)=>{
+      product.isCheck= status ? 'checked' : ''
+    })
+  }
 }
