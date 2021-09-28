@@ -1,7 +1,7 @@
 <div class='header-container'>
     <div class='upper-content'>
-        <div class='go-back' (click)=goBack()>
-            <i class="far fa-arrow-left"></i>
+        <div class='go-back'>
+            <i (click)=goBack() class="fas fa-arrow-left"></i>
         </div>
         <div class='edit-message-container'>
             <div class='edit'>Edit</div>
@@ -10,10 +10,9 @@
     </div>
     <div class='lower-content'>
         <ul>
-            <li>All({{addToCartQuantity}})</li>
+            <li>All ({{all}})</li>
             <li>Discount</li>
             <li>Buy Again</li>
         </ul>
     </div>
 </div>
-<app-add-to-cart-footer></app-add-to-cart-footer>

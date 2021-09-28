@@ -7,11 +7,31 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class AddToCartFooterComponent implements OnInit {
   @Input() totalPrice:number = 0;
-  @Input() productQuantity:number = 9;
+  @Input() all:number = 0;
+  @Input() productArray:any=[];
+  @Input() isAll:boolean=false;
 
-  constructor() { }
+  constructor() { 
+    
+  }
 
   ngOnInit(): void {
+    
+  }
+
+  
+  clickAll(){
+    this.isAll=!this.isAll
+    if(this.isAll){
+      this.productArray.map((product:any)=>{
+        this.totalPrice+=product.price
+        console.log(product.price)
+      }) 
+      this.all = this.productArray.length
+    }else{
+      this.totalPrice=0
+      this.all = 0
+    }
   }
 
 }

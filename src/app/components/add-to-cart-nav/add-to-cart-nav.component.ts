@@ -7,7 +7,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./add-to-cart-nav.component.scss']
 })
 export class AddToCartNavComponent implements OnInit {
-  @Input() addToCartQuantity:number=0;
+  @Input() all:number;
   constructor(private location: Location) { }
 
   ngOnInit(): void {
@@ -16,7 +16,5 @@ export class AddToCartNavComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
-
-  
   
 }

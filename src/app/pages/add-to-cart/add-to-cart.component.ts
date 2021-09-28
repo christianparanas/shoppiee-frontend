@@ -6,21 +6,21 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./add-to-cart.component.scss']
 })
 export class AddToCartComponent implements OnInit {
-  @Input() shopName:string='Black market'
-  @Input() productName:string='hello world'
   @Input() productArray:any=[]
+  @Input() all:number=0;
 
   constructor() { 
   }
 
   ngOnInit(): void {
     this.productArray=[
-    {id:1,quantity:0},
-    {id:2,quantity:0},
-    {id:3,quantity:0},
-    {id:4,quantity:0},
-    {id:5,quantity:0},
-    {id:6,quantity:0},]
+    {id:1,quantity:0,price:200,storeName:'Paranas',productName:'knife'},
+    {id:2,quantity:0,price:255,storeName:'Baldo',productName:'axe'},
+    {id:3,quantity:0,price:244,storeName:'Loreno',productName:'sword'},
+    {id:4,quantity:0,price:233,storeName:'Lebasora',productName:'water gun'},
+    {id:5,quantity:0,price:222,storeName:'Shoppiee',productName:'cell phone'},
+    {id:6,quantity:0,price:211,storeName:'angular',productName:'bags'}]
+    this.all = this.productArray.length
   }
 
   itemQuantity(qtyControl: number,id:number) {
