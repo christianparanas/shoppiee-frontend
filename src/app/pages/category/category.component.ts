@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryComponent implements OnInit {
   isImgLoaded: boolean = false;
+  categoryProductsArr = new Array(11);
 
   constructor() {}
 

@@ -11,7 +11,27 @@
       />
     </div>
 
-    <div class="category_content__container">content</div>
+    <div class="category_content__container">
+      <div class="category__container">
+        <div class="options">
+          <h4>MENS</h4>
+          <div class="sort">
+            <label for="op">Sort by:</label>
+  
+            <select id="op">
+              <option value="priceasc">Price - High to Low</option>
+              <option value="pricedsc">Price - Low to High</option>
+            </select>
+          </div>
+        </div>
+  
+        <div class="container">
+          <app-productpreview
+            *ngFor="let a of categoryProductsArr"
+          ></app-productpreview>
+        </div>
+      </div>
+    </div>
   </div>
 
   <app-footer></app-footer>

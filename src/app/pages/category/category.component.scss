@@ -7,12 +7,59 @@
     padding: 55px 0 200px;
     height: fit-content;
     min-height: 95vh;
+    max-width: 1200px;
+    margin: 0 auto;
 
     .category_header__container {
       width: 100%;
+      height: 250px;
 
       img {
         width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .category_content__container {
+
+    .category__container {
+      padding-bottom: 100px;
+      margin-top: 40px;
+
+      .options {
+        padding: 20px 20px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .sort {
+          border: 1px solid #e3e3e3;
+          font-size: 12px;
+          padding: 5px 8px;
+          border-radius: 8px;
+          box-shadow: 0px 2px 2px 0px RGB(43 80 237 / 20%);
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          select {
+            font-size: 12px;
+            outline: 0;
+            background: #fff;
+            cursor: pointer;
+          }
+
+          &:hover {
+            border: 1px solid #8d00ca;
+          }
+        }
+      }
+
+      .container {
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 15px;
       }
     }
   }
@@ -20,6 +67,67 @@
 
 @media only screen and (min-width: 999px) {
   .category__container {
-    padding-bottom: 0;
+    padding-bottom: 62px;
+  
+    .category_main__container {
+      padding: 130px 0 200px;
+      height: fit-content;
+      min-height: 95vh;
+      max-width: 1200px;
+      margin: 0 auto;
+  
+      .category_header__container {
+        width: 100%;
+        height: 400px;
+  
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  
+    .category_content__container {
+  
+      .category__container {
+        width: 100%;
+        max-width: 1400px;
+        margin: 50px auto 20px;
+
+        .options {
+          padding: 20px 20px 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .sort {
+            border: 1px solid #e3e3e3;
+            font-size: 12px;
+            padding: 5px 8px;
+            border-radius: 0;
+            box-shadow: 0px 2px 2px 0px RGB(43 80 237 / 20%);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #fff;
+
+            select {
+              font-size: 12px;
+              outline: 0;
+              background: #fff;
+              cursor: pointer;
+            }
+
+            &:hover {
+              border: 1px solid #8d00ca;
+            }
+          }
+        }
+
+        .container {
+          grid-template-columns: repeat(6, 1fr);
+          grid-gap: 20px 5px;
+        }
+      }
+    }
   }
 }
