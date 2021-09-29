@@ -189,6 +189,7 @@ color:black;
 }
 .icons-setting i{
     cursor: pointer;
+    color: #555;
     font-size: 30px;
 }
 .badge{
@@ -196,9 +197,9 @@ color:black;
     background: #ee4242;
     color: #f5f5f5;
     border-radius: 50%;
-    left: 93%;
+    left: 94%;
     top: -0.4%;
-    width: 17px;
+    width: 20px;
     height: 22px;
     
 }
@@ -274,6 +275,7 @@ color:black;
         padding: 10px;
     }
     .icons-setting i{
+        color: #fff;
         padding: 20px 20px 0px 0px;
     }
     
@@ -283,6 +285,7 @@ color:black;
     
     .user-addproduct{
         width: 100%;
+        margin-top: -6%;
         position: static;
         display: flex;
         align-items: center;
@@ -342,7 +345,7 @@ color:black;
     .head-tittle-flex h4{ /*changes*/
         font-size: 23px;
         display: block;/*show head-tittle*/
-        padding: 10px 10px 0px 90px;
+        padding: 20px;
     }
     .sort{/*changes*/
         width: 20%;
