@@ -1,4 +1,4 @@
-<app-add-to-cart-nav [all]="all"></app-add-to-cart-nav>
+<app-add-to-cart-nav [all]="allHeader"></app-add-to-cart-nav>
 <div class="content-container">
   <div class="items-list" *ngFor="let product of productArray">
     <div class="about-items">
@@ -42,6 +42,7 @@
     </div>
   </div>
 </div>
+
 <div class="footer-container">
   <div class="selectAll">
     <input
@@ -50,10 +51,10 @@
       id="all-product"
       (click)="clickAll()"
     />
-    <p>All ({{ all }})</p>
+    <p>All Selected({{ all }})</p>
   </div>
   <div class="checkout">
     <div>SubTotal {{ totalPrice }}php</div>
-    <div class="btn">check Out ({{ all }})</div>
+    <div class="btn">check-Out (Qty:{{ AllItemQuantity }})</div>
   </div>
 </div>
