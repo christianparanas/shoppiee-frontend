@@ -8,6 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class AddToCartComponent implements OnInit {
   @Input() productArray:any=[]
   @Input() all:number=0
+  @Input() allHeader:number=0
+  @Input() AllItemQuantity:number=0
   @Input() totalPrice:number = 0;
   @Input() isAll:boolean=false;
 
@@ -23,7 +25,7 @@ export class AddToCartComponent implements OnInit {
     {id:4,quantity:0,qtyAvailable:11,isCheck:'',price:233,storeName:'Lebasora',productName:'water gun'},
     {id:5,quantity:0,qtyAvailable:11,isCheck:'',price:222,storeName:'Shoppiee',productName:'cell phone'},
     {id:6,quantity:0,qtyAvailable:11,isCheck:'',price:211,storeName:'angular',productName:'bags'}]
-    this.all = this.productArray.length
+    this.allHeader = this.productArray.length
   }
 
   //product quantity control
@@ -60,12 +62,16 @@ export class AddToCartComponent implements OnInit {
 
   //show the transaction details
   showTransaction(){
-    this.all=0
+      this.all=0
+      this.AllItemQuantity=0
       this.totalPrice=0
       this.productArray.map((product:any)=>{
           if(product.isCheck=='checked'){
             this.all+=1
-            if(this.all!=0) {this.totalPrice+=(product.quantity*product.price)}
+            if(this.all!=0) {
+              this.totalPrice+=(product.quantity*product.price)
+              this.AllItemQuantity+=product.quantity
+            }
           }
         }
       )
