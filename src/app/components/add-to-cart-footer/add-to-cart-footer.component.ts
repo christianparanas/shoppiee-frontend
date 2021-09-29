@@ -18,16 +18,16 @@ export class AddToCartFooterComponent implements OnInit {
   
   ngOnInit(): void {
     //every 2s the system will check each checkbox if it`s check the price will show
-    setInterval(()=>{
-      this.all=0
-      this.totalPrice=0
-      this.productArray.map((product:any)=>{
-          if(product.isCheck=='checked'){
-            this.all+=1
-            if(this.all!=0) {this.totalPrice+=(product.quantity*product.price)}
-          }
-        })
-      },2000)
+    // setInterval(()=>{
+    //   this.all=0
+    //   this.totalPrice=0
+    //   this.productArray.map((product:any)=>{
+    //       if(product.isCheck=='checked'){
+    //         this.all+=1
+    //         if(this.all!=0) {this.totalPrice+=(product.quantity*product.price)}
+    //       }
+    //     })
+    //   },2000)
   }
   
   // select all checkbox it either uncheck or check
