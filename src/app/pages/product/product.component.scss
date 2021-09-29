@@ -160,6 +160,10 @@
               margin-left: 10px;
               padding-top: 8px;
 
+              .boxtbns {
+                display: none;
+              }
+
               .address {
                 font-size: 12px;
                 color: #5f5a5a;
@@ -179,6 +183,10 @@
             box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
             cursor: pointer;
           }
+        }
+
+        .shop_interactions_details-desk {
+          display: none;
         }
 
         .shop_interactions_details {
@@ -277,13 +285,87 @@
         }
 
         .product_owner__container {
-          grid-area: 2/2;
+          grid-column: 1 / span 2;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
 
           .shop__container {
+            display:block;
+
             .viewshop_btn {
+              display: none;
+              width: fit-content;
               border-radius: 0;
               font-size: 12px;
             }
+
+            .shop_details {
+              img {
+                width: 78px;
+                height: 78px;
+              }
+
+              .shop_name_address {
+                padding: 0;
+
+                .name {
+                  font-size: 14px;
+                }
+
+                .address {
+                  margin-bottom: 10px;
+                }
+
+                .boxtbns {
+                  display: flex;
+
+
+                  .btn {
+                    font-size: 12px;
+                    padding: 8px;
+                    display: flex;
+                    color: #000;
+                    height: fit-content;
+                    border: 1px solid #e3e3e3;
+                    align-items: center;
+                    box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+                    cursor: pointer;
+
+                    i {
+                      margin-right: 5px;
+                    }
+                  }
+
+                  .chatstore {
+                    margin-right: 5px;
+                    border-color: #fa6238;
+                    background: #fa6238;
+                    color: #fff;
+                  }
+                }
+              }
+            }
+          }
+
+          .shop_interactions_details-desk {
+            display: grid;
+            grid-template-columns: 150px 1fr 150px; 
+            grid-gap: 0 10px;
+
+            .inter {
+              display: flex;
+              align-items: center;
+              font-size: 12px;
+
+              span {
+                color:#fa6238;
+                margin-left: 10px;
+              }
+            }
+          }
+
+          .shop_interactions_details {
+            display: none;
           }
         }
       }
