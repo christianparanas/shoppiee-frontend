@@ -8,6 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class AddToCartComponent implements OnInit {
   @Input() productArray:any=[]
   @Input() all:number=0
+  @Input() totalPrice:number = 0;
+  @Input() isAll:boolean=false;
+
 
   constructor() { 
   }
@@ -32,6 +35,7 @@ export class AddToCartComponent implements OnInit {
               //increase and decrease if the quantity is not equal to -1 
               if (product.quantity + qtyControl == -1) product.quantity = 0;
               else product.quantity += qtyControl;
+              this.showTransaction();
             }
         }
       })
@@ -41,14 +45,29 @@ export class AddToCartComponent implements OnInit {
     return this.productArray.map((product:any)=>{
       if(product.id == id ){ 
         product.isCheck= product.isCheck ? '' : 'checked'
+        this.showTransaction();
       }
     })
   }
-
   // if the btn select all is check every product will be uncheck
-  toggleAllClick(status:boolean){
+  clickAll(){
+    this.isAll=!this.isAll
     return this.productArray.map((product:any)=>{
-      product.isCheck= status ? 'checked' : ''
+      product.isCheck= this.isAll ? 'checked' : ''
+      this.showTransaction();
     })
+  }
+
+  //show the transaction details
+  showTransaction(){
+    this.all=0
+      this.totalPrice=0
+      this.productArray.map((product:any)=>{
+          if(product.isCheck=='checked'){
+            this.all+=1
+            if(this.all!=0) {this.totalPrice+=(product.quantity*product.price)}
+          }
+        }
+      )
   }
 }

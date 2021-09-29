@@ -27,5 +27,13 @@
         </div>
     </div>
 </div>
-
-<app-add-to-cart-footer [productArray]='productArray' (clickedAll)='toggleAllClick($event)'></app-add-to-cart-footer>
+<div class='footer-container'>
+    <div class='selectAll'>
+        <input type="checkbox" name="all-product" id="all-product" (click)='clickAll()'>
+        <p>All ({{all}}) </p>
+    </div>
+    <div class='checkout'>
+        <div>SubTotal {{totalPrice}}php</div>
+        <div class='btn'>check Out ({{all}})</div>
+    </div>
+</div>

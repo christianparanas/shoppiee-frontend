@@ -37,7 +37,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CategoryComponent } from './pages/category/category.component';
 import { AddToCartComponent } from './pages/add-to-cart/add-to-cart.component';
 import { AddToCartNavComponent } from './components/add-to-cart-nav/add-to-cart-nav.component';
-import { AddToCartFooterComponent } from './components/add-to-cart-footer/add-to-cart-footer.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +66,6 @@ import { AddToCartFooterComponent } from './components/add-to-cart-footer/add-to
     CategoryComponent,
     AddToCartComponent,
     AddToCartNavComponent,
-    AddToCartFooterComponent,
   ],
   imports: [
     BrowserModule,
