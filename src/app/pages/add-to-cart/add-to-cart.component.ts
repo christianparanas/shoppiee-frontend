@@ -37,11 +37,15 @@ export class AddToCartComponent implements OnInit {
           //if product reach the maximum available item it will stop the quantityControl in increasing
             if(product.qtyAvailable>product.quantity){
               //increase and decrease if the quantity is not equal to -1
-              if (product.quantity + qtyControl == -1)product.quantity = 0
+              if (product.quantity + qtyControl == -1) product.quantity = 1
               //show delete-message if product hits value of zero
-              else if (product.quantity + qtyControl == 0) this.hideNotification(product.id)
+              else if (product.quantity + qtyControl == 0){
+                this.hideNotification(product.id)
+                product.quantity = 2 // since the next code is going to decrease it.
+              }
               product.quantity += qtyControl;
             }
+            //only accept decrement qtyControl if product is already max
             else if (product.quantity==product.qtyAvailable && qtyControl==-1) product.quantity-=1
             else this.ok();
         }
