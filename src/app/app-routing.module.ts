@@ -42,6 +42,7 @@ const routes: Routes = [
   { path: 'account/store', component: UserstoreComponent },
   { path: 'account/store/addproduct', component: UseraddproductsComponent },
   { path: 'account/store/#:customer_id', component: MessageComponent },
+  
  
 ];
 

@@ -37,7 +37,7 @@ label{
     font-family: Montserrat;
 }
 .lightbox{
-    position: fixed;
+    position: static;
     top: 40;
     z-index: -1;
     transition-duration: 1s;
@@ -61,13 +61,14 @@ label{
     display: flex;
     cursor: pointer;
     width: 100%;
+    
     flex-wrap: wrap;
     text-align: center;
     padding: 5px 0px;
 }
 .button button{
     background-color: #904490;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     color: #fff;
     
@@ -79,7 +80,7 @@ label{
     padding: 8px;
     border: 1px #e3e3e3 solid;
     color: #555;
-    border-radius: 5px;
+    border-radius: 10px;
     text-align: center;
     transition: all .3s ease;
     right: 2px;
@@ -96,9 +97,16 @@ label{
     outline: none;
     width: 60%;
 }
+.footer-container{
+    position: static;
+    margin-top: 1%;
+}
 @media only screen and (min-width: 999px){
     .lightbox{
         background-color: floralwhite;;
+    }
+    .footer-container{
+        width: 100%;
     }
     .content{
         margin: unset;
@@ -119,12 +127,14 @@ label{
     }
     .button button{
         background-color: #8d00ca;
-        padding: 15px;
+        padding: 10px;
+       
         font-size: 18px;
 
     }
+    
     .cancel{
-        padding: 15px;
+        padding: 10px;
         font-size: 18px;
     }
     .form-control{
