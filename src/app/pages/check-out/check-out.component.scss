@@ -4,18 +4,12 @@
     box-sizing: border-box;
 }
 
-app-add-to-cart-nav{
-    position: fixed;
-    left:0; top:0;
-    width:100%;
-}
 
 $shadow:rgba(0,0,0,.3);
 
 
 .check-out-container{
     display:grid;
-    min-width:300px;
     .user-information{
         display:grid;
         border-radius:10px 10px 0px 0px;
@@ -23,6 +17,7 @@ $shadow:rgba(0,0,0,.3);
         box-shadow:0px 0px 3px $shadow;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
+        padding:10px 0px;
         .address-banner{
             margin:30px 10px 10px 40px;
             display:grid;
@@ -44,7 +39,7 @@ $shadow:rgba(0,0,0,.3);
         display: grid;
         box-shadow: 0px 0px 3px $shadow;
         margin:0px 30px;
-        height: 30px;
+        height: 50px;
         ol{
             display: grid;
             grid-template-columns: 1fr 20% 20% 20%;
@@ -92,53 +87,14 @@ $shadow:rgba(0,0,0,.3);
                 li{
                     list-style: none;
                     img{
-                        margin:10px 0;
+                        margin:10px 20px;
+                        width:50%;
                     }
                 }
             }
         }
     }
-    .payment-container{
-        display:grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 30% 1fr 30%;
-        margin:0px 30px;
-        box-shadow: 0px 0px 3px $shadow;
-        .payment-method{
-            display:grid;
-            margin:20px 30px;
-            ol{
-                display:grid;
-                text-align: center;
-                grid-template-columns: 1fr auto auto;
-                li{
-                    list-style: none;
-                }
-                .payment-child{
-                    margin:0px 45px;
-                }
-            }
-        } 
-        .payment-info{
-            display:flex;
-            margin:20px 0px;
-            justify-content: flex-end;
-            width: 100%;
-            ol{
-                margin-right:3%;
-                text-align: center;
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: 1fr 1fr 1fr;
-                grid-gap: 10px;
-                justify-items: center;
-                align-items: center;
-                li{
-                    list-style: none;
-                }
-            }
-        }
-    }   
+      
     .place-order{
         display:flex;
         justify-content: end;
@@ -156,17 +112,57 @@ $shadow:rgba(0,0,0,.3);
             justify-content: center;
             align-items: center;
         }
+    }
+    .payment-container{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-column: 1fr auto;
+        margin:0px 30px;
+        box-shadow: 0px 0px 3px $shadow;
+        .payment-method{
+            ol{
+                display: grid;
+                grid-template-columns: 1fr 25% 25%;
+                text-align: center;
+                align-items:center ;
+                li{
+                    list-style: none;
+                }
+            }
         }
+        .payment-info{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            ol{
+                display: grid;
+                justify-content: end;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                align-items: center;
+                li{
+                    text-align: center;
+                    list-style: none;
+                    margin:5px 10px;
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (max-width:600px){
     .check-out-container{
         .payment-container{
+            .payment-method{
+                ol{
+                    font-size: 12px;
+                }
+            }
             .payment-info{
                 ol{
-                   li{ 
-                    width:50%;
-                   }
+                    font-size: 12px;
+                    li{
+                        text-align: left;
+                    }
                 }
             }           
         }       
