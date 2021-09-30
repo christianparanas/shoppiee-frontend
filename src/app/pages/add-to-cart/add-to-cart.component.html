@@ -13,7 +13,7 @@
         <p>{{ product.storeName }}`s Store</p>
         <i class="fal fa-greater-than"></i>
       </div>
-      <p class="edit">Edit</p>
+      <p class="edit" (click)='delete(product.id)'>Delete</p>
     </div>
     <div class="item-info">
       <input

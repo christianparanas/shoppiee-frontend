@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class AddToCartComponent implements OnInit {
   @Input() productArray:any=[]
+  @Input() temporary:any=[]
   @Input() all:number=0
   @Input() allHeader:number=0
   @Input() AllItemQuantity:number=0
@@ -75,5 +76,12 @@ export class AddToCartComponent implements OnInit {
           }
         }
       )
+  }
+  delete(id:number){
+    this.temporary=[]
+    this.productArray.filter((product:any)=>{
+      if(product.id!=id) this.temporary.push(product)
+      this.productArray=this.temporary
+    })
   }
 }
