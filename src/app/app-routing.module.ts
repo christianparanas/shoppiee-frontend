@@ -15,7 +15,8 @@ import { StoreComponent } from './pages/store/store.component';
 import { StoresComponent } from './pages/stores/stores.component';
 import { CategoryComponent } from './pages/category/category.component';
 import { AddToCartComponent } from './pages/add-to-cart/add-to-cart.component';
-import { UserAddProductsComponent } from './components/user-add-products/user-add-products.component';
+import { UseraddproductsComponent } from './pages/useraddproducts/useraddproducts.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -36,7 +37,8 @@ const routes: Routes = [
   { path: 'account/recover', component: RecoveraccountComponent },
   { path: 'account/recover/feedback', component: RecoverfeedbackComponent },
   { path: 'account/store', component: UserstoreComponent },
-  { path: 'user-addproduct', component: UserAddProductsComponent },
+  { path: 'account/store/addproduct', component: UseraddproductsComponent },
+ 
 ];
 
 @NgModule({

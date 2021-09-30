@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Icons+Outlined');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+.color{
+font-family:Montserrat;
+color:#735C5C;
+color:#904490;
+color:#735C5C;
+color:floralwhite;
+color:black;
+}
+
+.desktop-img{
+    display: none;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.content{
+    padding-top: 40px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.content h3{
+    font-family: Montserrat;
+    color: #555;
+    padding-bottom: 20px;
+    padding-left: 4px;
+    border-left: 1px rgba(49, 42, 42, 0.158) solid;
+    font-size: 17px;
+}
+label{
+    font-size: 10px;
+    font-family: Montserrat;
+}
+.lightbox{
+    position: fixed;
+    top: 40;
+    z-index: -1;
+    transition-duration: 1s;
+    background-color: #f5f5f550;
+    width: 100%;
+    height: 100vh;
+}
+
+.form-group{
+    display: flex;
+    padding: 6px;
+    border-radius: 10px;
+    border: 1px rgba(85, 85, 85, 0.24) solid;
+    line-height: 2.1em;
+    background-color: #fff;
+    margin-bottom: 5px;
+    width: 100%;
+    box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+}
+.button{
+    display: flex;
+    cursor: pointer;
+    width: 100%;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 5px 0px;
+}
+.button button{
+    background-color: #904490;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    
+    width: 50%;
+}
+
+.cancel{
+    flex: 1;
+    padding: 8px;
+    border: 1px #e3e3e3 solid;
+    color: #555;
+    border-radius: 5px;
+    text-align: center;
+    transition: all .3s ease;
+    right: 2px;
+    background-color: #fff;
+    
+}
+.cancel:hover{
+    background-color: rgba(85, 85, 85, 0.192);
+}
+
+.form-control{
+    border: none;
+    line-height: 2.1em;
+    outline: none;
+    width: 60%;
+}
+@media only screen and (min-width: 999px){
+    .lightbox{
+        background-color: floralwhite;;
+    }
+    .content{
+        margin: unset;
+        float: right;
+        padding: 50px 40px 20px 30px;
+        width: 40%;
+    }
+    .content h3{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 40px;
+        color: #735c5c;
+    }
+    .desktop-img{
+        float: left;
+        width: 50%;
+        padding: 60px 40px 60px 50px;
+        display: block;
+    }
+    .button button{
+        background-color: #8d00ca;
+        padding: 15px;
+        font-size: 18px;
+
+    }
+    .cancel{
+        padding: 15px;
+        font-size: 18px;
+    }
+    .form-control{
+        background-color: floralwhite;
+    }
+    .form-group{
+        padding: 10px;
+        background-color: floralwhite;
+    }
+    .desktop-img img{
+        width: 100%;
+        padding: 10px;
+        border-radius: 2px;
+        opacity: 0.8;
+    }
+}
