@@ -8,16 +8,19 @@ color:#735C5C;
 color:floralwhite;
 color:black;
 }
-
+.msg_icons:hover > .msg-container{
+    left: 0;
+}
 .msg-container{
-    position:fixed;
-    transition-duration:1s ;
+    position: fixed;
+    transition-duration: 2s;
     width: 100%;
     left: 100%;
+    margin-left: 30%;
     height: 100%;
 }
 .msg-container:target{
-    left: 0;
+    left:50px;
 }
 .msg_icons{
     position: absolute;
@@ -27,6 +30,9 @@ color:black;
     right: 0;
     color: #fff;
     font-size: 23px;
+}
+.msg_icons i{
+    font-size: 34px;
 }
 .icons-flex{
     margin-left: 70%;
@@ -123,9 +129,14 @@ span{
     color: #555;
     font-size: 30px;
 }
+
 @media only screen and (min-width: 999px) {
     body{
         font-family: Montserrat;
+    }
+    .msg-container{
+         margin-left: 70%;
+         right: 40px;
     }
     
     .user-header{
@@ -197,10 +208,11 @@ span{
         background-color: #735C5C;
         color: #fff;
     }
+    
     .msg_icons{
         right: 0px;
         position: fixed;
-        top: 13px;
+        top: 12px;
         width: 10%;
         height: 10px;
         overflow: unset;
@@ -211,7 +223,7 @@ span{
         padding: 10px;
         text-align: center;
         color: #fff;
-        font-size: 25px;
+        font-size: 30px;
         width: 45px;
         border-radius: 50%;
         background-color: #8d00ca;
