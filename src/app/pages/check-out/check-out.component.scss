@@ -153,16 +153,21 @@ $shadow:rgba(0,0,0,.3);
 @media only screen and (max-width:650px){
     .check-out-container{
         .user-information{
+            margin:0px 0px;
             .user-details{
                 font-size:12px;
                 text-align: center;
                 justify-items: center;
             }
         }
-        .product-list{
-            font-size: 14px;
+        .tables{
+            margin:0px 0px;
+            ol{
+                font-size:12px;
+            }
         }
         .payment-container{
+            margin:0px 0px;
             .payment-method{
                 ol{
                     font-size: 12px;
@@ -178,10 +183,15 @@ $shadow:rgba(0,0,0,.3);
             }           
         }
         .product-list{
+            font-size: 14px;
+            margin:0px 0px;
             .store{
                 margin:0px 0px;
                 text-indent: 10px;
             }
-        }       
+        }  
+        .place-order{
+            margin:0px 0px;
+        }     
     }   
 }
