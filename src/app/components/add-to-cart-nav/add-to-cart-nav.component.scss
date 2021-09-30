@@ -23,14 +23,12 @@ $font-color-contras:black;
                 cursor: pointer;
             }
         }
-        .edit-message-container{
+        .message-container{
             display:grid;
-            grid-template-columns: 1fr 1fr;
-            .edit{
-                text-indent: 60%;
-                font-size:14px;
-            }
             .messages{
+                display:flex;
+                justify-content: center;
+                align-items: center;
                 font-size:1.3rem;
             }
         }

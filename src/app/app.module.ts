@@ -40,6 +40,7 @@ import { AddToCartNavComponent } from './components/add-to-cart-nav/add-to-cart-
 import { MessageComponent } from './components/message/message.component';
 import { UserstoreHeaderComponent } from './components/userstore-header/userstore-header.component';
 import { UseraddproductsComponent } from './pages/useraddproducts/useraddproducts.component';
+import { CheckOutComponent } from './pages/check-out/check-out.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { UseraddproductsComponent } from './pages/useraddproducts/useraddproduct
     MessageComponent,
     UserstoreHeaderComponent,
     UseraddproductsComponent,
+    CheckOutComponent,
   ],
   imports: [
     BrowserModule,
