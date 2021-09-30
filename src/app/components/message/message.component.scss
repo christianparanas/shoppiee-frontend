@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Icons+Outlined');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+.color{
+font-family:Montserrat;
+color:#735C5C;
+color:#904490;
+color:#735C5C;
+color:floralwhite;
+color:black;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.message-profile{
+    position: static;
+    width: 100%;
+    padding: 5px 0px;
+}
+.myprofile{
+    float: left;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    align-items: center;
+    padding: 8px;
+    border-radius: 50%;
+}
+.message-nav{
+    position: static;
+    width: 100%;
+}
+.nav1{
+    display: flex;
+    width: 60%;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px 0px;
+}
+.msg_for_item{
+    width: 70%;
+    color: #555;
+    overflow: hidden;
+    height: 2vh;
+    font-size: 13px;
+    float: left;
+
+}
+.nav1 sub{
+    flex: 1;
+    text-align: right;
+    font-size: 11px;
+    font-family: Montserrat;
+}
+
+.message-details{
+    padding-top: 5px;
+    color: #555;
+    font-family: Montserrat;
+}
+.message-details h3{
+    font-size: 15px;
+}
+.message-list:hover{
+    background-color: rgba(85, 85, 85, 0.11);
+}
+.message-list{
+    position: static;
+    transition: .3s;
+   width: 95%;
+   padding-bottom: 5px;
+   margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+}
+.myname{
+    font-size: 20px;
+    color: #555;
+    font-family: Montserrat;
+    padding-left: 5px;
+}
+.profile{
+    width: 13%;
+    border: 2px #735C5C solid;
+    border-radius: 50%;
+}
+.nav{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px 0px;
+}
+.message-head{
+    position: fixed;
+    background-color: #fff;
+    border-bottom: 1px #e3e3e36b solid;
+    margin-bottom: 2px;
+    padding: 8px;
+    width: 100%;
+}
+
+.message-container{
+    position: relative;
+    width: 80%;
+    border-radius: 5px;
+    box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+    height: 60vh;
+    overflow: hidden;
+    float: right;
+    transition: all .3s ease;
+    background-color: #fff;
+}
+@media only screen and (min-width: 999px) {
+    .message-container{
+        width: 35%;
+        overflow: scroll;
+    }
+    .message-head{
+        color: #fff;
+        padding-left: 8px;
+        background-color: #8d00ca;
+        padding: unset;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        
+    }
+    .profile{
+        width: 5%;
+    }
+    .nav h3{
+        color: #fff;
+    }
+
+}

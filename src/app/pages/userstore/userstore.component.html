@@ -8,10 +8,15 @@
            </div>
            <div class="icons-setting">
                 <i class="material-icons-outlined">settings</i>
-                <i class="material-icons-outlined">chat_bubble_outline </i>
-                <span class="badge"><h5>23</h5></span>
+                
+               
+                
+                
+                
            </div>
+
      </div>
+    
        <div class="user-store-container">
              <div class="store-profile-image">
                   <img src="https://avatars.githubusercontent.com/u/59472122?v=4" alt="No image">
@@ -20,16 +25,30 @@
                   <h3>Baldo123**</h3>
                   <sub>Followers 6  |</sub> <sub> Following 22</sub>
              </div>
+             <div class="msg_icons">
+                  <div class="icons-flex">
+                    <i class="material-icons-outlined"id="msghover">chat_bubble_outline apan </i>
+                    <span>4</span>
+                  </div>
+
+                  <div class="msg-container">
+                    <!--Messagecustomer-->
+                    <app-message></app-message>
+                  </div>
+             </div>
        </div>
    
    </div>
+   
+   
+   
    <!--if user store have'nt yet product ,execute this elements-->
    <div class="user-addproduct">
         <div class="selling-image">
               <img src="https://addevice.io/wp-content/uploads/2020/08/how-to-make-online-selling-app_tech-business-details-technologiesprocesses-2020.png" alt="">
          <div class="selling-btn">
               <p>Start selling on Shoppiee</p>
-              <button routerLink="/user-addproduct" type="submit"name="add">Add Products</button>
+              <button class="btn" routerLink="/user-addproduct" type="submit"name="add">Add Products</button>
          </div>
         </div>
    </div>

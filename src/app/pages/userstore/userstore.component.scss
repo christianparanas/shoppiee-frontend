@@ -8,7 +8,45 @@ color:#735C5C;
 color:floralwhite;
 color:black;
 }
-
+.msg_icons:hover > .msg-container{
+    display: block;
+    transition: all .3s ease;
+    transition-duration: .1s;
+}
+.msg-container{
+    position: fixed;
+    transition-duration: 1s;
+    display: none;
+    right: 0;
+    width: 95%;
+    height: 100%;
+    
+   
+}
+.msg_icons{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #fff;
+    font-size: 23px;
+}
+.icons-flex{
+    margin-left: 70%;
+    display: flex;
+}
+.icons-flex span{
+    position: absolute;
+    top: -15px;
+    font-size: 15px;
+    text-align: center;
+    height: 23px;
+    width: 23px;
+    background-color: #fa6238;
+    right: 10px;
+    
+    border-radius: 50%;
+    color: #fff;
+}
 * {
     margin: 0;
     padding: 0;
@@ -29,6 +67,9 @@ color:black;
     height: auto;
     
 }
+span{
+    position: fixed;
+}
 
 .user-store-container{
     width: 100%;
@@ -48,6 +89,7 @@ color:black;
 }
 .store-profile-image img{
     width: 60px;
+  
     border-top: #f5f5f5 2px solid;
     border-left: #f5f5f5 2px solid;
     border-right: #735C5C 2px solid;
@@ -57,7 +99,7 @@ color:black;
 }
 .store-content{
     font-family: Montserrat;
-    position: absolute;
+    position:absolute;
     float:right ;
     top: 30px;
     left: 75px;
@@ -65,6 +107,7 @@ color:black;
     color: #f5f5f5;
 }
 .store-content sub{
+   
     opacity: 0.9 ;
     font-size: 10px;
 }
@@ -192,26 +235,8 @@ color:black;
     color: #555;
     font-size: 30px;
 }
-.badge{
-    position: fixed;
-    background: #ee4242;
-    color: #f5f5f5;
-    border-radius: 50%;
-    left: 94%;
-    top: -0.4%;
-    width: 20px;
-    height: 22px;
-    
-}
-.badge h5{
-    color: #f5f5f5;
-    display: flex;
-    font-size: 10px;
-    padding: 5px;
-    align-items:center ;
-    justify-content: center;
 
-}
+
 
 @media only screen and (min-width: 999px) {
     body{
@@ -356,5 +381,24 @@ color:black;
     }
     .sort select{
         background-color: #fff;
+    }
+    .msg_icons{
+        right: 30px;
+        position: fixed;
+        top: 100px;
+        border-radius: 50%;
+        padding: 8px;
+    }
+    .msg_icons i{
+        padding: 10px;
+        text-align: center;
+        
+        width: 45px;
+        border-radius: 50%;
+        background-color: #904490;
+    }
+    .msg_icons span{
+        top: 10px;
+        right: -25px;
     }
 }
