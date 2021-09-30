@@ -149,8 +149,15 @@ $shadow:rgba(0,0,0,.3);
     }
 }
 
-@media only screen and (max-width:600px){
+@media only screen and (max-width:650px){
     .check-out-container{
+        .user-information{
+            .user-details{
+                font-size:12px;
+                text-align: center;
+                justify-items: center;
+            }
+        }
         .payment-container{
             .payment-method{
                 ol{
@@ -165,6 +172,12 @@ $shadow:rgba(0,0,0,.3);
                     }
                 }
             }           
+        }
+        .product-list{
+            .store{
+                margin:0px 0px;
+                text-indent: 10px;
+            }
         }       
     }   
 }
