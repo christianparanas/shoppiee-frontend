@@ -16,6 +16,7 @@ import { StoresComponent } from './pages/stores/stores.component';
 import { CategoryComponent } from './pages/category/category.component';
 import { AddToCartComponent } from './pages/add-to-cart/add-to-cart.component';
 import { UseraddproductsComponent } from './pages/useraddproducts/useraddproducts.component';
+import { MessageComponent } from './components/message/message.component';
 
 
 const routes: Routes = [
@@ -38,6 +39,7 @@ const routes: Routes = [
   { path: 'account/recover/feedback', component: RecoverfeedbackComponent },
   { path: 'account/store', component: UserstoreComponent },
   { path: 'account/store/addproduct', component: UseraddproductsComponent },
+  { path: 'account/store/#:customer_id', component: MessageComponent },
  
 ];
 
