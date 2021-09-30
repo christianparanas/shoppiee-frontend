@@ -1,54 +1,13 @@
-<div class="user-header">
-     <div class="top-header">
-           <div class="arrow-icons">
-                <i routerLink="/account"class="material-icons-outlined">arrow_back</i>
-           </div>
-           <div class="my-store">
-                <h3>MY STORE</h3>
-           </div>
-           <div class="icons-setting">
-                <i class="material-icons-outlined">settings</i>
-                
-               
-                
-                
-                
-           </div>
+<!--Userstore-header-->
+<app-userstore-header></app-userstore-header>
 
-     </div>
-    
-       <div class="user-store-container">
-             <div class="store-profile-image">
-                  <img src="https://avatars.githubusercontent.com/u/59472122?v=4" alt="No image">
-             </div>
-             <div class="store-content">
-                  <h3>Baldo123**</h3>
-                  <sub>Followers 6  |</sub> <sub> Following 22</sub>
-             </div>
-             <div class="msg_icons">
-                  <div class="icons-flex">
-                    <i class="material-icons-outlined"id="msghover">chat_bubble_outline apan </i>
-                    <span>4</span>
-                  </div>
-
-                  <div class="msg-container">
-                    <!--Messagecustomer-->
-                    <app-message></app-message>
-                  </div>
-             </div>
-       </div>
-   
-   </div>
-   
-   
-   
    <!--if user store have'nt yet product ,execute this elements-->
    <div class="user-addproduct">
         <div class="selling-image">
               <img src="https://addevice.io/wp-content/uploads/2020/08/how-to-make-online-selling-app_tech-business-details-technologiesprocesses-2020.png" alt="">
          <div class="selling-btn">
               <p>Start selling on Shoppiee</p>
-              <button class="btn" routerLink="/user-addproduct" type="submit"name="add">Add Products</button>
+              <button class="btn" routerLink="/account/store/addproduct" type="submit"name="add">Add Products</button>
          </div>
         </div>
    </div>
@@ -72,5 +31,3 @@
    <div class="container">
         <app-productpreview  *ngFor="let a of discoverProductsArr"></app-productpreview>
    </div>
-   
-   
