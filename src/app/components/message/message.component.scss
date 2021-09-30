@@ -69,13 +69,19 @@ color:black;
 .message-list{
     position: static;
     transition: .3s;
-    width: 98%;
+    width: 96%;
     padding-bottom: 5px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 5px;
     margin-bottom: 10px;
     box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+}
+.close{
+    padding: 5px 0px;
+    text-align: left;
+    right: 40px;
+    font-size: 17px;
 }
 .myname{
     font-size: 20px;
@@ -97,34 +103,45 @@ color:black;
     padding: 5px 0px;
 }
 .message-head{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     position: fixed;
     background-color: #fff;
     border-bottom: 1px #e3e3e36b solid;
     margin-bottom: 2px;
-    padding: 8px;
-    width: 80%;
+    padding: 6px;
+    width: 70%;
 }
 
 .message-container{
     position: relative;
     border-radius: 5px;
     box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
-    height: 60vh;
+    height: 70vh;
     width: 80%;
     overflow: hidden;
-    float: right;
     transition: all .3s ease;
     background-color: #fff;
 }
 @media only screen and (min-width: 999px) {
     .message-container{
-        width: 45%;
-        height: 85vh;
+        width: 30%;
+      
         overflow: scroll;
+    }
+    .message-list{
+        width: 90%;
+        margin-left: 2%;
+    }
+    .close{
+        color: #fff;
+        
     }
     .message-head{
         color: #fff;
+       
         padding-left: 10px;
+        width: 80%;
         background-color: #8d00ca;
         padding: unset;
         border-top-left-radius: 10px;
