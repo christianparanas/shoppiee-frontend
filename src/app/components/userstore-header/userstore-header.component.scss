@@ -8,18 +8,16 @@ color:#735C5C;
 color:floralwhite;
 color:black;
 }
-.msg_icons:hover > .msg-container{
-    display: block;
-    
-    
-}
+
 .msg-container{
     position:fixed;
-    
-    display: none;
-    right: 0;
-    width: 70%;
-    height: 70%;
+    transition-duration:1s ;
+    width: 100%;
+    left: 100%;
+    height: 100%;
+}
+.msg-container:target{
+    left: 0;
 }
 .msg_icons{
     position: absolute;
@@ -129,6 +127,7 @@ span{
     body{
         font-family: Montserrat;
     }
+    
     .user-header{
         position: sticky;
         width: 100%;
@@ -201,7 +200,7 @@ span{
     .msg_icons{
         right: 0px;
         position: fixed;
-        top: 100px;
+        top: 13px;
         width: 10%;
         height: 10px;
         overflow: unset;
@@ -212,8 +211,9 @@ span{
         padding: 10px;
         text-align: center;
         color: #fff;
+        font-size: 25px;
         width: 45px;
         border-radius: 50%;
-        background-color: #904490;
+        background-color: #8d00ca;
     }
 }

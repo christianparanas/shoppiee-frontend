@@ -77,6 +77,12 @@ color:black;
     margin-bottom: 10px;
     box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
 }
+.close{
+    padding: 5px 0px;
+    text-align: left;
+    right: 40px;
+    font-size: 17px;
+}
 .myname{
     font-size: 20px;
     color: #555;
@@ -97,20 +103,22 @@ color:black;
     padding: 5px 0px;
 }
 .message-head{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     position: fixed;
     background-color: #fff;
     border-bottom: 1px #e3e3e36b solid;
     margin-bottom: 2px;
-    padding: 8px;
-    width: 80%;
+    padding: 6px;
+    width: 100%;
 }
 
 .message-container{
     position: relative;
     border-radius: 5px;
     box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
-    height: 60vh;
-    width: 80%;
+    height: 90vh;
+    width: 85%;
     overflow: hidden;
     float: right;
     transition: all .3s ease;
@@ -118,13 +126,20 @@ color:black;
 }
 @media only screen and (min-width: 999px) {
     .message-container{
-        width: 45%;
+        width: 30%;
         height: 85vh;
+        top: 0px;
         overflow: scroll;
+    }
+    .close{
+        color: #fff;
+        
     }
     .message-head{
         color: #fff;
+       
         padding-left: 10px;
+        width: 80%;
         background-color: #8d00ca;
         padding: unset;
         border-top-left-radius: 10px;
