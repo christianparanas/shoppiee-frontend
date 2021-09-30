@@ -124,9 +124,8 @@ color:black;
     box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
     height: auto;
     height: 70vh;
-    width: 100%;
-    float: left;
-    overflow: hidden;
+    width: 80%;
+    overflow: scroll;
     transition: all .3s ease;
     background-color: #fff;
 }
