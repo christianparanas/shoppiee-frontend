@@ -49,6 +49,7 @@ export class AddToCartComponent implements OnInit {
             else if (product.quantity==product.qtyAvailable && qtyControl==-1) product.quantity-=1
             else this.ok();
         }
+        this.showTransaction();
       })
   }
   //check only the specific product using id
