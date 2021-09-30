@@ -16,14 +16,16 @@ import { StoresComponent } from './pages/stores/stores.component';
 import { CategoryComponent } from './pages/category/category.component';
 import { AddToCartComponent } from './pages/add-to-cart/add-to-cart.component';
 import { UseraddproductsComponent } from './pages/useraddproducts/useraddproducts.component';
+import { CheckOutComponent } from './pages/check-out/check-out.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'categories', component: CategoriesComponent },
   { path: 'categories/:id', component: CategoryComponent },
-
+  
   { path: 'product/:id', component: ProductComponent },
+  {path: 'check-out/:id',component:CheckOutComponent},
 
   {path: 'add-to-cart', component: AddToCartComponent},
 
