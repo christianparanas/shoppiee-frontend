@@ -67,7 +67,7 @@ export class AddToCartComponent implements OnInit {
       this.AllItemQuantity=0
       this.totalPrice=0
       this.productArray.map((product:any)=>{
-          if(product.isCheck=='checked'){
+          if(product.isCheck==='checked'){
             this.all+=1
             if(this.all!=0) {
               this.totalPrice+=(product.quantity*product.price)
@@ -76,12 +76,14 @@ export class AddToCartComponent implements OnInit {
           }
         }
       )
+      this.allHeader=this.productArray.length
   }
   delete(id:number){
     this.temporary=[]
-    this.productArray.filter((product:any)=>{
+    return this.productArray.filter((product:any)=>{
       if(product.id!=id) this.temporary.push(product)
       this.productArray=this.temporary
+      this.showTransaction()
     })
   }
 }
