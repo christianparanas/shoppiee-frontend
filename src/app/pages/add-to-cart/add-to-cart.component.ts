@@ -13,6 +13,7 @@ export class AddToCartComponent implements OnInit {
   @Input() AllItemQuantity:number=0
   @Input() totalPrice:number = 0;
   @Input() isAll:boolean=false;
+  @Input() isMaxQty:boolean=false;
 
 
   constructor() { 
@@ -20,12 +21,12 @@ export class AddToCartComponent implements OnInit {
 
   ngOnInit(): void {
     this.productArray=[
-    {id:1,quantity:0,qtyAvailable:11,isCheck:'',price:200,storeName:'Paranas',productName:'knife'},
-    {id:2,quantity:0,qtyAvailable:11,isCheck:'',price:255,storeName:'Baldo',productName:'axe'},
-    {id:3,quantity:0,qtyAvailable:11,isCheck:'',price:244,storeName:'Loreno',productName:'sword'},
-    {id:4,quantity:0,qtyAvailable:11,isCheck:'',price:233,storeName:'Lebasora',productName:'water gun'},
-    {id:5,quantity:0,qtyAvailable:11,isCheck:'',price:222,storeName:'Shoppiee',productName:'cell phone'},
-    {id:6,quantity:0,qtyAvailable:11,isCheck:'',price:211,storeName:'angular',productName:'bags'}]
+    {id:1,quantity:1,qtyAvailable:11,notify:false,isCheck:'',price:200,storeName:'Paranas',productName:'knife'},
+    {id:2,quantity:1,qtyAvailable:11,notify:false,isCheck:'',price:255,storeName:'Baldo',productName:'axe'},
+    {id:3,quantity:1,qtyAvailable:11,notify:false,isCheck:'',price:244,storeName:'Loreno',productName:'sword'},
+    {id:4,quantity:1,qtyAvailable:11,notify:false,isCheck:'',price:233,storeName:'Lebasora',productName:'water gun'},
+    {id:5,quantity:1,qtyAvailable:11,notify:false,isCheck:'',price:222,storeName:'Shoppiee',productName:'cell phone'},
+    {id:6,quantity:1,qtyAvailable:11,notify:false,isCheck:'',price:211,storeName:'angular',productName:'bags'}]
     this.allHeader = this.productArray.length
   }
 
@@ -35,10 +36,14 @@ export class AddToCartComponent implements OnInit {
         if(product.id==id){
           //if product reach the maximum available item it will stop the quantityControl in increasing
             if(product.qtyAvailable>product.quantity){
-              //increase and decrease if the quantity is not equal to -1 
-              if (product.quantity + qtyControl == -1) product.quantity = 0;
+              //increase and decrease if the quantity is not equal to -1
+              if (product.quantity + qtyControl == -1) product.quantity = 0
+              //show delete-message if product hits value of zero
+              else if (product.quantity + qtyControl == 0) this.hideNotification(product.id)
               else product.quantity += qtyControl;
               this.showTransaction();
+            }else{
+              this.ok()
             }
         }
       })
@@ -86,4 +91,15 @@ export class AddToCartComponent implements OnInit {
       this.showTransaction()
     })
   }
+
+  hideNotification(id:number){
+    this.productArray.map((product:any)=>{
+      if(product.id==id) product.notify=!product.notify
+    })    
+  }
+
+  ok(){
+    this.isMaxQty=!this.isMaxQty
+  }
+
 }

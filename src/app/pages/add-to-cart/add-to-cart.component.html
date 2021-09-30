@@ -1,4 +1,6 @@
+<!-- header -->
 <app-add-to-cart-nav [all]="allHeader"></app-add-to-cart-nav>
+<!-- body -->
 <div class="content-container">
   <div class="items-list" *ngFor="let product of productArray">
     <div class="about-items">
@@ -40,9 +42,28 @@
         </div>
       </div>
     </div>
+
+    <!-- notification -->
+    <div class='notification-container' *ngIf='product.notify'>
+      <div class='msg'> Do You Want to Delete This Item?</div>
+      <div class='notification'>
+        <span class='cancel' (click)='hideNotification(product.id)'>CANCEL</span>
+        <span class='delete' (click)=delete(product.id)>DELETE</span>
+      </div>
+    </div>
+
+    <div *ngIf='isMaxQty' class='max-item'>
+      <div class='max'>
+        <p>Maximum Product Available</p>
+        <div class='ok' (click)='ok()'>OK</div>
+      </div>
+    </div>
   </div>
 </div>
 
+ 
+
+<!-- footer -->
 <div class="footer-container">
   <div class="selectAll">
     <input
