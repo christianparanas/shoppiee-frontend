@@ -41,6 +41,7 @@ import { MessageComponent } from './components/message/message.component';
 import { UserstoreHeaderComponent } from './components/userstore-header/userstore-header.component';
 import { UseraddproductsComponent } from './pages/useraddproducts/useraddproducts.component';
 import { CheckOutComponent } from './pages/check-out/check-out.component';
+import { MessagesComponent } from './pages/messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { CheckOutComponent } from './pages/check-out/check-out.component';
     UserstoreHeaderComponent,
     UseraddproductsComponent,
     CheckOutComponent,
+    MessagesComponent,
   ],
   imports: [
     BrowserModule,
