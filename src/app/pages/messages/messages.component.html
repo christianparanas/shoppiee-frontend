@@ -12,17 +12,19 @@
     </div>
 
     <div class="content">
-      <div class="msgs">
-        <div class="msg" *ngFor="let msg of mgsArr" routerLink="/messages">
-          <img src="https://avatars.githubusercontent.com/u/59472122?v=4" alt="">
-          <div class="details">
-            <div class="name">Thea</div>
-            <div class="latestMsg">Gwapo channy</div>
-          </div>
-          <div class="date">12:51 AM</div>
-        </div>
-      </div>
-    </div>
+      <div class="noMsg" *ngIf="mgsArr.length == 0">No messages</div>
 
+      <a class="msg" *ngFor="let msg of mgsArr" routerLink="/messages">
+        <img
+          src="https://avatars.githubusercontent.com/u/59472122?v=4"
+          alt=""
+        />
+        <div class="details">
+          <div class="name">Thea</div>
+          <div class="latestMsg">Gwapo channy</div>
+        </div>
+        <div class="date">12:51 AM</div>
+      </a>
+    </div>
   </div>
 </div>
