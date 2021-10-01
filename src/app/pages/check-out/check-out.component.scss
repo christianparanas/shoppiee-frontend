@@ -153,7 +153,7 @@ $shadow:rgba(0,0,0,.3);
 @media only screen and (max-width:650px){
     .check-out-container{
         .user-information{
-            border:0px 0px 0px 0px;
+            border-radius:0px 0px 0px 0px;
             margin:0px 0px;
             .user-details{
                 font-size:12px;
@@ -193,7 +193,7 @@ $shadow:rgba(0,0,0,.3);
         }  
         .place-order{
             margin:0px 0px;
-            border:0px 0px 0px 0px;
+            border-radius:0px 0px 0px 0px;
         }     
     }   
 }

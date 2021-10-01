@@ -205,6 +205,13 @@ $colorContras:white;
     }
 }
 
+.footer-copy-right{
+    position: relative;
+    display:grid;
+    grid-template-columns: 1fr;
+    width:100%;
+}
+
 //footer
 $shadow:0px -1px 2px rgba(0,0,0,.5);
 $background-color:#fff;
@@ -216,7 +223,7 @@ $checkout-color:rgb(211, 6, 6);
     width:100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 3rem;
+    grid-template-rows: 5rem;
     background-color: $background-color;
     box-shadow: $shadow;
     .checkout,.selectAll{
@@ -245,6 +252,7 @@ $checkout-color:rgb(211, 6, 6);
         margin-left: 30px;
     }
 }
+
 
 
 @media only screen and (min-width:700px){
