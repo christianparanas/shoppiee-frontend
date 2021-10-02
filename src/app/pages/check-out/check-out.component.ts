@@ -7,7 +7,6 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CheckOutComponent implements OnInit {
   @Input() all:number
-  @Input() allHeader:number=0
   @Input() subTotal:number=0;
   @Input() name:string='Cardo Never Die'
   @Input() phoneNumber:string='09123456789'
@@ -21,7 +20,6 @@ export class CheckOutComponent implements OnInit {
     {id:6,name:'Love Lang',Price:100,amount:2},
   ]
   constructor() {
-    this.allHeader=this.productArray.length
     let tempoTotal=0;
     this.productArray.map((product:any)=>{
       tempoTotal+=product.Price*product.amount;

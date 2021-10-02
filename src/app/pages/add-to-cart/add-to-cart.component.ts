@@ -9,7 +9,6 @@ export class AddToCartComponent implements OnInit {
   @Input() productArray:any=[]
   @Input() temporary:any=[]
   @Input() all:number=0
-  @Input() allHeader:number=0
   @Input() AllItemQuantity:number=0
   @Input() totalPrice:number = 0;
   @Input() isAll:boolean=false;
@@ -27,7 +26,6 @@ export class AddToCartComponent implements OnInit {
     {id:4,quantity:1,qtyAvailable:11,notify:false,isCheck:'',price:233,storeName:'Lebasora',productName:'water gun'},
     {id:5,quantity:1,qtyAvailable:11,notify:false,isCheck:'',price:222,storeName:'Shoppiee',productName:'cell phone'},
     {id:6,quantity:1,qtyAvailable:11,notify:false,isCheck:'',price:211,storeName:'angular',productName:'bags'}]
-    this.allHeader = this.productArray.length
   }
 
   //product quantity control
@@ -85,7 +83,6 @@ export class AddToCartComponent implements OnInit {
           }
         }
       )
-      this.allHeader=this.productArray.length
   }
   delete(id:number){
     this.temporary=[]
