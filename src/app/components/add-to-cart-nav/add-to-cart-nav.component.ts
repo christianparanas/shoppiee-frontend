@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-add-to-cart-nav',
@@ -8,13 +7,9 @@ import { Location } from '@angular/common';
 })
 export class AddToCartNavComponent implements OnInit {
   @Input() all:number;
-  constructor(private location: Location) { }
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-  goBack(): void {
-    this.location.back();
   }
   
 }
