@@ -18,32 +18,26 @@ import { MessageComponent } from './components/message/message.component';
 import { AddToCartComponent } from './pages/add-to-cart/add-to-cart.component';
 import { UseraddproductsComponent } from './pages/useraddproducts/useraddproducts.component';
 import { CheckOutComponent } from './pages/check-out/check-out.component';
-<<<<<<< HEAD
 import { BuyAgainComponent } from './pages/buy-again/buy-again.component';
-
-=======
 import { MessagesComponent } from './pages/messages/messages.component';
->>>>>>> b00912e83dcf21964d804b3f551468a1f2871c14
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'categories', component: CategoriesComponent },
   { path: 'categories/:id', component: CategoryComponent },
 
-  { path: 'product/:id', component: ProductComponent },
-<<<<<<< HEAD
 
-  {path: 'add-to-cart/check-out/:id',component:CheckOutComponent},
+  { path: 'product/:id', component: ProductComponent },
+
+
   {path: 'add-to-cart', component: AddToCartComponent},
   {path: 'add-to-cart/buy-again', component: BuyAgainComponent},
-=======
-  { path: 'check-out/:id', component: CheckOutComponent },
+  {path: 'add-to-cart/check-out/:id',component:CheckOutComponent},
 
-  { path: 'add-to-cart', component: AddToCartComponent },
->>>>>>> b00912e83dcf21964d804b3f551468a1f2871c14
 
   { path: 'stores', component: StoresComponent },
   { path: 'store/:storeId', component: StoreComponent },
+
 
   { path: 'account', component: AccountComponent },
   { path: 'account/setting', component: AccountsettingComponent },
