@@ -14,12 +14,12 @@ import { AccountsettingComponent } from './pages/accountsetting/accountsetting.c
 import { StoreComponent } from './pages/store/store.component';
 import { StoresComponent } from './pages/stores/stores.component';
 import { CategoryComponent } from './pages/category/category.component';
-import { MessageComponent } from './components/message/message.component';
 import { AddToCartComponent } from './pages/add-to-cart/add-to-cart.component';
 import { UseraddproductsComponent } from './pages/useraddproducts/useraddproducts.component';
 import { CheckOutComponent } from './pages/check-out/check-out.component';
 import { BuyAgainComponent } from './pages/buy-again/buy-again.component';
 import { MessagesComponent } from './pages/messages/messages.component';
+import { MessageComponent } from './pages/message/message.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -49,6 +49,7 @@ const routes: Routes = [
   { path: 'account/store/addproduct', component: UseraddproductsComponent },
   { path: 'account/store/#:customer_id', component: MessageComponent },
   { path: 'messages', component: MessagesComponent },
+  { path: 'messages/:id', component: MessageComponent },
 ];
 
 @NgModule({

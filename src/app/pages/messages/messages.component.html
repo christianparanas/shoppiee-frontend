@@ -24,16 +24,16 @@
         </div>
       </div>
 
-      <a class="msg" *ngFor="let msg of mgsArr" routerLink="/messages">
+      <a class="msg" *ngFor="let msg of mgsArr" [routerLink]="['/messages/', msg.msgID]">
         <img
-          src="https://avatars.githubusercontent.com/u/59472122?v=4"
+          [src]="msg.imgURL"
           alt=""
         />
         <div class="details">
-          <div class="name">Thea</div>
-          <div class="latestMsg">Gwapo channy</div>
+          <div class="name">{{ msg.name }}</div>
+          <div class="latestMsg">{{ msg.latestMsg }}</div>
         </div>
-        <div class="date">12:51 AM</div>
+        <div class="date">{{ msg.dateOrTime }}</div>
       </a>
     </div>
   </div>
