@@ -12,7 +12,7 @@
           checked="{{ product.isCheck }}"
         />
         <i class="fal fa-cart-arrow-down"></i>
-        <p>{{ product.storeName }}`s Store</p>
+        <a routerLink='/store/123'>{{ product.storeName }}`s Store</a>
         <i class="fal fa-greater-than"></i>
       </div>
       <p class="edit" (click)='delete(product.id)'>Delete</p>
@@ -73,6 +73,6 @@
   </div>
   <div class="checkout">
     <div>SubTotal {{ totalPrice }}php</div>
-    <a routerLink='/add-to-cart/check-out/123' class="btn">check-Out (Qty:{{ AllItemQuantity }})</a>
+    <a routerLink='/add-to-cart/check-out' class="btn">check-Out (Qty:{{ AllItemQuantity }})</a>
   </div>
 </div>
