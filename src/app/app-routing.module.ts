@@ -18,6 +18,7 @@ import { MessageComponent } from './components/message/message.component';
 import { AddToCartComponent } from './pages/add-to-cart/add-to-cart.component';
 import { UseraddproductsComponent } from './pages/useraddproducts/useraddproducts.component';
 import { CheckOutComponent } from './pages/check-out/check-out.component';
+import { BuyAgainComponent } from './pages/buy-again/buy-again.component';
 import { MessagesComponent } from './pages/messages/messages.component';
 
 const routes: Routes = [
@@ -25,13 +26,18 @@ const routes: Routes = [
   { path: 'categories', component: CategoriesComponent },
   { path: 'categories/:id', component: CategoryComponent },
 
-  { path: 'product/:id', component: ProductComponent },
-  { path: 'check-out/:id', component: CheckOutComponent },
 
-  { path: 'add-to-cart', component: AddToCartComponent },
+  { path: 'product/:id', component: ProductComponent },
+
+
+  {path: 'add-to-cart', component: AddToCartComponent},
+  {path: 'add-to-cart/buy-again', component: BuyAgainComponent},
+  {path: 'add-to-cart/check-out/:id',component:CheckOutComponent},
+
 
   { path: 'stores', component: StoresComponent },
   { path: 'store/:storeId', component: StoreComponent },
+
 
   { path: 'account', component: AccountComponent },
   { path: 'account/setting', component: AccountsettingComponent },

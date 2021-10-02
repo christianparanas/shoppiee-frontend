@@ -41,6 +41,7 @@ import { MessageComponent } from './components/message/message.component';
 import { UserstoreHeaderComponent } from './components/userstore-header/userstore-header.component';
 import { UseraddproductsComponent } from './pages/useraddproducts/useraddproducts.component';
 import { CheckOutComponent } from './pages/check-out/check-out.component';
+import { BuyAgainComponent } from './pages/buy-again/buy-again.component';
 import { MessagesComponent } from './pages/messages/messages.component';
 
 @NgModule({
@@ -75,6 +76,7 @@ import { MessagesComponent } from './pages/messages/messages.component';
     UserstoreHeaderComponent,
     UseraddproductsComponent,
     CheckOutComponent,
+    BuyAgainComponent,
     MessagesComponent,
   ],
   imports: [
