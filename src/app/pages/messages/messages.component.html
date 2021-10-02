@@ -12,7 +12,17 @@
     </div>
 
     <div class="content">
-      <div class="noMsg" *ngIf="mgsArr.length == 0">No messages</div>
+      <div class="noMsg" *ngIf="mgsArr.length == 0">
+        <img src="../../../assets/imgs/noMsgs.png" alt="">
+        <p>No Messages</p>
+      </div>
+
+      <div class="searchMsg">
+        <div class="wrapper">
+          <i class="fal fa-search"></i>
+          <input type="text" placeholder="Search">
+        </div>
+      </div>
 
       <a class="msg" *ngFor="let msg of mgsArr" routerLink="/messages">
         <img
