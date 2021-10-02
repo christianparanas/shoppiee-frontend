@@ -13,25 +13,30 @@
 
     <div class="content">
       <div class="noMsg" *ngIf="mgsArr.length == 0">
-        <img src="../../../assets/imgs/noMsgs.png" alt="">
+        <img src="../../../assets/imgs/noMsgs.png" alt="" />
         <p>No Messages</p>
       </div>
 
       <div class="searchMsg">
         <div class="wrapper">
           <i class="fal fa-search"></i>
-          <input type="text" placeholder="Search">
+          <input type="text" placeholder="Search" />
         </div>
       </div>
 
-      <a class="msg" *ngFor="let msg of mgsArr" [routerLink]="['/messages/', msg.msgID]">
-        <img
-          [src]="msg.imgURL"
-          alt=""
-        />
+      <a
+        class="msg"
+        *ngFor="let msg of mgsArr"
+        [routerLink]="['/messages/', msg.msgID]"
+      >
+        <img [src]="msg.imgURL" alt="" />
         <div class="details">
           <div class="name">{{ msg.name }}</div>
-          <div class="latestMsg">{{ msg.latestMsg }}</div>
+          <div class="latestMsg">
+            {{
+              msg.latestMsg.length > 30 ? msg.latestMsg.substring(0, 30) + " ..." : msg.latestMsg
+            }}
+          </div>
         </div>
         <div class="date">{{ msg.dateOrTime }}</div>
       </a>
