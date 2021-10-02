@@ -1,6 +1,7 @@
 $shadow:rgba(0,0,0,.3);
 .content-container{
     position: relative;
+    width:100%;
     min-height: 71.1vh;
     .items-list{
         margin:10px 30px;
@@ -31,6 +32,7 @@ $shadow:rgba(0,0,0,.3);
     .item-info{
         display: grid;
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
         margin:10px 10px;
         overflow: hidden;
         .product-image{
@@ -66,6 +68,27 @@ $shadow:rgba(0,0,0,.3);
             }
         }
     }
+}
+
+@media only screen and (max-width:600px){
+    .content-container{
+        .items-list{
+            margin:0px 0px;
+            border-radius:0;
+        }
+        .item-info{
+            .product-image{
+                img{
+                    width:5rem;
+                }
+            }
+            .item-details{
+                p{
+                    font-size:14px;
+                }
+            }
+        }
+    }    
 }
 
 
