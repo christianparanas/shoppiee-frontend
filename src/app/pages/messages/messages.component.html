@@ -1,0 +1,30 @@
+<div class="customer_msgs__main_container">
+  <div class="customer_mgs__wrapper">
+    <div class="header">
+      <div class="backBtn">
+        <i routerLink="/" class="fal fa-arrow-left"></i>
+      </div>
+      <div class="chatsIcon">
+        Chats
+        <i class="fad fa-comment-alt-dots"></i>
+      </div>
+      <div class=""></div>
+    </div>
+
+    <div class="content">
+      <div class="noMsg" *ngIf="mgsArr.length == 0">No messages</div>
+
+      <a class="msg" *ngFor="let msg of mgsArr" routerLink="/messages">
+        <img
+          src="https://avatars.githubusercontent.com/u/59472122?v=4"
+          alt=""
+        />
+        <div class="details">
+          <div class="name">Thea</div>
+          <div class="latestMsg">Gwapo channy</div>
+        </div>
+        <div class="date">12:51 AM</div>
+      </a>
+    </div>
+  </div>
+</div>

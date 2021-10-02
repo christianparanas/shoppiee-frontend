@@ -54,7 +54,7 @@
             <p *ngIf="AddedToCart">{{ AddedToCart }}</p>
           </i>
         </a>
-        <i class="far fa-comment-alt">
+        <i routerLink="/messages" class="far fa-comment-alt">
           <p *ngIf="AddedToCart">{{ AddedToCart }}</p>
         </i>
         <i class="fal fa-bars" (click)="openCloseSideBar()"></i>

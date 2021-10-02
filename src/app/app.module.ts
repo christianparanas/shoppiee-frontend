@@ -41,7 +41,11 @@ import { MessageComponent } from './components/message/message.component';
 import { UserstoreHeaderComponent } from './components/userstore-header/userstore-header.component';
 import { UseraddproductsComponent } from './pages/useraddproducts/useraddproducts.component';
 import { CheckOutComponent } from './pages/check-out/check-out.component';
+<<<<<<< HEAD
 import { BuyAgainComponent } from './pages/buy-again/buy-again.component';
+=======
+import { MessagesComponent } from './pages/messages/messages.component';
+>>>>>>> b00912e83dcf21964d804b3f551468a1f2871c14
 
 @NgModule({
   declarations: [
@@ -75,7 +79,11 @@ import { BuyAgainComponent } from './pages/buy-again/buy-again.component';
     UserstoreHeaderComponent,
     UseraddproductsComponent,
     CheckOutComponent,
+<<<<<<< HEAD
     BuyAgainComponent,
+=======
+    MessagesComponent,
+>>>>>>> b00912e83dcf21964d804b3f551468a1f2871c14
   ],
   imports: [
     BrowserModule,
