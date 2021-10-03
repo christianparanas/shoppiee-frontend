@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-add-to-cart-nav',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-to-cart-nav.component.scss']
 })
 export class AddToCartNavComponent implements OnInit {
+  @Input() currentRouter:string;
   constructor() { }
 
   ngOnInit(): void {
