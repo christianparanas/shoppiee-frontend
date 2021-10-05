@@ -144,6 +144,7 @@
         <app-productpreview
           *ngFor="let product of simillarProductsArray"
           [productArray]="product"
+          (click)="refetch()"
         ></app-productpreview>
       </div>
     </div>

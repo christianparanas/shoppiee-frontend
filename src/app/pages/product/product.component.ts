@@ -25,6 +25,10 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchSimillarProducts()
+    this.refetch()
+  }
+
+  refetch() {
     this.productId = this.route.snapshot.paramMap.get('id')
     this.fetchProduct()
   }
