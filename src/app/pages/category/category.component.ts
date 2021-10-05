@@ -17,7 +17,7 @@ export class CategoryComponent implements OnInit {
     console.log('error');
   }
 
-  imgIsLoading(): void {
-    console.log('loading');
+  imgIsLoaded(): void {
+    console.log('loaded');
   }
 }

@@ -10,19 +10,63 @@
         <img
           [src]="productArray.image"
           alt=""
+          (load)="imgIsLoaded()"
+          (error)="detectErroImg($event)"
+          [ngClass]="isImgLoaded ? 'showSkel' : 'hideSkel'"
         />
+        <div
+          [ngClass]="isImgLoaded ? 'hideSkel' : 'showSkel'"
+          style="width: 100%"
+        >
+          <ngx-skeleton-loader
+            count="1"
+            [theme]="{
+              height: '100%',
+              'min-height': '360px',
+              width: '100%'
+            }"
+          ></ngx-skeleton-loader>
+        </div>
       </div>
       <div class="product_interact">
         <div class="product_details__container">
           <div class="name">
             <div class="aaa">Product name:</div>
-            <p>{{ productArray.title }}</p>
+            <p [ngClass]="isImgLoaded ? 'showSkel' : 'hideSkel'">
+              {{ productArray.title }}
+            </p>
+            <div
+              [ngClass]="isImgLoaded ? 'hideSkel' : 'showSkel'"
+              style="width: 100%"
+            >
+              <ngx-skeleton-loader
+                count="1"
+                [theme]="{
+                  height: '100%',
+                  'min-height': '20px',
+                  width: '200px'
+                }"
+              ></ngx-skeleton-loader>
+            </div>
           </div>
           <div class="description">
             <div class="aaa">Product Description</div>
-            <p>
+            <p [ngClass]="isImgLoaded ? 'showSkel' : 'hideSkel'">
               {{ productArray.description }}
             </p>
+            <div
+              [ngClass]="isImgLoaded ? 'hideSkel' : 'showSkel'"
+              style="width: 100%"
+            >
+              <ngx-skeleton-loader
+                count="1"
+                [theme]="{
+                  height: '100%',
+                  'min-height': '40px',
+                  width: '100%'
+                }"
+              ></ngx-skeleton-loader>
+            </div>
           </div>
           <div class="price_stock__container">
             <div class="container">₱{{ productArray.price }}</div>
