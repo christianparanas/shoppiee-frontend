@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;900&display=swap");
 
+.showSkel {
+  display: block;
+}
+
+.hideSkel {
+  display: none;
+}
+
 .product__container {
   position: relative;
   padding-bottom: 62px;
@@ -37,6 +45,14 @@
           height: 360px;
           // box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
           object-fit: contain;
+        }
+
+       .showImg {
+          display: block;
+        }
+
+        .hideImg {
+          display: none;
         }
       }
 
@@ -290,7 +306,7 @@
           grid-template-columns: 1fr 1fr;
 
           .shop__container {
-            display:block;
+            display: block;
 
             .viewshop_btn {
               display: none;
@@ -318,7 +334,6 @@
 
                 .boxtbns {
                   display: flex;
-
 
                   .btn {
                     font-size: 12px;
@@ -349,7 +364,7 @@
 
           .shop_interactions_details-desk {
             display: grid;
-            grid-template-columns: 150px 1fr 150px; 
+            grid-template-columns: 150px 1fr 150px;
             grid-gap: 0 10px;
 
             .inter {
@@ -358,7 +373,7 @@
               font-size: 12px;
 
               span {
-                color:#fa6238;
+                color: #fa6238;
                 margin-left: 10px;
               }
             }

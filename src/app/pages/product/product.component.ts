@@ -15,6 +15,7 @@ export class ProductComponent implements OnInit {
   productArray: any = [];
   productId: any;
   quantity: number = 0;
+  isImgLoaded: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -32,6 +33,14 @@ export class ProductComponent implements OnInit {
     this.location.back();
   }
 
+  detectErroImg(e: any): void {
+    console.log('error');
+  }
+
+  imgIsLoaded(): void {
+    this.isImgLoaded = true;
+  }
+
   itemQuantity(event: number) {
     if (this.quantity + event == -1) this.quantity = 0;
     else this.quantity += event;
@@ -41,7 +50,6 @@ export class ProductComponent implements OnInit {
     this.productService.fetchSpecificProduct(this.productId).subscribe(
       (response) => {
         this.productArray = response;
-        console.log(this.productArray)
       },
       (error) => {
         console.log(error);
