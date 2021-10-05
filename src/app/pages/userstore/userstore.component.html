@@ -1,35 +1,48 @@
 <!--Userstore-header-->
 <app-userstore-header></app-userstore-header>
 
-   <!--if user store have'nt yet product ,execute this elements-->
-   <div class="user-addproduct">
-        <div class="selling-image">
-              <img src="https://addevice.io/wp-content/uploads/2020/08/how-to-make-online-selling-app_tech-business-details-technologiesprocesses-2020.png" alt="">
-         <div class="selling-btn">
-              <p>Start selling on Shoppiee</p>
-              <button class="btn" routerLink="/account/store/addproduct" type="submit"name="add">Add Products</button>
-         </div>
-        </div>
-   </div>
-   <!--if user store have already products ,execute productreview-->
-   <!--Changes-->
-   <div class="my-products">
-        <div class="head-tittle-flex">
-           <h4>Products</h4>
-        </div>
-        <div class="sort">
-           <label for="op">Sort by:</label>
-        <select id="op">
-           <option value="priceasc">Price - ASC</option>
-           <option value="pricedsc">Price - DESC</option>
-           <option value="nameasc">Name - ASC</option>
-           <option value="namedsc">Name - DESC</option>
-        </select>
-        </div>
-        </div><br>
-   <div class="container">
-        <app-productpreview  *ngFor="let a of discoverProductsArr"></app-productpreview>
-   </div>
-   <div class="footer-container">
-        <app-footer></app-footer>
-   </div>
+<!--if user store have'nt yet product ,execute this elements-->
+<div class="user-addproduct">
+  <div class="selling-image">
+    <img
+      src="https://addevice.io/wp-content/uploads/2020/08/how-to-make-online-selling-app_tech-business-details-technologiesprocesses-2020.png"
+      alt=""
+    />
+    <div class="selling-btn">
+      <p>Start selling on Shoppiee</p>
+      <button
+        class="btn"
+        routerLink="/account/store/addproduct"
+        type="submit"
+        name="add"
+      >
+        Add Products
+      </button>
+    </div>
+  </div>
+</div>
+<!--if user store have already products ,execute productreview-->
+<!--Changes-->
+<div class="my-products">
+  <div class="head-tittle-flex">
+    <h4>Products</h4>
+  </div>
+  <div class="sort">
+    <label for="op">Sort by:</label>
+    <select id="op">
+      <option value="priceasc">Price - ASC</option>
+      <option value="pricedsc">Price - DESC</option>
+      <option value="nameasc">Name - ASC</option>
+      <option value="namedsc">Name - DESC</option>
+    </select>
+  </div>
+</div>
+<br />
+<div class="container">
+  <app-productpreview
+    *ngFor="let a of discoverProductsArr"
+  ></app-productpreview>
+</div>
+<div class="footer-container">
+  <app-footer></app-footer>
+</div>

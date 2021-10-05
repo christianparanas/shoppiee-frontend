@@ -2,7 +2,7 @@
   <div class="customer_mgs__wrapper">
     <div class="header">
       <div class="backBtn">
-        <i (click)='goBack()' class="fal fa-arrow-left"></i>
+        <i (click)="goBack()" class="fal fa-arrow-left"></i>
       </div>
       <div class="chatsIcon">
         Chats
@@ -34,7 +34,9 @@
           <div class="name">{{ msg.name }}</div>
           <div class="latestMsg">
             {{
-              msg.latestMsg.length > 30 ? msg.latestMsg.substring(0, 30) + " ..." : msg.latestMsg
+              msg.latestMsg.length > 30
+                ? msg.latestMsg.substring(0, 30) + " ..."
+                : msg.latestMsg
             }}
           </div>
         </div>
