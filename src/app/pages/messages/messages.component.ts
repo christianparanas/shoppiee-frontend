@@ -69,6 +69,20 @@ export class MessagesComponent implements OnInit {
       imgURL: 'https://avatars.githubusercontent.com/u/59472122?v=4',
       msgID: '4',
     },
+    {
+      name: 'Ruel Baldo',
+      latestMsg: 'and this is crazy',
+      dateOrTime: '7:24 AM',
+      imgURL: 'https://avatars.githubusercontent.com/u/78558096?v=4',
+      msgID: '3',
+    },
+    {
+      name: 'Christian Paranas',
+      latestMsg: "so here's my number so call me maybe",
+      dateOrTime: '4:51 AM',
+      imgURL: 'https://avatars.githubusercontent.com/u/59472122?v=4',
+      msgID: '4',
+    },
   ];
 
   constructor(private location: Location) {}
