@@ -10,7 +10,28 @@
       <div class=""></div>
     </div>
 
-    <div class="content">
+    <div *ngIf="openMsg" class="contentMsg">
+      <div class="header1">
+        <div class="box">
+          <div class="backBtn">
+            <i (click)="openMsg = false" class="fal fa-arrow-left"></i>
+          </div>
+          <div class="chatUser">
+            <img src="https://avatars.githubusercontent.com/u/59472122?v=4" alt="">
+            <div class="online_indicator"></div>
+            <div class="details">
+              <div class="name">Chris Chan</div>
+              <div class="status">Active now</div>
+            </div>
+          </div>
+        </div>
+        <div class="setting">
+          <i class="fal fa-cog"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="contentMsgs">
       <div class="noMsg" *ngIf="mgsArr.length == 0">
         <img src="../../../assets/imgs/noMsgs.png" alt="" />
         <p>No Messages</p>
@@ -26,7 +47,7 @@
       <a
         class="msg"
         *ngFor="let msg of mgsArr"
-        [routerLink]="['/messages/', msg.msgID]"
+        (click)="openSpecificMsg(msg.msgID)"
       >
         <img [src]="msg.imgURL" alt="" />
         <div class="details">

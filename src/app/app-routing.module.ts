@@ -19,7 +19,7 @@ import { UseraddproductsComponent } from './pages/useraddproducts/useraddproduct
 import { CheckOutComponent } from './pages/check-out/check-out.component';
 import { BuyAgainComponent } from './pages/buy-again/buy-again.component';
 import { MessagesComponent } from './pages/messages/messages.component';
-import { MessageComponent } from './pages/message/message.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -47,9 +47,7 @@ const routes: Routes = [
   { path: 'account/recover/feedback', component: RecoverfeedbackComponent },
   { path: 'account/store', component: UserstoreComponent },
   { path: 'account/store/addproduct', component: UseraddproductsComponent },
-  { path: 'account/store/#:customer_id', component: MessageComponent },
   { path: 'messages', component: MessagesComponent },
-  { path: 'messages/:id', component: MessageComponent },
 ];
 
 @NgModule({
