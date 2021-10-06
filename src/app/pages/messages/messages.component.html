@@ -1,12 +1,11 @@
 <div class="customer_msgs__main_container">
   <div class="customer_mgs__wrapper">
-    <div class="header">
+    <div class="header" [ngClass]="{ header__scrollShadow: onScroll }">
       <div class="backBtn">
         <i (click)="goBack()" class="fal fa-arrow-left"></i>
       </div>
       <div class="chatsIcon">
-        Chats
-        <i class="fad fa-comment-alt-dots"></i>
+        CHAT
       </div>
       <div class=""></div>
     </div>
