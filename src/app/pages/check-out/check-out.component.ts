@@ -19,6 +19,7 @@ export class CheckOutComponent implements OnInit {
     {id:5,name:'Black Market',Price:5999,amount:1},
     {id:6,name:'Love Lang',Price:100,amount:2},
   ]
+
   constructor() {
     let tempoTotal=0;
     this.productArray.map((product:any)=>{

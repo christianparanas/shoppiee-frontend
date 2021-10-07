@@ -13,13 +13,13 @@ export class ProductpreviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.showSkel();
-
     // console.log(this.productArray)
   }
 
+  //if product is already fetch the value of productArray=true
   showSkel() {
-    setTimeout(() => {
-      this.isProductPreviewLoaded = true;
-    }, 3000);
+    if(this.productArray){
+      this.isProductPreviewLoaded=true
+    }
   }
 }
