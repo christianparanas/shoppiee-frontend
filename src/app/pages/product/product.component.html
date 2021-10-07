@@ -8,24 +8,68 @@
           <i class="far fa-arrow-left"></i>
         </div>
         <img
-          src="https://cf.shopee.ph/file/1215ba2b2585db792c2674cb3d8def3c_tn"
+          [src]="productArray.image"
           alt=""
+          (load)="imgIsLoaded()"
+          (error)="detectErroImg($event)"
+          [ngClass]="isImgLoaded ? 'showSkel' : 'hideSkel'"
         />
+        <div
+          [ngClass]="isImgLoaded ? 'hideSkel' : 'showSkel'"
+          style="width: 100%"
+        >
+          <ngx-skeleton-loader
+            count="1"
+            [theme]="{
+              height: '100%',
+              'min-height': '360px',
+              width: '100%'
+            }"
+          ></ngx-skeleton-loader>
+        </div>
       </div>
       <div class="product_interact">
         <div class="product_details__container">
           <div class="name">
             <div class="aaa">Product name:</div>
-            <p>Lorem Ipsum</p>
+            <p [ngClass]="isImgLoaded ? 'showSkel' : 'hideSkel'">
+              {{ productArray.title }}
+            </p>
+            <div
+              [ngClass]="isImgLoaded ? 'hideSkel' : 'showSkel'"
+              style="width: 100%"
+            >
+              <ngx-skeleton-loader
+                count="1"
+                [theme]="{
+                  height: '100%',
+                  'min-height': '20px',
+                  width: '200px'
+                }"
+              ></ngx-skeleton-loader>
+            </div>
           </div>
           <div class="description">
             <div class="aaa">Product Description</div>
-            <p>
-              Humayo ka kaibigang tom sawyer, maglakbay kung saan mo man naisin
+            <p [ngClass]="isImgLoaded ? 'showSkel' : 'hideSkel'">
+              {{ productArray.description }}
             </p>
+            <div
+              [ngClass]="isImgLoaded ? 'hideSkel' : 'showSkel'"
+              style="width: 100%"
+            >
+              <ngx-skeleton-loader
+                count="1"
+                [theme]="{
+                  height: '100%',
+                  'min-height': '40px',
+                  width: '100%'
+                }"
+              ></ngx-skeleton-loader>
+            </div>
           </div>
           <div class="price_stock__container">
-            <div class="container">₱76,348</div>
+            <div class="container">₱{{ productArray.price }}</div>
             <div class="container">STOCKS: 12</div>
           </div>
         </div>
@@ -53,9 +97,27 @@
             <div class="shop_name_address">
               <div class="name">Christian Shop</div>
               <div class="address">Tacloban City</div>
+
+              <div class="boxtbns">
+                <div class="btn chatstore">
+                  <i class="fad fa-comment-alt-dots"></i> Chat now
+                </div>
+                <div class="btn viewshop">
+                  <i class="fal fa-shopping-bag"></i>View shop
+                </div>
+              </div>
             </div>
           </div>
           <div class="viewshop_btn">View Shop</div>
+        </div>
+
+        <div class="shop_interactions_details-desk">
+          <div class="inter">Ratinngs: <span>1.6K</span></div>
+          <div class="inter">Response Rate: <span>18%</span></div>
+          <div class="inter">Joined: <span>2 years ago</span></div>
+          <div class="inter">Products: <span>99</span></div>
+          <div class="inter">Response Time: <span>within minutes</span></div>
+          <div class="inter">Follower: <span>999</span></div>
         </div>
 
         <div class="shop_interactions_details">
@@ -79,7 +141,11 @@
       <h4>SIMILAR PRODUCTS</h4>
 
       <div class="container">
-        <app-productpreview *ngFor="let a of fakeArray"></app-productpreview>
+        <app-productpreview
+          *ngFor="let product of simillarProductsArray"
+          [productArray]="product"
+          (click)="refetch()"
+        ></app-productpreview>
       </div>
     </div>
   </div>

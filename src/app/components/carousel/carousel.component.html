@@ -10,14 +10,34 @@
         }"
       >
         <splide-slide *ngFor="let photo of photo_slides">
-          <img src="{{ photo }}" alt="{{ photo }}" />
+          <img *ngIf="isProductImgsLoaded" src="{{ photo }}" alt="{{ photo }}" />
+          <ngx-skeleton-loader
+          count="1"
+          *ngIf="!isProductImgsLoaded"
+          [theme]="{
+            height: '100%',
+            'min-height': '345px',
+            width: '100%'
+          }"
+          ></ngx-skeleton-loader>
         </splide-slide>
       </splide>
     </div>
     <div class="car-boxes">
       <div class="box" *ngFor="let box_image of boxes_images">
-        <img src="{{ box_image }}" alt="{{ box_image }}" />
+        <img *ngIf="isProductImgsLoaded" src="{{ box_image }}" alt="{{ box_image }}" />
+        <ngx-skeleton-loader
+          count="1"
+          *ngIf="!isProductImgsLoaded"
+          [theme]="{
+            height: '100%',
+            'min-height': '160px',
+            width: '100%'
+          }"
+          ></ngx-skeleton-loader>
       </div>
     </div>
   </div>
 </div>
+
+

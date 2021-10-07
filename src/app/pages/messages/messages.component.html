@@ -1,0 +1,67 @@
+<div class="customer_msgs__main_container">
+  <div class="customer_mgs__wrapper">
+    <div class="header" [ngClass]="{ header__scrollShadow: onScroll }">
+      <div class="backBtn">
+        <i (click)="goBack()" class="fal fa-arrow-left"></i>
+      </div>
+      <div class="chatsIcon">
+        CHAT
+      </div>
+      <div class=""></div>
+    </div>
+
+    <div *ngIf="openMsg" class="contentMsg">
+      <div class="header1">
+        <div class="box">
+          <div class="backBtn">
+            <i (click)="openMsg = false" class="fal fa-arrow-left"></i>
+          </div>
+          <div class="chatUser">
+            <img src="https://avatars.githubusercontent.com/u/59472122?v=4" alt="">
+            <div class="online_indicator"></div>
+            <div class="details">
+              <div class="name">Chris Chan</div>
+              <div class="status">Active now</div>
+            </div>
+          </div>
+        </div>
+        <div class="setting">
+          <i class="fal fa-cog"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="contentMsgs">
+      <div class="noMsg" *ngIf="mgsArr.length == 0">
+        <img src="../../../assets/imgs/noMsgs.png" alt="" />
+        <p>No Messages</p>
+      </div>
+
+      <div class="searchMsg">
+        <div class="wrapper">
+          <i class="fal fa-search"></i>
+          <input type="text" placeholder="Search" />
+        </div>
+      </div>
+
+      <a
+        class="msg"
+        *ngFor="let msg of mgsArr"
+        (click)="openSpecificMsg(msg.msgID)"
+      >
+        <img [src]="msg.imgURL" alt="" />
+        <div class="details">
+          <div class="name">{{ msg.name }}</div>
+          <div class="latestMsg">
+            {{
+              msg.latestMsg.length > 30
+                ? msg.latestMsg.substring(0, 30) + " ..."
+                : msg.latestMsg
+            }}
+          </div>
+        </div>
+        <div class="date">{{ msg.dateOrTime }}</div>
+      </a>
+    </div>
+  </div>
+</div>

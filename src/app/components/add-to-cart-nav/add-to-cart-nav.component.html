@@ -1,0 +1,16 @@
+<div class='header-container'>
+    <div class='upper-content'>
+        <div class='go-back'>
+            <a routerLink='/'><i class="fas fa-arrow-left"></i></a>
+        </div>
+        <div class='message-container'>
+            <div class='messages'><a routerLink='/messages' ><i class="far fa-comment-alt"></i></a></div>
+        </div>
+    </div>
+    <div class='lower-content'>
+        <ul>
+            <li [ngClass]='{currentPage : currentRouter === "addToCart"}'><a routerLink='/add-to-cart'>Pending Items</a></li>
+            <li [ngClass]='{currentPage : currentRouter === "buyAgain"}'><a routerLink='/add-to-cart/buy-again'>Buy Again</a></li>
+        </ul>
+    </div>
+</div>

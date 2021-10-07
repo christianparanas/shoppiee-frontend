@@ -1,23 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-productpreview',
   templateUrl: './productpreview.component.html',
-  styleUrls: ['./productpreview.component.scss']
+  styleUrls: ['./productpreview.component.scss'],
 })
 export class ProductpreviewComponent implements OnInit {
-  isProductPreviewLoaded: boolean = false
+  isProductPreviewLoaded: boolean = false;
+  @Input() productArray: any;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
-    this.showSkel()
+    this.showSkel();
+
+    // console.log(this.productArray)
   }
 
   showSkel() {
     setTimeout(() => {
-      this.isProductPreviewLoaded = true
-    }, 3000)
+      this.isProductPreviewLoaded = true;
+    }, 3000);
   }
-
 }
