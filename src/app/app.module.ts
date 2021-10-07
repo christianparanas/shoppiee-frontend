@@ -35,6 +35,9 @@ import { StoresComponent } from './pages/stores/stores.component';
 import { StorepreviewComponent } from './components/storepreview/storepreview.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CategoryComponent } from './pages/category/category.component';
+
+import { MyprofileComponent } from './pages/myprofile/myprofile.component';
+
 import { AddToCartComponent } from './pages/add-to-cart/add-to-cart.component';
 import { AddToCartNavComponent } from './components/add-to-cart-nav/add-to-cart-nav.component';
 import { MessageComponent } from './components/message/message.component';
@@ -43,6 +46,7 @@ import { UseraddproductsComponent } from './pages/useraddproducts/useraddproduct
 import { CheckOutComponent } from './pages/check-out/check-out.component';
 import { BuyAgainComponent } from './pages/buy-again/buy-again.component';
 import { MessagesComponent } from './pages/messages/messages.component';
+
 
 @NgModule({
   declarations: [
@@ -70,6 +74,9 @@ import { MessagesComponent } from './pages/messages/messages.component';
     StorepreviewComponent,
     FooterComponent,
     CategoryComponent,
+
+    MyprofileComponent,
+
     AddToCartComponent,
     AddToCartNavComponent,
     MessageComponent,
@@ -78,6 +85,7 @@ import { MessagesComponent } from './pages/messages/messages.component';
     CheckOutComponent,
     BuyAgainComponent,
     MessagesComponent,
+
   ],
   imports: [
     BrowserModule,
