@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;900&display=swap");
+
+.subtitle {
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+}
+
+.prof-container {
+  position: fixed;
+  height: 180px;
+  width: 100%;
+  background: #db90db;
+}
+
+img {
+  height: 100px;
+  width: 100px;
+  border: 1px solid rgba(63, 58, 58, 0.39);
+  margin: 15px 125px;
+  border-radius: 50%;
+}
+
+#file {
+  margin: 5px 125px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  display: block;
+  box-sizing: border-box;
+  color: #000000;
+  margin-bottom: 30px;
+  padding: 4px;
+  width: 340px;
+  height: 32px;
+  border: none;
+  border-bottom: 2px solid rgba(63, 58, 58, 0.39);
+  font-family: "Montserrat", sans-serif;
+  font-weight: medium;
+  font-size: 18px;
+  transition: 0.2s ease;
+  background: none;
+}
+
+input[type="text"] {
+  margin-top: 25px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus {
+  border-bottom: 2px solid #3498db;
+  font-weight: medium;
+  color: #000000;
+  transition: 0.2s ease;
+  background: rgb(255, 255, 255);
+  border-top: none;
+}
+
+button {
+  font-weight: bold;
+  border: 1px solid #020202;
+  background-color: rgba(215, 7, 247, 0.39);
+  color: rgb(5, 5, 5);
+  height: 30px;
+  width: 100px;
+  border-radius: 5px;
+  margin: 0 10px 10px 50px;
+  display: center;
+  flex-direction: row;
+}
+
+button:hover {
+  background-color: #566573;
+}
+
+@media only screen and (min-width: 999px) {
+  .subtitle {
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .prof-container {
+    position: fixed;
+    height: 100%;
+    width: 42%;
+    background: #e4cee4;
+  }
+
+  img {
+    height: 100px;
+    width: 100px;
+    border: 1px solid rgba(63, 58, 58, 0.39);
+    margin: 15px 190px;
+    border-radius: 50%;
+  }
+
+  #file {
+    margin: 35px -220px;
+    padding-top: 90px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="number"] {
+    display: block;
+    margin-inline: 110px;
+    box-sizing: border-box;
+    color: #000000;
+    margin-bottom: 30px;
+    padding: 4px;
+    width: 330px;
+    height: 32px;
+    border: none;
+    border-bottom: 1.5px solid rgba(63, 58, 58, 0.39);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    transition: 0.2s ease;
+    background: none;
+  }
+
+  input[type="text"] {
+    margin-top: 25px;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="number"]:focus {
+    border-bottom: 2px solid #3498db;
+
+    color: #030303;
+    transition: 0.2s ease;
+    background: rgb(255, 255, 255);
+    border-top: none;
+  }
+
+  button {
+    font-weight: bold;
+    border: 1px solid #020202;
+    background-color: rgba(215, 7, 247, 0.39);
+    color: rgb(5, 5, 5);
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+    margin: 10px 0px 190px 115px;
+    display: center;
+    flex-direction: row;
+  }
+
+  button:hover {
+    background-color: #566573;
+  }
+}

@@ -35,6 +35,7 @@ import { StoresComponent } from './pages/stores/stores.component';
 import { StorepreviewComponent } from './components/storepreview/storepreview.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CategoryComponent } from './pages/category/category.component';
+import { MyprofileComponent } from './pages/myprofile/myprofile.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { CategoryComponent } from './pages/category/category.component';
     StorepreviewComponent,
     FooterComponent,
     CategoryComponent,
+    MyprofileComponent,
   ],
   imports: [
     BrowserModule,
