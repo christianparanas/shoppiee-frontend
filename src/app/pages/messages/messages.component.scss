@@ -124,6 +124,54 @@
           }
         }
       }
+
+      .msgs_container {
+        padding-top: 56px;
+
+        .spec_msg_wrapper {
+          padding: 15px;
+          position: relative;
+
+          .msg {
+            display: grid;
+            grid-template-columns: 40px 1fr;
+            max-width: 80%;
+            grid-gap: 10px;
+            width: fit-content;
+            margin-bottom: 10px;
+            align-items: center;
+
+            img {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              place-self: end;
+            }
+
+            p {
+              background: #f3f3f5;
+              padding: 10px;
+              border-radius: 15px;
+            }
+          }
+
+          .ownMessage {
+            max-width: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+
+            img {
+              display: none;
+            }
+
+            p {
+              background: #fa6238;
+              color: #fff;
+            }
+          }
+        }
+      }
     }
 
     .contentMsgs {

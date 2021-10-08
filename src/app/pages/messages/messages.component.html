@@ -30,16 +30,34 @@
           <i class="fal fa-cog"></i>
         </div>
       </div>
-      <div class="msgs_container">Hello</div>
+
+      <div class="msgs_container">
+        <div class="spec_msg_wrapper">
+          <div
+            class="msg"
+            *ngFor="let msg of specificMsgs"
+            [ngClass]="{ ownMessage: msg.userId == currentUser.userId }"
+          >
+            <img [src]="msg.userImage" alt="" />
+            <p>{{ msg.userMessage }}</p>
+          </div>
+        </div>
+      </div>
+
       <div class="bottomInputs">
         <div class="inputsWrapper">
           <div class="openMoreActions_btn">
             <i class="fal fa-plus-circle"></i>
           </div>
-          <input type="text" placeholder="Send message">
+          <input
+            type="text"
+            placeholder="Send message"
+            (focus)="isInputOnFocus = true"
+            (focusout)="isInputOnFocus = false"
+          />
           <div class="sendMsg_btn">
-            <i class="fal fa-paper-plane"></i>
-            <!-- <i class="fal fa-thumbs-up"></i> -->
+            <i *ngIf="isInputOnFocus" class="fal fa-paper-plane"></i>
+            <i *ngIf="!isInputOnFocus" class="fal fa-thumbs-up"></i>
           </div>
         </div>
       </div>

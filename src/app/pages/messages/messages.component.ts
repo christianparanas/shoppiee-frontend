@@ -9,7 +9,13 @@ import { Location } from '@angular/common';
 export class MessagesComponent implements OnInit {
   onScroll: boolean = false;
   openMsg: boolean = true;
+  isInputOnFocus: boolean = false;
   msgId: number;
+
+  currentUser = {
+    userId: 169,
+    username: "chan"
+  };
 
   mgsArr = [
     {
@@ -88,6 +94,39 @@ export class MessagesComponent implements OnInit {
     },
   ];
 
+  specificMsgs = [
+    {
+      userId: 1,
+      username: "thea",
+      userMessage: "Hain na an at mga saad?",
+      userImage: 'https://avatars.githubusercontent.com/u/59472122?v=4',
+    },
+    {
+      userId: 169,
+      username: "chan",
+      userMessage: "na diri kita magbubulag",
+      userImage: 'https://avatars.githubusercontent.com/u/59472122?v=4',
+    },
+    {
+      userId: 1,
+      username: "thea",
+      userMessage: "ano an akon bubuhaton na waray kana bhd jsdbf jsdhf jsdf dfsdf dfd jdf d fjdfd fjdf df djf",
+      userImage: 'https://avatars.githubusercontent.com/u/59472122?v=4',
+    },
+    {
+      userId: 1,
+      username: "thea",
+      userMessage: "Hain na an at mga saad?",
+      userImage: 'https://avatars.githubusercontent.com/u/59472122?v=4',
+    },
+    {
+      userId: 169,
+      username: "chan",
+      userMessage: "hello",
+      userImage: 'https://avatars.githubusercontent.com/u/59472122?v=4',  
+    },
+  ]
+
   constructor(private location: Location) {}
 
   ngOnInit(): void {
@@ -98,6 +137,8 @@ export class MessagesComponent implements OnInit {
     this.msgId = msgID;
     this.openMsg = true;
   }
+
+
 
   goBack() {
     this.location.back();
