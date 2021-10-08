@@ -104,7 +104,7 @@
 
         .inputsWrapper {
           display: grid;
-          grid-template-columns: 20px 1fr 40px;
+          grid-template-columns: 30px 1fr 35px;
           padding: 20px 15px;
           grid-gap: 10px;
           align-items: center;
@@ -112,12 +112,14 @@
           .openMoreActions_btn, .sendMsg_btn {
             display: flex;
             justify-content: center;
+            color: #fa6238;
+            font-size: 20px;
           }
 
           input {
             background: #f3f3f5;
-            padding: 10px 15px;
-            border-radius: 10px;
+            padding: 14px 15px;
+            border-radius: 15px;
             outline: 0;
           }
         }
