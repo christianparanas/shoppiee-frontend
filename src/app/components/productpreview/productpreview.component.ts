@@ -16,10 +16,10 @@ export class ProductpreviewComponent implements OnInit {
     // console.log(this.productArray)
   }
 
-  //if product is already fetch the value of productArray=true
   showSkel() {
-    if(this.productArray){
-      this.isProductPreviewLoaded=true
+    if(this.productArray.image){
+      this.isProductPreviewLoaded=true;
     }
   }
+
 }
