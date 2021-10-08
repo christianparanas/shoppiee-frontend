@@ -35,6 +35,7 @@
       width: 100%;
       height: 100vh;
       z-index: 20;
+      overflow-y: scroll;
 
       .header1 {
         display: flex;
@@ -100,12 +101,15 @@
       .bottomInputs {
         position: fixed;
         bottom: 0;
+
         width: 100%;
+        background: #fff;
+        border-top: 1px solid #f3f3f5;
 
         .inputsWrapper {
           display: grid;
           grid-template-columns: 30px 1fr 35px;
-          padding: 20px 15px;
+          padding: 8px 15px 20px;
           grid-gap: 10px;
           align-items: center;
 
@@ -129,8 +133,8 @@
         padding-top: 56px;
 
         .spec_msg_wrapper {
-          padding: 15px;
-          position: relative;
+          padding: 15px 15px 20px;
+
 
           .msg {
             display: grid;
@@ -140,6 +144,7 @@
             width: fit-content;
             margin-bottom: 10px;
             align-items: center;
+            font-size: 13px;
 
             img {
               width: 40px;

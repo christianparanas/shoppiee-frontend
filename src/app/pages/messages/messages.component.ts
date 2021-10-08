@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 
+import { MessageInterface } from 'src/app/shared/interfaces/messageInterface';
+
 @Component({
   selector: 'app-messages',
   templateUrl: './messages.component.html',
@@ -8,13 +10,13 @@ import { Location } from '@angular/common';
 })
 export class MessagesComponent implements OnInit {
   onScroll: boolean = false;
+  userMessage: any;
   openMsg: boolean = true;
-  isInputOnFocus: boolean = false;
   msgId: number;
 
   currentUser = {
     userId: 169,
-    username: "chan"
+    username: 'chan',
   };
 
   mgsArr = [
@@ -94,38 +96,39 @@ export class MessagesComponent implements OnInit {
     },
   ];
 
-  specificMsgs = [
+  specificMsgs: Array<MessageInterface> = [
     {
       userId: 1,
-      username: "thea",
-      userMessage: "Hain na an at mga saad?",
+      username: 'thea',
+      userMessage: 'Hain na an at mga saad?',
       userImage: 'https://avatars.githubusercontent.com/u/59472122?v=4',
     },
     {
       userId: 169,
-      username: "chan",
-      userMessage: "na diri kita magbubulag",
+      username: 'chan',
+      userMessage: 'na diri kita magbubulag',
       userImage: 'https://avatars.githubusercontent.com/u/59472122?v=4',
     },
     {
       userId: 1,
-      username: "thea",
-      userMessage: "ano an akon bubuhaton na waray kana bhd jsdbf jsdhf jsdf dfsdf dfd jdf d fjdfd fjdf df djf",
+      username: 'thea',
+      userMessage:
+        'ano an akon bubuhaton na waray kana bhd jsdbf jsdhf jsdf dfsdf dfd jdf d fjdfd fjdf df djf',
       userImage: 'https://avatars.githubusercontent.com/u/59472122?v=4',
     },
     {
       userId: 1,
-      username: "thea",
-      userMessage: "Hain na an at mga saad?",
+      username: 'thea',
+      userMessage: 'Hain na an at mga saad?',
       userImage: 'https://avatars.githubusercontent.com/u/59472122?v=4',
     },
     {
       userId: 169,
-      username: "chan",
-      userMessage: "hello",
-      userImage: 'https://avatars.githubusercontent.com/u/59472122?v=4',  
+      username: 'chan',
+      userMessage: 'hello',
+      userImage: 'https://avatars.githubusercontent.com/u/59472122?v=4',
     },
-  ]
+  ];
 
   constructor(private location: Location) {}
 
@@ -138,7 +141,17 @@ export class MessagesComponent implements OnInit {
     this.openMsg = true;
   }
 
+  sendMessage() {
+    if(this.userMessage) {
+      this.specificMsgs.push({
+        userId: 169,
+        username: 'chan',
+        userMessage: this.userMessage,
+      });
 
+      this.userMessage = ""
+    }
+  }
 
   goBack() {
     this.location.back();

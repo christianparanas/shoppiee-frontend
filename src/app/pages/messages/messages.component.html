@@ -52,12 +52,14 @@
           <input
             type="text"
             placeholder="Send message"
-            (focus)="isInputOnFocus = true"
-            (focusout)="isInputOnFocus = false"
+            [(ngModel)]="userMessage"
           />
           <div class="sendMsg_btn">
-            <i *ngIf="isInputOnFocus" class="fal fa-paper-plane"></i>
-            <i *ngIf="!isInputOnFocus" class="fal fa-thumbs-up"></i>
+            <i
+              (click)="sendMessage()"
+              class="fal fa-paper-plane"
+              
+            ></i>
           </div>
         </div>
       </div>
