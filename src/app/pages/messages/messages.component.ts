@@ -156,6 +156,9 @@ export class MessagesComponent implements OnInit {
       });
 
       this.userMessage = '';
+      setTimeout(() => {
+       this.scrollToBottom()
+      }, 100)
     }
   }
 
