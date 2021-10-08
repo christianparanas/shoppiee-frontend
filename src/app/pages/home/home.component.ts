@@ -21,9 +21,9 @@ export class HomeComponent implements OnInit {
       once: true, // whether animation should happen only once - );
     });
 
-    this.fetchDiscoverProducts();
-    this.fetchNewProducts();
     this.fetchTopProducts();
+    this.fetchNewProducts();
+    this.fetchDiscoverProducts();
   }
 
 

@@ -27,7 +27,7 @@ import { MessagesComponent } from './pages/messages/messages.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'categories', component: CategoriesComponent },
-  { path: 'categories/:id', component: CategoryComponent },
+  { path: 'category/:id', component: CategoryComponent },
 
 
   { path: 'product/:id', component: ProductComponent },

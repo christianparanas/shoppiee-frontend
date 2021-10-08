@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-categorypreview',
   templateUrl: './categorypreview.component.html',
-  styleUrls: ['./categorypreview.component.scss']
+  styleUrls: ['./categorypreview.component.scss'],
 })
 export class CategorypreviewComponent implements OnInit {
+  @Input() categoryArr: any;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

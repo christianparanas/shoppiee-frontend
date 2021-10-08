@@ -31,4 +31,12 @@ export class ProductService {
   simillarProducts(): Observable<any> {
     return this.http.get(`${baseUrl}/products?limit=11`);
   }
+
+  productCategories(): Observable<any> {
+    return this.http.get(`${baseUrl}/products/categories`);
+  }
+
+  fetchSpecificCategoryProduct(categoryId: any): Observable<any> {
+    return this.http.get(`${baseUrl}/products/category/${categoryId}`);
+  }
 }

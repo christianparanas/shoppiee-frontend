@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+
+// services
+import { ProductService } from '../../shared/services/product.service';
 
 @Component({
   selector: 'app-category',
@@ -7,11 +12,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryComponent implements OnInit {
   isImgLoaded: boolean = false;
-  categoryProductsArr = new Array(11);
+  categoryProductsArray = new Array(11);
+  categoryId: any;
 
-  constructor() {}
+  constructor(
+    private productService: ProductService,
+    private route: ActivatedRoute
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.categoryId = this.route.snapshot.paramMap.get('id');
+    this.fetchCategoryProducts();
+  }
 
   detectErroImg(e: any): void {
     console.log('error');
@@ -19,5 +31,16 @@ export class CategoryComponent implements OnInit {
 
   imgIsLoaded(): void {
     console.log('loaded');
+  }
+
+  fetchCategoryProducts() {
+    this.productService.fetchSpecificCategoryProduct(this.categoryId).subscribe(
+      (response) => {
+        this.categoryProductsArray = response;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }

@@ -5,7 +5,10 @@
     <h4>CATEGORIES</h4>
 
     <div class="container">
-      <app-categorypreview *ngFor="let a of fakeArray"></app-categorypreview>
+      <app-categorypreview
+        *ngFor="let category of productCategoriesArray"
+        [categoryArr]="category"
+      ></app-categorypreview>
     </div>
   </div>
 

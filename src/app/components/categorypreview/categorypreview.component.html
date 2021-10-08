@@ -1,4 +1,4 @@
-<div routerLink="/categories/men" class="categorypreview-container">
+<div [routerLink]="['/category/', categoryArr]" class="categorypreview-container">
 	<i class="fal fa-tshirt"></i>
-	<p>Men's apparel</p>
+	<p>{{ categoryArr }}</p>
 </div>
