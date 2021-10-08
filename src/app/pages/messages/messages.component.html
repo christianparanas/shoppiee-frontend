@@ -32,7 +32,7 @@
       </div>
 
       <div class="msgs_container">
-        <div class="spec_msg_wrapper">
+        <div class="spec_msg_wrapper" >
           <div
             class="msg"
             *ngFor="let msg of specificMsgs"
@@ -41,6 +41,8 @@
             <img [src]="msg.userImage" alt="" />
             <p>{{ msg.userMessage }}</p>
           </div>
+          <div class="bottomscroll" #scroll></div>
+
         </div>
       </div>
 
@@ -53,10 +55,11 @@
             type="text"
             placeholder="Send message"
             [(ngModel)]="userMessage"
+            #msgInput
           />
           <div class="sendMsg_btn">
             <i
-              (click)="sendMessage()"
+              (click)="sendMessage(); msgInput.focus(); scrollBottom()"
               class="fal fa-paper-plane"
               
             ></i>

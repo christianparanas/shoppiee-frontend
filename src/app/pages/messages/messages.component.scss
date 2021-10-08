@@ -36,6 +36,7 @@
       height: 100vh;
       z-index: 20;
       overflow-y: scroll;
+      overflow-x:hidden;
 
       .header1 {
         display: flex;
@@ -130,10 +131,14 @@
       }
 
       .msgs_container {
-        padding-top: 56px;
+        padding: 56px 0 78px 0;
 
         .spec_msg_wrapper {
-          padding: 15px 15px 20px;
+          padding: 15px 15px ;
+
+          .bottomscroll {
+            margin-bottom: 30px;
+          }
 
 
           .msg {

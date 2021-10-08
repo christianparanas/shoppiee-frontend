@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Location } from '@angular/common';
 
 import { MessageInterface } from 'src/app/shared/interfaces/messageInterface';
@@ -11,8 +11,10 @@ import { MessageInterface } from 'src/app/shared/interfaces/messageInterface';
 export class MessagesComponent implements OnInit {
   onScroll: boolean = false;
   userMessage: any;
-  openMsg: boolean = true;
+  openMsg: boolean = false;
   msgId: number;
+
+  @ViewChild("scroll") scrollEl: ElementRef;
 
   currentUser = {
     userId: 169,
@@ -160,4 +162,8 @@ export class MessagesComponent implements OnInit {
   listenScrollEvent = () => {
     window.scrollY > 15 ? (this.onScroll = true) : (this.onScroll = false);
   };
+
+  scrollBottom() {
+    this.scrollEl.nativeElement.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  }
 }
