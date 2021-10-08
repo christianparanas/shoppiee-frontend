@@ -41,7 +41,7 @@
             <img [src]="msg.userImage" alt="" />
             <p>{{ msg.userMessage }}</p>
           </div>
-          <div class="bottomscroll" #scroll></div>
+          <div class="bottomscroll" #btnScroll></div>
 
         </div>
       </div>
@@ -59,7 +59,7 @@
           />
           <div class="sendMsg_btn">
             <i
-              (click)="sendMessage(); msgInput.focus(); scrollBottom()"
+              (click)="sendMessage(); msgInput.focus(); scrollToBottom()"
               class="fal fa-paper-plane"
               
             ></i>

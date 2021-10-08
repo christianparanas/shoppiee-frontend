@@ -14,12 +14,12 @@ export class MessagesComponent implements OnInit {
   openMsg: boolean = false;
   msgId: number;
 
-  @ViewChild("scroll") scrollEl: ElementRef;
-
   currentUser = {
     userId: 169,
     username: 'chan',
   };
+
+  @ViewChild('btnScroll') scrollEl: any;
 
   mgsArr = [
     {
@@ -141,17 +141,21 @@ export class MessagesComponent implements OnInit {
   openSpecificMsg(msgID: number) {
     this.msgId = msgID;
     this.openMsg = true;
+
+    setTimeout(() => {
+      this.scrollToBottom()
+    }, 100)
   }
 
   sendMessage() {
-    if(this.userMessage) {
+    if (this.userMessage) {
       this.specificMsgs.push({
         userId: 169,
         username: 'chan',
         userMessage: this.userMessage,
       });
 
-      this.userMessage = ""
+      this.userMessage = '';
     }
   }
 
@@ -163,7 +167,11 @@ export class MessagesComponent implements OnInit {
     window.scrollY > 15 ? (this.onScroll = true) : (this.onScroll = false);
   };
 
-  scrollBottom() {
-    this.scrollEl.nativeElement.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  scrollToBottom() {
+    this.scrollEl.nativeElement.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  ngAfterViewInit() {
+    this.scrollToBottom();
   }
 }
