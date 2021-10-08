@@ -8,7 +8,7 @@ import { Location } from '@angular/common';
 })
 export class MessagesComponent implements OnInit {
   onScroll: boolean = false;
-  openMsg: boolean = false;
+  openMsg: boolean = true;
   msgId: number;
 
   mgsArr = [

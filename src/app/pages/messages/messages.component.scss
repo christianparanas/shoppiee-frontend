@@ -2,7 +2,6 @@
   .customer_mgs__wrapper {
     .header {
       display: flex;
-      justify-content: space-between;
       border-bottom: 1px solid #e3e3e3;
       background: #fff;
       color: #000;
@@ -18,6 +17,10 @@
           padding: 10px;
           cursor: pointer;
         }
+      }
+
+      .chatsIcon {
+        margin-left: 10px;
       }
     }
 
@@ -60,14 +63,12 @@
             align-items: center;
             position: relative;
 
-
             img {
               width: 40px;
               height: 40px;
               border-radius: 50%;
               margin-right: 10px;
             }
-
 
             .online_indicator {
               position: absolute;
@@ -92,6 +93,32 @@
         .setting {
           i {
             font-size: 20px;
+          }
+        }
+      }
+
+      .bottomInputs {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+
+        .inputsWrapper {
+          display: grid;
+          grid-template-columns: 20px 1fr 40px;
+          padding: 20px 15px;
+          grid-gap: 10px;
+          align-items: center;
+
+          .openMoreActions_btn, .sendMsg_btn {
+            display: flex;
+            justify-content: center;
+          }
+
+          input {
+            background: #f3f3f5;
+            padding: 10px 15px;
+            border-radius: 10px;
+            outline: 0;
           }
         }
       }

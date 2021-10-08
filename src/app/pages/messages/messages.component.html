@@ -4,9 +4,7 @@
       <div class="backBtn">
         <i (click)="goBack()" class="fal fa-arrow-left"></i>
       </div>
-      <div class="chatsIcon">
-        CHAT
-      </div>
+      <div class="chatsIcon">Messages</div>
       <div class=""></div>
     </div>
 
@@ -17,7 +15,10 @@
             <i (click)="openMsg = false" class="fal fa-arrow-left"></i>
           </div>
           <div class="chatUser">
-            <img src="https://avatars.githubusercontent.com/u/59472122?v=4" alt="">
+            <img
+              src="https://avatars.githubusercontent.com/u/59472122?v=4"
+              alt=""
+            />
             <div class="online_indicator"></div>
             <div class="details">
               <div class="name">Chris Chan</div>
@@ -27,6 +28,19 @@
         </div>
         <div class="setting">
           <i class="fal fa-cog"></i>
+        </div>
+      </div>
+      <div class="msgs_container">Hello</div>
+      <div class="bottomInputs">
+        <div class="inputsWrapper">
+          <div class="openMoreActions_btn">
+            <i class="fal fa-plus-circle"></i>
+          </div>
+          <input type="text" placeholder="Send message">
+          <div class="sendMsg_btn">
+            <i class="fal fa-paper-plane"></i>
+            <!-- <i class="fal fa-thumbs-up"></i> -->
+          </div>
         </div>
       </div>
     </div>
