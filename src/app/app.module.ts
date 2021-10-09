@@ -77,9 +77,7 @@ import { MessagesComponent } from './pages/messages/messages.component';
     CategoryComponent,
 
     MyprofileComponent,
-<<<<<<< HEAD
     MyaddressComponent,
-=======
 
     AddToCartComponent,
     AddToCartNavComponent,
@@ -90,7 +88,6 @@ import { MessagesComponent } from './pages/messages/messages.component';
     BuyAgainComponent,
     MessagesComponent,
 
->>>>>>> 0630062490cfb930a92398c6f8da8e9503a59166
   ],
   imports: [
     BrowserModule,

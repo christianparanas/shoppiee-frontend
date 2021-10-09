@@ -52,14 +52,11 @@ const routes: Routes = [
   { path: 'account/store', component: UserstoreComponent },
 
   { path: 'account/setting/myprofile', component: MyprofileComponent },
-<<<<<<< HEAD
   { path: 'account/setting/myaddress', component: MyaddressComponent },
-=======
 
   { path: 'account/store/addproduct', component: UseraddproductsComponent },
   { path: 'messages', component: MessagesComponent },
 
->>>>>>> 0630062490cfb930a92398c6f8da8e9503a59166
 ];
 
 @NgModule({
