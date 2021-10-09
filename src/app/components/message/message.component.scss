@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Icons+Outlined');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+.color{
+font-family:Montserrat;
+color:#735C5C;
+color:#904490;
+color:#735C5C;
+color:floralwhite;
+color:black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.message-profile{
+    position: static;
+    width: 100%;
+    padding: 5px 0px;
+}
+.myprofile{
+    float: left;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    align-items: center;
+    padding: 8px;
+    border-radius: 50%;
+}
+.message-nav{
+    position: static;
+    width: 100%;
+}
+.nav1{
+    display: flex;
+    width: 60%;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px 0px;
+}
+.msg_for_item{
+    width: 70%;
+    color: #555;
+    overflow: hidden;
+    height: 2.1vh;
+    font-size: 13px;
+    float: left;
+
+}
+.nav1 sub{
+    flex: 1;
+    text-align: right;
+    font-size: 11px;
+    font-family: Montserrat;
+}
+
+.message-details{
+    padding-top: 5px;
+    color: #555;
+    font-family: Montserrat;
+}
+.message-details h3{
+    font-size: 15px;
+}
+.message-list:hover{
+    background-color: rgba(85, 85, 85, 0.11);
+}
+.message-list{
+    position: static;
+    transition: .3s;
+    width: 100%;
+    padding-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+}
+.close{
+    padding: 5px 0px;
+    text-align: left;
+    right: 40px;
+    font-size: 17px;
+}
+.myname{
+    font-size: 20px;
+    color: #555;
+    font-family: Montserrat;
+    padding-left: 5px;
+}
+.profile{
+    width: 13%;
+    margin-left: 1%;
+    border: 2px #735C5C solid;
+    border-radius: 50%;
+}
+.nav{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px 0px;
+}
+.nav i{
+    color: #555;
+    cursor: pointer;
+}
+.message-head{
+    z-index: 1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: fixed;
+    background-color: #fff;
+    border-bottom: 1px #e3e3e36b solid;
+    margin-bottom: 2px;
+    padding: 6px;
+    width: 100%;
+}
+
+.message-container{
+    
+    border-radius: 5px;
+    box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+    height: auto;
+    height: 70vh;
+    width: 80%;
+    overflow: scroll;
+    transition: all .3s ease;
+    background-color: #fff;
+}
+.panel_container{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    background-color: #e3e3e3;
+    top: 40px;
+    transition-duration: .3s;
+    left: -100%;
+    height: 90%;
+    border-radius: 10px;
+}
+.panel_container:target{
+    left: 0;
+}
+.panel_sumit{
+    border-top: 1px rgba(85, 85, 85, 0.137) solid;
+    position: fixed;
+    padding-left: 30px;
+    bottom: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #fff;
+    width: 100%;
+}
+
+.panel_content{
+    position: relative;
+    padding: 0px 0px;
+    width: 100%;
+    
+    background-color: #e3e3e3;
+    height: 100%;
+}
+.panel_content2{
+   
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+}
+.panel_content2:hover > .form input{
+    border: 1px #8d00ca5e solid;
+}
+.panel_content2:hover > .form button{
+    color: #904490;
+}
+.form{
+    
+    display: flex;
+    width: 100%;
+}
+
+.panel_content2 form > button{
+    background-color: #fff;
+    outline: none;
+    padding-left: 8px;
+    cursor: pointer;
+    
+    color: #555;
+}
+.panel_content2 form > i{
+    font-size: 30px;
+}
+.panel_content2 form > input{
+    border: 1px rgba(85, 85, 85, 0.39) solid;
+    padding: 10px;
+    outline: none;
+    width: 80%;
+    border-radius: 20px;
+}
+.panel_header{
+    display: flex;
+    background-color: #fff;
+    border-bottom: 1px rgba(85, 85, 85, 0.185) solid;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 8px;
+
+}
+.panel_header a{
+    color: #555;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+.panel_profile{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.panel_name{
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    padding: 5px;
+}
+@media only screen and (min-width: 999px) {
+    .message-container{
+        width: 30%;
+        overflow: scroll;
+    }
+    .message-list{
+        width: 90%;
+        margin-left: 2%;
+    }
+    .panel_header{
+        background-color: #8d00ca;
+        
+    }
+    .panel_header  h3{
+        color: #fff;
+    }
+    .panel_header a{
+        color: #fff;
+    }
+
+    .message-head{
+        color: #fff;
+       
+        padding-left: 10px;
+        width: 80%;
+        background-color: #8d00ca;
+        padding: unset;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        
+    }
+    .profile{
+        width: 5%;
+        border: 2px #fff solid;
+    }
+    .nav h3{
+        color: #fff;
+    }
+    .nav i{
+        padding-left: 4px;
+        color: #fff;
+    }
+    
+    .panel_container{
+        width: 30%;
+        margin-left: 50%;
+        margin-top: 10%;
+        overflow: hidden;
+    }
+    .panel_sumit{
+        width: 30%;
+    }
+    .panel_content2 form > input{
+        width: 90%;
+    }
+   
+    
+    
+
+}
+

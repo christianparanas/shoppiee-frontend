@@ -15,7 +15,8 @@
 
         <div class="container">
           <app-productpreview
-            *ngFor="let a of topProductsArr"
+            *ngFor="let product of topProductsArray"
+            [productArray]="product"
           ></app-productpreview>
           <div class="seemorebtn"><p>See More</p></div>
         </div>
@@ -31,7 +32,8 @@
 
         <div class="container">
           <app-productpreview
-            *ngFor="let a of newProductsArr"
+            *ngFor="let product of newProductsArray"
+            [productArray]="product"
           ></app-productpreview>
           <div class="seemorebtn"><p>See More</p></div>
         </div>
@@ -39,11 +41,21 @@
     </div>
 
     <div class="menWomen_container">
-      <div class="asc" routerLink="/categories/men">
+      <div
+        class="asc"
+        routerLink="/categories/men"
+        data-aos="fade-up"
+        data-aos-offset="100"
+      >
         <div class="label">Men</div>
         <img src="../../../assets/imgs/men.jpg" alt="" />
       </div>
-      <div class="asc" routerLink="/categories/women">
+      <div
+        class="asc"
+        routerLink="/categories/women"
+        data-aos="fade-up"
+        data-aos-offset="100"
+      >
         <div class="label">Women</div>
         <img src="../../../assets/imgs/women.jpg" alt="" />
       </div>
@@ -64,7 +76,8 @@
 
       <div class="container">
         <app-productpreview
-          *ngFor="let a of discoverProductsArr"
+          *ngFor="let product of discoverProductsArray"
+          [productArray]="product"
         ></app-productpreview>
       </div>
     </div>

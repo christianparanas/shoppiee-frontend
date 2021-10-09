@@ -35,8 +35,19 @@ import { StoresComponent } from './pages/stores/stores.component';
 import { StorepreviewComponent } from './components/storepreview/storepreview.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CategoryComponent } from './pages/category/category.component';
+
 import { MyprofileComponent } from './pages/myprofile/myprofile.component';
 import { MyaddressComponent } from './pages/myaddress/myaddress.component';
+
+import { AddToCartComponent } from './pages/add-to-cart/add-to-cart.component';
+import { AddToCartNavComponent } from './components/add-to-cart-nav/add-to-cart-nav.component';
+import { MessageComponent } from './components/message/message.component';
+import { UserstoreHeaderComponent } from './components/userstore-header/userstore-header.component';
+import { UseraddproductsComponent } from './pages/useraddproducts/useraddproducts.component';
+import { CheckOutComponent } from './pages/check-out/check-out.component';
+import { BuyAgainComponent } from './pages/buy-again/buy-again.component';
+import { MessagesComponent } from './pages/messages/messages.component';
+
 
 @NgModule({
   declarations: [
@@ -64,8 +75,22 @@ import { MyaddressComponent } from './pages/myaddress/myaddress.component';
     StorepreviewComponent,
     FooterComponent,
     CategoryComponent,
+
     MyprofileComponent,
+<<<<<<< HEAD
     MyaddressComponent,
+=======
+
+    AddToCartComponent,
+    AddToCartNavComponent,
+    MessageComponent,
+    UserstoreHeaderComponent,
+    UseraddproductsComponent,
+    CheckOutComponent,
+    BuyAgainComponent,
+    MessagesComponent,
+
+>>>>>>> 0630062490cfb930a92398c6f8da8e9503a59166
   ],
   imports: [
     BrowserModule,

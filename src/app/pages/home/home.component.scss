@@ -82,7 +82,7 @@ $shadow: black;
     }
 
     .menWomen_container {
-      margin-top: 50px;
+      margin-top: 20px;
       width: 100%;
       padding: 20px;
       display: grid;
@@ -188,11 +188,13 @@ app-carousel {
         width: 100%;
         max-width: 1360px;
         margin: 0 auto 10px;
+        transition: all .3s ease;
 
         .new_products__container,
         .top_products__container {
           background: #fff;
           width: 100%;
+          transition: all .3s ease;
 
           .options {
             .see_more {

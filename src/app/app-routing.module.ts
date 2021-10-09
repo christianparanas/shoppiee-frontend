@@ -17,15 +17,31 @@ import { CategoryComponent } from './pages/category/category.component';
 import { MyprofileComponent } from './pages/myprofile/myprofile.component'; 
 import { MyaddressComponent } from './pages/myaddress/myaddress.component';
 
+import { AddToCartComponent } from './pages/add-to-cart/add-to-cart.component';
+import { UseraddproductsComponent } from './pages/useraddproducts/useraddproducts.component';
+import { CheckOutComponent } from './pages/check-out/check-out.component';
+import { BuyAgainComponent } from './pages/buy-again/buy-again.component';
+import { MessagesComponent } from './pages/messages/messages.component';
+
+
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'categories', component: CategoriesComponent },
   { path: 'categories/:id', component: CategoryComponent },
 
+
   { path: 'product/:id', component: ProductComponent },
+
+
+  {path: 'add-to-cart', component: AddToCartComponent},
+  {path: 'add-to-cart/buy-again', component: BuyAgainComponent},
+  {path: 'add-to-cart/check-out',component:CheckOutComponent},
+
 
   { path: 'stores', component: StoresComponent },
   { path: 'store/:storeId', component: StoreComponent },
+
 
   { path: 'account', component: AccountComponent },
   { path: 'account/setting', component: AccountsettingComponent },
@@ -34,8 +50,16 @@ const routes: Routes = [
   { path: 'account/recover', component: RecoveraccountComponent },
   { path: 'account/recover/feedback', component: RecoverfeedbackComponent },
   { path: 'account/store', component: UserstoreComponent },
+
   { path: 'account/setting/myprofile', component: MyprofileComponent },
+<<<<<<< HEAD
   { path: 'account/setting/myaddress', component: MyaddressComponent },
+=======
+
+  { path: 'account/store/addproduct', component: UseraddproductsComponent },
+  { path: 'messages', component: MessagesComponent },
+
+>>>>>>> 0630062490cfb930a92398c6f8da8e9503a59166
 ];
 
 @NgModule({
