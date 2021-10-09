@@ -37,6 +37,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CategoryComponent } from './pages/category/category.component';
 
 import { MyprofileComponent } from './pages/myprofile/myprofile.component';
+import { MyaddressComponent } from './pages/myaddress/myaddress.component';
 
 import { AddToCartComponent } from './pages/add-to-cart/add-to-cart.component';
 import { AddToCartNavComponent } from './components/add-to-cart-nav/add-to-cart-nav.component';
@@ -76,6 +77,7 @@ import { MessagesComponent } from './pages/messages/messages.component';
     CategoryComponent,
 
     MyprofileComponent,
+    MyaddressComponent,
 
     AddToCartComponent,
     AddToCartNavComponent,

@@ -15,6 +15,7 @@ import { StoreComponent } from './pages/store/store.component';
 import { StoresComponent } from './pages/stores/stores.component';
 import { CategoryComponent } from './pages/category/category.component';
 import { MyprofileComponent } from './pages/myprofile/myprofile.component'; 
+import { MyaddressComponent } from './pages/myaddress/myaddress.component';
 
 import { AddToCartComponent } from './pages/add-to-cart/add-to-cart.component';
 import { UseraddproductsComponent } from './pages/useraddproducts/useraddproducts.component';
@@ -51,6 +52,7 @@ const routes: Routes = [
   { path: 'account/store', component: UserstoreComponent },
 
   { path: 'account/setting/myprofile', component: MyprofileComponent },
+  { path: 'account/setting/myaddress', component: MyaddressComponent },
 
   { path: 'account/store/addproduct', component: UseraddproductsComponent },
   { path: 'messages', component: MessagesComponent },
