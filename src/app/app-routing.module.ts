@@ -15,6 +15,7 @@ import { StoreComponent } from './pages/store/store.component';
 import { StoresComponent } from './pages/stores/stores.component';
 import { CategoryComponent } from './pages/category/category.component';
 import { MyprofileComponent } from './pages/myprofile/myprofile.component'; 
+import { MyaddressComponent } from './pages/myaddress/myaddress.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'account/recover/feedback', component: RecoverfeedbackComponent },
   { path: 'account/store', component: UserstoreComponent },
   { path: 'account/setting/myprofile', component: MyprofileComponent },
+  { path: 'account/setting/myaddress', component: MyaddressComponent },
 ];
 
 @NgModule({
