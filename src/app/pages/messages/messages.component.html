@@ -31,8 +31,8 @@
           <div class="name">{{ msg.name }}</div>
           <div class="latestMsg">
             {{
-              msg.latestMsg.length > 30
-                ? msg.latestMsg.substring(0, 30) + " ..."
+              msg.latestMsg.length > 15
+                ? msg.latestMsg.substring(0, 15) + " ..."
                 : msg.latestMsg
             }}
           </div>

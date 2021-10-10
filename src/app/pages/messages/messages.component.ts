@@ -107,7 +107,7 @@ export class MessagesComponent implements OnInit {
     },
     {
       name: 'Christian Paranas',
-      latestMsg: "so here's my number so call me maybe",
+      latestMsg: "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm",
       dateOrTime: '4:51 AM',
       imgURL: 'https://avatars.githubusercontent.com/u/59472122?v=4',
       msgID: 4,
@@ -154,7 +154,13 @@ export class MessagesComponent implements OnInit {
     {
       userId: 169,
       username: 'chan',
-      userMessage: 'na diri kita magbubulag',
+      userMessage: 'fffff',
+      userImage: 'https://avatars.githubusercontent.com/u/59472122?v=4',
+    },
+    {
+      userId: 1,
+      username: 'thea',
+      userMessage: 'mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm',
       userImage: 'https://avatars.githubusercontent.com/u/59472122?v=4',
     },
     {
@@ -165,7 +171,7 @@ export class MessagesComponent implements OnInit {
       userImage: 'https://avatars.githubusercontent.com/u/59472122?v=4',
     },
     {
-      userId: 1,
+      userId: 169,
       username: 'thea',
       userMessage: 'Hain na an at mga saad?',
       userImage: 'https://avatars.githubusercontent.com/u/59472122?v=4',
@@ -173,7 +179,7 @@ export class MessagesComponent implements OnInit {
     {
       userId: 169,
       username: 'chan',
-      userMessage: 'hello',
+      userMessage: 'mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm',
       userImage: 'https://avatars.githubusercontent.com/u/59472122?v=4',
     },
   ];
