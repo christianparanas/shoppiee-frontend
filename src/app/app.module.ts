@@ -47,6 +47,7 @@ import { UseraddproductsComponent } from './pages/useraddproducts/useraddproduct
 import { CheckOutComponent } from './pages/check-out/check-out.component';
 import { BuyAgainComponent } from './pages/buy-again/buy-again.component';
 import { MessagesComponent } from './pages/messages/messages.component';
+import { SearchComponent } from './pages/search/search.component';
 
 
 @NgModule({
@@ -87,6 +88,7 @@ import { MessagesComponent } from './pages/messages/messages.component';
     CheckOutComponent,
     BuyAgainComponent,
     MessagesComponent,
+    SearchComponent,
 
   ],
   imports: [

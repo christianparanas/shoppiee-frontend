@@ -521,14 +521,16 @@
 
 
           .msg {
-            display: grid;
-            grid-template-columns: 40px 1fr;
-            max-width: 80%;
-            grid-gap: 10px;
-            width: fit-content;
-            margin-bottom: 10px;
-            align-items: center;
-            font-size: 13px;
+            cursor: pointer;
+          display: grid;
+          grid-template-columns: 40px 1fr;
+          max-width: 80%;
+          grid-gap: 10px;
+          width: fit-content;
+          margin-bottom: 10px;
+          align-items: center;
+          font-size: 13px;
+          word-break: break-all;
 
             img {
               width: 40px;
@@ -547,16 +549,20 @@
           .ownMessage {
             max-width: 100%;
             width: 100%;
-            display: flex;
-            justify-content: flex-end;
-
+            display: grid;
+            grid-template-columns: 100px 1fr;
+  
             img {
               display: none;
             }
-
+  
             p {
+              width: fit-content;
+              max-width: 100%;;
               background: #fa6238;
               color: #fff;
+              grid-column-start: 2;
+              justify-self: end;
             }
           }
         }
