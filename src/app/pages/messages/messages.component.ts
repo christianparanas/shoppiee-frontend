@@ -128,4 +128,8 @@ export class MessagesComponent implements OnInit {
       this.scrollEl.nativeElement.scrollIntoView({ behavior: 'smooth' });
     }, 100)
   }
+
+  testScroll() {
+    this.scrollToBottom()
+  }
 }
