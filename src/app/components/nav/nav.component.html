@@ -68,7 +68,7 @@
       </div>
     </div>
 
-    <form (ngSubmit)="searchStoreOrProduct()" class="searchBar" [ngClass]="{ viewSearchBar: isSearchBarOpen }">
+    <form (ngSubmit)="searchStoreOrProduct(); searchInput.blur()" class="searchBar" [ngClass]="{ viewSearchBar: isSearchBarOpen }">
       <i class="far fa-search"></i>
       <input
         #searchInput
