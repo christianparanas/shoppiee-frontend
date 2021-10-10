@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -9,11 +10,12 @@ export class NavComponent implements OnInit {
   isSearchBarOpen: boolean = false;
   isSideBarOpen: boolean = false;
   onScroll: boolean = false;
+  searchinput: any;
+
   @Input() currentRoute: String;
-  //notification event pop-out
   @Input() AddedToCart: number = 23;
 
-  constructor() {}
+  constructor(public router: Router) {}
 
   ngOnInit(): void {
     window.addEventListener('scroll', this.listenScrollEvent);
@@ -30,4 +32,8 @@ export class NavComponent implements OnInit {
   listenScrollEvent = () => {
     window.scrollY > 15 ? (this.onScroll = true) : (this.onScroll = false);
   };
+
+  searchStoreOrProduct() {
+    if(this.searchinput) this.router.navigate(['/search'], { queryParams: { keyword: this.searchinput } });
+  }
 }

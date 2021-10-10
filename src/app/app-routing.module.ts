@@ -14,7 +14,7 @@ import { AccountsettingComponent } from './pages/accountsetting/accountsetting.c
 import { StoreComponent } from './pages/store/store.component';
 import { StoresComponent } from './pages/stores/stores.component';
 import { CategoryComponent } from './pages/category/category.component';
-import { MyprofileComponent } from './pages/myprofile/myprofile.component'; 
+import { MyprofileComponent } from './pages/myprofile/myprofile.component';
 import { MyaddressComponent } from './pages/myaddress/myaddress.component';
 
 import { AddToCartComponent } from './pages/add-to-cart/add-to-cart.component';
@@ -22,26 +22,21 @@ import { UseraddproductsComponent } from './pages/useraddproducts/useraddproduct
 import { CheckOutComponent } from './pages/check-out/check-out.component';
 import { BuyAgainComponent } from './pages/buy-again/buy-again.component';
 import { MessagesComponent } from './pages/messages/messages.component';
-
-
+import { SearchComponent } from './pages/search/search.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'categories', component: CategoriesComponent },
   { path: 'category/:id', component: CategoryComponent },
 
-
   { path: 'product/:id', component: ProductComponent },
 
-
-  {path: 'add-to-cart', component: AddToCartComponent},
-  {path: 'add-to-cart/buy-again', component: BuyAgainComponent},
-  {path: 'add-to-cart/check-out',component:CheckOutComponent},
-
+  { path: 'add-to-cart', component: AddToCartComponent },
+  { path: 'add-to-cart/buy-again', component: BuyAgainComponent },
+  { path: 'add-to-cart/check-out', component: CheckOutComponent },
 
   { path: 'stores', component: StoresComponent },
   { path: 'store/:storeId', component: StoreComponent },
-
 
   { path: 'account', component: AccountComponent },
   { path: 'account/setting', component: AccountsettingComponent },
@@ -57,6 +52,7 @@ const routes: Routes = [
   { path: 'account/store/addproduct', component: UseraddproductsComponent },
   { path: 'messages', component: MessagesComponent },
 
+  { path: 'search', component: SearchComponent },
 ];
 
 @NgModule({
