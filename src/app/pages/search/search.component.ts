@@ -42,7 +42,7 @@ export class SearchComponent implements OnInit {
   }
 
   checkifhasresult() {
-    if(this.searchInput == "chan") {
+    if(this.searchInput == "Chan") {
       this.hasResult = true
       this.fetchSearchProductsResult()
     } else {

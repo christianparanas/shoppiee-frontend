@@ -48,6 +48,13 @@
           (click)="openCloseSearchBar(); searchInput.focus()"
           class="far fa-search"
           [ngClass]="{ selectedIcon: isSearchBarOpen }"
+          *ngIf="!isSearchBarOpen"
+        ></i>
+        <i
+          (click)="openCloseSearchBar(); searchInput.blur()"
+          class="far fa-times"
+          [ngClass]="{ selectedIcon: isSearchBarOpen }"
+          *ngIf="isSearchBarOpen"
         ></i>
         <a routerLink="/add-to-cart">
           <i class="far fa-shopping-cart">
