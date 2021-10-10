@@ -110,7 +110,6 @@ export class MessagesComponent implements OnInit {
       });
 
       this.userMessage = '';
-
       this.scrollToBottom();
     }
   }
