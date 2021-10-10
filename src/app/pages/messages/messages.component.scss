@@ -101,6 +101,10 @@
     }
   }
 
+  .noSelectedMsg {
+    display: none;
+  }
+
   .contentMsg {
     position: fixed;
     background: #fff;
@@ -217,6 +221,7 @@
 
 
         .msg {
+          cursor: pointer;
           display: grid;
           grid-template-columns: 40px 1fr;
           max-width: 80%;
@@ -268,6 +273,18 @@
     display: grid;
     grid-template-columns: 400px 1fr;
     overflow: hidden;
+
+    .noSelectedMsg {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 400px;
+        height: 400px;
+
+      }
+    }
   
     .customer_mgs__wrapper {
       border-right: 1px solid #e3e3e3;
@@ -343,6 +360,7 @@
           display: grid;
           grid-template-columns: 50px 1fr 60px;
           align-items: center;
+          cursor: pointer;
           // border-bottom: 1px solid #e3e3e3;
   
           img {
@@ -368,6 +386,10 @@
           .date {
             font-size: 12px;
             color: #0000007d;
+          }
+
+          &:hover {
+            background: #f7f7f7;
           }
         }
       }
