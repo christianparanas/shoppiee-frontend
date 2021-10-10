@@ -142,9 +142,7 @@ export class MessagesComponent implements OnInit {
     this.msgId = msgID;
     this.openMsg = true;
 
-    setTimeout(() => {
-      this.scrollToBottom()
-    }, 100)
+    this.scrollToBottom() 
   }
 
   sendMessage() {
@@ -156,9 +154,8 @@ export class MessagesComponent implements OnInit {
       });
 
       this.userMessage = '';
-      setTimeout(() => {
+
        this.scrollToBottom()
-      }, 100)
     }
   }
 
@@ -171,10 +168,8 @@ export class MessagesComponent implements OnInit {
   };
 
   scrollToBottom() {
-    this.scrollEl.nativeElement.scrollIntoView({ behavior: 'smooth' });
-  }
-
-  ngAfterViewInit() {
-    this.scrollToBottom();
+    setTimeout(() => {
+      this.scrollEl.nativeElement.scrollIntoView({ behavior: 'smooth' });
+    }, 10)
   }
 }
