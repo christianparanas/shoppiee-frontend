@@ -1,1 +1,33 @@
-<p>search: {{ searchInput }}</p>
+<div class="search_main__container">
+  <app-nav [searchquery]="searchInput" (btnClickOnSearch)="checkifhasresult()"></app-nav>
+
+  <div class="search_container">
+    <div class="header">
+      <p>
+        <i class="fal fa-question"></i>
+        Search Result for
+        <span>"{{ searchInput }}"</span>
+      </p>
+    </div>
+
+    <div class="search_result__container">
+      <div *ngIf="hasResult" class="hasResult__container">
+        <div class="stores_result_wrapper">
+          <h3>STORES</h3>
+          <div class="stores_result_content">
+            <app-storepreview *ngFor="let store of storesResultArray"></app-storepreview>
+          </div>
+        </div>
+        <div class="products_result_wrapper">
+          <h3>PRODUCTS</h3>
+          <div class="products_result_content">
+            <app-productpreview [productArray]="product" *ngFor="let product of productsResultArray"></app-productpreview>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="!hasResult" class="noResult__container">
+        <img src="../../../assets/imgs/noresult.svg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
