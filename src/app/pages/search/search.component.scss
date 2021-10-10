@@ -1,0 +1,142 @@
+
+.search_main__container {
+  padding-bottom: 100px;
+
+
+  .search_container {
+    padding: 76px 0 20px;
+
+    .header {
+      padding: 20px;
+
+      p {
+
+        span {
+          color: #ff4612;
+        }
+      }
+    }
+
+    .search_result__container {
+
+      .hasResult__container {
+        margin-top: 50px;
+
+        .stores_result_wrapper {
+
+          h3 {
+            padding-left: 20px;
+          }
+          
+          .stores_result_content {
+            padding: 15px 0 40px 20px;
+            overflow-y: auto;
+            display: grid;
+            grid-template-columns: repeat(7, 165px);
+            grid-gap: 15px;
+          }
+        }
+
+        .products_result_wrapper {
+          margin-top: 30px;
+
+          h3 {
+            padding-left: 20px;
+          }
+         
+          .products_result_content {
+            margin: 20px 0;
+            padding: 0 20px 20px;
+            display: grid;
+            grid-gap: 15px;
+            grid-template-columns: 1fr 1fr;
+          }
+        }
+      }
+
+      .noResult__container {
+        margin-top: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 300px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 999px) {
+  .search_main__container {
+
+    .search_container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 134px 20px 20px;
+  
+      .header {
+        background: #fff;
+        padding: 20px;
+        width: fit-content;
+
+        p {
+  
+          span {
+            color: #ff4612;
+          }
+        }
+      }
+
+      .search_result__container {
+
+        .noResult__container {
+          margin-top: 80px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 400px;
+          }
+        }
+
+        .hasResult__container {
+          margin-top: 50px;
+  
+          .stores_result_wrapper {
+  
+            h3 {
+              padding-left: 20px;
+            }
+            
+            .stores_result_content {
+              padding: 15px 0 40px 20px;
+              overflow-y: auto;
+              display: grid;
+              grid-template-columns: repeat(7, 165px);
+              grid-gap: 10px;
+            }
+          }
+  
+          .products_result_wrapper {
+            margin-top: 30px;
+  
+            h3 {
+              padding-left: 20px;
+            }
+           
+            .products_result_content {
+              margin: 20px 0;
+              padding: 0 20px 20px;
+              display: grid;
+              grid-gap: 5px;
+              grid-template-columns: repeat(6, 1fr);
+            }
+          }
+        }
+      }
+    }
+  }
+}
