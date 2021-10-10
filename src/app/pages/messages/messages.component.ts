@@ -126,12 +126,12 @@ export class MessagesComponent implements OnInit {
   scrollToBottom() {
     setTimeout(() => {
       this.scrollEl.nativeElement.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
+    }, 50);
   }
 
   testScroll() {
     setTimeout(() => {
       this.scrollToBottom();
-    }, 100);
+    }, 50);
   }
 }
