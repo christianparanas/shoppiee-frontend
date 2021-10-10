@@ -51,7 +51,7 @@ export class MessagesComponent implements OnInit {
       dateOrTime: '4:51 AM',
       imgURL: 'https://avatars.githubusercontent.com/u/59472122?v=4',
       msgID: 4,
-    }
+    },
   ];
 
   specificMsgs: Array<MessageInterface> = [
@@ -98,7 +98,7 @@ export class MessagesComponent implements OnInit {
     this.msgId = msgID;
     this.openMsg = true;
 
-    this.scrollToBottom() 
+    this.scrollToBottom();
   }
 
   sendMessage() {
@@ -111,7 +111,7 @@ export class MessagesComponent implements OnInit {
 
       this.userMessage = '';
 
-       this.scrollToBottom()
+      this.scrollToBottom();
     }
   }
 
@@ -126,10 +126,12 @@ export class MessagesComponent implements OnInit {
   scrollToBottom() {
     setTimeout(() => {
       this.scrollEl.nativeElement.scrollIntoView({ behavior: 'smooth' });
-    }, 100)
+    }, 100);
   }
 
   testScroll() {
-    this.scrollToBottom()
+    setTimeout(() => {
+      this.scrollToBottom();
+    }, 100);
   }
 }
