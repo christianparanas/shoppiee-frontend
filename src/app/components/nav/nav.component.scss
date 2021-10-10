@@ -103,6 +103,16 @@ $textHeadColor: #735c5c;
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        height: fit-content;
+
+        img {
+          width: 100%;
+          height: 32px;
+        }
+
+        .img2 {
+          display: none;
+        }
 
         i,
         h2 {
@@ -309,6 +319,16 @@ $textHeadColor: #735c5c;
         padding: 0 20px 5px;
         display: flex;
         justify-content: space-between;
+
+        .logo {
+          .img2 {
+            display: block;
+          }
+
+          .img1 {
+            display: none;
+          }
+        }
 
         .icons {
           font-size: 23px;
