@@ -26,8 +26,7 @@ export class SearchComponent implements OnInit {
       (params: any) => (this.searchInput = params.params.keyword)
     );
 
-    
-    this.checkifhasresult()
+    this.checkifhasresult();
   }
 
   fetchSearchProductsResult() {
@@ -42,11 +41,11 @@ export class SearchComponent implements OnInit {
   }
 
   checkifhasresult() {
-    if(this.searchInput == "Chan") {
-      this.hasResult = true
-      this.fetchSearchProductsResult()
+    if (this.searchInput == 'Chan') {
+      this.hasResult = true;
+      this.fetchSearchProductsResult();
     } else {
-      this.hasResult = false
+      this.hasResult = false;
     }
   }
 }
