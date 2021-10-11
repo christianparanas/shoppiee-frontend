@@ -36,10 +36,10 @@
           type="text"
           placeholder="Search stores or items"
           [(ngModel)]="searchinput"
-          [ngModelOptions]="{standalone: true}"
+          [ngModelOptions]="{ standalone: true }"
         />
         <div class="btns" (click)="searchStoreOrProduct()">
-          <i class="far fa-search" ></i>
+          <i class="far fa-search"></i>
         </div>
       </form>
 
@@ -68,14 +68,18 @@
       </div>
     </div>
 
-    <form (ngSubmit)="searchStoreOrProduct(); searchInput.blur()" class="searchBar" [ngClass]="{ viewSearchBar: isSearchBarOpen }">
+    <form
+      (ngSubmit)="searchStoreOrProduct(); searchInput.blur()"
+      class="searchBar"
+      [ngClass]="{ viewSearchBar: isSearchBarOpen }"
+    >
       <i class="far fa-search"></i>
       <input
         #searchInput
         type="search"
         placeholder="Search stores or items"
         [(ngModel)]="searchinput"
-        [ngModelOptions]="{standalone: true}"
+        [ngModelOptions]="{ standalone: true }"
       />
       <div class="btn" (click)="searchStoreOrProduct()">
         <i class="far fa-search"></i>
