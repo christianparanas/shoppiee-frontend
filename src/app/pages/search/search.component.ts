@@ -48,7 +48,5 @@ export class SearchComponent implements OnInit {
     } else {
       this.hasResult = false
     }
-
-    console.log('fff')
   }
 }
