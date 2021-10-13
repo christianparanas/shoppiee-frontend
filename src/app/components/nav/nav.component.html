@@ -17,9 +17,12 @@
       <div class="container">
         <div class="item"><i class="fad fa-bell"></i> Notifications</div>
         <div class="item"><i class="fad fa-question-circle"></i> Help</div>
-        <div class="item auth">
+        <div class="item auth" *ngIf="!isAuth">
           <div class="a" routerLink="/account/register">Sign Up</div>
           <div class="a" routerLink="/account/login">Login</div>
+        </div>
+        <div class="item" *ngIf="isAuth" routerLink="/account/">
+          <i class="fal fa-user"></i> Account
         </div>
       </div>
     </div>
@@ -58,11 +61,11 @@
         ></i>
         <a routerLink="/add-to-cart">
           <i class="far fa-shopping-cart">
-            <p *ngIf="AddedToCart">{{ AddedToCart }}</p>
+            <p *ngIf="AddedToCart && isAuth">{{ AddedToCart }}</p>
           </i>
         </a>
         <i routerLink="/messages" class="far fa-comment-alt">
-          <p *ngIf="AddedToCart">{{ AddedToCart }}</p>
+          <p *ngIf="AddedToCart && isAuth">{{ AddedToCart }}</p>
         </i>
         <i class="fal fa-bars" (click)="openCloseSideBar()"></i>
       </div>
@@ -115,6 +118,7 @@
         <i class="fal fa-store"></i> Stores
       </div>
       <div
+        *ngIf="isAuth"
         routerLink="/account"
         class="items"
         [ngClass]="{ currentPage: currentRoute === 'account' }"

@@ -29,7 +29,14 @@ export class LogInPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.checkIfAuth()
     this.initForm();
+  }
+
+  checkIfAuth() {
+    if (this.authService.isLoggedIn()) {
+      this.router.navigate(['/account/']);
+    }
   }
 
   initForm() {
@@ -40,7 +47,6 @@ export class LogInPageComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.loginForm);
 
     if (this.loginForm.status == 'VALID') {
       // start the loader
@@ -54,7 +60,12 @@ export class LogInPageComponent implements OnInit {
         (response) => {
           this.submitLoading = false;
           this.toast.success(response.message, { position: 'top-right' });
-          console.log(response);
+
+          // return the data to service
+          this.authService.setSession(response)
+
+          // nav to accountpage
+          this.router.navigate(['/account/']);
         },
         (error) => {
           this.submitLoading = false;

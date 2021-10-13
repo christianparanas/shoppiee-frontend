@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+// services
+import { AuthService } from '../../shared/services/auth.service';
+
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
@@ -9,10 +12,14 @@ import { Router } from '@angular/router';
 export class AccountComponent implements OnInit {
   userIsAuth: boolean = true;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit(): void {
-    if (this.userIsAuth == false) {
+    this.checkIfAuth()
+  }
+
+  checkIfAuth() {
+    if (!this.authService.isLoggedIn()) {
       this.router.navigate(['/account/login']);
     }
   }
