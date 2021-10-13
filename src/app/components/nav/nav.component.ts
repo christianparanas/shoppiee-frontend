@@ -1,6 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
+// services
+import { AuthService } from '../../shared/services/auth.service';
+
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -11,18 +14,26 @@ export class NavComponent implements OnInit {
   isSideBarOpen: boolean = false;
   onScroll: boolean = false;
   searchinput: any;
+  isAuth: boolean = false;
 
   @Input() currentRoute: String;
   @Input() searchquery: String;
   @Input() AddedToCart: number = 23;
   @Output() btnClickOnSearch = new EventEmitter();
 
-  constructor(public router: Router) {}
+  constructor(public router: Router, private authService: AuthService) {}
 
   ngOnInit(): void {
-    window.addEventListener('scroll', this.listenScrollEvent);
+    this.checkIfAuth()
 
+    window.addEventListener('scroll', this.listenScrollEvent);
     this.searchinput = this.searchquery;
+  }
+
+  checkIfAuth() {
+    if (this.authService.isLoggedIn()) {
+      this.isAuth = true
+    }
   }
 
   openCloseSearchBar() {

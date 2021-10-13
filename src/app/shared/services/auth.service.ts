@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
+import * as moment from 'moment';
 
 import { environment } from '../../../environments/environment';
 
@@ -26,5 +28,36 @@ export class AuthService {
 
   login(data: any): Observable<any> {
     return this.http.post(`${baseUrl}/api/auth/login`, data);
+  }
+
+  setSession(authResult: any) {
+    const jwtToken = authResult[0].original.token;
+    const expiresAt = moment().add(authResult[0].original.expires_in, 'second');
+
+    localStorage.setItem('uJwtToken', jwtToken);
+    localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
+  }
+
+  logout() {
+    localStorage.removeItem('uJwtToken');
+    localStorage.removeItem('expires_at');
+  }
+
+  public isLoggedIn() {
+    // for dev 
+    // return moment().isBefore(this.getExpiration());
+
+    // for production - because our backend not yet deployed on a live server
+    return true;
+  }
+
+  isLoggedOut() {
+    return !this.isLoggedIn();
+  }
+
+  getExpiration() {
+    const expiration: any = localStorage.getItem('expires_at');
+    const expiresAt = JSON.parse(expiration);
+    return moment(expiresAt);
   }
 }

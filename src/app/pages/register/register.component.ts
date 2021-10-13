@@ -39,7 +39,14 @@ export class RegisterComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.checkIfAuth()
     this.initForm();
+  }
+
+  checkIfAuth() {
+    if (this.authService.isLoggedIn()) {
+      this.router.navigate(['/account/']);
+    }
   }
 
   initForm() {
@@ -88,7 +95,11 @@ export class RegisterComponent implements OnInit {
         (response) => {
           this.submitLoading = false;
           this.toast.success(response.message, { position: 'top-right' });
-          console.log(response);
+
+          setTimeout(() => {
+            this.router.navigate(['/account/login']);
+            this.toast.success('Please login 😉', { position: 'top-right' });
+          }, 1000)
         },
         (error) => {
           this.submitLoading = false;

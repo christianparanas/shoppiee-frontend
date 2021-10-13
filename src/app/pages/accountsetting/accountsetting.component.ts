@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { HotToastService } from '@ngneat/hot-toast';
+
+// services
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-accountsetting',
@@ -8,9 +13,27 @@ import { Component, OnInit } from '@angular/core';
 export class AccountsettingComponent implements OnInit {
   isAboutUsOverlayOpen: boolean = false;
 
-  constructor() {}
+  constructor(
+    private authService: AuthService,
+    public router: Router,
+    private toast: HotToastService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.checkIfAuth();
+  }
+
+  checkIfAuth() {
+    if (!this.authService.isLoggedIn()) {
+      this.router.navigate(['/account/login']);
+    }
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/account/login']);
+    this.toast.success('Logged out!', { position: 'top-right' });
+  }
 
   openCloseAboutUsOverlay(): void {
     this.isAboutUsOverlayOpen = !this.isAboutUsOverlayOpen;

@@ -1,7 +1,12 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
+import { HotToastService } from '@ngneat/hot-toast';
 
 import { MessageInterface } from 'src/app/shared/interfaces/messageInterface';
+
+// services
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-messages',
@@ -107,7 +112,7 @@ export class MessagesComponent implements OnInit {
     },
     {
       name: 'Christian Paranas',
-      latestMsg: "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm",
+      latestMsg: 'mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm',
       dateOrTime: '4:51 AM',
       imgURL: 'https://avatars.githubusercontent.com/u/59472122?v=4',
       msgID: 4,
@@ -184,10 +189,23 @@ export class MessagesComponent implements OnInit {
     },
   ];
 
-  constructor(private location: Location) {}
+  constructor(
+    private location: Location,
+    private authService: AuthService,
+    public router: Router,
+    private toast: HotToastService
+  ) {}
 
   ngOnInit(): void {
+    this.checkIfAuth()
     window.addEventListener('scroll', this.listenScrollEvent);
+  }
+
+  checkIfAuth() {
+    if (!this.authService.isLoggedIn()) {
+      this.router.navigate(['/account/login']);
+      this.toast.warning('Login first!', { position: 'top-right' });
+    }
   }
 
   openSpecificMsg(msgID: number) {
@@ -206,7 +224,7 @@ export class MessagesComponent implements OnInit {
       });
 
       this.userMessage = '';
-      this.testScroll()
+      this.testScroll();
     }
   }
 
