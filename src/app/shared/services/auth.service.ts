@@ -44,7 +44,11 @@ export class AuthService {
   }
 
   public isLoggedIn() {
-    return moment().isBefore(this.getExpiration());
+    // for dev 
+    // return moment().isBefore(this.getExpiration());
+
+    // for production - because our backend not yet deployed on a live server
+    return true;
   }
 
   isLoggedOut() {
