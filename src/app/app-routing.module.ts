@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+// services
+import { AuthGuardService as AuthGuard } from './shared/services/auth-guard.service';
+
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { LogInPageComponent } from './pages/log-in-page/log-in-page.component';
@@ -25,34 +28,31 @@ import { MessagesComponent } from './pages/messages/messages.component';
 import { SearchComponent } from './pages/search/search.component';
 
 const routes: Routes = [
+
+  //  public routes
   { path: '', component: HomeComponent },
+  { path: 'search', component: SearchComponent },
   { path: 'categories', component: CategoriesComponent },
   { path: 'category/:id', component: CategoryComponent },
-
   { path: 'product/:id', component: ProductComponent },
-
-  { path: 'add-to-cart', component: AddToCartComponent },
-  { path: 'add-to-cart/buy-again', component: BuyAgainComponent },
-  { path: 'add-to-cart/check-out', component: CheckOutComponent },
-
   { path: 'stores', component: StoresComponent },
   { path: 'store/:storeId', component: StoreComponent },
-
-  { path: 'account', component: AccountComponent },
-  { path: 'account/setting', component: AccountsettingComponent },
   { path: 'account/register', component: RegisterComponent },
   { path: 'account/login', component: LogInPageComponent },
   { path: 'account/recover', component: RecoveraccountComponent },
   { path: 'account/recover/feedback', component: RecoverfeedbackComponent },
-  { path: 'account/store', component: UserstoreComponent },
 
-  { path: 'account/setting/myprofile', component: MyprofileComponent },
-  { path: 'account/setting/myaddress', component: MyaddressComponent },
-
-  { path: 'account/store/addproduct', component: UseraddproductsComponent },
-  { path: 'messages', component: MessagesComponent },
-
-  { path: 'search', component: SearchComponent },
+  // protected routes
+  { path: 'messages', component: MessagesComponent, canActivate: [AuthGuard] },
+  { path: 'account', component: AccountComponent, canActivate: [AuthGuard] },
+  { path: 'account/setting', component: AccountsettingComponent, canActivate: [AuthGuard] },
+  { path: 'account/setting/myprofile', component: MyprofileComponent, canActivate: [AuthGuard] },
+  { path: 'account/setting/myaddress', component: MyaddressComponent, canActivate: [AuthGuard] },
+  { path: 'account/store', component: UserstoreComponent, canActivate: [AuthGuard] },
+  { path: 'account/store/addproduct', component: UseraddproductsComponent, canActivate: [AuthGuard] },
+  { path: 'add-to-cart', component: AddToCartComponent, canActivate: [AuthGuard] },
+  { path: 'add-to-cart/buy-again', component: BuyAgainComponent, canActivate: [AuthGuard] },
+  { path: 'add-to-cart/check-out', component: CheckOutComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

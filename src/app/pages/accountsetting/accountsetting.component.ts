@@ -19,15 +19,7 @@ export class AccountsettingComponent implements OnInit {
     private toast: HotToastService
   ) {}
 
-  ngOnInit(): void {
-    this.checkIfAuth();
-  }
-
-  checkIfAuth() {
-    if (!this.authService.isLoggedIn()) {
-      this.router.navigate(['/account/login']);
-    }
-  }
+  ngOnInit(): void {}
 
   logout() {
     this.authService.logout();

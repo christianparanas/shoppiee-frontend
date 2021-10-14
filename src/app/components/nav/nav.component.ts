@@ -24,7 +24,7 @@ export class NavComponent implements OnInit {
   constructor(public router: Router, private authService: AuthService) {}
 
   ngOnInit(): void {
-    this.checkIfAuth()
+    this.checkIfAuth();
 
     window.addEventListener('scroll', this.listenScrollEvent);
     this.searchinput = this.searchquery;
@@ -32,7 +32,7 @@ export class NavComponent implements OnInit {
 
   checkIfAuth() {
     if (this.authService.isLoggedIn()) {
-      this.isAuth = true
+      this.isAuth = true;
     }
   }
 
