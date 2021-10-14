@@ -195,7 +195,6 @@ export class MessagesComponent implements OnInit {
 
   ngOnInit(): void {
     window.addEventListener('scroll', this.listenScrollEvent);
-
   }
 
   openSpecificMsg(msgID: number) {
