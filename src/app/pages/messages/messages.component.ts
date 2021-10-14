@@ -199,6 +199,7 @@ export class MessagesComponent implements OnInit {
   ngOnInit(): void {
     this.checkIfAuth()
     window.addEventListener('scroll', this.listenScrollEvent);
+
   }
 
   checkIfAuth() {

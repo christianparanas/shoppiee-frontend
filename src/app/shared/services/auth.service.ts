@@ -35,28 +35,28 @@ export class AuthService {
     const expiresAt = moment().add(authResult[0].original.expires_in, 'second');
 
     localStorage.setItem('uJwtToken', jwtToken);
-    localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
+    localStorage.setItem('uExpires_at', JSON.stringify(expiresAt.valueOf()));
   }
 
   logout() {
     localStorage.removeItem('uJwtToken');
-    localStorage.removeItem('expires_at');
+    localStorage.removeItem('uExpires_at');
   }
 
-  public isLoggedIn() {
-    // for dev 
-    // return moment().isBefore(this.getExpiration());
+  public isLoggedIn(): boolean {
+    // for dev
+    return moment().isBefore(this.getExpiration());
 
     // for production - because our backend not yet deployed on a live server
-    return true;
+    // return true;
   }
 
-  isLoggedOut() {
+  isLoggedOut(): boolean {
     return !this.isLoggedIn();
   }
 
   getExpiration() {
-    const expiration: any = localStorage.getItem('expires_at');
+    const expiration: any = localStorage.getItem('uExpires_at');
     const expiresAt = JSON.parse(expiration);
     return moment(expiresAt);
   }
