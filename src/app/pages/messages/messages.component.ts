@@ -5,8 +5,6 @@ import { HotToastService } from '@ngneat/hot-toast';
 
 import { MessageInterface } from 'src/app/shared/interfaces/messageInterface';
 
-// services
-import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-messages',
@@ -191,22 +189,13 @@ export class MessagesComponent implements OnInit {
 
   constructor(
     private location: Location,
-    private authService: AuthService,
     public router: Router,
     private toast: HotToastService
   ) {}
 
   ngOnInit(): void {
-    this.checkIfAuth()
     window.addEventListener('scroll', this.listenScrollEvent);
 
-  }
-
-  checkIfAuth() {
-    if (!this.authService.isLoggedIn()) {
-      this.router.navigate(['/account/login']);
-      this.toast.warning('Login first!', { position: 'top-right' });
-    }
   }
 
   openSpecificMsg(msgID: number) {

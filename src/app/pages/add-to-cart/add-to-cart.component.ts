@@ -26,7 +26,6 @@ export class AddToCartComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.checkIfAuth()
 
     this.productArray = [
       {
@@ -90,13 +89,6 @@ export class AddToCartComponent implements OnInit {
         productName: 'bags',
       },
     ];
-  }
-
-  checkIfAuth() {
-    if (!this.authService.isLoggedIn()) {
-      this.router.navigate(['/account/login']);
-      this.toast.warning('Login first!', { position: 'top-right' });
-    }
   }
 
   //product quantity control
