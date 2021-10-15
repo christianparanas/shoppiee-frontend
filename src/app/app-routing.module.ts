@@ -19,7 +19,6 @@ import { StoresComponent } from './pages/stores/stores.component';
 import { CategoryComponent } from './pages/category/category.component';
 import { MyprofileComponent } from './pages/myprofile/myprofile.component';
 import { MyaddressComponent } from './pages/myaddress/myaddress.component';
-
 import { AddToCartComponent } from './pages/add-to-cart/add-to-cart.component';
 import { UseraddproductsComponent } from './pages/useraddproducts/useraddproducts.component';
 import { CheckOutComponent } from './pages/check-out/check-out.component';
@@ -52,7 +51,7 @@ const routes: Routes = [
   { path: 'account/store/addproduct', component: UseraddproductsComponent, canActivate: [AuthGuard] },
   { path: 'add-to-cart', component: AddToCartComponent, canActivate: [AuthGuard] },
   { path: 'add-to-cart/buy-again', component: BuyAgainComponent, canActivate: [AuthGuard] },
-  { path: 'add-to-cart/check-out', component: CheckOutComponent, canActivate: [AuthGuard] },
+  // { path: 'add-to-cart/check-out', component: CheckOutComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

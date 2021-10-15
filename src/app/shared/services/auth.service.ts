@@ -15,13 +15,6 @@ const baseUrl = environment.baseURL;
 export class AuthService {
   constructor(private http: HttpClient) {}
 
-  // Http Options
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-    }),
-  };
-
   register(data: any): Observable<any> {
     return this.http.post(`${baseUrl}/api/auth/register`, data);
   }
@@ -44,11 +37,7 @@ export class AuthService {
   }
 
   public isLoggedIn(): boolean {
-    // for dev
     return moment().isBefore(this.getExpiration());
-
-    // for production - because our backend not yet deployed on a live server
-    // return true;
   }
 
   isLoggedOut(): boolean {
