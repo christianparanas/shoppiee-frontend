@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;900&display=swap");
+
+
+.adminLayout {
+
+
+  .adminLayout_container {
+
+    app-side-nav {
+      display: none;
+    }
+  }
+}
+
+
+@media only screen and (min-width: 999px) {
+  .adminLayout {
+
+
+    .adminLayout_container {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+
+      app-side-nav {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+
+.nav {
+  position: relative;
+
+  .top_nav_container {
+    background: #310F74;
+    color: white;
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+
+    .con1 {
+      font-size: 20px;
+      display: grid;
+      grid-template-columns: 40px 40px;
+      grid-gap: 10px;
+      height: 100%;
+      cursor: pointer;
+
+      .iconBtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  .nav-side-nav-overlay_container {
+    position: fixed;
+    display: none;
+    top: 0;
+    right: 0;
+    width: 200px;
+    background: #fff;
+  }
+}

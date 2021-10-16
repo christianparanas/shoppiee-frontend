@@ -5,6 +5,7 @@ import { ReactiveFormsModule,FormsModule  } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AdminModule } from './modules/admin/admin.module';
 
 // vendors
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
@@ -48,6 +49,8 @@ import { CheckOutComponent } from './pages/check-out/check-out.component';
 import { BuyAgainComponent } from './pages/buy-again/buy-again.component';
 import { MessagesComponent } from './pages/messages/messages.component';
 import { SearchComponent } from './pages/search/search.component';
+
+
 
 
 @NgModule({
@@ -100,6 +103,7 @@ import { SearchComponent } from './pages/search/search.component';
     ReactiveFormsModule,
     HotToastModule.forRoot(),
     FormsModule,
+    AdminModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

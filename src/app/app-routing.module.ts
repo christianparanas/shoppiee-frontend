@@ -51,7 +51,7 @@ const routes: Routes = [
   { path: 'account/store/addproduct', component: UseraddproductsComponent, canActivate: [AuthGuard] },
   { path: 'add-to-cart', component: AddToCartComponent, canActivate: [AuthGuard] },
   { path: 'add-to-cart/buy-again', component: BuyAgainComponent, canActivate: [AuthGuard] },
-  // { path: 'add-to-cart/check-out', component: CheckOutComponent, canActivate: [AuthGuard] },
+  { path: 'add-to-cart/check-out', component: CheckOutComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
