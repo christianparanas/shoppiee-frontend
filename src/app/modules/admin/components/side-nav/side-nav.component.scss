@@ -1,6 +1,6 @@
 .desktop-sidenav {
-  height: 100%;
   height: 100vh;
+  min-height: fit-content;
   padding: 20px;
 
   .sidenav-wrapper {
@@ -8,6 +8,7 @@
     padding-top: 80px;
     box-shadow: 0 14px 30px 0 RGB(43 80 237 / 20%);
     height: 100%;
+    min-height: 420px;
     border-radius: 40px;
 
     .route-items {
@@ -15,16 +16,15 @@
       cursor: pointer;
       border-radius: 15px;
       border: 4px solid #fff;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
       font-weight: 400;
-      font-family: 'Fredoka One', cursive;
+      font-family: "Fredoka One", cursive;
       color: #6b5d5d;
       margin-bottom: 5px;
-      
 
       i {
         margin-right: 10px;
-        --fa-primary-color: #65676E; 
+        --fa-primary-color: #65676e;
         --fa-secondary-color: grey;
       }
 
@@ -33,7 +33,7 @@
         color: #8d00ca;
 
         i {
-          --fa-primary-color: #8d00ca; 
+          --fa-primary-color: #8d00ca;
         }
       }
     }
