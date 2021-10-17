@@ -18,10 +18,37 @@
       <i class="fal fa-times" (click)="openCloseMobileSidebar()"></i>
     </div>
     <div class="side-nav-route-items">
-      <div class="route-items"><i class="fad fa-analytics"></i>Dashboard</div>
-      <div class="route-items"><i class="fad fa-tshirt"></i>Products</div>
-      <div class="route-items"><i class="fad fa-users"></i>Customers</div>
-      <div class="route-items"><i class="fad fa-store"></i>Shoppiee Mall</div>
+      <div
+        class="route-items"
+        routerLink="/admin"
+        (click)="openCloseMobileSidebar()"
+      >
+        <i class="fad fa-analytics"></i>Dashboard
+      </div>
+      <div
+        class="route-items"
+        routerLink="/admin/products"
+        (click)="openCloseMobileSidebar()"
+      >
+        <i class="fad fa-tshirt"></i>Products
+      </div>
+      <div
+        class="route-items"
+        routerLink="/admin/customers"
+        (click)="openCloseMobileSidebar()"
+      >
+        <i class="fad fa-users"></i>Customers
+      </div>
+      <div
+        class="route-items"
+        routerLink="/admin/stores"
+        (click)="openCloseMobileSidebar()"
+      >
+        <i class="fad fa-store-alt"></i>Stores
+      </div>
+      <div class="route-items">
+        <i class="fad fa-shopping-bag"></i>Shoppiee Mall
+      </div>
     </div>
   </div>
   <div

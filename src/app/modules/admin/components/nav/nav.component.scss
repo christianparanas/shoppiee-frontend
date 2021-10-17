@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .nav {
   position: relative;
   
 
   .top_nav_container {
-    background: #310F74;
+    background: #8d00ca;
     color: white;
     height: 60px;
     display: flex;
@@ -29,7 +33,7 @@
 
         i {
           padding: 6px;
-          border: 4px solid #310F74;
+          border: 4px solid #8d00ca;
           transition: all .3s ease;
           border-radius: 8px;
 
@@ -64,6 +68,7 @@
     .side-nav-header {
       display: flex;
       justify-content: end;
+      float: right;
       
       i {
         padding: 10px;
@@ -80,7 +85,7 @@
     }
 
     .side-nav-route-items {
-      margin-top: 40px;
+      margin-top: 60px;
       display: grid;
       grid-gap: 5px;
 

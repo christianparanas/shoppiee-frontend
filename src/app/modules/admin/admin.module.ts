@@ -7,6 +7,9 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { NavComponent } from './components/nav/nav.component';
 import { AdminComponent } from './admin.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
+import { ProductsComponent } from './pages/products/products.component';
+import { CustomersComponent } from './pages/customers/customers.component';
+import { StoresComponent } from './pages/stores/stores.component';
 
 
 @NgModule({
@@ -15,7 +18,10 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
     DashboardComponent,
     NavComponent,
     AdminComponent,
-    SideNavComponent
+    SideNavComponent,
+    ProductsComponent,
+    CustomersComponent,
+    StoresComponent
   ],
   imports: [
     CommonModule,

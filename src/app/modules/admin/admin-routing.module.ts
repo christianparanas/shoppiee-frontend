@@ -4,6 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthComponent } from './pages/auth/auth.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AdminComponent } from './admin.component';
+import { ProductsComponent } from './pages/products/products.component';
+import { CustomersComponent } from './pages/customers/customers.component';
+import { StoresComponent } from './pages/stores/stores.component';
 
 const routes: Routes = [
   { 
@@ -11,6 +14,9 @@ const routes: Routes = [
     component: AdminComponent, 
     children: [
       { path: "", component: DashboardComponent },
+      { path: "products", component: ProductsComponent },
+      { path: "customers", component: CustomersComponent },
+      { path: "stores", component: StoresComponent },
     ] 
   },
   { path: "admin/auth", component: AuthComponent },
