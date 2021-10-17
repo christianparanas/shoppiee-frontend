@@ -1,21 +1,32 @@
-
 <div class="nav">
   <div class="top_nav_container">
     <div class="con">AdminPanel</div>
     <div class="con1">
       <div class="iconBtn"><i class="fal fa-user-alt"></i></div>
-      <div class="iconBtn"><i class="fal fa-bars"></i></div>
+      <div class="iconBtn" (click)="openCloseMobileSidebar()">
+        <i class="fal fa-bars"></i>
+      </div>
     </div>
   </div>
 
-  <div class="nav-side-nav-overlay_container">
-    <div class="side-nav-header">x</div>
+  <div
+    class="nav-side-nav-overlay_container"
+    *ngIf="isMobileSidebarOpen"
+    [@inOutAnimation]
+  >
+    <div class="side-nav-header">
+      <i class="fal fa-times" (click)="openCloseMobileSidebar()"></i>
+    </div>
     <div class="side-nav-route-items">
-      <div class="route-items">Dashboard</div>
-      <div class="route-items">Products</div>
-      <div class="route-items">Customers</div>
-      <div class="route-items">Shoppiee Mall</div>
+      <div class="route-items"><i class="fad fa-analytics"></i>Dashboard</div>
+      <div class="route-items"><i class="fad fa-tshirt"></i>Products</div>
+      <div class="route-items"><i class="fad fa-users"></i>Customers</div>
+      <div class="route-items"><i class="fad fa-store"></i>Shoppiee Mall</div>
     </div>
   </div>
-  <div class="nav-side-nav-bg-overlay"></div>
+  <div
+    class="nav-side-nav-bg-overlay"
+    (click)="openCloseMobileSidebar()"
+    *ngIf="isMobileSidebarOpen"
+  ></div>
 </div>
