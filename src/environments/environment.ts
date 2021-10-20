@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseURL: 'https://still-forest-97994.herokuapp.com/'
+  baseURL: 'https://still-forest-97994.herokuapp.com'
   // baseURL: 'http://localhost:8000'
 };
 
