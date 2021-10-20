@@ -61,11 +61,11 @@ export class RegisterComponent implements OnInit {
   // check if the inputs have value if the user click the subnit btn
   checkInputs(): void {
     this.submitValidate = {
-      name: this.registerForm.controls.name.value == '' ? true : false,
-      email: this.registerForm.controls.email.value == '' ? true : false,
-      password: this.registerForm.controls.password.value == '' ? true : false,
+      name: this.registerForm.controls.name.value.trim() == '' ? true : false,
+      email: this.registerForm.controls.email.value.trim() == '' ? true : false,
+      password: this.registerForm.controls.password.value.trim() == '' ? true : false,
       confirmpass:
-        this.registerForm.controls.confirmPassword.value == '' ? true : false,
+        this.registerForm.controls.confirmPassword.value.trim() == '' ? true : false,
     };
   }
 
@@ -102,18 +102,16 @@ export class RegisterComponent implements OnInit {
           }, 1000)
         },
         (error) => {
+          let result :any
           this.submitLoading = false;
-
           if (error.status == 0) {
-            this.toast.error('Server is down, help! hehe', {
-              position: 'top-right',
-            });
+            result='Server is down, help! hehe'
           } else if (error.status == 422) {
-            this.toast.error(error.error.email[0], { position: 'top-right' });
+            result=error.error.email[0]
           } else if (error.status == 500) {
-            this.toast.error(error.statusText, { position: 'top-right' });
+            result=error.statusText
           }
-
+          this.toast.error(result,{ position: 'top-right' })
           console.log(error);
         }
       );
