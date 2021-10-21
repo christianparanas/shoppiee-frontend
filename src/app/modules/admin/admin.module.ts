@@ -1,6 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+// ng material modules
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatRippleModule } from '@angular/material/core';
+
 import { AdminRoutingModule } from './admin-routing.module';
 import { AuthComponent } from './pages/auth/auth.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
@@ -11,7 +18,6 @@ import { ProductsComponent } from './pages/products/products.component';
 import { CustomersComponent } from './pages/customers/customers.component';
 import { StoresComponent } from './pages/stores/stores.component';
 
-
 @NgModule({
   declarations: [
     AuthComponent,
@@ -21,11 +27,16 @@ import { StoresComponent } from './pages/stores/stores.component';
     SideNavComponent,
     ProductsComponent,
     CustomersComponent,
-    StoresComponent
+    StoresComponent,
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatRippleModule,
+    MatInputModule
   ],
 })
-export class AdminModule { }
+export class AdminModule {}
