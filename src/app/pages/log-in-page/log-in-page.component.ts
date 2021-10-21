@@ -40,6 +40,7 @@ export class LogInPageComponent implements OnInit {
   }
 
   initForm() {
+    console.log(this.loginForm)
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', Validators.required),
@@ -47,8 +48,7 @@ export class LogInPageComponent implements OnInit {
   }
 
   onSubmit() {
-
-    if (this.loginForm.status == 'VALID') {
+    if (this.loginForm.status == 'VALID'){
       // start the loader
       this.submitLoading = true;
 
@@ -77,15 +77,16 @@ export class LogInPageComponent implements OnInit {
             result=error.error.message
           } else if (error.status == 422) {
             result=error.error.email[0]
+            
           } else if (error.status == 500) {
             result=error.statusText
           }
-
+          console.log(error)
           this.toast.error(result,{ position: 'top-right' })
-
-          console.log(error);
         }
       );
+    }else{
+      this.toast.error('Invalid Input',{position:'top-right'})
     }
   }
 }
