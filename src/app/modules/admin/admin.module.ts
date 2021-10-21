@@ -7,6 +7,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatRippleModule } from '@angular/material/core';
+import {MatSortModule} from '@angular/material/sort';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { AuthComponent } from './pages/auth/auth.component';
@@ -36,7 +37,8 @@ import { StoresComponent } from './pages/stores/stores.component';
     MatPaginatorModule,
     MatFormFieldModule,
     MatRippleModule,
-    MatInputModule
+    MatInputModule,
+    MatSortModule
   ],
 })
 export class AdminModule {}
