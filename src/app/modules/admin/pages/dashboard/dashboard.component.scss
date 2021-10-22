@@ -1,4 +1,3 @@
-
 .admin_dashboard_container {
   overflow-y: scroll;
   width: 100%;
@@ -6,6 +5,11 @@
   .dash_wrapper {
     padding: 20px;
     width: 100%;
+
+    h2 {
+      color: #310f74;
+      padding: 20px 0;
+    }
 
     .btnOverview_wrapper {
       display: grid;
@@ -15,83 +19,60 @@
       .btnOver_container {
         box-shadow: 0 14px 30px 0 RGB(43 80 237 / 20%);
         padding: 20px;
-        border-radius: 25px;
+        border-radius: 0;
         display: grid;
-        grid-gap: 15px;
-        grid-template-columns: 70px 1fr;
+        
         align-items: center;
         color: #fff;
-        border: 5px solid #fff;
-        transition: all .3s ease;
+        transition: all 0.3s ease;
+        background: #310f74;
+
+        .top-content {
+          display: grid;
+          grid-gap: 30px;
+          grid-template-columns: 70px 1fr;
+
+          .stats {
+            .numeric {
+              font-size: 30px;
+              font-weight: 800;
+            }
+          }
+        }
 
         &:hover {
           border-color: #10236fbf;
         }
+      }
 
-        img {
-         
-        }
+      .btnOver_container:nth-child(1) {
+        background: #FF5C00;
+      }
 
-        .details_container {
-          border-radius: 20px;
-          background: #310F74;
-          padding: 20px;
+      .btnOver_container:nth-child(2) {
+        background: #8F83FF;
+      }
 
-          .box {
-            margin-bottom: 20px;
-         
-          }
+      .btnOver_container:nth-child(3) {
+        background: #31D9A4;
+      }
 
-          .box1 {
-            background: #5E17EB;
-            border-radius: 12px;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-          }
-        }
+      .btnOver_container:nth-child(4) {
+        background: #FA5291;
       }
     }
   }
 }
 
-@media only screen and (min-width: 500px) {
-  .admin_dashboard_container {
-
-    .dash_wrapper {
-
-
-      .btnOverview_wrapper {
-        grid-template-columns: repeat(3, 1fr);
-
-        .btnOver_container {
-          padding: 10px;
-          font-size: 12px;
-        }
-      }
-    }
-  }
-}
 
 @media only screen and (min-width: 1400px) {
   .admin_dashboard_container {
-
     .dash_wrapper {
-
-
       .btnOverview_wrapper {
         grid-template-columns: repeat(4, 1fr);
 
         .btnOver_container {
-          padding: 15px;
-          font-size: 18px;
-
-          .details_container {
-
-            .box1 {
-              font-size: 12px;
-            }
-          }
+          padding: 20px;
         }
       }
     }

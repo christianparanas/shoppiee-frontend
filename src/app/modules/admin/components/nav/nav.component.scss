@@ -10,13 +10,14 @@
   
 
   .top_nav_container {
-    background: #310F74;
-    color: white;
+    background: #fff;
+    color: #310F74;
     height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    border-bottom: 1px solid #e3e3e3;
 
     .con1 {
       font-size: 20px;
@@ -33,13 +34,7 @@
 
         i {
           padding: 6px;
-          border: 4px solid #310F74;
-          transition: all .3s ease;
           border-radius: 8px;
-
-          &:hover {
-            border: 4px solid #5f4a8a;
-          }
         }
       }
     }
@@ -58,7 +53,7 @@
   .nav-side-nav-overlay_container {
     position: fixed;
     z-index: 22;
-    padding: 10px;
+    padding: 20px;
     top: 0;
     right: 0;
     width: 250px;
