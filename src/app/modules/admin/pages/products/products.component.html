@@ -2,18 +2,19 @@
   <div class="products_wrapper">
     <header>
       <div class="label">Products</div>
-    </header>
-
-    <div class="products_content_container">
       <mat-form-field MatFormFieldControl appearance="standard">
-        <mat-label>Filter</mat-label>
+        <mat-label>Search</mat-label>
         <input
           matInput
           (keyup)="applyFilter($event)"
-          placeholder="Ex. Mia"
+          placeholder="Ex. Bag"
           #input
         />
       </mat-form-field>
+    </header>
+
+    <div class="products_content_container">
+
 
       <div class="mat-elevation-z8">
         <table mat-table [dataSource]="dataSource" matSort>

@@ -24,6 +24,8 @@
 
 
     .adminLayout_container {
+      min-height: 100vh;
+      height: 100%;
       display: grid;
       grid-template-columns: 260px 1fr;
 

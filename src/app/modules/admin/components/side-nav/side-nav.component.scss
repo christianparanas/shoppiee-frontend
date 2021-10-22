@@ -2,6 +2,8 @@
   height: 100vh;
   min-height: fit-content;
   padding: 20px;
+  position: fixed;
+  background: #fff;
 
   .sidenav-wrapper {
     padding: 20px 30px;
@@ -30,10 +32,30 @@
 
       &:hover {
         border: 4px solid #20399e91;
-        color: #8d00ca;
+        color: #10236fbf;
 
         i {
-          --fa-primary-color: #8d00ca;
+          --fa-primary-color: #10236fbf;
+        }
+      }
+    }
+
+    .currentRoute {
+      background: #10236fbf;
+      color: #fff;
+      border: 4px solid #20399e91;
+
+      i {
+        --fa-primary-color: #bf98bdbf;
+        --fa-secondary-color: #fff;
+      }
+
+      &:hover {
+        border: 4px solid #20399e91;
+        color: #fff;
+
+        i {
+          --fa-primary-color: #bf98bdbf;
         }
       }
     }

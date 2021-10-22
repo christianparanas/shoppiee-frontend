@@ -3,9 +3,19 @@
 .products_container {
 
   .products_wrapper {
-    padding: 20px;
+    padding: 20px 20px;
+    padding-top: 0;
+
+    header {
+      position: fixed;
+      background: #fff;
+      width: 100%;
+      padding: 20px;
+    }
 
     .products_content_container {
+      padding-top: 150px;
+
       width: 100%;
 
       .mat-table {

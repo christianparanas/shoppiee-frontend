@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import {
   trigger,
   state,
@@ -28,10 +29,17 @@ import {
 })
 export class NavComponent implements OnInit {
   isMobileSidebarOpen: boolean = false;
+  currentRoute: any;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    this.getCurrentRouteURL(this.route.snapshot.children[0].routeConfig?.path);
+  }
+
+  getCurrentRouteURL(route: any) {
+    // getting currentRoute url path
+    route == '' ? this.currentRoute = '/' : this.currentRoute = route;
   }
 
   openCloseMobileSidebar() {

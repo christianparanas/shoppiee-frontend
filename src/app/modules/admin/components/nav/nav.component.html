@@ -21,33 +21,42 @@
       <div
         class="route-items"
         routerLink="/admin"
-        (click)="openCloseMobileSidebar()"
+        [ngClass]="{ currentRoute: currentRoute === '/' }"
+        (click)="openCloseMobileSidebar(); getCurrentRouteURL('/')"
       >
         <i class="fad fa-analytics"></i>Dashboard
       </div>
       <div
         class="route-items"
         routerLink="/admin/products"
-        (click)="openCloseMobileSidebar()"
+        (click)="openCloseMobileSidebar(); getCurrentRouteURL('products')"
+        [ngClass]="{ currentRoute: currentRoute === 'products' }"
       >
         <i class="fad fa-tshirt"></i>Products
       </div>
       <div
         class="route-items"
         routerLink="/admin/customers"
-        (click)="openCloseMobileSidebar()"
+        (click)="openCloseMobileSidebar(); getCurrentRouteURL('customers')"
+        [ngClass]="{ currentRoute: currentRoute === 'customers' }"
       >
         <i class="fad fa-users"></i>Customers
       </div>
       <div
+      class="route-items"
+      [ngClass]="{ currentRoute: currentRoute === 'orders' }"
+      routerLink="/admin/customers"
+      (click)="openCloseMobileSidebar(); getCurrentRouteURL('orders')"
+    >
+      <i class="fad fa-shopping-cart"></i>Orders
+    </div>
+      <div
         class="route-items"
         routerLink="/admin/stores"
-        (click)="openCloseMobileSidebar()"
+        (click)="openCloseMobileSidebar(); getCurrentRouteURL('stores')"
+        [ngClass]="{ currentRoute: currentRoute === 'stores' }"
       >
         <i class="fad fa-store-alt"></i>Stores
-      </div>
-      <div class="route-items">
-        <i class="fad fa-shopping-bag"></i>Shoppiee Mall
       </div>
     </div>
   </div>
