@@ -40,6 +40,17 @@
           }
         }
 
+        .bottom-content {
+          height: 50px;
+          position: relative;
+          display: block;
+
+          .chartjs {
+  
+          }
+
+        }
+
         &:hover {
           border-color: #10236fbf;
         }
