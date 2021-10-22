@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit {
   lineChartColors: Color[] = [
     {
       borderColor: 'white',
-      backgroundColor: '#FA5291',
+      backgroundColor: 'rgb(250, 82, 145, 0.5)',
     },
   ];
   lineChartLegend: any = false;
