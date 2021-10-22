@@ -1,23 +1,35 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { AdminRoutingModule } from './admin-routing.module';
+
 // ng material modules
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatRippleModule } from '@angular/material/core';
-import {MatSortModule} from '@angular/material/sort';
+import { MatSortModule } from '@angular/material/sort';
 
-import { AdminRoutingModule } from './admin-routing.module';
-import { AuthComponent } from './pages/auth/auth.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { NavComponent } from './components/nav/nav.component';
+// components
 import { AdminComponent } from './admin.component';
+import { NavComponent } from './components/nav/nav.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
+import { AuthComponent } from './pages/auth/auth.component';
+
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { CustomersComponent } from './pages/customers/customers.component';
 import { StoresComponent } from './pages/stores/stores.component';
+
+const ngMaterialModules = [
+  MatTableModule,
+  MatPaginatorModule,
+  MatFormFieldModule,
+  MatRippleModule,
+  MatInputModule,
+  MatSortModule,
+];
 
 @NgModule({
   declarations: [
@@ -30,15 +42,6 @@ import { StoresComponent } from './pages/stores/stores.component';
     CustomersComponent,
     StoresComponent,
   ],
-  imports: [
-    CommonModule,
-    AdminRoutingModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatFormFieldModule,
-    MatRippleModule,
-    MatInputModule,
-    MatSortModule
-  ],
+  imports: [CommonModule, AdminRoutingModule, ...ngMaterialModules],
 })
 export class AdminModule {}

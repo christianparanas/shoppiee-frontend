@@ -29,24 +29,55 @@
         <div class="seeall_purchase_btn">View Purchase History</div>
       </div>
       <div class="content">
-        <div class="item">
-          <i class="fal fa-wallet"></i>
-          <p>To Pay</p>
-        </div>
-        <div class="item">
-          <i class="fal fa-box-alt"></i>
-          <p>To Ship</p>
-        </div>
-        <div class="item">
-          <i class="fal fa-truck"></i>
-          <p>To Recieve</p>
-        </div>
-        <div class="item">
-          <i class="fal fa-star"></i>
-          <p>To Rate</p>
-        </div>
+        <mat-tab-group mat-align-tabs="center" class="acc-tabs">
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <div class="" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+                <i class="fal fa-wallet"></i>
+                <p>To Pay</p>
+              </div>
+            </ng-template>
+            <div class="">
+              lorem
+            </div>
+          </mat-tab>
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <div class="" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+                <i class="fal fa-box-alt"></i>
+                <p>To Ship</p>
+              </div>
+            </ng-template>
+            <div class="">
+              lorem
+            </div>
+          </mat-tab>
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <div class="" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+                <i class="fal fa-truck"></i>
+                <p>To Recieve</p>
+              </div>
+            </ng-template>
+            <div class="">
+              lorem
+            </div>
+          </mat-tab>
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <div class="" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+                <i class="fal fa-star"></i>
+                <p>To Rate</p>
+              </div>
+            </ng-template>
+            <div class="">
+              lorem
+            </div>
+          </mat-tab>
+        </mat-tab-group>
       </div>
     </div>
+
 
     <div class="userstore__container">
       <div class="toStore_btn" routerLink="/account/store">

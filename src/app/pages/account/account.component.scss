@@ -82,38 +82,14 @@
       }
 
       .content {
-        padding: 20px;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        border-bottom: 1px solid #e3e3e3;
-
-        .item {
-          text-align: center;
-          width: fit-content;
-          margin: 0 auto;
-          padding: 10px;
-          cursor: pointer;
-
-          i {
-            font-size: 25px;
-            margin-bottom: 10px;
-            color: #7a6a6a;
-          }
-
-          p {
-            font-size: 10px;
-            width: fit-content;
-          }
-
-          &:hover {
-            
-            i, p {
-              color: #8d00ca;;
-            }
-          }
+        
+        .acc-tabs {
+          background: #fff;
+          padding: 20px 0;
         }
       }
     }
+
 
     .userstore__container {
       padding: 10px 20px;

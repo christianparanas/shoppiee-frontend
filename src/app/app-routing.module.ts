@@ -43,7 +43,7 @@ const routes: Routes = [
 
   // protected routes
   { path: 'messages', component: MessagesComponent, canActivate: [AuthGuard] },
-  { path: 'account', component: AccountComponent, canActivate: [AuthGuard] },
+  { path: 'account', component: AccountComponent},
   { path: 'account/setting', component: AccountsettingComponent, canActivate: [AuthGuard] },
   { path: 'account/setting/myprofile', component: MyprofileComponent, canActivate: [AuthGuard] },
   { path: 'account/setting/myaddress', component: MyaddressComponent, canActivate: [AuthGuard] },

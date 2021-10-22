@@ -1,32 +1,43 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule,FormsModule  } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminModule } from './modules/admin/admin.module';
 
+// material modules
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatIconModule } from '@angular/material/icon';
+
 // vendors
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { NgxSplideModule } from 'ngx-splide';
 import { HotToastModule } from '@ngneat/hot-toast';
 
-// compoenets
-import { HomeComponent } from './pages/home/home.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { LogInPageComponent } from './pages/log-in-page/log-in-page.component';
+// reusable components
 import { HeaderComponent } from './components/header/header.component';
 import { FormComponent } from './components/form/form.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { HotsalesComponent } from './components/hotsales/hotsales.component';
 import { DiscoverComponent } from './components/discover/discover.component';
-import { CategoriesComponent } from './pages/categories/categories.component';
 import { CategorypreviewComponent } from './components/categorypreview/categorypreview.component';
 import { ProductpreviewComponent } from './components/productpreview/productpreview.component';
-import { AccountComponent } from './pages/account/account.component';
 import { NavComponent } from './components/nav/nav.component';
+import { StorepreviewComponent } from './components/storepreview/storepreview.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { AddToCartNavComponent } from './components/add-to-cart-nav/add-to-cart-nav.component';
+import { MessageComponent } from './components/message/message.component';
+import { UserstoreHeaderComponent } from './components/userstore-header/userstore-header.component';
+
+// pages
+import { HomeComponent } from './pages/home/home.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { LogInPageComponent } from './pages/log-in-page/log-in-page.component';
+import { CategoriesComponent } from './pages/categories/categories.component';
+import { AccountComponent } from './pages/account/account.component';
 import { ProductComponent } from './pages/product/product.component';
 import { RecoveraccountComponent } from './pages/recoveraccount/recoveraccount.component';
 import { RecoverfeedbackComponent } from './pages/recoverfeedback/recoverfeedback.component';
@@ -34,67 +45,59 @@ import { UserstoreComponent } from './pages/userstore/userstore.component';
 import { AccountsettingComponent } from './pages/accountsetting/accountsetting.component';
 import { StoreComponent } from './pages/store/store.component';
 import { StoresComponent } from './pages/stores/stores.component';
-import { StorepreviewComponent } from './components/storepreview/storepreview.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { CategoryComponent } from './pages/category/category.component';
-
 import { MyprofileComponent } from './pages/myprofile/myprofile.component';
 import { MyaddressComponent } from './pages/myaddress/myaddress.component';
-
 import { AddToCartComponent } from './pages/add-to-cart/add-to-cart.component';
-import { AddToCartNavComponent } from './components/add-to-cart-nav/add-to-cart-nav.component';
-import { MessageComponent } from './components/message/message.component';
-import { UserstoreHeaderComponent } from './components/userstore-header/userstore-header.component';
 import { UseraddproductsComponent } from './pages/useraddproducts/useraddproducts.component';
 import { CheckOutComponent } from './pages/check-out/check-out.component';
 import { BuyAgainComponent } from './pages/buy-again/buy-again.component';
 import { MessagesComponent } from './pages/messages/messages.component';
 import { SearchComponent } from './pages/search/search.component';
 
+// pages components
+const pagesComponents = [
+  HomeComponent,
+  RegisterComponent,
+  LogInPageComponent,
+  MyprofileComponent,
+  MessagesComponent,
+  SearchComponent,
+  CheckOutComponent,
+  BuyAgainComponent,
+  CategoriesComponent,
+  AccountComponent,
+  RecoveraccountComponent,
+  RecoverfeedbackComponent,
+  UserstoreComponent,
+  AccountsettingComponent,
+  ProductComponent,
+  MyaddressComponent,
+  AddToCartComponent,
+  UseraddproductsComponent,
+  CategoryComponent,
+  StoreComponent,
+  StoresComponent,
+];
 
-
+const reusableComponents = [
+  HeaderComponent,
+  FormComponent,
+  CarouselComponent,
+  HotsalesComponent,
+  DiscoverComponent,
+  CategorypreviewComponent,
+  ProductpreviewComponent,
+  NavComponent,
+  StorepreviewComponent,
+  FooterComponent,
+  AddToCartNavComponent,
+  MessageComponent,
+  UserstoreHeaderComponent,
+];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    RegisterComponent,
-    LogInPageComponent,
-    HeaderComponent,
-    FormComponent,
-    CarouselComponent,
-    HotsalesComponent,
-    DiscoverComponent,
-    CategoriesComponent,
-    CategorypreviewComponent,
-    ProductpreviewComponent,
-    AccountComponent,
-    NavComponent,
-    ProductComponent,
-    RecoveraccountComponent,
-    RecoverfeedbackComponent,
-    UserstoreComponent,
-    AccountsettingComponent,
-    StoreComponent,
-    StoresComponent,
-    StorepreviewComponent,
-    FooterComponent,
-    CategoryComponent,
-
-    MyprofileComponent,
-    MyaddressComponent,
-
-    AddToCartComponent,
-    AddToCartNavComponent,
-    MessageComponent,
-    UserstoreHeaderComponent,
-    UseraddproductsComponent,
-    CheckOutComponent,
-    BuyAgainComponent,
-    MessagesComponent,
-    SearchComponent,
-
-  ],
+  declarations: [AppComponent, ...pagesComponents, ...reusableComponents],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -105,7 +108,9 @@ import { SearchComponent } from './pages/search/search.component';
     HotToastModule.forRoot(),
     FormsModule,
     AdminModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatTabsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent],
