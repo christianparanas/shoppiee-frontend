@@ -12,13 +12,27 @@
             <div class="statlabel">Total Sales</div>
           </div>
         </div>
+        <div class="bottom-content">
+            <canvas baseChart 
+              class="chartjs"
+              height="40vh" 
+              width="80vw"
+              [datasets]="lineChartData"
+              [labels]="lineChartLabels"
+              [options]="lineChartOptions"
+              [colors]="lineChartColors"
+              [legend]="lineChartLegend"
+              [chartType]="lineChartType"
+              [plugins]="lineChartPlugins">
+            </canvas>
+        </div>
       </div>
       <div class="btnOver_container">
         <div class="top-content">
           <img src="../../../../../assets/svgs/creditSvg.svg" alt="" />
           <div class="stats">
-            <div class="numeric">102,341</div>
-            <div class="statlabel">Total Sales</div>
+            <div class="numeric">1501</div>
+            <div class="statlabel">Total Orders</div>
           </div>
         </div>
       </div>
@@ -26,8 +40,8 @@
         <div class="top-content">
           <img src="../../../../../assets/svgs/usersSvg.svg" alt="" />
           <div class="stats">
-            <div class="numeric">102,341</div>
-            <div class="statlabel">Total Sales</div>
+            <div class="numeric">881</div>
+            <div class="statlabel">Total Users</div>
           </div>
         </div>
       </div>
@@ -35,8 +49,8 @@
         <div class="top-content">
           <img src="../../../../../assets/svgs/storeSvg.svg" alt="" />
           <div class="stats">
-            <div class="numeric">102,341</div>
-            <div class="statlabel">Total Sales</div>
+            <div class="numeric">121</div>
+            <div class="statlabel">Total Products</div>
           </div>
         </div>
       </div>

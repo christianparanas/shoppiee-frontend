@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
 
+import { ChartsModule } from 'ng2-charts';
+
 // ng material modules
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -42,6 +44,6 @@ const ngMaterialModules = [
     CustomersComponent,
     StoresComponent,
   ],
-  imports: [CommonModule, AdminRoutingModule, ...ngMaterialModules],
+  imports: [CommonModule, AdminRoutingModule, ...ngMaterialModules, ChartsModule],
 })
 export class AdminModule {}
