@@ -32,10 +32,8 @@ Navigate to `http://localhost:4200/`. The app will automatically reload if you c
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
+
+<table style="border: none;">
   <tr>
     <td align="center">
       <a href="https://github.com/luigiloreno">
