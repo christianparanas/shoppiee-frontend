@@ -22,7 +22,7 @@ export interface UserData {
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent implements AfterViewInit, OnInit {
-  displayedColumns: string[] = ['id', 'image', 'name'];
+  displayedColumns: string[] = ['id', 'image', 'name', 'storeID', 'stock'];
   dataSource: MatTableDataSource<UserData>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

@@ -21,7 +21,6 @@
         padding: 20px;
         border-radius: 0;
         display: grid;
-        
         align-items: center;
         color: #fff;
         transition: all 0.3s ease;
@@ -44,11 +43,6 @@
           height: 50px;
           position: relative;
           display: block;
-
-          .chartjs {
-  
-          }
-
         }
 
         &:hover {
@@ -57,24 +51,23 @@
       }
 
       .btnOver_container:nth-child(1) {
-        background: #FF5C00;
+        background: #ff5c00;
       }
 
       .btnOver_container:nth-child(2) {
-        background: #8F83FF;
+        background: #8f83ff;
       }
 
       .btnOver_container:nth-child(3) {
-        background: #31D9A4;
+        background: #31d9a4;
       }
 
       .btnOver_container:nth-child(4) {
-        background: #FA5291;
+        background: #fa5291;
       }
     }
   }
 }
-
 
 @media only screen and (min-width: 1400px) {
   .admin_dashboard_container {

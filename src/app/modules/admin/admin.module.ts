@@ -12,7 +12,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatRippleModule } from '@angular/material/core';
 import { MatSortModule } from '@angular/material/sort';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
 
 // components
 import { AdminComponent } from './admin.component';
@@ -32,6 +33,8 @@ const ngMaterialModules = [
   MatRippleModule,
   MatInputModule,
   MatSortModule,
+  MatCardModule,
+  MatChipsModule
 ];
 
 @NgModule({
@@ -45,6 +48,11 @@ const ngMaterialModules = [
     CustomersComponent,
     StoresComponent,
   ],
-  imports: [CommonModule, AdminRoutingModule, ...ngMaterialModules, ChartsModule],
+  imports: [
+    CommonModule,
+    AdminRoutingModule,
+    ...ngMaterialModules,
+    ChartsModule,
+  ],
 })
 export class AdminModule {}
