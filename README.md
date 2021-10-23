@@ -30,12 +30,9 @@ Navigate to `http://localhost:4200/`. The app will automatically reload if you c
 
 ## Contributors ✨
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-
 <table>
   <tr>
-    <td align="center" style="border: none;">
+    <td align="center">
       <a href="https://github.com/luigiloreno">
         <img src="https://avatars.githubusercontent.com/u/73870953?v=4" width="100px;" alt=""/>
         <br />
