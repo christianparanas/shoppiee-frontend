@@ -30,10 +30,13 @@ import {
 export class NavComponent implements OnInit {
   isMobileSidebarOpen: boolean = false;
   currentRoute: any;
+  onScroll: boolean = false;
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    window.addEventListener('scroll', this.listenScrollEvent);
+    
     this.getCurrentRouteURL(this.route.snapshot.children[0].routeConfig?.path);
   }
 
@@ -45,5 +48,9 @@ export class NavComponent implements OnInit {
   openCloseMobileSidebar() {
     this.isMobileSidebarOpen =! this.isMobileSidebarOpen
   }
+
+  listenScrollEvent = () => {
+    window.scrollY > 15 ? (this.onScroll = true) : (this.onScroll = false);
+  };
 
 }

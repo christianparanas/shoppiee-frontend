@@ -5,14 +5,16 @@
     padding-top: 0;
 
     header {
-      position: fixed;
       background: #fff;
       width: 100%;
-      padding: 20px;
+      padding: 100px 20px 20px;
+
+      h2 {
+        color: #310f74;
+      }
     }
 
     .products_content_container {
-      padding-top: 150px;
 
       width: 100%;
 
