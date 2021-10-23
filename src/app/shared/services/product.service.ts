@@ -6,11 +6,10 @@ import { Observable } from 'rxjs';
 const baseUrl = 'https://fakestoreapi.com';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   fetchSpecificProduct(productId: number) {
     return this.http.get(`${baseUrl}/products/${productId}`);
