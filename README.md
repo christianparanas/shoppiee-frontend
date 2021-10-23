@@ -33,9 +33,9 @@ Navigate to `http://localhost:4200/`. The app will automatically reload if you c
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 
-<table style="border: none;">
+<table>
   <tr>
-    <td align="center">
+    <td align="center" style="border: none;">
       <a href="https://github.com/luigiloreno">
         <img src="https://avatars.githubusercontent.com/u/73870953?v=4" width="100px;" alt=""/>
         <br />
