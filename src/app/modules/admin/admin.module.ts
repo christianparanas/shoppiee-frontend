@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AdminRoutingModule } from './admin-routing.module';
 
@@ -61,6 +62,7 @@ const ngMaterialModules = [
     AdminRoutingModule,
     ...ngMaterialModules,
     ChartsModule,
+    BrowserAnimationsModule
   ],
 })
 export class AdminModule {}

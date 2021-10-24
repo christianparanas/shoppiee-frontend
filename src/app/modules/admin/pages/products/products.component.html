@@ -7,9 +7,20 @@
       #tooltip="matTooltip"
       matTooltip="Add new product"
       matTooltipPosition="left"
+      (click)="openCloseNewProductModal()"
     >
       <mat-icon>add</mat-icon>
     </button>
+
+    <div
+      class="addproduct_modal_container"
+      [@inOutAnimation]
+      *ngIf="isAddProductModalOpen"
+    >
+      <div class="header">
+        <i class="fal fa-times" (click)="openCloseNewProductModal()"></i>
+      </div>
+    </div>
 
     <header>
       <h2 class="label">Products</h2>
@@ -23,7 +34,7 @@
             #input
           />
         </mat-form-field>
-        <button mat-button mat-raised-button color="primary">
+        <button mat-button mat-raised-button color="primary" (click)="openCloseNewProductModal()">
           Add new product
         </button>
       </div>

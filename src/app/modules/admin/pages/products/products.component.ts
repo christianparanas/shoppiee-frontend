@@ -1,4 +1,11 @@
 import { AfterViewInit, Component, ViewChild, OnInit } from '@angular/core';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+} from '@angular/animations';
 
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -20,8 +27,21 @@ export interface UserData {
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss'],
+  animations: [
+    trigger('inOutAnimation', [
+      transition(':enter', [
+        style({ bottom: '-1000px', opacity: 1 }),
+        animate('.3s ease', style({ bottom: 0, opacity: 1 })),
+      ]),
+      transition(':leave', [
+        style({ bottom: 0, opacity: 1 }),
+        animate('.3s ease', style({ bottom: '-1000px', opacity: 1 })),
+      ]),
+    ]),
+  ],
 })
 export class ProductsComponent implements AfterViewInit, OnInit {
+  isAddProductModalOpen: boolean = false;
   displayedColumns: string[] = ['id', 'image', 'name', 'storeID', 'stock'];
   dataSource: MatTableDataSource<UserData>;
 
@@ -29,12 +49,16 @@ export class ProductsComponent implements AfterViewInit, OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(private productsService: ProductsService) {
-    this.fetchProducts()
+    this.fetchProducts();
   }
 
   ngOnInit() {}
 
   ngAfterViewInit() {}
+
+  openCloseNewProductModal() {
+    this.isAddProductModalOpen = !this.isAddProductModalOpen;
+  }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
