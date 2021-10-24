@@ -2,8 +2,6 @@
   <div class="dash_wrapper">
     <h2>Dashboard</h2>
     <div class="btnOverview_wrapper">
-
-
       <div class="btnOver_container">
         <div class="top-content">
           <img src="../../../../../assets/svgs/salesSvg.svg" alt="" />
@@ -13,18 +11,19 @@
           </div>
         </div>
         <div class="bottom-content">
-            <canvas baseChart 
-              class="chartjs"
-              height="40vh" 
-              width="80vw"
-              [datasets]="lineChartData"
-              [labels]="lineChartLabels"
-              [options]="lineChartOptions"
-              [colors]="lineChartColors"
-              [legend]="lineChartLegend"
-              [chartType]="lineChartType"
-              [plugins]="lineChartPlugins">
-            </canvas>
+          <canvas
+            baseChart
+            class="chartjs"
+            height="40vh"
+            width="80vw"
+            [datasets]="dashBtnSetting.lineChartData"
+            [labels]="dashBtnSetting.lineChartLabels"
+            [options]="dashBtnSetting.lineChartOptions"
+            [colors]="dashBtnSetting.lineChartColors"
+            [legend]="dashBtnSetting.lineChartLegend"
+            [chartType]="lineChartType"
+          >
+          </canvas>
         </div>
       </div>
       <div class="btnOver_container">
@@ -54,7 +53,120 @@
           </div>
         </div>
       </div>
+    </div>
 
+    <div class="data-grid-wrapper">
+      <div class="top-grid">
+        <div class="data-top-container">
+          <div class="header">Summary</div>
+          <div class="chart-container">
+            <div class="charts-btns">
+              <div class="btn" [ngClass]="currentChart == 'products' ? 'selectedChartBtn' : ''" (click)="changeChartData('products')">
+                <div class="sum">
+                  <h4>168</h4>
+                  <p>Products</p>
+                </div>
+                
+              </div>
+              <div class="btn" [ngClass]="currentChart == 'sales' ? 'selectedChartBtn' : ''" (click)="changeChartData('sales')">
+                <div class="sum">
+                  <h4>168</h4>
+                  <p>Sales</p>
+                </div>
+              </div>
+              <div class="btn" [ngClass]="currentChart == 'orders' ? 'selectedChartBtn' : ''" (click)="changeChartData('orders')">
+                <div class="sum">
+                  <h4>168</h4>
+                  <p>Orders</p>
+                </div>
+              </div>
+            </div>
+            <div class="chart-wrapper">
+              <canvas
+              baseChart
+              class="chartjs"
+              [datasets]="dashSetting.lineChartData"
+              [labels]="dashSetting.lineChartLabels"
+              [options]="dashSetting.lineChartOptions"
+              [colors]="dashSetting.lineChartColors"
+              [legend]="dashSetting.lineChartLegend"
+              [chartType]="lineChartType"
+            >
+            </canvas>
+            </div>
+          </div>
+        </div>
+        <div class="data-top-container">
+          <div class="header">Top Selling Products</div>
+          <div class="top-content">
+            <div class="product-container">
+              <div class="img-container">
+                <img
+                  src="https://avatars.githubusercontent.com/u/59472122?v=4"
+                  alt=""
+                />
+              </div>
+              <div class="detail-container">
+                <div class="product_name_container">Baso</div>
+                <div class="product_desc_container">
+                  Lorem ipsum dolor sit amet
+                </div>
+              </div>
+              <div class="product-sales-container">
+                <div class="num">P169</div>
+                <p>Sales</p>
+              </div>
+            </div>
+            <div class="product-container">
+              <div class="img-container">
+                <img
+                  src="https://avatars.githubusercontent.com/u/59472122?v=4"
+                  alt=""
+                />
+              </div>
+              <div class="detail-container">
+                <div class="product_name_container">Baso</div>
+                <div class="product_desc_container">
+                  Lorem ipsum dolor sit amet
+                </div>
+              </div>
+              <div class="product-sales-container">
+                <div class="num">P169</div>
+                <p>Sales</p>
+              </div>
+            </div>
+            <div class="product-container">
+              <div class="img-container">
+                <img
+                  src="https://avatars.githubusercontent.com/u/59472122?v=4"
+                  alt=""
+                />
+              </div>
+              <div class="detail-container">
+                <div class="product_name_container">Baso</div>
+                <div class="product_desc_container">
+                  Lorem ipsum dolor sit amet
+                </div>
+              </div>
+              <div class="product-sales-container">
+                <div class="num">P169</div>
+                <p>Sales</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-grid">
+        <div class="data-bottom-container">
+          <div class="header">Order Activity</div>
+        </div>
+        <div class="data-bottom-container">
+          <div class="header">Recent Products</div>
+        </div>
+        <div class="data-bottom-container">
+          <div class="header">Recent Buyers</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

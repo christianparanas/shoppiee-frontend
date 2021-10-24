@@ -18,10 +18,10 @@ export interface UserData {
 /**
  * @title Data table with sorting, pagination, and filtering.
  */
- @Component({
+@Component({
   selector: 'app-customers',
   templateUrl: './customers.component.html',
-  styleUrls: ['./customers.component.scss']
+  styleUrls: ['./customers.component.scss'],
 })
 export class CustomersComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['id', 'image', 'name', 'address', 'role'];
@@ -37,44 +37,44 @@ export class CustomersComponent implements OnInit, AfterViewInit {
         image: 'https://avatars.githubusercontent.com/u/59472122?v=4',
         name: 'Thea Thea',
         address: 'Brgy Tibay',
-        role: 'Customer'
+        role: 'Customer',
       },
       {
         id: '1',
         image: 'https://avatars.githubusercontent.com/u/59472122?v=4',
         name: 'Chan Chan',
         address: 'Brgy Tibay',
-        role: 'Admin'
+        role: 'Admin',
       },
       {
         id: '1',
         image: 'https://avatars.githubusercontent.com/u/59472122?v=4',
         name: 'Thea Thea',
         address: 'Brgy Tibay',
-        role: 'Customer'
+        role: 'Customer',
       },
       {
         id: '1',
         image: 'https://avatars.githubusercontent.com/u/59472122?v=4',
         name: 'Thea Thea',
         address: 'Brgy Tibay',
-        role: 'Customer'
+        role: 'Customer',
       },
       {
         id: '1',
         image: 'https://avatars.githubusercontent.com/u/59472122?v=4',
         name: 'Thea Thea',
         address: 'Brgy Tibay',
-        role: 'Customer'
+        role: 'Customer',
       },
       {
         id: '1',
         image: 'https://avatars.githubusercontent.com/u/59472122?v=4',
         name: 'Thea Thea',
         address: 'Brgy Tibay',
-        role: 'Customer'
+        role: 'Customer',
       },
-    ]
+    ];
 
     this.dataSource = new MatTableDataSource(users);
   }
