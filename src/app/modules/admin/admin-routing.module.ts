@@ -7,6 +7,7 @@ import { AdminComponent } from './admin.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { CustomersComponent } from './pages/customers/customers.component';
 import { StoresComponent } from './pages/stores/stores.component';
+import { OrdersComponent } from './pages/orders/orders.component';
 
 const routes: Routes = [
   { 
@@ -16,6 +17,7 @@ const routes: Routes = [
       { path: "", component: DashboardComponent },
       { path: "products", component: ProductsComponent },
       { path: "customers", component: CustomersComponent },
+      { path: "orders", component: OrdersComponent },
       { path: "stores", component: StoresComponent },
     ] 
   },
