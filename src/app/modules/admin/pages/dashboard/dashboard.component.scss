@@ -102,6 +102,8 @@
                 justify-content: center;
                 padding: 10px;
                 cursor: pointer;
+                border-top: 2px solid #fff;
+                transition: all .3s ease;
 
                 .sum {
                   h4 {
@@ -122,15 +124,13 @@
           }
 
           .top-content {
-            padding: 0 20px;
 
             .product-container {
               display: grid;
               grid-template-columns: 60px 1fr 100px;
               grid-gap: 10px;
               align-items: center;
-              border-bottom: 1px solid #e3e3e3;
-              padding: 20px 0;
+              padding: 20px;
 
               .img-container {
                 width: 60px;
