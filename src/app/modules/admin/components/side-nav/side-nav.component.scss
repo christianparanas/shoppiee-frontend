@@ -7,11 +7,14 @@
 
   .sidenav-wrapper {
     padding: 20px 30px;
-    padding-top: 80px;
     box-shadow: 0 14px 30px 0 RGB(43 80 237 / 20%);
     height: 100%;
     min-height: 420px;
     border-radius: 40px;
+
+    .logo {
+      padding: 20px 20px 40px;
+    }
 
     .route-items {
       padding: 10px;
