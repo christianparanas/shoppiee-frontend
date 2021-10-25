@@ -48,8 +48,10 @@ export class LogInPageComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.loginForm.status == 'VALID'){
+    //check if the input is valid and password is not empty and not using multiple space.
+    if (this.loginForm.status == 'VALID' && this.loginForm.controls.password.value.trim()){
       // start the loader
+      console.log(this.loginForm)
       this.submitLoading = true;
 
       var formData: any = new FormData();
@@ -81,12 +83,11 @@ export class LogInPageComponent implements OnInit {
           } else if (error.status == 500) {
             result=error.statusText
           }
-          console.log(error)
           this.toast.error(result,{ position: 'top-right' })
         }
       );
     }else{
-      this.toast.error('Invalid Input',{position:'top-right'})
+      this.toast.error('Invalid Email or Password',{position:'top-right'})
     }
   }
 }
