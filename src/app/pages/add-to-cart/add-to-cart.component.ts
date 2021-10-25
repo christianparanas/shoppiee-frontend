@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
+import { Location } from '@angular/common';
 
 // services
 import { AuthService } from '../../shared/services/auth.service';
@@ -22,8 +23,13 @@ export class AddToCartComponent implements OnInit {
   constructor(
     public router: Router,
     private authService: AuthService,
-    private toast: HotToastService
+    private toast: HotToastService,
+    private location: Location,
   ) {}
+  
+  goBack() {
+    this.location.back();
+  }
 
   ngOnInit(): void {
 

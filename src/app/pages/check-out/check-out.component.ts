@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-check-out',
@@ -6,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./check-out.component.scss']
 })
 export class CheckOutComponent implements OnInit {
+  onScroll: boolean = false;
   @Input() all:number
   @Input() subTotal:number=0;
   @Input() name:string='Cardo Never Die'
@@ -20,7 +22,7 @@ export class CheckOutComponent implements OnInit {
     {id:6,name:'Love Lang',Price:100,amount:2},
   ]
 
-  constructor() {
+  constructor(private location: Location,) {
     let tempoTotal=0;
     this.productArray.map((product:any)=>{
       tempoTotal+=product.Price*product.amount;
@@ -29,7 +31,15 @@ export class CheckOutComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+    window.addEventListener('scroll', this.listenScrollEvent);
+  }
+
+  listenScrollEvent = () => {
+    window.scrollY > 15 ? (this.onScroll = true) : (this.onScroll = false);
+  };
+
+  goBack() {
+    this.location.back();
   }
 
 }

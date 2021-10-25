@@ -11,6 +11,8 @@ import { AdminModule } from './modules/admin/admin.module';
 // material modules
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
+import { MatRippleModule } from '@angular/material/core';
+import { MatButtonModule } from '@angular/material/button';
 
 // vendors
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
@@ -110,7 +112,9 @@ const reusableComponents = [
     AdminModule,
     BrowserAnimationsModule,
     MatTabsModule,
-    MatIconModule
+    MatIconModule,
+    MatRippleModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent],
