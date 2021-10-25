@@ -42,7 +42,7 @@ const routes: Routes = [
   { path: 'account/recover/feedback', component: RecoverfeedbackComponent },
 
   // protected routes
-  { path: 'messages', component: MessagesComponent, canActivate: [AuthGuard] },
+  { path: 'messages', component: MessagesComponent },
   { path: 'account', component: AccountComponent},
   { path: 'account/setting', component: AccountsettingComponent, canActivate: [AuthGuard] },
   { path: 'account/setting/myprofile', component: MyprofileComponent, canActivate: [AuthGuard] },

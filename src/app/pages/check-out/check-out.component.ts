@@ -7,6 +7,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./check-out.component.scss']
 })
 export class CheckOutComponent implements OnInit {
+  rippleColor: string = "rgb(255, 92, 0, 0.2)"
   onScroll: boolean = false;
   @Input() all:number
   @Input() subTotal:number=0;
