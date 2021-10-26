@@ -1,16 +1,28 @@
-<div class='header-container'>
-    <div class='upper-content'>
-        <div class='go-back'>
-            <a routerLink='/'><i class="fas fa-arrow-left"></i></a>
-        </div>
-        <div class='message-container'>
-            <div class='messages'><a routerLink='/messages' ><i class="far fa-comment-alt"></i></a></div>
-        </div>
+<div class="header-container" [ngClass]="{ header__scrollShadow: onScroll }">
+  <div class="upper-content">
+    <button mat-icon-button class="goBack" (click)="goBack()">
+      <i class="fal fa-arrow-left"></i>
+    </button>
+    <div class="toMsg" routerLink="/messages">
+      <i class="far fa-comment-alt">
+        <p>99</p>
+      </i>
     </div>
-    <div class='lower-content'>
-        <ul>
-            <li [ngClass]='{currentPage : currentRouter === "addToCart"}'><a routerLink='/cart'>Pending Items</a></li>
-            <li [ngClass]='{currentPage : currentRouter === "buyAgain"}'><a routerLink='/cart/buy-again'>Buy Again</a></li>
-        </ul>
+  </div>
+  <div class="lower-content">
+    <div
+      [ngClass]="{ currentPage: currentRouter === 'addToCart' }"
+      routerLink="/cart"
+      class="navvv"
+    >
+      Pending Items
     </div>
+    <div
+      [ngClass]="{ currentPage: currentRouter === 'buyAgain' }"
+      routerLink="/cart/buy-again"
+      class="navvv"
+    >
+      Buy Again
+    </div>
+  </div>
 </div>

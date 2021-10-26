@@ -23,7 +23,7 @@ export class CheckOutComponent implements OnInit {
     {id:6,name:'Love Lang',Price:100,amount:2},
   ]
 
-  constructor(private location: Location,) {
+  constructor(private location: Location) {
     let tempoTotal=0;
     this.productArray.map((product:any)=>{
       tempoTotal+=product.Price*product.amount;

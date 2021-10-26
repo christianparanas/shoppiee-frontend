@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-add-to-cart-nav',
@@ -7,9 +8,20 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class AddToCartNavComponent implements OnInit {
   @Input() currentRouter:string;
-  constructor() { }
+  onScroll: boolean = false;
+
+  constructor(private location: Location) { }
 
   ngOnInit(): void {
+    window.addEventListener('scroll', this.listenScrollEvent);
+  }
+
+  listenScrollEvent = () => {
+    window.scrollY > 15 ? (this.onScroll = true) : (this.onScroll = false);
+  };
+
+  goBack() {
+    this.location.back();
   }
   
 }

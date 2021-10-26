@@ -24,15 +24,14 @@ export class AddToCartComponent implements OnInit {
     public router: Router,
     private authService: AuthService,
     private toast: HotToastService,
-    private location: Location,
+    private location: Location
   ) {}
-  
+
   goBack() {
     this.location.back();
   }
 
   ngOnInit(): void {
-
     this.productArray = [
       {
         id: 1,
@@ -120,6 +119,7 @@ export class AddToCartComponent implements OnInit {
       this.showTransaction();
     });
   }
+
   //check only the specific product using id
   check(id: number) {
     return this.productArray.map((product: any) => {
@@ -129,6 +129,7 @@ export class AddToCartComponent implements OnInit {
       }
     });
   }
+  
   // if the btn select all is check every product will be uncheck
   clickAll() {
     this.isAll = !this.isAll;
@@ -153,6 +154,7 @@ export class AddToCartComponent implements OnInit {
       }
     });
   }
+
   delete(id: number) {
     this.temporary = [];
     return this.productArray.filter((product: any) => {
