@@ -9,10 +9,9 @@ import { HotToastService } from '@ngneat/hot-toast';
   styleUrls: ['./userstore.component.scss'],
 })
 export class UserstoreComponent implements OnInit {
-  isMsgPanelOpen: boolean = false;
   discoverProductsArr = new Array(11);
-  onScroll1: boolean = false;
-  onScroll2: boolean = false;
+  onScroll: boolean = false;
+
 
   constructor(
     private location: Location,
@@ -25,13 +24,8 @@ export class UserstoreComponent implements OnInit {
   }
 
   listenScrollEvent = () => {
-    window.scrollY > 122 ? (this.onScroll1 = true) : (this.onScroll1 = false);
-    window.scrollY > 12 ? (this.onScroll2 = true) : (this.onScroll2 = false);
+    window.scrollY > 12 ? (this.onScroll = true) : (this.onScroll = false);
   };
-
-  openCloseMsgPanel() {
-    this.isMsgPanelOpen =! this.isMsgPanelOpen
-  }
 
   goBack() {
     this.location.back();

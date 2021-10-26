@@ -43,7 +43,7 @@
   </div>
 
   <div *ngIf="!openMsg" class="noSelectedMsg">
-    <img src="../../../assets/imgs/msgImg.png" alt=""> 
+    <img src="../../../assets/imgs/msgImg.png" alt="" />
   </div>
 
   <div *ngIf="openMsg" class="contentMsg">
@@ -70,7 +70,7 @@
     </div>
 
     <div class="msgs_container">
-      <div class="spec_msg_wrapper" >
+      <div class="spec_msg_wrapper">
         <div
           class="msg"
           *ngFor="let msg of specificMsgs"
@@ -80,7 +80,6 @@
           <p>{{ msg.userMessage }}</p>
         </div>
         <div class="bottomscroll" #btnScroll></div>
-
       </div>
     </div>
 
@@ -97,13 +96,12 @@
           (click)="testScroll()"
           (focus)="testScroll()"
           required
-          [ngModelOptions]="{standalone: true}"
+          [ngModelOptions]="{ standalone: true }"
         />
         <div class="sendMsg_btn">
           <i
             (click)="sendMessage(); msgInput.focus()"
             class="fal fa-paper-plane"
-            
           ></i>
         </div>
       </form>

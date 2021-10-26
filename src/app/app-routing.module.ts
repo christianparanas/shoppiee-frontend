@@ -48,6 +48,7 @@ const routes: Routes = [
   { path: 'account/setting/myprofile', component: MyprofileComponent, canActivate: [AuthGuard] },
   { path: 'account/setting/myaddress', component: MyaddressComponent, canActivate: [AuthGuard] },
   { path: 'account/store', component: UserstoreComponent },
+  { path: 'account/store/messages', component: MessagesComponent },
   { path: 'account/store/addproduct', component: UseraddproductsComponent, canActivate: [AuthGuard] },
   { path: 'cart', component: AddToCartComponent },
   { path: 'cart/buy-again', component: BuyAgainComponent },

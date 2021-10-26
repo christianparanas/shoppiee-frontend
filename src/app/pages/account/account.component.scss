@@ -17,7 +17,7 @@
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
-        padding: 20px;
+        padding: 30px 20px 20px;
         align-items: flex-end;
 
         .user {
@@ -27,6 +27,7 @@
             width: 80px;
             height: 80px;
             border-radius: 50%;
+            object-fit: cover;
           }
 
           .details {

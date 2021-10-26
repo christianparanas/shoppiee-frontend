@@ -3,15 +3,16 @@
     <div class="userStore_header_content_container">
       <div
         class="userStore_options_container"
-        [ngClass]="{ header__scrollShadow: onScroll1 }"
-        [ngClass]="{ header2__scrollShadow: onScroll2 }"
+        [ngClass]="{ header__scrollShadow: onScroll }"
       >
         <button mat-icon-button class="backBtn" (click)="goBack()">
           <i class="fal fa-arrow-left"></i>
         </button>
         <div class="iconsBtn">
-          <i class="fal fa-bell"></i>
-          <i class="far fa-comment-alt" (click)="openCloseMsgPanel()">
+          <i class="fal fa-bell">
+            <p>99</p>
+          </i>
+          <i class="far fa-comment-alt" routerLink="/account/store/messages">
             <p>99</p>
           </i>
         </div>
@@ -29,7 +30,7 @@
           </div>
         </div>
         <div class="store_setting_btn">
-          <i class="fal fa-street-view"></i>
+          <i class="fal fa-cog"></i>
         </div>
       </div>
     </div>
@@ -43,31 +44,27 @@
         </div>
         <div class="addproduct_btn_container">
           <p>Start selling on Shoppiee</p>
-          <button
-            mat-button
+          <div
             class="btn"
             routerLink="/account/store/addproduct"
             type="submit"
             name="add"
           >
             Add Product
-          </button>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="userStore_products_container">
       <div class="header">
-        <h4>Products</h4>
-        <button mat-button class="sort">
-          <label for="op">Sort by:</label>
+        <h3>Products</h3>
+        <div class="sort">
           <select id="op">
-            <option value="priceasc">Price - ASC</option>
-            <option value="pricedsc">Price - DESC</option>
-            <option value="nameasc">Name - ASC</option>
-            <option value="namedsc">Name - DESC</option>
+            <option value="priceasc">Sort by: Price - High to Low</option>
+            <option value="pricedsc">Sort by: Price - Low to High</option>
           </select>
-        </button>
+        </div>
       </div>
 
       <div class="products_container">
@@ -79,7 +76,12 @@
   </div>
 </div>
 
-<div *ngIf="isMsgPanelOpen" class="msgPanel">
+
+
+
+
+<!-- ruel msg panel html -->
+<div *ngIf="false" class="msgPanel">
   <div class="message-container">
     <div class="message-head">
       <nav class="nav">
@@ -163,6 +165,8 @@
       </div>
     </a>
   </div>
+
+  
   <!--Specific Message-->
   <div class="main-container">
     <div class="panel_container" id=":customer_id">
