@@ -31,8 +31,6 @@ import { NavComponent } from './components/nav/nav.component';
 import { StorepreviewComponent } from './components/storepreview/storepreview.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AddToCartNavComponent } from './components/add-to-cart-nav/add-to-cart-nav.component';
-import { MessageComponent } from './components/message/message.component';
-import { UserstoreHeaderComponent } from './components/userstore-header/userstore-header.component';
 
 // pages
 import { HomeComponent } from './pages/home/home.component';
@@ -94,8 +92,6 @@ const reusableComponents = [
   StorepreviewComponent,
   FooterComponent,
   AddToCartNavComponent,
-  MessageComponent,
-  UserstoreHeaderComponent,
 ];
 
 @NgModule({
