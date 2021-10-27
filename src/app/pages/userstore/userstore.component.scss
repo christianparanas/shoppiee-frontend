@@ -15,9 +15,14 @@
         transition: all 0.2s ease;
         height: 58px;
 
-        .backbtn {
+        .goBack {
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+    
           i {
-            font-size: 20px;
+            font-size: 18px;
           }
         }
 
