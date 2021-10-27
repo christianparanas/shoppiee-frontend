@@ -19,6 +19,10 @@ export class ProductService {
     return this.http.get(`${baseUrl}/products?limit=11`);
   }
 
+  fetchUserStoreProducts(): Observable<any> {
+    return this.http.get(`${baseUrl}/products`);
+  }
+
   topProducts(): Observable<any> {
     return this.http.get(`${baseUrl}/products?limit=7`);
   }
