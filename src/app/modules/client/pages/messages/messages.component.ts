@@ -3,7 +3,7 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
 
-import { MessageInterface } from 'src/app/shared/interfaces/messageInterface';
+import { MessageInterface } from '../../shared/interfaces/messageInterface';
 
 
 @Component({
