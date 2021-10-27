@@ -10,20 +10,20 @@ import { AppComponent } from './app.component';
 // custom modules
 import { AdminModule } from './modules/admin/admin.module';
 import { ClientModule } from './modules/client/client.module';
-
+import { MaterialModule } from './modules/material/material.module';
 
 @NgModule({
-  declarations: [AppComponent, ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MaterialModule,
     AdminModule,
     ClientModule,
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    FormsModule
-
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

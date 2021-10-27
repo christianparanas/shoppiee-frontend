@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 // services
 import { AuthGuardService as AuthGuard } from './shared/services/auth-guard.service';
 
+// pages
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { LogInPageComponent } from './pages/log-in-page/log-in-page.component';

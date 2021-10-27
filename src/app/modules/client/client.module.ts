@@ -5,13 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+// modules
 import { ClientRoutingModule } from './client-routing.module';
-
-// material modules
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatIconModule } from '@angular/material/icon';
-import { MatRippleModule } from '@angular/material/core';
-import { MatButtonModule } from '@angular/material/button';
+import { MaterialModule } from '../material/material.module';
 
 // vendors
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
@@ -30,7 +26,6 @@ import { NavComponent } from './components/nav/nav.component';
 import { StorepreviewComponent } from './components/storepreview/storepreview.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AddToCartNavComponent } from './components/add-to-cart-nav/add-to-cart-nav.component';
-
 
 // pages
 import { HomeComponent } from './pages/home/home.component';
@@ -105,13 +100,10 @@ const reusableComponents = [
     NgxSkeletonLoaderModule,
     NgxSplideModule,
     ReactiveFormsModule,
-    HotToastModule.forRoot(),
     FormsModule,
+    HotToastModule.forRoot(),
     BrowserAnimationsModule,
-    MatTabsModule,
-    MatIconModule,
-    MatRippleModule,
-    MatButtonModule,
+    MaterialModule
   ]
 })
 export class ClientModule { }
