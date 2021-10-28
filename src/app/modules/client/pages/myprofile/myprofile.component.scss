@@ -1,155 +1,123 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;900&display=swap");
+$formBack:rgb(0, 140, 255);
+$formText:black;
 
-.subtitle {
-  font-weight: bold;
-  font-family: "Montserrat", sans-serif;
-}
-
-.prof-container {
-  position: fixed;
-  height: 180px;
-  width: 100%;
-  background: #db90db;
-}
-
-img {
-  height: 100px;
-  width: 100px;
-  border: 1px solid rgba(63, 58, 58, 0.39);
-  margin: 15px 125px;
-  border-radius: 50%;
-}
-
-#file {
-  margin: 5px 125px;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="number"] {
-  display: block;
-  box-sizing: border-box;
-  color: #000000;
-  margin-bottom: 30px;
-  padding: 4px;
-  width: 340px;
-  height: 32px;
-  border: none;
-  border-bottom: 2px solid rgba(63, 58, 58, 0.39);
-  font-family: "Montserrat", sans-serif;
-  font-weight: medium;
-  font-size: 18px;
-  transition: 0.2s ease;
-  background: none;
-}
-
-input[type="text"] {
-  margin-top: 25px;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="number"]:focus {
-  border-bottom: 2px solid #3498db;
-  font-weight: medium;
-  color: #000000;
-  transition: 0.2s ease;
-  background: rgb(255, 255, 255);
-  border-top: none;
-}
-
-button {
-  font-weight: bold;
-  border: 1px solid #020202;
-  background-color: rgba(215, 7, 247, 0.39);
-  color: rgb(5, 5, 5);
-  height: 30px;
-  width: 100px;
-  border-radius: 5px;
-  margin: 0 10px 10px 50px;
-  display: center;
-  flex-direction: row;
-}
-
-button:hover {
-  background-color: #566573;
-}
-
-@media only screen and (min-width: 999px) {
-  .subtitle {
-    font-weight: bold;
-    font-family: "Montserrat", sans-serif;
-  }
-
-  .prof-container {
-    position: fixed;
+.my-profile-container{
+  display: grid;
+  width:100%;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  .man-with-computer{
+    display:grid;
+    width: 100%;
     height: 100%;
-    width: 42%;
-    background: #e4cee4;
   }
+  .from-container{
+    width:100%; height: 100%;
+    display:grid;
+    background-color: $formBack;
+    grid-template-rows: 5rem 1fr;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    border-radius:50px;
+    form::before,
+    form::after{
+      content: '';
+      position: absolute;
+      border-radius:999px;
+      background-color: $formBack;
+    }
+    form::after{
+      width:4vw;
+      height:4vw;
+      transform: translateX(-37vw) translateY(-1rem);
+    }
+    form::before{
+      width: 9vw;
+      height: 9vw;
+      transform: translateX(-30vw) translateY(-5rem);
+    }
 
-  img {
-    height: 100px;
-    width: 100px;
-    border: 1px solid rgba(63, 58, 58, 0.39);
-    margin: 15px 190px;
-    border-radius: 50%;
+    form{
+      display:grid;
+      width:95%;
+      height: 90%;
+      justify-items: center;
+      align-content: center;
+      box-shadow:0px 0px 3px rgba(0,0,0,.5);
+      .prof-container{
+        width:100; height:7rem;
+        display:grid;
+        justify-items: center;
+        align-content: center;
+        .circle{
+          width:8rem; height:8rem;
+          overflow: hidden;
+          border-radius: 999px;
+          img{
+            width:100%;
+            height: 100%;
+          }
+          input[type=file]::-webkit-file-upload-button{
+            border:none;
+            background-color: rgba(255,255,255,.3);
+            height: 2rem;
+            font-size: 14px;
+            transform: translateX(-10px);
+            padding-bottom: 10px;
+            color:white;
+            text-shadow: 0px 0px 1px black;
+            width:8rem;
+          }
+          input[type=file]{
+            transform: translateY(-35px);
+          }
+        }
+      }
+      .mat-form-field{
+        width:90%;
+      }
+    }
+    button{
+      width:90%;
+      height: 2.5rem;
+      margin:5px;
+      font-weight: bold;
+      border-radius: .5rem;
+    }
+    .confirm{
+      background-color: rgb(31, 224, 31);
+    }
+    .cancel{
+      background-color: rgb(235, 36, 36);
+    }
   }
+}
 
-  #file {
-    margin: 35px -220px;
-    padding-top: 90px;
-  }
+input{
+  text-indent: 10px;
+  color:$formText;
+}
 
-  input[type="text"],
-  input[type="email"],
-  input[type="number"] {
-    display: block;
-    margin-inline: 110px;
-    box-sizing: border-box;
-    color: #000000;
-    margin-bottom: 30px;
-    padding: 4px;
-    width: 330px;
-    height: 32px;
-    border: none;
-    border-bottom: 1.5px solid rgba(63, 58, 58, 0.39);
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    font-size: 15px;
-    transition: 0.2s ease;
-    background: none;
-  }
+mat-label{
+  color:$formText;
+  margin-left:10px;
+}
 
-  input[type="text"] {
-    margin-top: 25px;
-  }
-
-  input[type="text"]:focus,
-  input[type="email"]:focus,
-  input[type="number"]:focus {
-    border-bottom: 2px solid #3498db;
-
-    color: #030303;
-    transition: 0.2s ease;
-    background: rgb(255, 255, 255);
-    border-top: none;
-  }
-
-  button {
-    font-weight: bold;
-    border: 1px solid #020202;
-    background-color: rgba(215, 7, 247, 0.39);
-    color: rgb(5, 5, 5);
-    height: 30px;
-    width: 100px;
-    border-radius: 5px;
-    margin: 10px 0px 190px 115px;
-    display: center;
-    flex-direction: row;
-  }
-
-  button:hover {
-    background-color: #566573;
+@media only screen and (max-width:700px){
+  .my-profile-container{
+    grid-template-columns: 1fr;
+    .man-with-computer{
+      display:none;
+    }
+    .from-container{
+      border-radius:0px;
+      background-color:white;
+      form::before,form::after{
+        display:none;
+      }
+    }
   }
 }
