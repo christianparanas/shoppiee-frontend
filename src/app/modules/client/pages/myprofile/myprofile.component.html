@@ -4,33 +4,37 @@
     <!------form-of-profile-editing-->
     <div class='from-container'>
         <h3 class="subtitle">{{user.name}}`s Profile</h3>       
-        <form>
+        <form (ngSubmit)='onSubmit()' [formGroup]="updateForm">
             <div class="prof-container">
                 <div class='circle'>
                     <img src="https://avatars.githubusercontent.com/u/59472122?v=4">
                     <input type="file" id="file" name="image" >
                 </div>
             </div>
-            <mat-form-field>
-                <mat-label>User Name</mat-label>
-                <input matInput placeholder="" value="">
-            </mat-form-field>
 
             <mat-form-field>
                 <mat-label>Name</mat-label>
-                <input matInput placeholder="" value="">
+                <input formControlName='name' type='text' matInput placeholder="" value="" required>
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Email</mat-label>
-                <input matInput placeholder="" value="">
+                <input formControlName='email' type='email' matInput placeholder="" value="" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input formControlName='password' type='password' matInput placeholder="" value="" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>number</mat-label>
+                <input formControlName='number' matInput placeholder="ex.0912-123-1234" type='tel' value="" pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}" required>
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Date of Birth</mat-label>
-                <input matInput placeholder="" value="">
+                <input formControlName='date' type='date' matInput placeholder="" value="" required>
             </mat-form-field>
             
-            <button name="confirm" class='confirm'>CONFIRM</button>
-            <button class='cancel'>CANCEL</button>
+            <button type='submit'  name="confirm" class='confirm'>CONFIRM</button>
+            <div (click)='goBack()' class='cancel'>CANCEL</div>
         </form>
     </div>
 </div>

@@ -53,12 +53,7 @@ export class LogInPageComponent implements OnInit {
       // start the loader
       console.log(this.loginForm)
       this.submitLoading = true;
-
-      var formData: any = new FormData();
-      formData.append('email', this.loginForm.value.email);
-      formData.append('password', this.loginForm.value.password);
-
-      this.authService.login(formData).subscribe(
+      this.authService.login(this.loginForm.value).subscribe(
         (response) => {
           this.submitLoading = false;
           this.toast.success(response.message, { position: 'top-right' });
