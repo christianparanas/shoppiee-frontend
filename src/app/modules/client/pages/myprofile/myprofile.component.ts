@@ -2,15 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl,FormGroup,Validators } from '@angular/forms';
 import {Location} from '@angular/common';
 
-export interface dataFromForm{
-  id?:string,
-  name:string,
-  email:string,
-  password:string,
-  number:string,
-  date:string,
-}
-
 @Component({
   selector: 'app-myprofile',
   templateUrl: './myprofile.component.html',
@@ -19,7 +10,6 @@ export interface dataFromForm{
 export class MyprofileComponent implements OnInit {
   user = {name:'lorem'}
   updateForm:FormGroup;
-  data:dataFromForm[];
   constructor(private location:Location) { }
 
   ngOnInit(): void {
