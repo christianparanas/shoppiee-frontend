@@ -85,11 +85,7 @@ export class RegisterComponent implements OnInit {
       // start the loader
       this.submitLoading = true;
 
-      this.authService.register({
-        name: this.registerForm.value.name,
-        email: this.registerForm.value.email,
-        password: this.registerForm.value.password
-      }).subscribe(
+      this.authService.register(this.registerForm.value).subscribe(
         (response) => {
           this.submitLoading = false;
           this.toast.success(response.message, { position: 'top-right' });
