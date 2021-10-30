@@ -64,8 +64,7 @@ export class RegisterComponent implements OnInit {
       name: this.registerForm.controls.name.value.trim() == '' ? true : false,
       email: this.registerForm.controls.email.value.trim() == '' ? true : false,
       password: this.registerForm.controls.password.value.trim() == '' ? true : false,
-      confirmpass:
-        this.registerForm.controls.confirmPassword.value.trim() == '' ? true : false,
+      confirmpass: this.registerForm.controls.confirmPassword.value.trim() == '' ? true : false,
     };
   }
 
@@ -86,12 +85,11 @@ export class RegisterComponent implements OnInit {
       // start the loader
       this.submitLoading = true;
 
-      var formData: any = new FormData();
-      formData.append('name', this.registerForm.value.name);
-      formData.append('email', this.registerForm.value.email);
-      formData.append('password', this.registerForm.value.password);
-
-      this.authService.register(formData).subscribe(
+      this.authService.register({
+        name: this.registerForm.value.name,
+        email: this.registerForm.value.email,
+        password: this.registerForm.value.password
+      }).subscribe(
         (response) => {
           this.submitLoading = false;
           this.toast.success(response.message, { position: 'top-right' });

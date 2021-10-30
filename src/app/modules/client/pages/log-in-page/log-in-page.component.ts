@@ -29,7 +29,7 @@ export class LogInPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.checkIfAuth()
+    this.checkIfAuth();
     this.initForm();
   }
 
@@ -40,7 +40,7 @@ export class LogInPageComponent implements OnInit {
   }
 
   initForm() {
-    console.log(this.loginForm)
+    console.log(this.loginForm);
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', Validators.required),
@@ -49,40 +49,42 @@ export class LogInPageComponent implements OnInit {
 
   onSubmit() {
     //check if the input is valid and password is not empty and not using multiple space.
-    if (this.loginForm.status == 'VALID' && this.loginForm.controls.password.value.trim()){
+    if (
+      this.loginForm.status == 'VALID' &&
+      this.loginForm.controls.password.value.trim()
+    ) {
       // start the loader
-      console.log(this.loginForm)
       this.submitLoading = true;
+
       this.authService.login(this.loginForm.value).subscribe(
         (response) => {
           this.submitLoading = false;
           this.toast.success(response.message, { position: 'top-right' });
 
           // return the data to service
-          this.authService.setSession(response)
+          this.authService.setSession(response);
 
           // nav to accountpage
           this.router.navigate(['/account/']);
         },
         (error) => {
           this.submitLoading = false;
-          let result:any;
+          let result: any;
 
           if (error.status == 0) {
-            result='Server is down, help! hehe'
+            result = 'Server is down, help! hehe';
           } else if (error.status == 401) {
-            result=error.error.message
+            result = error.error.message;
           } else if (error.status == 422) {
-            result=error.error.email[0]
-            
+            result = error.error.email[0];
           } else if (error.status == 500) {
-            result=error.statusText
+            result = error.statusText;
           }
-          this.toast.error(result,{ position: 'top-right' })
+          this.toast.error(result, { position: 'top-right' });
         }
       );
-    }else{
-      this.toast.error('Invalid Email or Password',{position:'top-right'})
+    } else {
+      this.toast.error('Invalid Email or Password', { position: 'top-right' });
     }
   }
 }

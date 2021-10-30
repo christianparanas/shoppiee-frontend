@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
 import * as moment from 'moment';
 
 import { environment } from '../../../../../environments/environment';
@@ -24,8 +23,10 @@ export class AuthService {
   }
 
   setSession(authResult: any) {
-    const jwtToken = authResult[0].original.token;
-    const expiresAt = moment().add(authResult[0].original.expires_in, 'second');
+    console.log(authResult.token)
+
+    const jwtToken = authResult.token;
+    const expiresAt = moment().add(7200, 'second');
 
     localStorage.setItem('uJwtToken', jwtToken);
     localStorage.setItem('uExpires_at', JSON.stringify(expiresAt.valueOf()));
