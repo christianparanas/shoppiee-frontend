@@ -43,17 +43,17 @@ const routes: Routes = [
     { path: 'account/recover/feedback', component: RecoverfeedbackComponent },
   
     // protected routes
-    { path: 'messages', component: MessagesComponent },
-    { path: 'account', component: AccountComponent},
+    { path: 'messages', component: MessagesComponent, canActivate: [AuthGuard] },
+    { path: 'account', component: AccountComponent, canActivate: [AuthGuard]},
     { path: 'account/setting', component: AccountsettingComponent, canActivate: [AuthGuard] },
     { path: 'account/setting/myprofile', component: MyprofileComponent, canActivate: [AuthGuard] },
     { path: 'account/setting/myaddress', component: MyaddressComponent, canActivate: [AuthGuard] },
-    { path: 'account/store', component: UserstoreComponent },
-    { path: 'account/store/messages', component: MessagesComponent },
+    { path: 'account/store', component: UserstoreComponent, canActivate: [AuthGuard] },
+    { path: 'account/store/messages', component: MessagesComponent, canActivate: [AuthGuard] },
     { path: 'account/store/addproduct', component: UseraddproductsComponent, canActivate: [AuthGuard] },
-    { path: 'cart', component: AddToCartComponent },
-    { path: 'cart/buy-again', component: BuyAgainComponent },
-    { path: 'checkout', component: CheckOutComponent },
+    { path: 'cart', component: AddToCartComponent, canActivate: [AuthGuard] },
+    { path: 'cart/buy-again', component: BuyAgainComponent, canActivate: [AuthGuard] },
+    { path: 'checkout', component: CheckOutComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
