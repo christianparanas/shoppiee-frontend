@@ -23,8 +23,6 @@ export class AuthService {
   }
 
   setSession(authResult: any) {
-    console.log(authResult.token)
-
     const jwtToken = authResult.token;
     const expiresAt = moment().add(7200, 'second');
 
