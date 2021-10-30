@@ -8,7 +8,6 @@ export class TokenInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     if (req.headers.get("skip"))
       return next.handle(req);
-      
 
     const userToken: any = localStorage.getItem('uJwtToken');
     const modifiedReq = req.clone({ 
