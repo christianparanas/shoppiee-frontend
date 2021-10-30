@@ -15,11 +15,11 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   register(data: any): Observable<any> {
-    return this.http.post(`${baseUrl}/api/auth/register`, data);
+    return this.http.post(`${baseUrl}/api/auth/register`, data, {headers:{skip:"true"}});
   }
 
   login(data: any): Observable<any> {
-    return this.http.post(`${baseUrl}/api/auth/login`, data);
+    return this.http.post(`${baseUrl}/api/auth/login`, data, {headers:{skip:"true"}});
   }
 
   setSession(authResult: any) {

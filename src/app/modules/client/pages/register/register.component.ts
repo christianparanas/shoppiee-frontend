@@ -39,7 +39,7 @@ export class RegisterComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.checkIfAuth()
+    this.checkIfAuth();
     this.initForm();
   }
 
@@ -63,8 +63,12 @@ export class RegisterComponent implements OnInit {
     this.submitValidate = {
       name: this.registerForm.controls.name.value.trim() == '' ? true : false,
       email: this.registerForm.controls.email.value.trim() == '' ? true : false,
-      password: this.registerForm.controls.password.value.trim() == '' ? true : false,
-      confirmpass: this.registerForm.controls.confirmPassword.value.trim() == '' ? true : false,
+      password:
+        this.registerForm.controls.password.value.trim() == '' ? true : false,
+      confirmpass:
+        this.registerForm.controls.confirmPassword.value.trim() == ''
+          ? true
+          : false,
     };
   }
 
@@ -93,19 +97,21 @@ export class RegisterComponent implements OnInit {
           setTimeout(() => {
             this.router.navigate(['/account/login']);
             this.toast.success('Please login 😉', { position: 'top-right' });
-          }, 1000)
+          }, 1000);
         },
         (error) => {
-          let result :any
+          let result: any;
           this.submitLoading = false;
           if (error.status == 0) {
-            result='Server is down, help! hehe'
+            result = 'Server is down, help! hehe';
+          } else if (error.status == 403) {
+            result = error.error.message;
           } else if (error.status == 422) {
-            result=error.error.email[0]
+            result = error.error.email[0];
           } else if (error.status == 500) {
-            result=error.statusText
+            result = error.statusText;
           }
-          this.toast.error(result,{ position: 'top-right' })
+          this.toast.error(result, { position: 'top-right' });
           console.log(error);
         }
       );
