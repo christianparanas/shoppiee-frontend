@@ -11,6 +11,7 @@ import { ProfileService } from '../../shared/services/profile.service';
 })
 export class AccountComponent implements OnInit {
   userIsAuth: boolean = true;
+  userData: any = []
 
   constructor(private router: Router, private profileService: ProfileService,) {}
 
@@ -20,8 +21,9 @@ export class AccountComponent implements OnInit {
 
   loadAccountData = () => {
     this.profileService.getProfileData().subscribe(
-      (response) => {
-        console.log(response)
+      async (response) => {
+        this.userData = await response
+        console.log(this.userData)
       },
       (error) => {
         console.error(error)
