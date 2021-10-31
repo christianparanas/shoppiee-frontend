@@ -17,6 +17,7 @@ import { MatTableDataSource } from '@angular/material/table';
 
 // services
 import { ProductService } from '../../shared/services/product.service';
+import { ImgUploadService } from '../../../../core/services/img-upload.service';
 
 export interface UserData {
   id: string;

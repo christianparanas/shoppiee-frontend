@@ -2,14 +2,22 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-// base enpoint url
+// fake base enpoint url
 const baseUrl = 'https://fakestoreapi.com';
+
+import { environment } from 'src/environments/environment';
+
+const baseURL = environment.baseURL
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
   constructor(private http: HttpClient) {}
+
+  addproduct(data: any) {
+    return this.http.post(`${baseURL}/api/products`, data)
+  }
 
   fetchSpecificProduct(productId: number) {
     return this.http.get(`${baseUrl}/products/${productId}`);
