@@ -6,6 +6,16 @@ import { Observable } from 'rxjs';
 export class TokenInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    const skipIntercept = req.headers.has('skip')
+
+    if(skipIntercept) {
+      const req1 = req.clone({
+        headers: req.headers.delete('skip')
+      })
+
+      return next.handle(req1)
+    }
+
     if (req.headers.get("skip"))
       return next.handle(req);
 
