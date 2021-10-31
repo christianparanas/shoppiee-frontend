@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 // components
 import { CreateProductModalComponent } from './components/create-product-modal/create-product-modal.component';
@@ -11,7 +12,9 @@ import { CreateProductModalComponent } from './components/create-product-modal/c
     CreateProductModalComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [
     CreateProductModalComponent

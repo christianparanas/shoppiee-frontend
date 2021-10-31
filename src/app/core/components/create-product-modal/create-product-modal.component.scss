@@ -24,6 +24,11 @@
       img {
         width: 100%;
         min-height: 230px;
+        object-fit: contain;
+      }
+
+      .imageInput {
+        display: none;
       }
     }
 

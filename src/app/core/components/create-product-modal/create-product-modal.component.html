@@ -4,9 +4,24 @@
     <i class="fal fa-times" (click)="closeModal()"></i>
   </div>
 
-  <div class="content_container">
+  <form
+    class="content_container"
+    (ngSubmit)="onSubmitCreateProduct()"
+    [formGroup]="createProductForm"
+  >
     <div class="product_image_container">
-      <img src="../../../../assets/imgs/men.jpg" alt="" />
+      <input
+        class="imageInput"
+        type="file"
+        (change)="loadImg($event)"
+        formControlName="product_image"
+        #imageUpload
+      />
+      <img
+        [src]="imgFile"
+        alt=""
+        (click)="imageUpload.click()"
+      />
     </div>
     <div class="product_details_container">
       <div class="grp">
@@ -16,6 +31,7 @@
           name="product_name"
           placeholder="Enter product name"
           id=""
+          formControlName="product_name"
         />
       </div>
       <div class="grp">
@@ -26,6 +42,7 @@
           cols="30"
           rows="5"
           placeholder="Enter product description"
+          formControlName="product_description"
         ></textarea>
       </div>
 
@@ -36,6 +53,7 @@
             type="number"
             name="product_price"
             placeholder="Enter product price"
+            formControlName="product_price"
             id=""
           />
         </div>
@@ -45,6 +63,7 @@
             type="number"
             name="product_name"
             placeholder="Enter product quantity"
+            formControlName="product_quantity"
             id=""
           />
         </div>
@@ -52,7 +71,11 @@
 
       <div class="product_category_container">
         <label for="product_category">Product category</label>
-        <select name="product_category" id="">
+        <select
+          name="product_category"
+          id=""
+          formControlName="product_category"
+        >
           <option value="mensApparel">Men's Apparel</option>
           <option value="mensApparel">Women's Apparel</option>
           <option value="mensApparel">Appliances</option>
@@ -60,9 +83,9 @@
         </select>
       </div>
 
-      <div class="addBtn_container">
+      <button class="addBtn_container">
         <h4>Add product</h4>
-      </div>
+      </button>
     </div>
-  </div>
+  </form>
 </div>

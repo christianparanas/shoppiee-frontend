@@ -26,11 +26,9 @@ export class AccountComponent implements OnInit {
 
   imgUp = (event: any) => {
     const file: File = event.target.files[0];
-
     console.log(file)
 
     const formData = new FormData()
-
     formData.append('file', file)
     formData.append('upload_preset', 'yulajclu')
 
