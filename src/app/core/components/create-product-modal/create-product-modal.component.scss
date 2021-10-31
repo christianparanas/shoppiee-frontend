@@ -1,9 +1,11 @@
 
+
 .createproductmodal_container {
   color: #000;
   padding: 20px;
   background: #fff;
   height: 100%;
+  overflow-x: auto;
 
   .header {
     display: flex;
@@ -17,6 +19,7 @@
     .product_image_container {
       border: 1px solid #e3e3e3;
       width: 100%;
+      box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
 
       img {
         width: 100%;
@@ -30,10 +33,7 @@
 
       .grp {
         margin-bottom: 15px;
-
-        label {
-          font-size: 14px;
-        }
+        font-size: 12px;
 
         input, textarea {
           margin-top: 5px;
@@ -42,6 +42,8 @@
           outline: 0;
           padding: 10px;
           resize: none;
+          box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
+          border-radius: 4px;
         }
       }
 
@@ -49,6 +51,46 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 10px;
+      }
+
+      .product_category_container {
+        font-size: 12px;
+        display: grid;
+
+        select {
+          margin-top: 5px;
+          width: fit-content;
+          border: 1px solid #e3e3e3;
+          padding: 10px;
+          outline: 0;
+          border-radius: 4px;
+
+          background: url("data:image/svg+xml,<svg height='10px' width='10px' viewBox='0 0 16 16' fill='%23000000' xmlns='http://www.w3.org/2000/svg'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>") no-repeat;
+          background-position: calc(100% - 0.75rem) center !important;
+          -moz-appearance:none !important;
+          -webkit-appearance: none !important; 
+          appearance: none !important;
+          padding-right: 2rem !important;
+          box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
+        }
+      }
+
+      .addBtn_container {
+        margin-top: 20px;
+        width: 100%;
+        background: purple;
+        color: #fff;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+
+        h4 {
+          font-size: 14px;
+          font-weight: 600;
+        }
       }
     }
   }
