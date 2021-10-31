@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // modules
+import { CoreModule } from '../../core/core.module'
 import { AdminRoutingModule } from './admin-routing.module';
 import { MaterialModule } from '../material/material.module';
 
@@ -48,7 +49,8 @@ const reusableComponents = [
     AdminRoutingModule,
     MaterialModule,
     ChartsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CoreModule
   ],
 })
 export class AdminModule {}

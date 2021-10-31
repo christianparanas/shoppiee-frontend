@@ -13,14 +13,12 @@
     </button>
 
     <div
-      class="addproduct_modal_container"
-      [@inOutAnimation]
-      *ngIf="isAddProductModalOpen"
+    class="addproduct_modal_container"
+    [@inOutAnimation]
+    *ngIf="isAddProductModalOpen"
     >
-      <div class="header">
-        <i class="fal fa-times" (click)="openCloseNewProductModal()"></i>
-      </div>
-    </div>
+    <app-create-product-modal (btnClickCloseModal)="openCloseNewProductModal()"></app-create-product-modal>
+  </div>
 
     <header>
       <h2 class="label">Products</h2>

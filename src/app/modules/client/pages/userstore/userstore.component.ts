@@ -46,7 +46,7 @@ export interface UserData {
 })
 export class UserstoreComponent implements AfterViewInit, OnInit {
   onScroll: boolean = false;
-  isAddProductModalOpen: boolean = true;
+  isAddProductModalOpen: boolean = false;
   displayedColumns: string[] = ['id', 'image', 'name', 'storeID', 'stock'];
   dataSource: MatTableDataSource<UserData>;
 
