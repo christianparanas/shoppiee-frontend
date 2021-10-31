@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 // services
 import { ProfileService } from '../../shared/services/profile.service';
-import { ImgUploadService } from '../../../../shared/services/img-upload.service';
+import { ImgUploadService } from '../../../../core/services/img-upload.service';
 
 @Component({
   selector: 'app-account',

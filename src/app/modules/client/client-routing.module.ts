@@ -21,7 +21,6 @@ import { CategoryComponent } from './pages/category/category.component';
 import { MyprofileComponent } from './pages/myprofile/myprofile.component';
 import { MyaddressComponent } from './pages/myaddress/myaddress.component';
 import { AddToCartComponent } from './pages/add-to-cart/add-to-cart.component';
-import { UseraddproductsComponent } from './pages/useraddproducts/useraddproducts.component';
 import { CheckOutComponent } from './pages/check-out/check-out.component';
 import { BuyAgainComponent } from './pages/buy-again/buy-again.component';
 import { MessagesComponent } from './pages/messages/messages.component';
@@ -44,13 +43,12 @@ const routes: Routes = [
   
     // protected routes
     { path: 'messages', component: MessagesComponent, canActivate: [AuthGuard] },
-    { path: 'account', component: AccountComponent, canActivate: [AuthGuard]},
+    { path: 'account', component: AccountComponent},
     { path: 'account/setting', component: AccountsettingComponent, canActivate: [AuthGuard] },
     { path: 'account/setting/myprofile', component: MyprofileComponent, canActivate: [AuthGuard] },
     { path: 'account/setting/myaddress', component: MyaddressComponent, canActivate: [AuthGuard] },
-    { path: 'account/store', component: UserstoreComponent, canActivate: [AuthGuard] },
+    { path: 'account/store', component: UserstoreComponent },
     { path: 'account/store/messages', component: MessagesComponent, canActivate: [AuthGuard] },
-    { path: 'account/store/addproduct', component: UseraddproductsComponent, canActivate: [AuthGuard] },
     { path: 'cart', component: AddToCartComponent, canActivate: [AuthGuard] },
     { path: 'cart/buy-again', component: BuyAgainComponent, canActivate: [AuthGuard] },
     { path: 'checkout', component: CheckOutComponent, canActivate: [AuthGuard] },

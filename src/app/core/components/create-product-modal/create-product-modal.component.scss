@@ -1,0 +1,55 @@
+
+.createproductmodal_container {
+  color: #000;
+  padding: 20px;
+  background: #fff;
+  height: 100%;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .content_container {
+    width: 100%;
+    margin: 20px 0;
+
+    .product_image_container {
+      border: 1px solid #e3e3e3;
+      width: 100%;
+
+      img {
+        width: 100%;
+        min-height: 230px;
+      }
+    }
+
+    .product_details_container {
+      width: 100%;
+      margin: 20px 0;
+
+      .grp {
+        margin-bottom: 15px;
+
+        label {
+          font-size: 14px;
+        }
+
+        input, textarea {
+          margin-top: 5px;
+          width: 100%;
+          border: 1px solid #e3e3e3;
+          outline: 0;
+          padding: 10px;
+          resize: none;
+        }
+      }
+
+      .grid-column {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+      }
+    }
+  }
+}

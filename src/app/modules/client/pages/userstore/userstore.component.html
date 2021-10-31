@@ -1,4 +1,14 @@
 <div class="userStore_container">
+
+
+  <div
+  class="addproduct_modal_container"
+  [@inOutAnimation]
+  *ngIf="isAddProductModalOpen"
+  >
+  <app-create-product-modal (btnClickCloseModal)="openCloseNewProductModal()"></app-create-product-modal>
+</div>
+
   <div class="userStore_header_container">
     <div class="userStore_header_content_container">
       <div
@@ -44,14 +54,6 @@
         </div>
         <div class="addproduct_btn_container">
           <p>Start selling on Shoppiee</p>
-          <div
-            class="btn"
-            routerLink="/account/store/addproduct"
-            type="submit"
-            name="add"
-          >
-            Add Product
-          </div>
         </div>
       </div>
     </div>
@@ -71,15 +73,7 @@
             <mat-icon>add</mat-icon>
           </button>
       
-          <div
-            class="addproduct_modal_container"
-            [@inOutAnimation]
-            *ngIf="isAddProductModalOpen"
-          >
-            <div class="header">
-              <i class="fal fa-times" (click)="openCloseNewProductModal()"></i>
-            </div>
-          </div>
+
       
           <header>
             <h2 class="label">Products</h2>

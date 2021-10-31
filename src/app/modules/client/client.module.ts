@@ -13,6 +13,7 @@ import { TokenInterceptor } from './shared/interceptors/uTokenInterceptor';
 // modules
 import { ClientRoutingModule } from './client-routing.module';
 import { MaterialModule } from '../material/material.module';
+import { CoreModule } from '../../core/core.module'
 
 // vendors
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
@@ -108,7 +109,8 @@ const reusableComponents = [
     FormsModule,
     HotToastModule.forRoot(),
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    CoreModule
   ],
   providers: [
     {

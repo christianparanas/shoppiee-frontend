@@ -1,0 +1,54 @@
+<div class="createproductmodal_container">
+  <div class="header">
+    <h5>Add Product</h5>
+    <i class="fal fa-times" (click)="closeModal()"></i>
+  </div>
+
+  <div class="content_container">
+    <div class="product_image_container">
+      <img src="../../../../assets/imgs/men.jpg" alt="" />
+    </div>
+    <div class="product_details_container">
+      <div class="grp">
+        <label for="product_name">Product name</label>
+        <input
+          type="text"
+          name="product_name"
+          placeholder="Enter product name"
+          id=""
+        />
+      </div>
+      <div class="grp">
+        <label for="product_description">Product description</label>
+        <textarea
+          name="product_description"
+          id=""
+          cols="30"
+          rows="5"
+          placeholder="Enter product description"
+        ></textarea>
+      </div>
+
+      <div class="grid-column">
+        <div class="grp">
+          <label for="product_price">Product price</label>
+          <input
+            type="number"
+            name="product_price"
+            placeholder="Enter product price"
+            id=""
+          />
+        </div>
+        <div class="grp">
+          <label for="product_category">Product quantity</label>
+          <input
+            type="number"
+            name="product_name"
+            placeholder="Enter product quantity"
+            id=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // custom modules
+import { CoreModule } from './core/core.module'
 import { AdminModule } from './modules/admin/admin.module';
 import { ClientModule } from './modules/client/client.module';
 import { MaterialModule } from './modules/material/material.module';
@@ -20,6 +21,7 @@ import { MaterialModule } from './modules/material/material.module';
     MaterialModule,
     AdminModule,
     ClientModule,
+    CoreModule,
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
