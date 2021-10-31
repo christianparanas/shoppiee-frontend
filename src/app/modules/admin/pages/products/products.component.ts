@@ -41,7 +41,7 @@ export interface UserData {
   ],
 })
 export class ProductsComponent implements AfterViewInit, OnInit {
-  isAddProductModalOpen: boolean = false;
+  isAddProductModalOpen: boolean = true;
   displayedColumns: string[] = ['id', 'image', 'name', 'storeID', 'stock'];
   dataSource: MatTableDataSource<UserData>;
 

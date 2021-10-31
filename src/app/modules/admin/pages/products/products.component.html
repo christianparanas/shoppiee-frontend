@@ -1,5 +1,8 @@
 <div class="products_container">
+  
   <div class="products_wrapper">
+    <div class="blackopacitybg" *ngIf="isAddProductModalOpen" (click)="openCloseNewProductModal()"></div>
+  
     <button
       mat-fab
       color="primary"
