@@ -4,17 +4,17 @@
   [routerLink]="['/product/', productArray.id]"
 >
   <div class="product-image">
-    <img [src]="productArray.image" alt=""/>
+    <img [src]="productArray.product_image" alt=""/>
   </div>
   <div class="product-details">
     <div class="product-description">
       {{
-        productArray.title.length > 10
-          ? productArray.title.substring(0, 10) + " ..."
-          : productArray.title
+        productArray.product_name.length > 10
+          ? productArray.product_name.substring(0, 10) + " ..."
+          : productArray.product_name
       }}
     </div>
-    <div class="product-price">PHP {{ productArray.price }}</div>
+    <div class="product-price">PHP {{ productArray.product_price }}</div>
   </div>
 </div>
 

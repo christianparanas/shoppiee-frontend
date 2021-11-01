@@ -19,28 +19,28 @@ export class ProductService {
     return this.http.post(`${baseURL}/api/products`, data)
   }
 
-  fetchSpecificProduct(productId: number) {
-    return this.http.get(`${baseUrl}/products/${productId}`);
+  fetchSpecificProduct(productId: any) {
+    return this.http.get(`${baseURL}/api/products/${productId}`);
   }
 
   discoverProducts(): Observable<any> {
-    return this.http.get(`${baseUrl}/products?limit=11`);
+    return this.http.get(`${baseURL}/api/products`);
   }
 
   fetchUserStoreProducts(): Observable<any> {
-    return this.http.get(`${baseUrl}/products`);
+    return this.http.get(`${baseURL}/api/products`);
   }
 
   topProducts(): Observable<any> {
-    return this.http.get(`${baseUrl}/products?limit=7`);
+    return this.http.get(`${baseURL}/api/products`);
   }
 
   newProducts(): Observable<any> {
-    return this.http.get(`${baseUrl}/products?limit=7`);
+    return this.http.get(`${baseURL}/api/products`);
   }
 
   simillarProducts(): Observable<any> {
-    return this.http.get(`${baseUrl}/products?limit=11`);
+    return this.http.get(`${baseURL}/api/products`);
   }
 
   productCategories(): Observable<any> {

@@ -54,6 +54,7 @@ export class ProductComponent implements OnInit {
     this.productService.fetchSpecificProduct(this.productId).subscribe(
       (response) => {
         this.productArray = response;
+        console.log(this.productArray)
       },
       (error) => {
         console.log(error);

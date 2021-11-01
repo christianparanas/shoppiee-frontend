@@ -17,7 +17,7 @@ export class ProductpreviewComponent implements OnInit {
   }
 
   showSkel() {
-    if (this.productArray && this.productArray.image) {
+    if (this.productArray && this.productArray.product_image) {
       this.isProductPreviewLoaded = true;
     }
   }
