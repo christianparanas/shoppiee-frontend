@@ -19,6 +19,7 @@
       .product_image__container {
         position: relative;
         height: 100%;
+        min-height: 360px;
 
         .backBtn {
           position: absolute;
@@ -85,6 +86,7 @@
           margin-top: 30px;
           display: flex;
           justify-content: space-between;
+          min-height: 24px;
 
           .container:nth-child(1) {
             color: #ff4612;
@@ -265,10 +267,15 @@
       .product__container {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap: 20px 0;
+        grid-gap: 20px;
+
+        .product_image__container {
+          background: #fff;
+        }
 
         .product_interact {
           background: #fff;
+          min-height: 360px;
 
           .product_details__container {
             padding: 20px;
@@ -366,6 +373,7 @@
             display: grid;
             grid-template-columns: 150px 1fr 150px;
             grid-gap: 0 10px;
+            margin-left: 20px;
 
             .inter {
               display: flex;
@@ -386,6 +394,8 @@
       }
 
       .similar_products__container {
+        padding: 20px 0;
+
         .container {
           grid-template-columns: repeat(6, 1fr);
           grid-gap: 20px 2px;

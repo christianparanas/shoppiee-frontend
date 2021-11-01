@@ -17,7 +17,7 @@ import { MatTableDataSource } from '@angular/material/table';
 
 // services
 import { ProductService } from '../../shared/services/product.service';
-import { ImgUploadService } from '../../../../core/services/img-upload.service';
+import { StoreService } from '../../shared/services/store.service';
 
 export interface UserData {
   id: string;
@@ -47,8 +47,8 @@ export interface UserData {
 })
 export class UserstoreComponent implements AfterViewInit, OnInit {
   onScroll: boolean = false;
-  isAddProductModalOpen: boolean = true;
-  displayedColumns: string[] = ['id', 'image', 'name', 'storeID', 'stock'];
+  isAddProductModalOpen: boolean = false;
+  displayedColumns: string[] = ['id', 'image', 'name', 'price', 'stock', 'options'];
   dataSource: MatTableDataSource<UserData>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -58,7 +58,8 @@ export class UserstoreComponent implements AfterViewInit, OnInit {
     private productsService: ProductService,
     private location: Location,
     public router: Router,
-    private toast: HotToastService
+    private toast: HotToastService,
+    private storeService: StoreService
   ) {
     this.fetchProducts();
   }
@@ -91,9 +92,11 @@ export class UserstoreComponent implements AfterViewInit, OnInit {
   }
 
   fetchProducts() {
-    this.productsService.fetchUserStoreProducts().subscribe(
-      (response) => {
-        this.dataSource = new MatTableDataSource(response);
+    this.storeService.getStoreProduct().subscribe(
+      (response: any) => {
+        console.log(response)
+
+        this.dataSource = new MatTableDataSource(response.Products);
 
         // init the paginator ang sorter after the dataSource is set
         this.dataSource.paginator = this.paginator;

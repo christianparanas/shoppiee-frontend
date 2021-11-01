@@ -16,14 +16,14 @@
         />
         <div
           [ngClass]="isImgLoaded ? 'hideSkel' : 'showSkel'"
-          style="width: 100%"
+          style="width: 100%; height: 100%;"
         >
           <ngx-skeleton-loader
             count="1"
             [theme]="{
               height: '100%',
-              'min-height': '360px',
-              width: '100%'
+              width: '100%',
+              'min-height': '360px'
             }"
           ></ngx-skeleton-loader>
         </div>
@@ -69,8 +69,8 @@
             </div>
           </div>
           <div class="price_stock__container">
-            <div class="container">₱{{ productArray.product_price }}</div>
-            <div class="container">STOCKS: {{ productArray.product_quantity }}</div>
+            <div *ngIf="isImgLoaded" class="container">₱{{ productArray.product_price }}</div>
+            <div *ngIf="isImgLoaded" class="container">STOCKS: {{ productArray.product_quantity }}</div>
           </div>
         </div>
         <div class="product_options__container">
@@ -95,14 +95,14 @@
               alt=""
             />
             <div class="shop_name_address">
-              <div class="name">Christian Shop</div>
+              <div *ngIf="isImgLoaded" class="name">{{ productArray.Store.store_name }}</div>
               <div class="address">Tacloban City</div>
 
               <div class="boxtbns">
                 <div class="btn chatstore">
                   <i class="fad fa-comment-alt-dots"></i> Chat now
                 </div>
-                <div class="btn viewshop">
+                <div *ngIf="isImgLoaded" [routerLink]="['/store/', productArray.Store.id]" class="btn viewshop">
                   <i class="fal fa-shopping-bag"></i>View shop
                 </div>
               </div>

@@ -20,7 +20,10 @@ import { ProductService } from 'src/app/modules/client/shared/services/product.s
   styleUrls: ['./create-product-modal.component.scss'],
 })
 export class CreateProductModalComponent implements OnInit {
+  submitLoading: boolean = false
   @Output() btnClickCloseModal = new EventEmitter();
+  @Output() btnClickSubmitModal = new EventEmitter();
+
   imgFilePreview: any = '../../../../assets/imgs/men.jpg';
   imgData: any = ""
   createProductForm: FormGroup;
@@ -54,7 +57,7 @@ export class CreateProductModalComponent implements OnInit {
 
     // check if form is valid, if not then the submission will not proceed
     if(this.createProductForm.status == "VALID") {
-      console.log(this.createProductForm.value);
+      this.submitLoading = true
 
       // upload image to cloudinary and wait for its response for the image url that we need to reference the uploaded image
       this.imgUpload.imgUpload(this.imgData).subscribe(
@@ -86,12 +89,15 @@ export class CreateProductModalComponent implements OnInit {
       ...noProductImg
     }).subscribe(
       (response: any) => {
+        this.submitLoading = false
         this.toast.success(response.message, { position: 'top-right' });
 
         // close the modal after product save
+        this.btnClickSubmitModal.emit()
         this.btnClickCloseModal.emit();
       },
       (error) => {
+        this.submitLoading = false
         this.toast.error(error.message, { position: 'top-right' });
         console.error(error)
       }

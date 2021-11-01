@@ -86,7 +86,8 @@
       </div>
 
       <button class="addBtn_container">
-        <h4>Add product</h4>
+        <h4 *ngIf="!submitLoading">Add product</h4>
+        <div class="loader" *ngIf="submitLoading"></div>
       </button>
     </div>
   </form>
