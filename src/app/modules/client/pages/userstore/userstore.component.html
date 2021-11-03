@@ -21,18 +21,24 @@
       <h5>Settings</h5>
       <i (click)="openCloseSettingModal()" class="fal fa-times"></i>
     </div>
-    <form class="userstore_setting_body">
+    <form
+      class="userstore_setting_body"
+      (ngSubmit)="onSubmitUserSettingForm()"
+      [formGroup]="userstoreSettingForm"
+    >
       <div class="userstore_setting_img_container">
         <div class="box">
           <img
-            [src]="
-              storeData.image != null
-                ? storeData.image
-                : '../../../assets/imgs/men.jpg'
-            "
+            [src]="storeData.image != null && imgFilePreview != '../../../assets/imgs/men.jpg' ? imgFilePreview : storeData.image"
             alt="Userstore image"
           />
-          <input type="file" #settingImgInput class="imageInput" />
+          <input
+            type="file"
+            #settingImgInput
+            class="imageInput"
+            formControlName="store_image"
+            (change)="loadInputImgToPreview($event)"
+          />
           <i class="fal fa-camera" (click)="settingImgInput.click()"></i>
         </div>
       </div>
@@ -42,17 +48,18 @@
           <input
             type="text"
             placeholder="Enter store name"
+            formControlName="store_name"
             [value]="storeData ? storeData.store_name : 'Loading...'"
           />
         </div>
         <div class="input-box">
           <label for="">Store address</label>
-          <input type="text" placeholder="Enter store adress" />
+          <input type="text" placeholder="Enter store adress" formControlName="store_address"/>
         </div>
 
         <button class="updateSettingBtn_container">
-          <h4>Update Data</h4>
-          <div class="loader"></div>
+          <h4 *ngIf="!submitLoading">Update Data</h4>
+          <div *ngIf="submitLoading" class="loader"></div>
         </button>
       </div>
     </form>
@@ -79,7 +86,7 @@
 
       <div class="userStore_store_details_container">
         <div class="image_container">
-          <img src="../../../assets/imgs/men.jpg" alt="No image" />
+          <img *ngIf="storeData" [src]="storeData.image == null ? '../../../assets/imgs/men.jpg' : storeData.image" alt="No image" />
         </div>
         <div class="store_details">
           <h5 class="userStore_name">

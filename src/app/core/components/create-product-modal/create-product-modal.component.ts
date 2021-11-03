@@ -54,7 +54,6 @@ export class CreateProductModalComponent implements OnInit {
   }
 
   onSubmitCreateProduct() {
-    this.toast.info('Please fill out the fields and choose an image', { position: 'top-right' });
 
     // check if form is valid, if not then the submission will not proceed
     if(this.createProductForm.status == "VALID") {
@@ -72,6 +71,9 @@ export class CreateProductModalComponent implements OnInit {
           console.error(error);
         }
       );
+    }
+    else {
+      this.toast.info('Please fill out the fields and choose an image', { position: 'top-right' });
     }
   }
 
