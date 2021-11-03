@@ -24,7 +24,7 @@ export class CreateProductModalComponent implements OnInit {
   @Output() btnClickCloseModal = new EventEmitter();
   @Output() btnClickSubmitModal = new EventEmitter();
 
-  imgFilePreview: any = '../../../../assets/imgs/men.jpg';
+  imgFilePreview: any = '../../../../assets/imgs/uploadSvg.svg';
   imgData: any = ""
   createProductForm: FormGroup;
 
