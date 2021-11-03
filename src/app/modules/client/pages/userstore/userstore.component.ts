@@ -2,7 +2,7 @@
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
-import { AfterViewInit, Component, ViewChild, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ViewChild, OnInit, ElementRef } from '@angular/core';
 import {
   trigger,
   state,
@@ -46,8 +46,11 @@ export interface UserData {
   ],
 })
 export class UserstoreComponent implements AfterViewInit, OnInit {
+  isBlackBgOpen: boolean = false
+  storeData: any
   onScroll: boolean = false;
   isAddProductModalOpen: boolean = false;
+  isSettingModalOpen: boolean = false;
   displayedColumns: string[] = ['id', 'image', 'name', 'price', 'stock', 'options'];
   dataSource: MatTableDataSource<UserData>;
 
@@ -79,7 +82,13 @@ export class UserstoreComponent implements AfterViewInit, OnInit {
   ngAfterViewInit() {}
 
   openCloseNewProductModal() {
+    this.isBlackBgOpen = !this.isBlackBgOpen
     this.isAddProductModalOpen = !this.isAddProductModalOpen;
+  }
+
+  openCloseSettingModal() {
+    this.isBlackBgOpen = !this.isBlackBgOpen
+    this.isSettingModalOpen = !this.isSettingModalOpen
   }
 
   applyFilter(event: Event) {
@@ -95,6 +104,7 @@ export class UserstoreComponent implements AfterViewInit, OnInit {
     this.storeService.getStoreProduct().subscribe(
       (response: any) => {
         console.log(response)
+        this.storeData = response
 
         this.dataSource = new MatTableDataSource(response.Products);
 
