@@ -11,7 +11,11 @@ const baseURL = environment.baseURL;
 export class StoreService {
   constructor(private http: HttpClient) {}
 
-  getStoreProduct() {
-    return this.http.get(`${baseURL}/api/stores/`);
+  getStoreProducts() {
+    return this.http.get(`${baseURL}/api/stores/products`);
+  }
+
+  getStoreUpdateDetails(data: any) {
+    return this.http.patch(`${baseURL}/api/stores/updateDetails`, data);
   }
 }

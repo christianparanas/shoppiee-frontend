@@ -7,8 +7,7 @@
     *ngIf="isAddProductModalOpen"
   >
     <app-create-product-modal
-      (btnClickSubmitModal)="fetchProducts()"
-      (btnClickCloseModal)="openCloseNewProductModal()"
+      (btnClickCloseModal)="openCloseNewProductModal(); fetchUserstoreDataAndProducts()"
     ></app-create-product-modal>
   </div>
 
@@ -21,22 +20,19 @@
       <h5>Settings</h5>
       <i (click)="openCloseSettingModal()" class="fal fa-times"></i>
     </div>
-    <form
-      class="userstore_setting_body"
-      (ngSubmit)="onSubmitUserSettingForm()"
-      [formGroup]="userstoreSettingForm"
-    >
+    <form class="userstore_setting_body">
       <div class="userstore_setting_img_container">
         <div class="box">
           <img
-            [src]="storeData.image != null && imgFilePreview != '../../../assets/imgs/men.jpg' ? imgFilePreview : storeData.image"
+            [src]="storeData.store_image == null || storeData.store_image != userSettingForm.store_img ? imgFilePreview : storeData.store_image"
             alt="Userstore image"
           />
           <input
             type="file"
             #settingImgInput
             class="imageInput"
-            formControlName="store_image"
+            [(ngModel)]="userSettingForm.store_img"
+            [ngModelOptions]="{ standalone: true }"
             (change)="loadInputImgToPreview($event)"
           />
           <i class="fal fa-camera" (click)="settingImgInput.click()"></i>
@@ -48,16 +44,25 @@
           <input
             type="text"
             placeholder="Enter store name"
-            formControlName="store_name"
-            [value]="storeData ? storeData.store_name : 'Loading...'"
+            [(ngModel)]="userSettingForm.store_name"
+            [ngModelOptions]="{ standalone: true }"
           />
         </div>
         <div class="input-box">
           <label for="">Store address</label>
-          <input type="text" placeholder="Enter store adress" formControlName="store_address"/>
+          <input
+            type="text"
+            placeholder="Enter store adress"
+            [(ngModel)]="userSettingForm.store_address"
+            [ngModelOptions]="{ standalone: true }"
+          />
         </div>
 
-        <button class="updateSettingBtn_container">
+        <button
+          class="updateSettingBtn_container"
+          (click)="onSubmitUserSettingForm()"
+          [disabled]="submitLoading"
+        >
           <h4 *ngIf="!submitLoading">Update Data</h4>
           <div *ngIf="submitLoading" class="loader"></div>
         </button>
@@ -86,7 +91,15 @@
 
       <div class="userStore_store_details_container">
         <div class="image_container">
-          <img *ngIf="storeData" [src]="storeData.image == null ? '../../../assets/imgs/men.jpg' : storeData.image" alt="No image" />
+          <img
+            *ngIf="storeData"
+            [src]="
+              storeData.store_image == null
+                ? '../../../assets/imgs/men.jpg'
+                : storeData.store_image
+            "
+            alt="No image"
+          />
         </div>
         <div class="store_details">
           <h5 class="userStore_name">

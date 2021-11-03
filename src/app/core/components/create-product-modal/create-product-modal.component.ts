@@ -81,7 +81,7 @@ export class CreateProductModalComponent implements OnInit {
   sendDataToServer(product_img_res: any) {
 
     // store imgURL from cloundinary
-    const imgUrl = product_img_res.url
+    const imgUrl = product_img_res.imgURL
 
     // destructure the array, except for the product image on the form because we dont need to store in the db
     const {product_image, ...noProductImg } = this.createProductForm.value
