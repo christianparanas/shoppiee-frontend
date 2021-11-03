@@ -1,65 +1,64 @@
-<app-nav></app-nav>
-<div class="store-content-container">
-  <div class="margin-top"></div>
-  <div class="store-header">
-    <div class="store-signage">
-      <div class="img-container">
-        <img
-          src="https://avatars.githubusercontent.com/u/59472122?v=4"
-          alt="store profile"
-        />
-        <p>{{ storeName }}</p>
-      </div>
-      <div class="popularity-event">
-        <div class="btn-container">
-          <div (click)="isFollowed()" class="follow">
-            <i class="fas fa-smile-plus"></i>
-            <p>{{ follow }}</p>
+<div class="store_container">
+  <app-nav></app-nav>
+
+  <div class="store_content_container">
+    <div class="store_header">
+      <div class="store-signage">
+        <div class="img-container">
+          <img *ngIf="storeData" [src]="storeData.store_image" alt="store profile" />
+          <p *ngIf="storeData">{{ storeData.store_name }}</p>
+        </div>
+        <div class="popularity-event">
+          <div class="btn-container">
+            <div (click)="isFollowed()" class="follow">
+              <i class="fal fa-user-plus"></i>
+              <p>{{ follow }}</p>
+            </div>
+          </div>
+          <div class="btn-container">
+            <div class="inbox">
+              <i class="fal fa-comment-alt"></i>
+              <p>Message Us</p>
+            </div>
           </div>
         </div>
-        <div class="btn-container">
-          <div class="inbox">
-            <i class="fas fa-inbox-in"></i>
-            <p>Message Us</p>
-          </div>
+      </div>
+
+      <div class="store-details-and-activities">
+        <div class="details-container">
+          <i class="fad fa-store"></i>
+          <p>following: 5</p>
+        </div>
+        <div class="details-container">
+          <i class="fad fa-satellite-dish"></i>
+          <p>followers: 2000</p>
+        </div>
+        <div class="details-container">
+          <i class="fad fa-calendar"></i>
+          <p>Created At: 3 years ago</p>
+        </div>
+        <div class="details-container">
+          <i class="fad fa-box-full"></i>
+          <p *ngIf="storeData">Product: {{ storeData.Products.length }}</p>
+        </div>
+        <div class="details-container">
+          <i class="fad fa-star-half-alt"></i>
+          <p>Rating: 4.5(1k rate)</p>
         </div>
       </div>
     </div>
 
-    <div class="store-details-and-activities">
-      <div class="details-container">
-        <i class="fas fa-store"></i>
-        <p>following:</p>
-        <p>5</p>
-      </div>
-      <div class="details-container">
-        <i class="fas fa-satellite-dish"></i>
-        <p>follower:</p>
-        <p>2000</p>
-      </div>
-      <div class="details-container">
-        <i class="fas fa-calendar-check"></i>
-        <p>Store Create At:</p>
-        <p>3 years ago</p>
-      </div>
-      <div class="details-container">
-        <i class="fas fa-comments"></i>
-        <p>Chat Performance:</p>
-        <p>80% Within hour</p>
-      </div>
-      <div class="details-container">
-        <i class="fas fa-box-full"></i>
-        <p>Product:</p>
-        <p>169</p>
-      </div>
-      <div class="details-container">
-        <i class="fas fa-star-half-alt"></i>
-        <p>Rating:</p>
-        <p>4.5(1k rate)</p>
+    <div class="store_body">
+      <div class="store_product_wrapper">
+        <h4 *ngIf="storeData">{{ storeData.store_name }} products</h4>
+        <div *ngIf="storeData" class="store_products_container">
+          <app-productpreview
+            *ngFor="let product of storeData.Products"
+            [productArray]="product"
+          ></app-productpreview>
+        </div>
       </div>
     </div>
   </div>
-  <div>
-    <app-discover contentName="STORE`S PRODUCTS"></app-discover>
-  </div>
 </div>
+

@@ -117,7 +117,7 @@ export class UserstoreComponent implements AfterViewInit, OnInit {
   sendUserInfoToServer(imgURL: any) {
     this.storeService
 
-      .getStoreUpdateDetails({
+      .userStoreUpdateDetails({
         store_image: imgURL,
         store_name: this.userSettingForm.store_name,
         store_address: this.userSettingForm.store_address,
@@ -189,7 +189,7 @@ export class UserstoreComponent implements AfterViewInit, OnInit {
   }
 
   fetchUserstoreDataAndProducts() {
-    this.storeService.getStoreProducts().subscribe(
+    this.storeService.getUserStoreData().subscribe(
       (response: any) => {
         console.log(response);
         // store data to a variable for some usage

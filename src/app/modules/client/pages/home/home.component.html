@@ -5,7 +5,7 @@
     <app-carousel></app-carousel>
 
     <div class="topnew__container">
-      <div class="top_products__container">
+      <div class="top_products__container" *ngIf="topProductsArray.length > 0">
         <div class="options">
           <h4>TOP PRODUCTS</h4>
           <div class="see_more">
@@ -18,11 +18,11 @@
             *ngFor="let product of topProductsArray"
             [productArray]="product"
           ></app-productpreview>
-          <div class="seemorebtn"><p>See More</p></div>
+          <div class="seemorebtn" *ngIf="topProductsArray.length >= 7"><p>See More</p></div>
         </div>
       </div>
 
-      <div class="new_products__container">
+      <div class="new_products__container" *ngIf="newProductsArray.length > 0">
         <div class="options">
           <h4>NEW PRODUCTS</h4>
           <div class="see_more">
@@ -35,12 +35,16 @@
             *ngFor="let product of newProductsArray"
             [productArray]="product"
           ></app-productpreview>
-          <div class="seemorebtn"><p>See More</p></div>
+          <div class="seemorebtn" *ngIf="topProductsArray.length >= 7"><p>See More</p></div>
         </div>
       </div>
     </div>
 
-    <div class="menWomen_container">
+    <div class="noProductsAvailable_container" *ngIf="discoverProductsArray.length == 0">
+      <h5>No products available at the moment!</h5>
+    </div>
+
+    <div class="menWomen_container" *ngIf="discoverProductsArray.length > 0">
       <div
         class="asc"
         routerLink="/categories/men"
@@ -61,7 +65,7 @@
       </div>
     </div>
 
-    <div class="discover__container">
+    <div class="discover__container" *ngIf="discoverProductsArray.length > 0">
       <div class="options">
         <h4>DISCOVER</h4>
         <div class="sort">

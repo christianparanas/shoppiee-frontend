@@ -35,7 +35,8 @@ export class SearchComponent implements OnInit {
     this.productService.searchProduct(this.searchInput).subscribe(
       (response: any) => {
         this.searchResult = response
-        if(this.searchResult == []) {
+        console.log(response)
+        if(this.searchResult == null || this.searchResult.length == 0) {
           this.hasResult = false
         }
         else {
