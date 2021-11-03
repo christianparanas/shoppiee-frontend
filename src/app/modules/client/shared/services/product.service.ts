@@ -7,7 +7,7 @@ const baseUrl = 'https://fakestoreapi.com';
 
 import { environment } from 'src/environments/environment';
 
-const baseURL = environment.baseURL
+const baseURL = environment.baseURL;
 
 @Injectable({
   providedIn: 'root',
@@ -16,12 +16,17 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   addproduct(data: any) {
-    return this.http.post(`${baseURL}/api/products`, data)
+    return this.http.post(`${baseURL}/api/products`, data);
   }
 
   fetchSpecificProduct(productId: any) {
     return this.http.get(`${baseURL}/api/products/${productId}`);
   }
+
+  searchProduct(query: any) {
+    return this.http.get(`${baseURL}/api/products/search/${query}`);
+  }
+
 
   discoverProducts(): Observable<any> {
     return this.http.get(`${baseURL}/api/products`);

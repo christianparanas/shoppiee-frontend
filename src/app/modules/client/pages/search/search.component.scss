@@ -22,21 +22,6 @@
       .hasResult__container {
         margin-top: 50px;
 
-        .stores_result_wrapper {
-
-          h3 {
-            padding-left: 20px;
-          }
-          
-          .stores_result_content {
-            padding: 15px 0 40px 20px;
-            overflow-y: auto;
-            display: grid;
-            grid-template-columns: repeat(7, 165px);
-            grid-gap: 15px;
-          }
-        }
-
         .products_result_wrapper {
           margin-top: 30px;
 
@@ -104,21 +89,6 @@
 
         .hasResult__container {
           margin-top: 50px;
-  
-          .stores_result_wrapper {
-  
-            h3 {
-              padding-left: 20px;
-            }
-            
-            .stores_result_content {
-              padding: 15px 0 40px 20px;
-              overflow-y: auto;
-              display: grid;
-              grid-template-columns: repeat(7, 165px);
-              grid-gap: 10px;
-            }
-          }
   
           .products_result_wrapper {
             margin-top: 30px;

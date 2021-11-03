@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 import {
   FormGroup,
   FormBuilder,
@@ -34,7 +33,6 @@ export class RegisterComponent implements OnInit {
   constructor(
     private authService: AuthService,
     public router: Router,
-    private http: HttpClient,
     private toast: HotToastService
   ) {}
 

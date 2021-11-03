@@ -1,5 +1,5 @@
 <div class="search_main__container">
-  <app-nav [searchquery]="searchInput" (btnClickOnSearch)="checkifhasresult()"></app-nav>
+  <app-nav [searchquery]="searchInput" (btnClickOnSearch)="fetchQueryResult()"></app-nav>
 
   <div class="search_container">
     <div class="header">
@@ -12,16 +12,10 @@
 
     <div class="search_result__container">
       <div *ngIf="hasResult" class="hasResult__container">
-        <div class="stores_result_wrapper">
-          <h3>STORES</h3>
-          <div class="stores_result_content">
-            <app-storepreview *ngFor="let store of storesResultArray"></app-storepreview>
-          </div>
-        </div>
         <div class="products_result_wrapper">
           <h3>PRODUCTS</h3>
           <div class="products_result_content">
-            <app-productpreview [productArray]="product" *ngFor="let product of productsResultArray"></app-productpreview>
+            <app-productpreview [productArray]="product" *ngFor="let product of searchResult"></app-productpreview>
           </div>
         </div>
       </div>

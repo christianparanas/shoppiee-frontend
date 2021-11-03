@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { HotToastService } from '@ngneat/hot-toast';
+
 // services
 import { ProductService } from '../../shared/services/product.service';
 
@@ -12,40 +14,38 @@ import { ProductService } from '../../shared/services/product.service';
 export class SearchComponent implements OnInit {
   searchInput: String;
   hasResult: boolean = false;
-  storesResultArray = new Array(7);
-  productsResultArray = new Array(11);
+  searchResult: any;
 
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductService
+    private productService: ProductService,
+    private toast: HotToastService
   ) {}
 
   ngOnInit(): void {
-    // get query params
+    // get query 
     this.route.queryParamMap.subscribe(
       (params: any) => (this.searchInput = params.params.keyword)
     );
 
-    this.checkifhasresult();
+    this.fetchQueryResult();
   }
 
-  fetchSearchProductsResult() {
-    this.productService.simillarProducts().subscribe(
-      (response) => {
-        this.productsResultArray = response;
+  fetchQueryResult() {
+    this.productService.searchProduct(this.searchInput).subscribe(
+      (response: any) => {
+        this.searchResult = response
+        if(this.searchResult == []) {
+          this.hasResult = false
+        }
+        else {
+          this.hasResult = true
+        }
+
       },
-      (error) => {
-        console.log(error);
+      (error: any) => {
+        this.toast.error(error.message, { position: 'top-right' });
       }
-    );
-  }
-
-  checkifhasresult() {
-    if (this.searchInput == 'Chan') {
-      this.hasResult = true;
-      this.fetchSearchProductsResult();
-    } else {
-      this.hasResult = false;
-    }
+    )
   }
 }
