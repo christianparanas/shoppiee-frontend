@@ -24,13 +24,13 @@
     <form class="userstore_setting_body">
       <div class="userstore_setting_img_container">
         <div class="box">
-          <img *ngIf="storeData"
+          <img
             [src]="
-              storeData && storeData.image != null
+              storeData.image != null
                 ? storeData.image
                 : '../../../assets/imgs/men.jpg'
             "
-            alt=""
+            alt="Userstore image"
           />
           <input type="file" #settingImgInput class="imageInput" />
           <i class="fal fa-camera" (click)="settingImgInput.click()"></i>
