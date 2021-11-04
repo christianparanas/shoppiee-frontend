@@ -2,7 +2,8 @@
   <app-nav currentRoute="home"></app-nav>
 
   <div class="main-container">
-    <app-carousel></app-carousel>
+    
+    <app-carousel *ngIf="discoverProductsArray.length != 0"></app-carousel>
 
     <div class="topnew__container">
       <div class="top_products__container" *ngIf="topProductsArray.length > 0">
@@ -41,7 +42,7 @@
     </div>
 
     <div class="noProductsAvailable_container" *ngIf="discoverProductsArray.length == 0">
-      <h5>No products available at the moment!</h5>
+      <img src="../../../../../assets/imgs/noproduct.svg" alt="">
     </div>
 
     <div class="menWomen_container" *ngIf="discoverProductsArray.length > 0">

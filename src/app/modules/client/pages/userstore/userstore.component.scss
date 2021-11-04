@@ -471,5 +471,22 @@
       overflow: auto;
       z-index: 201;
     }
+
+    .userstoreSettingModal_container {
+      background: #fff;
+      position: fixed;
+      width: 400px;
+      margin: auto;
+      z-index: 400;
+      min-height: fit-content;
+      padding: 20px;
+      height: fit-content;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      overflow: auto;
+      z-index: 201;
+      border-radius: 8px;
+    }
   }
 }

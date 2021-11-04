@@ -7,19 +7,17 @@ $color: #735c5c;
 $color2: floralwhite;
 $shadow: black;
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
 
 .home-container {
+height: 100%;
+
   ::-webkit-scrollbar {
     height: 0;
   }
 
   .main-container {
     padding-bottom: 62px;
+    height: 100%;
 
     .topnew__container {
       .new_products__container,
@@ -78,6 +76,20 @@ $shadow: black;
             }
           }
         }
+      }
+    }
+
+    .noProductsAvailable_container {
+      padding: 20px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 200px;
+
+      img {
+        width: 300px;
       }
     }
 
