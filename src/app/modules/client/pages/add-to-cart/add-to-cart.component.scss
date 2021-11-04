@@ -312,7 +312,17 @@ app-add-to-cart-nav {
     grid-template-columns: 1fr;
 
     .cart_content_container {
+      max-width: 1400px;
+      margin: 0 auto;
    
+      .cart_items_container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        .cart_item_container {
+          background: #fff;
+        }
+      }
     }
   }
 }
