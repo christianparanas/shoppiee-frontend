@@ -42,9 +42,9 @@ export class SearchComponent implements OnInit {
         else {
           this.hasResult = true
         }
-
       },
       (error: any) => {
+        console.log(error)
         this.toast.error(error.message, { position: 'top-right' });
       }
     )

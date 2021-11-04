@@ -19,27 +19,13 @@ export class StoreComponent implements OnInit {
   constructor(
     private storeService: StoreService,
     private route: ActivatedRoute,
-    private profileService: ProfileService,
     public router: Router
   ) {}
 
   async ngOnInit(): Promise<void> {
     this.storeId = await  this.route.snapshot.paramMap.get('storeId');
 
-    this.profileService.getProfileData().subscribe(
-      (response: any) => {
-        console.log(response)
-        if(response.Store.id == this.storeId) {
-          this.router.navigate(['/account/store']);
-        }
-        else {
-          this.fetchStoreData(this.storeId);
-        }
-      },
-      (error) => {
-        console.log(error)
-      }
-    )
+    this.fetchStoreData(this.storeId);
   }
 
   isFollowed() {

@@ -19,7 +19,12 @@ export class TokenInterceptor implements HttpInterceptor {
     if (req.headers.get("skip"))
       return next.handle(req);
 
-    const userToken: any = localStorage.getItem('uJwtToken');
+    let userToken: any = localStorage.getItem('uJwtToken');
+
+    if(userToken == null) {
+      userToken = 'chand'
+    }
+
     const modifiedReq = req.clone({ 
       headers: req.headers.set('uJwtToken', userToken),
     });
