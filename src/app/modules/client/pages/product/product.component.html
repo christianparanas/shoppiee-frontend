@@ -94,7 +94,7 @@
       <div class="product_owner__container">
         <div class="shop__container">
           <div class="shop_details">
-            <img *ngIf="isImgLoaded" [src]="productArray.Store.store_image" alt="store image" />
+            <img *ngIf="isImgLoaded" [src]="productArray.Store.store_image == null ? 'https://raw.githubusercontent.com/christianparanas/insta-clone-frontend/main/public/Default.png' : productArray.Store.store_image" alt="store image" />
             <div class="shop_name_address">
               <div *ngIf="isImgLoaded" class="name">
                 {{ productArray.Store.store_name }}

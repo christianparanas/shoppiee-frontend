@@ -173,7 +173,7 @@ export class UserstoreComponent implements AfterViewInit, OnInit {
   }
 
   openCloseSettingModal() {
-    this.imgFilePreview = '../../../assets/imgs/men.jpg';
+    this.imgFilePreview = 'https://raw.githubusercontent.com/christianparanas/insta-clone-frontend/main/public/Default.png';
 
     this.isBlackBgOpen = !this.isBlackBgOpen;
     this.isSettingModalOpen = !this.isSettingModalOpen;
