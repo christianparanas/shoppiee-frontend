@@ -5,7 +5,15 @@
     <div class="store_header">
       <div class="store-signage">
         <div class="img-container">
-          <img *ngIf="storeData" [src]="storeData.store_image" alt="store profile" />
+          <img
+            *ngIf="storeData"
+            [src]="
+              storeData.store_image == null
+                ? 'https://raw.githubusercontent.com/christianparanas/insta-clone-frontend/main/public/Default.png'
+                : storeData.store_image
+            "
+            alt="store profile"
+          />
           <p *ngIf="storeData">{{ storeData.store_name }}</p>
         </div>
         <div class="popularity-event">
@@ -35,22 +43,18 @@
         </div>
         <div class="details-container">
           <i class="fad fa-calendar"></i>
-          <p>Created At: 3 years ago</p>
+          <p *ngIf="storeData">Created At: {{ storeData.createdAt | dateAgo }}</p>
         </div>
         <div class="details-container">
           <i class="fad fa-box-full"></i>
           <p *ngIf="storeData">Product: {{ storeData.Products.length }}</p>
         </div>
-        <div class="details-container">
-          <i class="fad fa-star-half-alt"></i>
-          <p>Rating: 4.5(1k rate)</p>
-        </div>
       </div>
     </div>
 
     <div class="store_body">
-      <div class="store_product_wrapper">
-        <h4 *ngIf="storeData">{{ storeData.store_name }} products</h4>
+      <div *ngIf="storeData && storeData.Products.length > 0" class="store_product_wrapper">
+        <h4 >{{ storeData.store_name }} products</h4>
         <div *ngIf="storeData" class="store_products_container">
           <app-productpreview
             *ngFor="let product of storeData.Products"
@@ -58,7 +62,10 @@
           ></app-productpreview>
         </div>
       </div>
+
+      <div  *ngIf="storeData && storeData.Products.length == 0" class="store_no_products__container">
+        <img src="../../../../../assets/imgs/noproduct.svg" alt="">
+      </div>
     </div>
   </div>
 </div>
-

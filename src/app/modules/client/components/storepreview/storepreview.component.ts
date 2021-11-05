@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-storepreview',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./storepreview.component.scss']
 })
 export class StorepreviewComponent implements OnInit {
+  @Input() storeArray: any;
 
   constructor() { }
 

@@ -121,6 +121,15 @@
           grid-gap: 10px;
         }
       }
+
+      .store_no_products__container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+      }
     }
   }
 }

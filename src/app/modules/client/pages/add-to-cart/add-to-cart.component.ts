@@ -12,7 +12,7 @@ import { AuthService } from '../../shared/services/auth.service';
   styleUrls: ['./add-to-cart.component.scss'],
 })
 export class AddToCartComponent implements OnInit {
-  @Input() productArray: any = [];
+  productArray: any = [];
   @Input() temporary: any = [];
   @Input() all: number = 0;
   @Input() AllItemQuantity: number = 0;
@@ -40,58 +40,8 @@ export class AddToCartComponent implements OnInit {
         notify: false,
         isCheck: '',
         price: 200,
-        storeName: 'Paranas',
+        storeName: 'thea',
         productName: 'knife',
-      },
-      {
-        id: 2,
-        quantity: 1,
-        qtyAvailable: 11,
-        notify: false,
-        isCheck: '',
-        price: 255,
-        storeName: 'Baldo',
-        productName: 'axe',
-      },
-      {
-        id: 3,
-        quantity: 1,
-        qtyAvailable: 11,
-        notify: false,
-        isCheck: '',
-        price: 244,
-        storeName: 'Loreno',
-        productName: 'sword',
-      },
-      {
-        id: 4,
-        quantity: 1,
-        qtyAvailable: 11,
-        notify: false,
-        isCheck: '',
-        price: 233,
-        storeName: 'Lebasora',
-        productName: 'water gun',
-      },
-      {
-        id: 5,
-        quantity: 1,
-        qtyAvailable: 11,
-        notify: false,
-        isCheck: '',
-        price: 222,
-        storeName: 'Shoppiee',
-        productName: 'cell phone',
-      },
-      {
-        id: 6,
-        quantity: 1,
-        qtyAvailable: 11,
-        notify: false,
-        isCheck: '',
-        price: 211,
-        storeName: 'angular',
-        productName: 'bags',
       },
     ];
   }

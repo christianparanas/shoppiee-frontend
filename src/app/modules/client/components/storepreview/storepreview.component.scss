@@ -18,6 +18,12 @@
 		display: grid;
 		grid-gap: 5px;
 
+		.store_name {
+			i {
+				margin-right: 5px;
+			}
+		}
+
 		.visitShop_btn {
 			margin-top: 10px;
 			font-size: 12px;

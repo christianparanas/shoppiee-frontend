@@ -11,6 +11,10 @@ const baseURL = environment.baseURL;
 export class StoreService {
   constructor(private http: HttpClient) {}
 
+  getStores() {
+    return this.http.get(`${baseURL}/api/stores/`)
+  }
+
   getStoreData(storeId: any) {
     return this.http.get(`${baseURL}/api/stores/store/${storeId}`, { headers: { skip: 'true' } });
   }

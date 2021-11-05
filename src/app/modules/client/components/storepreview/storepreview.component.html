@@ -1,12 +1,12 @@
 
-<div class="storepreview__container">
-	<img src="https://c.tenor.com/rvoSW5YfLa8AAAAM/open-store.gif" alt="">
+<div *ngIf="storeArray" class="storepreview__container">
+	<img [src]="storeArray.store_image == null ? 'https://c.tenor.com/rvoSW5YfLa8AAAAM/open-store.gif' : storeArray.store_image" alt="">
 	<div class="store_details">
 		<div class="store_name">
-			<i class="fal fa-shopping-bag"></i> Si belen eleven</div>
+			<i class="fal fa-shopping-bag"></i>{{ storeArray.store_name }}</div>
 		<div class="store_rating">
-			<i class="fal fa-star"></i> 1.5</div>
-		<div class="visitShop_btn" routerLink="/store/1">
+			<i class="fal fa-star"></i>1.5</div>
+		<div class="visitShop_btn" [routerLink]="['/store/', storeArray.id]">
 			Visit Store
 		</div>
 	</div>

@@ -4,12 +4,14 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 // components
 import { CreateProductModalComponent } from './components/create-product-modal/create-product-modal.component';
+import { DateAgoPipe } from './pipes/date-ago.pipe';
 
 
 
 @NgModule({
   declarations: [
-    CreateProductModalComponent
+    CreateProductModalComponent,
+    DateAgoPipe
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { CreateProductModalComponent } from './components/create-product-modal/c
     FormsModule
   ],
   exports: [
-    CreateProductModalComponent
+    CreateProductModalComponent,
+    DateAgoPipe
   ]
 })
 export class CoreModule { }

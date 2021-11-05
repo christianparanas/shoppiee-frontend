@@ -2,8 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+// services
+import { AuthService } from '../services/auth.service';
+
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
+
+  constructor(private authService: AuthService) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const skipIntercept = req.headers.has('skip')
@@ -21,7 +26,9 @@ export class TokenInterceptor implements HttpInterceptor {
 
     let userToken: any = localStorage.getItem('uJwtToken');
 
-    if(userToken == null) {
+    console.log(this.authService.isLoggedIn())
+
+    if(userToken == null || this.authService.isLoggedIn() == false) {
       userToken = 'chand'
     }
 
