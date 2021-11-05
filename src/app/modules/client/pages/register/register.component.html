@@ -78,7 +78,7 @@
             This field is required!
           </div>
         </div>
-        <button>
+        <button [disabled]="submitLoading">
           <span class="text" *ngIf="!submitLoading">SIGN UP</span>
           <div class="loader" *ngIf="submitLoading"></div>
         </button>

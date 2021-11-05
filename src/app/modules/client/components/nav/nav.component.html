@@ -61,7 +61,7 @@
         ></i>
         <a routerLink="/cart">
           <i class="far fa-shopping-cart">
-            <p *ngIf="AddedToCart && isAuth">{{ AddedToCart }}</p>
+            <p *ngIf="AddedToCart && isAuth">{{ itemsCartCount }}</p>
           </i>
         </a>
         <i routerLink="/messages" class="far fa-comment-alt">

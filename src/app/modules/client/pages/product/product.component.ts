@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -9,6 +9,7 @@ import { HotToastService } from '@ngneat/hot-toast';
 import { AuthService } from '../../shared/services/auth.service';
 import { ProductService } from '../../shared/services/product.service';
 import { CartService } from '../../shared/services/cart.service';
+import { NavComponent } from '../../components/nav/nav.component';
 
 @Component({
   selector: 'app-product',
@@ -21,6 +22,9 @@ export class ProductComponent implements OnInit {
   productId: any;
   quantity: number = 0;
   isImgLoaded: boolean = false;
+  isSubmitted: boolean = false
+
+  @ViewChild(NavComponent, {static : true}) navCompo : NavComponent;
 
   constructor(
     private router: Router,
@@ -39,6 +43,8 @@ export class ProductComponent implements OnInit {
 
   addToCart() {
     if (this.authService.isLoggedIn()) {
+      this.isSubmitted = true
+
       this.cartService
         .addToCart({
           product_id: this.productArray.id,
@@ -47,8 +53,11 @@ export class ProductComponent implements OnInit {
         .subscribe(
           (response: any) => {
             this.toast.success(response.message, { position: 'top-right' });
+            this.isSubmitted = false 
+            this.navCompo.cartItemsCount()         
           },
           (error) => {
+            this.isSubmitted = false
             if(error.status == 403) this.toast.info(error.error.message, { position: 'top-right' });
           }
         );

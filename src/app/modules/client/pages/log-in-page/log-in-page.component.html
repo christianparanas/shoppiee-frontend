@@ -18,7 +18,7 @@
         <div class="forgotpass">
           <p><a routerLink="/account/recover">Forgot your password?</a></p>
         </div>
-        <button>
+        <button [disabled]="submitLoading">
           <span class="text" *ngIf="!submitLoading">SIGN IN </span>
           <div class="loader" *ngIf="submitLoading"></div>
         </button>

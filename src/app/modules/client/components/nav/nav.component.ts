@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 // services
 import { AuthService } from '../../shared/services/auth.service';
+import { CartService } from '../../shared/services/cart.service';
 
 @Component({
   selector: 'app-nav',
@@ -15,19 +16,36 @@ export class NavComponent implements OnInit {
   onScroll: boolean = false;
   searchinput: any;
   isAuth: boolean = false;
+  itemsCartCount: any
 
   @Input() currentRoute: String;
   @Input() searchquery: String;
   @Input() AddedToCart: number = 23;
   @Output() btnClickOnSearch = new EventEmitter();
 
-  constructor(public router: Router, private authService: AuthService) {}
+  constructor(
+    public router: Router,
+    private authService: AuthService,
+    private cartService: CartService
+  ) {}
 
   ngOnInit(): void {
     this.checkIfAuth();
+    this.cartItemsCount()
 
     window.addEventListener('scroll', this.listenScrollEvent);
     this.searchinput = this.searchquery;
+  }
+
+  cartItemsCount() {
+    this.cartService.getCartItems().subscribe(
+      (response: any) => {
+        this.itemsCartCount = response.length
+      },
+      (error) => {
+        console.log(error)
+      }
+    )
   }
 
   checkIfAuth() {

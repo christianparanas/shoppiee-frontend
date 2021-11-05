@@ -87,7 +87,9 @@
             </div>
           </div>
 
-          <div class="addtocart_btn" (click)="addToCart()">Add to cart</div>
+          <button [disabled]="isSubmitted" class="addtocart_btn" (click)="addToCart()">
+            Add to cart
+          </button>
         </div>
       </div>
 
