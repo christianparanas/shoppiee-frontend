@@ -79,7 +79,7 @@
         </select>
       </div>
 
-      <button class="addBtn_container">
+      <button [disabled]="submitLoading" class="addBtn_container">
         <h4 *ngIf="!submitLoading">Add product</h4>
         <div class="loader" *ngIf="submitLoading"></div>
       </button>

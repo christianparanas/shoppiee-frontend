@@ -64,11 +64,13 @@ export class CreateProductModalComponent implements OnInit {
         (response) => {
           // if success call the sendToServer function to save the product details to our database with the response image url of cloudinary
           this.sendDataToServer(response)
+          this.submitLoading = false
         },
         (error) => {
           // catch error if the image uploading process got an error
           this.toast.error("Error occured when uploading the image, please try again!", { position: 'top-right' });
           console.error(error);
+          this.submitLoading = false
         }
       );
     }
