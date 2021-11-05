@@ -61,7 +61,6 @@ export class UserstoreComponent implements AfterViewInit, OnInit {
   imgData: any = '';
 
   displayedColumns: string[] = [
-    'id',
     'image',
     'name',
     'price',

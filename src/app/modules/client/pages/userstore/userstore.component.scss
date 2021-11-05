@@ -349,6 +349,7 @@
       
             .mat-table {
               width: 100%;
+              min-width: 634px;
             }
       
             .mat-elevation-z8 {
@@ -406,6 +407,7 @@
         
               .mat-table {
                 width: 100%;
+                min-width: 634px;
               }
         
               .mat-elevation-z8 {
@@ -421,6 +423,7 @@
               td,
               th {
                 min-width: fit-content;
+                width: 25%;
         
                 .productImage {
                   width: 50px;
@@ -430,6 +433,7 @@
               }
 
               .optionCon {
+                min-width: fit-content;
                 display: flex;
 
                 button:nth-child(1) {
