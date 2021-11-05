@@ -6,7 +6,6 @@ import { Observable } from 'rxjs';
 const baseUrl = 'https://fakestoreapi.com';
 
 import { environment } from 'src/environments/environment';
-
 const baseURL = environment.baseURL;
 
 @Injectable({

@@ -1,9 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
+// vendor
+import { HotToastService } from '@ngneat/hot-toast';
+
 // services
+import { AuthService } from '../../shared/services/auth.service';
 import { ProductService } from '../../shared/services/product.service';
+import { CartService } from '../../shared/services/cart.service';
 
 @Component({
   selector: 'app-product',
@@ -18,19 +23,45 @@ export class ProductComponent implements OnInit {
   isImgLoaded: boolean = false;
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private location: Location,
-    private productService: ProductService
+    private productService: ProductService,
+    private authService: AuthService,
+    private cartService: CartService,
+    private toast: HotToastService
   ) {}
 
   ngOnInit(): void {
-    this.fetchSimillarProducts()
-    this.refetch()
+    this.fetchSimillarProducts();
+    this.refetch();
+  }
+
+  addToCart() {
+    if (this.authService.isLoggedIn()) {
+      this.cartService
+        .addToCart({
+          product_id: this.productArray.id,
+          product_quantity: 1,
+        })
+        .subscribe(
+          (response: any) => {
+            this.toast.success(response.message, { position: 'top-right' });
+          },
+          (error) => {
+            if(error.status == 403) this.toast.info(error.error.message, { position: 'top-right' });
+          }
+        );
+    }
+    else {
+      this.toast.info("Please login first!", { position: 'top-right' });
+      this.router.navigate(['/account/login']);
+    }
   }
 
   refetch() {
-    this.productId = this.route.snapshot.paramMap.get('id')
-    this.fetchProduct()
+    this.productId = this.route.snapshot.paramMap.get('id');
+    this.fetchProduct();
   }
 
   goBack(): void {
@@ -54,7 +85,7 @@ export class ProductComponent implements OnInit {
     this.productService.fetchSpecificProduct(this.productId).subscribe(
       (response) => {
         this.productArray = response;
-        console.log(this.productArray)
+        console.log(this.productArray);
       },
       (error) => {
         console.log(error);

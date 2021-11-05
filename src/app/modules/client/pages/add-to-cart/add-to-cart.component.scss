@@ -136,7 +136,7 @@ app-add-to-cart-nav {
 
             .product-image {
               overflow: hidden;
-  
+
               img {
                 min-height: 138px;
                 width: 100%;
@@ -147,25 +147,24 @@ app-add-to-cart-nav {
                 transform: scale(1.1);
               }
             }
-  
+
             .item-details {
               display: grid;
               grid-template-rows: 1fr auto auto;
               align-items: center;
               grid-gap: 10px;
               position: relative;
-  
+
               .price {
                 font-size: 14px;
-  
+
                 p {
                   display: inline-block;
                   color: rgb(255, 92, 0);
                 }
               }
-  
+
               .product-name {
-  
                 p {
                   position: absolute;
                   top: 0;
@@ -173,7 +172,7 @@ app-add-to-cart-nav {
                   font-size: 10px;
                 }
               }
-  
+
               .changer {
                 display: grid;
                 grid-template-columns: repeat(3, 40px);
@@ -184,18 +183,18 @@ app-add-to-cart-nav {
                 box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
                 font-size: 14px;
                 margin-bottom: 2px;
-  
+
                 div {
                   width: 100%;
                   text-align: center;
                   padding: 5px 0;
                 }
-  
+
                 .increment,
                 .decrement {
                   border: 1px solid #fff;
                   cursor: pointer;
-  
+
                   &:hover {
                     border: 1px solid #000;
                   }
@@ -314,7 +313,7 @@ app-add-to-cart-nav {
     .cart_content_container {
       max-width: 1400px;
       margin: 0 auto;
-   
+
       .cart_items_container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);

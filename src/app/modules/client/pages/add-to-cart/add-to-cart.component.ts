@@ -4,7 +4,7 @@ import { HotToastService } from '@ngneat/hot-toast';
 import { Location } from '@angular/common';
 
 // services
-import { AuthService } from '../../shared/services/auth.service';
+import { CartService } from '../../shared/services/cart.service'
 
 @Component({
   selector: 'app-add-to-cart',
@@ -22,28 +22,31 @@ export class AddToCartComponent implements OnInit {
 
   constructor(
     public router: Router,
-    private authService: AuthService,
     private toast: HotToastService,
-    private location: Location
+    private location: Location,
+    private cartService: CartService
   ) {}
 
   goBack() {
     this.location.back();
   }
 
+
+
   ngOnInit(): void {
-    this.productArray = [
-      {
-        id: 1,
-        quantity: 1,
-        qtyAvailable: 11,
-        notify: false,
-        isCheck: '',
-        price: 200,
-        storeName: 'thea',
-        productName: 'knife',
+    this.loadCartItems()
+  }
+
+  loadCartItems() {
+    this.cartService.getCartItems().subscribe(
+      (response) => {
+        console.log(response)
+        this.productArray = response
       },
-    ];
+      (error) => {
+        console.log(error)
+      }
+    )
   }
 
   //product quantity control
