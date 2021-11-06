@@ -22,4 +22,12 @@ export class CartService {
   removeCartItem(cartId: any) {
     return this.http.delete(`${baseURL}/api/carts/${cartId}`);
   }
+
+  reduceQtyCartItem(data: any) {
+    return this.http.post(`${baseURL}/api/carts/dec`, data);
+  }
+
+  increaseQtyCartItem(data: any) {
+    return this.http.post(`${baseURL}/api/carts/inc`, data);
+  }
 }

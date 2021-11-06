@@ -48,7 +48,7 @@ export class ProductComponent implements OnInit {
       this.cartService
         .addToCart({
           product_id: this.productArray.id,
-          product_quantity: 1,
+          product_quantity: 10,
         })
         .subscribe(
           (response: any) => {

@@ -49,6 +49,37 @@ export class AddToCartComponent implements OnInit {
     )
   }
 
+  incDecCartItemQty(op: any, cartId: any) {
+    if(op == 1) {
+      this.cartService.increaseQtyCartItem({
+        cartId: cartId
+      }).subscribe(
+        (response: any) => {
+          console.log(response)
+          // refetch cart items
+        this.loadCartItems()
+        },
+        (error) => {
+          console.log(error)
+        }
+      )
+    }
+    else {
+      this.cartService.reduceQtyCartItem({
+        cartId: cartId
+      }).subscribe(
+        (response: any) => {
+          console.log(response)
+          // refetch cart items
+        this.loadCartItems()
+        },
+        (error) => {
+          console.log(error)
+        }
+      )
+    }
+  }
+
   removeCartItem(cart_id: any) {
     this.cartService.removeCartItem(cart_id).subscribe(
       (response: any) => {

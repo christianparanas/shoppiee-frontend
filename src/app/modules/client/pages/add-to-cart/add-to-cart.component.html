@@ -28,11 +28,11 @@
               <p>P{{ product.Product.product_price }}</p>
             </div>
             <div class="changer">
-              <div class="decrement" (click)="itemQuantity(-1, product.id)">
+              <div class="decrement" (click)="incDecCartItemQty(2, product.id)">
                 -
               </div>
               <div class="">{{ product.quantity }}</div>
-              <div class="increment" (click)="itemQuantity(1, product.id)">
+              <div class="increment" (click)="incDecCartItemQty(1, product.id)">
                 +
               </div>
             </div>
