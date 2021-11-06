@@ -4,10 +4,6 @@
 
 <br />
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
-
-> This is the frontend repository of our final project.
-
 <p align="center">
  <img src="./src/assets/imgs/shoppiee.png?raw=true">
 </p>
