@@ -4,7 +4,7 @@
 <div class="cart_container">
   <div class="cart_content_container">
     <div class="cart_items_container">
-      <div class="cart_item_container" *ngFor="let product of productArray">
+      <div class="cart_item_container" [routerLink]="['/product/', product.Product.id]" *ngFor="let product of productArray">
         <div class="about-items">
           <input
             type="checkbox"
@@ -22,7 +22,7 @@
             <div class="product-name">
               {{ product.Product.product_name }}
             </div>
-            <p>Stocks: {{ product.Product.product_quantity }}</p>
+            <p class="stock">Stocks: {{ product.Product.product_quantity }}</p>
             <div class="price">
               Price:
               <p>P{{ product.Product.product_price }}</p>
@@ -59,8 +59,12 @@
       </div>
     </div>
 
-    <div *ngIf="productArray.length == 0" class="emptyCart_container">
+    <div *ngIf="isCartEmpty" class="emptyCart_container">
       <h5>Cart is empty :(</h5>
+    </div>
+
+    <div *ngIf="productArray.length == 0" class="emptyCart_container">
+      <h5>Loading...</h5>
     </div>
 
     <div class="checkout_container">

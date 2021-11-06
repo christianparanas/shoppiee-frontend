@@ -12,6 +12,7 @@ import { CartService } from '../../shared/services/cart.service'
   styleUrls: ['./add-to-cart.component.scss'],
 })
 export class AddToCartComponent implements OnInit {
+  isCartEmpty: boolean = false
   productArray: any = [];
   @Input() temporary: any = [];
   @Input() all: number = 0;
@@ -31,16 +32,14 @@ export class AddToCartComponent implements OnInit {
     this.location.back();
   }
 
-
-
   ngOnInit(): void {
     this.loadCartItems()
   }
 
   loadCartItems() {
     this.cartService.getCartItems().subscribe(
-      (response) => {
-        console.log(response)
+      (response: any) => {
+        response.length == 0 ? this.isCartEmpty = true : this.isCartEmpty = false
         this.productArray = response
       },
       (error) => {

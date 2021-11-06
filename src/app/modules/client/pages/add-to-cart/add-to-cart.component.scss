@@ -93,7 +93,12 @@ app-add-to-cart-nav {
         grid-template-columns: repeat(1fr 1fr 1fr);
         box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
         border-radius: 8px;
-        border-top: 1px solid #fafafa;
+        border: 2px solid #fafafa;
+        transition: all .3s ease;
+
+        &:hover {
+          border: 2px solid rgb(255, 92, 0);;
+        }
 
         .about-items {
           display: grid;
@@ -136,6 +141,11 @@ app-add-to-cart-nav {
             grid-gap: 10px;
             position: relative;
 
+            .stock {
+              position: absolute;
+              font-size: 9px;
+              bottom: 65px;
+            }
             .price {
               font-size: 12px;
 
@@ -145,10 +155,6 @@ app-add-to-cart-nav {
               }
             }
 
-            p {
-              position: absolute;
-              font-size: 9px;
-            }
 
             .changer {
               display: grid;
