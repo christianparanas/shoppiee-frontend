@@ -50,6 +50,7 @@ export interface UserData {
     ]),
   ],
 })
+
 export class UserstoreComponent implements AfterViewInit, OnInit {
   isBlackBgOpen: boolean = false;
   storeData: any;
