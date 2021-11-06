@@ -5,7 +5,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
 // services
-import { ProductsService } from '../../shared/services/products.service';
+import { UsersService } from "../../shared/services/users.service"
 
 export interface UserData {
   id: string;
@@ -30,61 +30,13 @@ export class CustomersComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private productsService: ProductsService) {
-    const users = [
-      {
-        id: '1',
-        image: 'https://avatars.githubusercontent.com/u/59472122?v=4',
-        name: 'Thea Thea',
-        address: 'Brgy Tibay',
-        role: 'Customer',
-      },
-      {
-        id: '1',
-        image: 'https://avatars.githubusercontent.com/u/59472122?v=4',
-        name: 'Chan Chan',
-        address: 'Brgy Tibay',
-        role: 'Admin',
-      },
-      {
-        id: '1',
-        image: 'https://avatars.githubusercontent.com/u/59472122?v=4',
-        name: 'Thea Thea',
-        address: 'Brgy Tibay',
-        role: 'Customer',
-      },
-      {
-        id: '1',
-        image: 'https://avatars.githubusercontent.com/u/59472122?v=4',
-        name: 'Thea Thea',
-        address: 'Brgy Tibay',
-        role: 'Customer',
-      },
-      {
-        id: '1',
-        image: 'https://avatars.githubusercontent.com/u/59472122?v=4',
-        name: 'Thea Thea',
-        address: 'Brgy Tibay',
-        role: 'Customer',
-      },
-      {
-        id: '1',
-        image: 'https://avatars.githubusercontent.com/u/59472122?v=4',
-        name: 'Thea Thea',
-        address: 'Brgy Tibay',
-        role: 'Customer',
-      },
-    ];
-
-    this.dataSource = new MatTableDataSource(users);
+  constructor(private usersService: UsersService) {
+    this.fetchUsers()
   }
 
   ngOnInit() {}
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
+  ngAfterViewInit() {}
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -93,5 +45,22 @@ export class CustomersComponent implements OnInit, AfterViewInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  fetchUsers() {
+    this.usersService.getUsers().subscribe(
+      (response) => {
+        console.log(response)
+
+        this.dataSource = new MatTableDataSource(response);
+
+        // init the paginator ang sorter after the dataSource is set
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }

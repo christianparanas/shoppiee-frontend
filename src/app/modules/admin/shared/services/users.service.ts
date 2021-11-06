@@ -8,11 +8,11 @@ const baseURL = environment.baseURL;
 @Injectable({
   providedIn: 'root'
 })
-export class ProductsService {
+export class UsersService {
 
   constructor(private http: HttpClient) { }
 
-  getProducts(): Observable<any> {
-    return this.http.get(`${baseURL}/api/admin/products/`);
+  getUsers(): Observable<any> {
+    return this.http.get(`${baseURL}/api/admin/users/`);
   }
 }

@@ -25,7 +25,15 @@
           <ng-container matColumnDef="image">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Image</th>
             <td mat-cell *matCellDef="let row">
-              <img class="productImage" [src]="row.image" alt="" />
+              <img
+                class="productImage"
+                [src]="
+                  row.image == null
+                    ? '../../../../../assets/imgs/defaultUserImage.png'
+                    : row.image
+                "
+                alt=""
+              />
             </td>
           </ng-container>
 
@@ -43,29 +51,30 @@
 
           <ng-container matColumnDef="address">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Address</th>
-            <td mat-cell *matCellDef="let row">{{ row.address }}</td>
+            <td mat-cell *matCellDef="let row">null</td>
           </ng-container>
 
           <ng-container matColumnDef="role">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Role</th>
             <td mat-cell *matCellDef="let row">
               <mat-chip-list>
-                <mat-chip *ngIf="row.role == 'Admin'" color="primary" selected>
+                <mat-chip *ngIf="row.role == 'admin'" color="primary" selected>
                   {{ row.role }}
                 </mat-chip>
               </mat-chip-list>
               <mat-chip-list>
-                <mat-chip *ngIf="row.role == 'Customer'" color="secondary" selected>
+                <mat-chip
+                  *ngIf="row.role == 'user'"
+                  color="secondary"
+                  selected
+                >
                   {{ row.role }}
                 </mat-chip>
               </mat-chip-list>
             </td>
           </ng-container>
 
-          <tr
-            mat-header-row
-            *matHeaderRowDef="displayedColumns"
-          ></tr>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
           <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 
           <!-- Row shown when there is no matching data. -->

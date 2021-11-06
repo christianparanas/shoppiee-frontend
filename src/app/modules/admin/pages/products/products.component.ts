@@ -41,8 +41,8 @@ export interface UserData {
   ],
 })
 export class ProductsComponent implements AfterViewInit, OnInit {
-  isAddProductModalOpen: boolean = true;
-  displayedColumns: string[] = ['id', 'image', 'name', 'storeID', 'stock'];
+  isAddProductModalOpen: boolean = false;
+  displayedColumns: string[] = ['image', 'name', 'storeID', 'stock'];
   dataSource: MatTableDataSource<UserData>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -70,8 +70,10 @@ export class ProductsComponent implements AfterViewInit, OnInit {
   }
 
   fetchProducts() {
-    this.productsService.fetchProducts().subscribe(
+    this.productsService.getProducts().subscribe(
       (response) => {
+        console.log(response)
+
         this.dataSource = new MatTableDataSource(response);
 
         // init the paginator ang sorter after the dataSource is set

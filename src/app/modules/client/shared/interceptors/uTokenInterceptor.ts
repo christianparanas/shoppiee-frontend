@@ -26,7 +26,7 @@ export class TokenInterceptor implements HttpInterceptor {
 
     let userToken: any = localStorage.getItem('uJwtToken');
 
-    console.log(this.authService.isLoggedIn())
+    console.log("isLoggin? - " + this.authService.isLoggedIn())
 
     if(userToken == null || this.authService.isLoggedIn() == false) {
       userToken = 'chand'

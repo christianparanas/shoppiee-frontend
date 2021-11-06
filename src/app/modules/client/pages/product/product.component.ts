@@ -77,10 +77,6 @@ export class ProductComponent implements OnInit {
     this.location.back();
   }
 
-  detectErroImg(e: any): void {
-    console.log('error');
-  }
-
   imgIsLoaded(): void {
     this.isImgLoaded = true;
   }
@@ -94,7 +90,6 @@ export class ProductComponent implements OnInit {
     this.productService.fetchSpecificProduct(this.productId).subscribe(
       (response) => {
         this.productArray = response;
-        console.log(this.productArray);
       },
       (error) => {
         console.log(error);
