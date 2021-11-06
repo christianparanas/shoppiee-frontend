@@ -6,51 +6,34 @@
     <div class="cart_items_container">
       <div class="cart_item_container" *ngFor="let product of productArray">
         <div class="about-items">
-          <div class="item-header">
-            <input
-              type="checkbox"
-              name="item"
-              (click)="check(product.id)"
-              checked="{{ product.isCheck }}"
-            />
-            <div class="toStoreBtn_container" routerLink="/store/123">
-              <i class="fal fa-store"></i>
-              <p>{{ product.storeName }}`s Store</p>
-            </div>
-          </div>
-          <p class="edit" (click)="delete(product.id)">Remove</p>
-        </div>
-        <div class="item-info">
           <input
             type="checkbox"
             name="item"
             (click)="check(product.id)"
             checked="{{ product.isCheck }}"
           />
-          <div class="product">
-            <div class="product-image">
-              <img
-                [src]="product.Product.product_image"
-                alt="item"
-              />
+          <p class="edit" (click)="removeCartItem(product.id)">Remove</p>
+        </div>
+        <div class="product">
+          <div class="product-image">
+            <img [src]="product.Product.product_image" alt="item" />
+          </div>
+          <div class="item-details">
+            <div class="product-name">
+              {{ product.Product.product_name }}
+              <p>Stocks: {{ product.Product.product_quantity }}</p>
             </div>
-            <div class="item-details">
-              <div class="product-name">
-                {{ product.Product.product_name }}
-                <p>Stocks: {{ product.Product.product_quantity }}</p>
+            <div class="price">
+              Price:
+              <p>P{{ product.Product.product_price }}</p>
+            </div>
+            <div class="changer">
+              <div class="decrement" (click)="itemQuantity(-1, product.id)">
+                -
               </div>
-              <div class="price">
-                Price:
-                <p>P{{ product.Product.product_price }}</p>
-              </div>
-              <div class="changer">
-                <div class="decrement" (click)="itemQuantity(-1, product.id)">
-                  -
-                </div>
-                <div class="">{{ product.quantity }}</div>
-                <div class="increment" (click)="itemQuantity(1, product.id)">
-                  +
-                </div>
+              <div class="">{{ product.quantity }}</div>
+              <div class="increment" (click)="itemQuantity(1, product.id)">
+                +
               </div>
             </div>
           </div>
@@ -74,6 +57,10 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div *ngIf="productArray.length == 0" class="emptyCart_container">
+      <h5>Cart is empty :(</h5>
     </div>
 
     <div class="checkout_container">

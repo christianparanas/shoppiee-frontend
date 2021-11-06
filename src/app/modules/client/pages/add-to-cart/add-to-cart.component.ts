@@ -49,6 +49,20 @@ export class AddToCartComponent implements OnInit {
     )
   }
 
+  removeCartItem(cart_id: any) {
+    this.cartService.removeCartItem(cart_id).subscribe(
+      (response: any) => {
+        this.toast.success(response.message, { position: 'top-right' });
+
+        // refetch cart items
+        this.loadCartItems()
+      },
+      (error) => {
+        console.log(error)
+      }
+    )
+  }
+
   //product quantity control
   itemQuantity(qtyControl: number, id: number) {
     return this.productArray.map((product: any) => {

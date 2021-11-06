@@ -73,6 +73,14 @@ app-add-to-cart-nav {
       }
     }
 
+    .emptyCart_container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100px;
+    }
+
     .cart_items_container {
       display: grid;
       grid-gap: 20px;
@@ -84,6 +92,8 @@ app-add-to-cart-nav {
         padding: 10px;
         grid-template-columns: repeat(1fr 1fr 1fr);
         box-shadow: 0 14px 20px 0 RGB(43 80 237 / 20%);
+        border-radius: 8px;
+        border-top: 1px solid #fafafa;
 
         .about-items {
           display: grid;
@@ -91,28 +101,6 @@ app-add-to-cart-nav {
           margin: 10px;
           padding-bottom: 10px;
           border-bottom: 2px solid $shadow;
-
-          .item-header {
-            display: flex;
-
-            i,
-            a {
-              text-indent: 10px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-            }
-
-            .toStoreBtn_container {
-              font-size: 15px;
-              display: flex;
-              align-items: center;
-
-              i {
-                margin-right: 5px;
-              }
-            }
-          }
 
           .edit {
             display: flex;
@@ -123,81 +111,74 @@ app-add-to-cart-nav {
           }
         }
 
-        .item-info {
-          margin: 10px;
+        .product {
           display: grid;
-          grid-gap: 10px;
-          grid-template-columns: auto 1fr;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 15px;
 
-          .product {
+          .product-image {
+            overflow: hidden;
+
+            img {
+              min-height: 138px;
+              width: 100%;
+              border-radius: 8px 8px 0 0;
+              max-height: 200px;
+              object-fit: cover;
+              transition: transform 0.5s ease;
+              transform: scale(1.1);
+            }
+          }
+
+          .item-details {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 15px;
+            grid-template-rows: 1fr auto auto;
+            align-items: center;
+            grid-gap: 10px;
+            position: relative;
 
-            .product-image {
-              overflow: hidden;
+            .price {
+              font-size: 14px;
 
-              img {
-                min-height: 138px;
-                width: 100%;
-                border-radius: 8px 8px 0 0;
-                max-height: 200px;
-                object-fit: cover;
-                transition: transform 0.5s ease;
-                transform: scale(1.1);
+              p {
+                display: inline-block;
+                color: rgb(255, 92, 0);
               }
             }
 
-            .item-details {
+            .product-name {
+              p {
+                position: absolute;
+                top: 0;
+                right: 0;
+                font-size: 10px;
+              }
+            }
+
+            .changer {
               display: grid;
-              grid-template-rows: 1fr auto auto;
-              align-items: center;
-              grid-gap: 10px;
-              position: relative;
+              grid-template-columns: repeat(3, 40px);
+              place-items: center;
+              border: 1px solid #e3e3e3;
+              width: fit-content;
+              padding: 0;
+              box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+              font-size: 14px;
+              margin-bottom: 2px;
 
-              .price {
-                font-size: 14px;
-
-                p {
-                  display: inline-block;
-                  color: rgb(255, 92, 0);
-                }
+              div {
+                width: 100%;
+                text-align: center;
+                padding: 5px 0;
               }
 
-              .product-name {
-                p {
-                  position: absolute;
-                  top: 0;
-                  right: 0;
-                  font-size: 10px;
-                }
-              }
+              .increment,
+              .decrement {
+                border: 1px solid #fff;
+                cursor: pointer;
 
-              .changer {
-                display: grid;
-                grid-template-columns: repeat(3, 40px);
-                place-items: center;
-                border: 1px solid #e3e3e3;
-                width: fit-content;
-                padding: 0;
-                box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
-                font-size: 14px;
-                margin-bottom: 2px;
-
-                div {
-                  width: 100%;
-                  text-align: center;
-                  padding: 5px 0;
-                }
-
-                .increment,
-                .decrement {
-                  border: 1px solid #fff;
-                  cursor: pointer;
-
-                  &:hover {
-                    border: 1px solid #000;
-                  }
+                &:hover {
+                  border: 1px solid #000;
                 }
               }
             }

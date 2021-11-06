@@ -6,11 +6,10 @@ import { environment } from 'src/environments/environment';
 const baseURL = environment.baseURL;
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CartService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getCartItems() {
     return this.http.get(`${baseURL}/api/carts`);
@@ -18,5 +17,9 @@ export class CartService {
 
   addToCart(data: any) {
     return this.http.post(`${baseURL}/api/carts`, data);
+  }
+
+  removeCartItem(cartId: any) {
+    return this.http.delete(`${baseURL}/api/carts/${cartId}`);
   }
 }
