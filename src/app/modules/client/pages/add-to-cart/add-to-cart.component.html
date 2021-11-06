@@ -4,7 +4,7 @@
 <div class="cart_container">
   <div class="cart_content_container">
     <div class="cart_items_container">
-      <div class="cart_item_container" [routerLink]="['/product/', product.Product.id]" *ngFor="let product of productArray">
+      <div class="cart_item_container" *ngFor="let product of productArray">
         <div class="about-items">
           <input
             type="checkbox"
@@ -28,11 +28,11 @@
               <p>P{{ product.Product.product_price }}</p>
             </div>
             <div class="changer">
-              <div class="decrement" (click)="incDecCartItemQty(2, product.id)">
+              <div class="decrement" (click)="incDecCartItemQty(2, product.id, product.quantity)">
                 -
               </div>
               <div class="">{{ product.quantity }}</div>
-              <div class="increment" (click)="incDecCartItemQty(1, product.id)">
+              <div class="increment" (click)="incDecCartItemQty(1, product.id, product.quantity)">
                 +
               </div>
             </div>
