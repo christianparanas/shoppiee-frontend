@@ -91,14 +91,13 @@ app-add-to-cart-nav {
         display: grid;
         padding: 10px;
         grid-template-columns: repeat(1fr 1fr 1fr);
-        box-shadow: 0 14px 20px 0 RGB(43 80 237 / 20%);
+        box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
         border-radius: 8px;
         border-top: 1px solid #fafafa;
 
         .about-items {
           display: grid;
           grid-template-columns: 1fr auto;
-          margin: 10px;
           padding-bottom: 10px;
           border-bottom: 2px solid $shadow;
 
@@ -113,7 +112,7 @@ app-add-to-cart-nav {
 
         .product {
           display: grid;
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: 1fr 122px;
           grid-gap: 15px;
 
           .product-image {
@@ -138,7 +137,7 @@ app-add-to-cart-nav {
             position: relative;
 
             .price {
-              font-size: 14px;
+              font-size: 12px;
 
               p {
                 display: inline-block;
@@ -146,13 +145,9 @@ app-add-to-cart-nav {
               }
             }
 
-            .product-name {
-              p {
-                position: absolute;
-                top: 0;
-                right: 0;
-                font-size: 10px;
-              }
+            p {
+              position: absolute;
+              font-size: 9px;
             }
 
             .changer {
@@ -162,7 +157,7 @@ app-add-to-cart-nav {
               border: 1px solid #e3e3e3;
               width: fit-content;
               padding: 0;
-              box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+              box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
               font-size: 14px;
               margin-bottom: 2px;
 
