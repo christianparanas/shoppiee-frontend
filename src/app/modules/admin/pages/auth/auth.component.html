@@ -1,1 +1,15 @@
-<p>auth works!</p>
+<div class="auth_container">
+  <div class="login_container">
+    <input type="text" placeholder="email">  
+    <input type="text" placeholder="pass">
+    <button>login</button>
+  </div>
+  <br>
+  <br>
+  <div class="register_container">
+    <input type="text" [(ngModel)]="regCred.name" placeholder="name">
+    <input type="text" [(ngModel)]="regCred.email" placeholder="email">
+    <input type="text" [(ngModel)]="regCred.pass" placeholder="pass">
+    <button (click)="register()">register</button>
+  </div>
+</div>
