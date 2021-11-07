@@ -1,7 +1,6 @@
 import { AfterViewInit, Component, ViewChild, OnInit } from '@angular/core';
 import {
   trigger,
-  state,
   style,
   animate,
   transition,
@@ -14,15 +13,6 @@ import { MatTableDataSource } from '@angular/material/table';
 // services
 import { ProductsService } from '../../shared/services/products.service';
 
-export interface UserData {
-  id: string;
-  image: string;
-  name: string;
-}
-
-/**
- * @title Data table with sorting, pagination, and filtering.
- */
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -40,10 +30,10 @@ export interface UserData {
     ]),
   ],
 })
-export class ProductsComponent implements AfterViewInit, OnInit {
+export class ProductsComponent implements OnInit {
   isAddProductModalOpen: boolean = false;
-  displayedColumns: string[] = ['image', 'name', 'storeID', 'stock'];
-  dataSource: MatTableDataSource<UserData>;
+  displayedColumns: string[] = ['image', 'name', 'storeID', 'stock', 'options'];
+  dataSource: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -53,8 +43,6 @@ export class ProductsComponent implements AfterViewInit, OnInit {
   }
 
   ngOnInit() {}
-
-  ngAfterViewInit() {}
 
   openCloseNewProductModal() {
     this.isAddProductModalOpen = !this.isAddProductModalOpen;

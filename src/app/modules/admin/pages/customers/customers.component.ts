@@ -7,25 +7,15 @@ import { MatTableDataSource } from '@angular/material/table';
 // services
 import { UsersService } from "../../shared/services/users.service"
 
-export interface UserData {
-  id: string;
-  image: string;
-  name: string;
-  address: string;
-  role: string;
-}
 
-/**
- * @title Data table with sorting, pagination, and filtering.
- */
 @Component({
   selector: 'app-customers',
   templateUrl: './customers.component.html',
   styleUrls: ['./customers.component.scss'],
 })
-export class CustomersComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['id', 'image', 'name', 'address', 'role'];
-  dataSource: MatTableDataSource<UserData>;
+export class CustomersComponent implements OnInit {
+  displayedColumns: string[] = ['image', 'name', 'address', 'role', 'options'];
+  dataSource: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -36,7 +26,6 @@ export class CustomersComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {}
 
-  ngAfterViewInit() {}
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

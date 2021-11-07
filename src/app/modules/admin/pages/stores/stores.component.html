@@ -1,1 +1,107 @@
-<p>stores works!</p>
+<div class="stores_container">
+  <div class="stores_wrapper">
+    <header>
+      <h2 class="label">Stores</h2>
+      <mat-form-field MatFormFieldControl appearance="standard">
+        <mat-label>Search</mat-label>
+        <input
+          matInput
+          (keyup)="applyFilter($event)"
+          placeholder="Ex. Chris"
+          #input
+        />
+      </mat-form-field>
+    </header>
+
+    <div class="stores_content_container">
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+          <ng-container matColumnDef="image">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Image</th>
+            <td mat-cell *matCellDef="let row">
+              <img
+                class="productImage"
+                [src]="
+                  row.image == null
+                    ? '../../../../../assets/imgs/defaultUserImage.png'
+                    : row.image
+                "
+                alt=""
+              />
+            </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+            <td mat-cell *matCellDef="let row">
+              {{
+                row.name.length > 10
+                  ? row.name.substring(0, 10) + " ..."
+                  : row.name
+              }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="address">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Address</th>
+            <td mat-cell *matCellDef="let row">null</td>
+          </ng-container>
+
+          <ng-container matColumnDef="role">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Role</th>
+            <td mat-cell *matCellDef="let row">
+              <mat-chip-list>
+                <mat-chip *ngIf="row.role == 'admin'" color="primary" selected>
+                  {{ row.role }}
+                </mat-chip>
+              </mat-chip-list>
+              <mat-chip-list>
+                <mat-chip
+                  *ngIf="row.role == 'user'"
+                  color="secondary"
+                  selected
+                >
+                  {{ row.role }}
+                </mat-chip>
+              </mat-chip-list>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="options">
+            <th
+              mat-header-cell
+              *matHeaderCellDef
+              class="head"
+            >
+              Options
+            </th>
+            <td mat-cell *matCellDef="let row" class="optionCon">
+              <button mat-button mat-raised-button color="accent">
+                Edit
+              </button>
+              <button mat-button mat-raised-button color="warn">
+                Delete
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+          <!-- Row shown when there is no matching data. -->
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">
+              No data matching the filter "{{ input.value }}"
+            </td>
+          </tr>
+        </table>
+
+        <mat-paginator
+          [pageSizeOptions]="[5, 10, 25, 100]"
+          aria-label="Select page of users"
+        ></mat-paginator>
+      </div>
+    </div>
+  </div>
+</div>
