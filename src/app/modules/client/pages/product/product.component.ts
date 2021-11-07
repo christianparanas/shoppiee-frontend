@@ -20,7 +20,7 @@ export class ProductComponent implements OnInit {
   simillarProductsArray = new Array(11);
   productArray: any = [];
   productId: any;
-  quantity: number = 0;
+  quantity: number = 1;
   isImgLoaded: boolean = false;
   isSubmitted: boolean = false
 
