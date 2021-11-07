@@ -4,7 +4,7 @@
     [ngClass]="{ upperNav__scrollShadow: onScroll }"
   >
     <div class="con">
-      <img src="../../../../../assets/svgs/adminLogo.svg" alt="" />
+      <img routerLink="/admin" src="../../../../../assets/svgs/adminLogo.svg" alt="" />
     </div>
     <div class="con1">
       <div class="iconBtn imga">
@@ -47,7 +47,7 @@
         (click)="openCloseMobileSidebar(); getCurrentRouteURL('customers')"
         [ngClass]="{ currentRoute: currentRoute === 'customers' }"
       >
-        <i class="far fa-users"></i>Customers
+        <i class="far fa-users"></i>Users
       </div>
       <div
         class="route-items"
