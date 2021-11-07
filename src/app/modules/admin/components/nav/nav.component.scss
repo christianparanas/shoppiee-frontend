@@ -40,6 +40,20 @@
           border-radius: 8px;
         }
       }
+
+      .imga {
+        cursor: pointer;
+        box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
+        border-radius: 50%;
+        border: 2px solid #fafafa;
+
+        img {
+          width: 30px;
+          height: 30px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
     }
   }
 

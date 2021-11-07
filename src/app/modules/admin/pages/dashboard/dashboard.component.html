@@ -1,5 +1,15 @@
 <div class="admin_dashboard_container">
   <div class="dash_wrapper">
+    <div class="dash-header">
+      <div class=""></div>
+      <div class="dash-header_option_container">
+        <div class="curentUser_image_container">
+          <img src="../../../../../assets/imgs/defaultUserImage.png" alt="">
+          <div class="name">Chan</div>
+        </div>
+      </div>
+    </div>
+
     <h2>Dashboard</h2>
     <div class="btnOverview_wrapper">
       <div class="btnOver_container">
@@ -61,20 +71,31 @@
           <div class="header">Summary</div>
           <div class="chart-container">
             <div class="charts-btns">
-              <div class="btn" [ngClass]="currentChart == 'products' ? 'selectedChartBtn' : ''" (click)="changeChartData('products')">
+              <div
+                class="btn"
+                [ngClass]="currentChart == 'products' ? 'selectedChartBtn' : ''"
+                (click)="changeChartData('products')"
+              >
                 <div class="sum">
                   <h4>168</h4>
                   <p>Products</p>
                 </div>
-                
               </div>
-              <div class="btn" [ngClass]="currentChart == 'sales' ? 'selectedChartBtn' : ''" (click)="changeChartData('sales')">
+              <div
+                class="btn"
+                [ngClass]="currentChart == 'sales' ? 'selectedChartBtn' : ''"
+                (click)="changeChartData('sales')"
+              >
                 <div class="sum">
                   <h4>168</h4>
                   <p>Sales</p>
                 </div>
               </div>
-              <div class="btn" [ngClass]="currentChart == 'orders' ? 'selectedChartBtn' : ''" (click)="changeChartData('orders')">
+              <div
+                class="btn"
+                [ngClass]="currentChart == 'orders' ? 'selectedChartBtn' : ''"
+                (click)="changeChartData('orders')"
+              >
                 <div class="sum">
                   <h4>168</h4>
                   <p>Orders</p>
@@ -83,16 +104,16 @@
             </div>
             <div class="chart-wrapper">
               <canvas
-              baseChart
-              class="chartjs"
-              [datasets]="dashSetting.lineChartData"
-              [labels]="dashSetting.lineChartLabels"
-              [options]="dashSetting.lineChartOptions"
-              [colors]="dashSetting.lineChartColors"
-              [legend]="dashSetting.lineChartLegend"
-              [chartType]="lineChartType"
-            >
-            </canvas>
+                baseChart
+                class="chartjs"
+                [datasets]="dashSetting.lineChartData"
+                [labels]="dashSetting.lineChartLabels"
+                [options]="dashSetting.lineChartOptions"
+                [colors]="dashSetting.lineChartColors"
+                [legend]="dashSetting.lineChartLegend"
+                [chartType]="lineChartType"
+              >
+              </canvas>
             </div>
           </div>
         </div>

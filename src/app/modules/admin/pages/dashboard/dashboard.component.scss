@@ -6,6 +6,42 @@
     padding: 80px 20px 20px;
     width: 100%;
 
+    .dash-header {
+      display: flex;
+      justify-content: space-between;
+      display: none;
+
+      .dash-header_option_container {
+        padding: 10px 15px;
+        box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
+        border-radius: 15px;
+        border: 2px solid #fafafa;
+        cursor: pointer;
+        transition: all .3s ease;
+        -webkit-tap-highlight-color: transparent;
+
+        &:hover {
+          border: 2px solid purple;
+        }
+
+        .curentUser_image_container {
+          display: flex;
+          align-items: center;
+
+          .name {
+            margin-left: 10px;
+          }
+
+          img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+
     h2 {
       color: #310f74;
       padding: 20px 0;
@@ -81,7 +117,8 @@
         grid-template-columns: 1fr;
 
         .data-top-container {
-          box-shadow: 0 14px 20px 0 RGB(43 80 237 / 20%);
+          box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+          border: 2px solid #fafafa;
 
           .header {
             padding: 20px;
@@ -180,6 +217,12 @@
 @media only screen and (min-width: 800px) {
   .admin_dashboard_container {
     .dash_wrapper {
+      padding-top: 20px;
+
+      .dash-header {
+        display: flex;
+      }
+
       .btnOverview_wrapper {
         grid-template-columns: repeat(4, 1fr);
 
