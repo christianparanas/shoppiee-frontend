@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+// services
+import { AuthGuardService as AuthGuard } from './shared/services/auth-guard.service';
+
+
 import { AuthComponent } from './pages/auth/auth.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AdminComponent } from './admin.component';
@@ -14,11 +18,11 @@ const routes: Routes = [
     path: 'admin', 
     component: AdminComponent, 
     children: [
-      { path: "", component: DashboardComponent },
-      { path: "products", component: ProductsComponent },
-      { path: "customers", component: CustomersComponent },
-      { path: "orders", component: OrdersComponent },
-      { path: "stores", component: StoresComponent },
+      { path: "", component: DashboardComponent, canActivate: [AuthGuard] },
+      { path: "products", component: ProductsComponent, canActivate: [AuthGuard] },
+      { path: "customers", component: CustomersComponent, canActivate: [AuthGuard] },
+      { path: "orders", component: OrdersComponent, canActivate: [AuthGuard] },
+      { path: "stores", component: StoresComponent, canActivate: [AuthGuard] },
     ] 
   },
   { path: "admin/auth", component: AuthComponent },

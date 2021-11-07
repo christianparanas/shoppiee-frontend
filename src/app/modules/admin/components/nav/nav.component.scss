@@ -118,6 +118,24 @@
         }
       }
 
+      .logout {
+        background: #d85d5d;
+        color: #fff;
+        text-align: center;
+        position: relative;
+        top: 40px;
+
+        &:hover {
+          background: orange;
+          border: 4px solid #fff;
+          color: #fff;
+  
+          i {
+            --fa-primary-color: #fff;
+          }
+        }
+      }
+
       .currentRoute {
         background: #10236fbf;
         color: #fff;

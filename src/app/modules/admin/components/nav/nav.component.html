@@ -1,7 +1,10 @@
 <div class="nav">
-  <div class="top_nav_container" [ngClass]="{ upperNav__scrollShadow: onScroll }">
+  <div
+    class="top_nav_container"
+    [ngClass]="{ upperNav__scrollShadow: onScroll }"
+  >
     <div class="con">
-      <img src="../../../../../assets/svgs/adminLogo.svg" alt="">
+      <img src="../../../../../assets/svgs/adminLogo.svg" alt="" />
     </div>
     <div class="con1">
       <div class="iconBtn"><i class="fal fa-user-alt"></i></div>
@@ -26,7 +29,7 @@
         [ngClass]="{ currentRoute: currentRoute === '/' }"
         (click)="openCloseMobileSidebar(); getCurrentRouteURL('/')"
       >
-        <i class="fad fa-analytics"></i>Dashboard
+        <i class="far fa-analytics"></i>Dashboard
       </div>
       <div
         class="route-items"
@@ -34,7 +37,7 @@
         (click)="openCloseMobileSidebar(); getCurrentRouteURL('products')"
         [ngClass]="{ currentRoute: currentRoute === 'products' }"
       >
-        <i class="fad fa-tshirt"></i>Products
+        <i class="far fa-tshirt"></i>Products
       </div>
       <div
         class="route-items"
@@ -42,23 +45,28 @@
         (click)="openCloseMobileSidebar(); getCurrentRouteURL('customers')"
         [ngClass]="{ currentRoute: currentRoute === 'customers' }"
       >
-        <i class="fad fa-users"></i>Customers
+        <i class="far fa-users"></i>Customers
       </div>
       <div
-      class="route-items"
-      [ngClass]="{ currentRoute: currentRoute === 'orders' }"
-      routerLink="/admin/orders"
-      (click)="openCloseMobileSidebar(); getCurrentRouteURL('orders')"
-    >
-      <i class="fad fa-shopping-cart"></i>Orders
-    </div>
+        class="route-items"
+        [ngClass]="{ currentRoute: currentRoute === 'orders' }"
+        routerLink="/admin/orders"
+        (click)="openCloseMobileSidebar(); getCurrentRouteURL('orders')"
+      >
+        <i class="far fa-shopping-cart"></i>Orders
+      </div>
       <div
         class="route-items"
         routerLink="/admin/stores"
         (click)="openCloseMobileSidebar(); getCurrentRouteURL('stores')"
         [ngClass]="{ currentRoute: currentRoute === 'stores' }"
       >
-        <i class="fad fa-store-alt"></i>Stores
+        <i class="far fa-store"></i>Stores
+      </div>
+      <div
+        class="route-items logout" (click)="logout()"
+      >
+        <i class="far fa-sign-out-alt"></i>Logout
       </div>
     </div>
   </div>

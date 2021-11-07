@@ -1,15 +1,36 @@
-<div class="auth_container">
-  <div class="login_container">
-    <input type="text" placeholder="email">  
-    <input type="text" placeholder="pass">
-    <button>login</button>
+<div class="login-container">
+
+  <div class="main-container">
+    <div class="visual">
+      <img
+        src="https://www.pngplay.com/wp-content/uploads/6/E-Commerce-Shopping-PNG-Clipart-Background.png"
+        alt=""
+        loading="eager"
+      />
+    </div>
+    <div class="container">
+      <h2>Admin - Login</h2>
+
+      <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+        <input type="email" placeholder="Email" formControlName="email" />
+        <input type="text" placeholder="Password" formControlName="password" />
+        <button [disabled]="submitLoading">
+          <span class="text" *ngIf="!submitLoading">LOGIN</span>
+          <div class="loader" *ngIf="submitLoading"></div>
+        </button>
+      </form>
+    </div>
   </div>
-  <br>
-  <br>
-  <div class="register_container">
-    <input type="text" [(ngModel)]="regCred.name" placeholder="name">
-    <input type="text" [(ngModel)]="regCred.email" placeholder="email">
-    <input type="text" [(ngModel)]="regCred.pass" placeholder="pass">
-    <button (click)="register()">register</button>
+
+
+  <div class="regForm">
+    <h5>register</h5>
+
+    <input type="text" placeholder="enter name" [(ngModel)]="regForm.name">
+    <input type="eamail" placeholder="enter email" [(ngModel)]="regForm.email">
+    <input type="text" placeholder="enter password" [(ngModel)]="regForm.password">
+    <button (click)="regAdminUser()">Register</button>
   </div>
 </div>
+
+

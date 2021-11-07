@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import * as moment from 'moment';
 
-import { environment } from '../../../../../environments/environment';
+import { environment } from 'src/environments/environment';
 
 // baseURL
 const baseUrl = environment.baseURL;

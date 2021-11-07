@@ -7,6 +7,10 @@ import {
   animate,
   transition,
 } from '@angular/animations';
+import { Router } from '@angular/router';
+import { HotToastService } from '@ngneat/hot-toast';
+
+import { AuthService } from '../../shared/services/auth.service'
 
 
 @Component({
@@ -32,12 +36,18 @@ export class NavComponent implements OnInit {
   currentRoute: any;
   onScroll: boolean = false;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private authService: AuthService, private router: Router, private toast: HotToastService) {}
 
   ngOnInit(): void {
     window.addEventListener('scroll', this.listenScrollEvent);
     
     this.getCurrentRouteURL(this.route.snapshot.children[0].routeConfig?.path);
+  }
+
+  logout() {
+    this.authService.logout()
+    this.router.navigate(['/admin/auth']);
+    this.toast.success('Logged out!', { position: 'top-right' });
   }
 
   getCurrentRouteURL(route: any) {
