@@ -5,11 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-
-// interceptor
-import { TokenInterceptor } from './shared/interceptors/uTokenInterceptor';
-
 // modules
 import { ClientRoutingModule } from './client-routing.module';
 import { MaterialModule } from '../material/material.module';
@@ -112,12 +107,6 @@ const reusableComponents = [
     MaterialModule,
     CoreModule
   ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptor,
-      multi: true
-    }
-  ]
+  providers: []
 })
 export class ClientModule { }

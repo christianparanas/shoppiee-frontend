@@ -3,12 +3,13 @@ import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest } from '@angular/c
 import { Observable } from 'rxjs';
 
 // services
-import { AuthService } from '../services/auth.service';
+import { AuthService as uAuthService } from '../../modules/client/shared/services/auth.service';
+import { AuthService as adAuthService } from '../../modules/admin/shared/services/auth.service';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
 
-  constructor(private authService: AuthService) {}
+  constructor(private userAuthService: uAuthService, private adminAuthService: adAuthService) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const skipIntercept = req.headers.has('skip')
@@ -17,7 +18,6 @@ export class TokenInterceptor implements HttpInterceptor {
       const req1 = req.clone({
         headers: req.headers.delete('skip')
       })
-
       return next.handle(req1)
     }
 
@@ -25,15 +25,14 @@ export class TokenInterceptor implements HttpInterceptor {
       return next.handle(req);
 
     let userToken: any = localStorage.getItem('uJwtToken');
+    let adminToken: any = localStorage.getItem('adJwtToken');
 
-    console.log("isLoggin? - " + this.authService.isLoggedIn())
-
-    if(userToken == null || this.authService.isLoggedIn() == false) {
-      userToken = 'chand'
-    }
+    if(userToken == null || this.userAuthService.isLoggedIn() == false) userToken = 'chand'
+    if(adminToken == null || this.adminAuthService.isLoggedIn() == false) adminToken = 'chand'
 
     const modifiedReq = req.clone({ 
-      headers: req.headers.set('uJwtToken', userToken),
+      headers: req.headers.set('uJwtToken', userToken)
+              .set('adJwtToken', adminToken)
     });
     return next.handle(modifiedReq);
   }
