@@ -19,7 +19,7 @@
           <input
             type="checkbox"
             name="item"
-            (click)="check(cart.id)"
+            (click)="selectProductToCheckout(cart.id)"
             checked="{{ cart.isCheck }}"
           />
           <p class="edit" (click)="removeCartItem(cart.id)">Remove</p>
@@ -51,7 +51,7 @@
 
 
         <!-- notification -->
-        <div class="notification-container" *ngIf="cart.notify">
+        <div class="notification-container" *ngIf="false">
           <div class="msg">Do you want to remove this item?</div>
           <div class="notification">
             <span class="cancel" (click)="hideNotification(cart.id)"
@@ -85,13 +85,14 @@
             type="checkbox"
             name="all-product"
             id="all-product"
-            (click)="clickAll()"
+            (click)="selectAllCartItems()"
+            checked="{{ allSelectedCheck }}"
           />
-          <p>All Selected({{ all }})</p>
+          <p>All Selected({{ selectedCartItems.length }})</p>
         </div>
         <div class="subtotal">
           <p>Subtotal</p>
-          <h5>P{{ totalPrice }}</h5>
+          <h5>P{{ subTotal }}</h5>
         </div>
       </div>
       <div class="checkout_btn" routerLink="/checkout">

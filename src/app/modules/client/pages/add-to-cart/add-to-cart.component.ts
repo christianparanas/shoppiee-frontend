@@ -14,8 +14,6 @@ import { CartService } from '../../shared/services/cart.service';
   styleUrls: ['./add-to-cart.component.scss'],
 })
 export class AddToCartComponent implements OnInit {
-  isCartEmpty: boolean = false;
-  cartArray: any = [];
   temporary: any = [];
   all: number = 0;
   AllItemQuantity: number = 0;
@@ -23,7 +21,14 @@ export class AddToCartComponent implements OnInit {
   isAll: boolean = false;
   isMaxQty: boolean = false;
 
-  @ViewChild(NavComponent, {static : true}) navCompo : NavComponent;
+  isCartEmpty: boolean = false;
+  cartArray: any = [];
+  selectedCartItems: any = [];
+  isAllItemSelected: boolean = false
+  allSelectedCheck: any
+  subTotal: number = 0
+
+  @ViewChild(NavComponent, { static: true }) navCompo: NavComponent;
 
   constructor(
     public router: Router,
@@ -41,9 +46,8 @@ export class AddToCartComponent implements OnInit {
   }
 
   loadCartItems() {
-    this.navCompo.cartItemsCount() 
-    this.AllItemQuantity = 0;
-    this.totalPrice = 0;
+    this.cartArray = []
+    this.navCompo.cartItemsCount();
 
     this.cartService.getCartItems().subscribe(
       (response: any) => {
@@ -51,7 +55,7 @@ export class AddToCartComponent implements OnInit {
           ? (this.isCartEmpty = true)
           : (this.isCartEmpty = false);
         this.cartArray = response;
-        console.log(this.cartArray);
+        this.selectedCartItems = []
       },
       (error) => {
         console.log(error);
@@ -59,28 +63,32 @@ export class AddToCartComponent implements OnInit {
     );
   }
 
+  checkoutOrder() {}
+
   incDecCartItemQty(op: any, cartId: any, qty: any, productAvailQty?: any) {
 
     if (op != 1 && qty == 1) {
       this.removeCartItem(cartId);
     } else {
       if (op == 1) {
-        if(qty >= productAvailQty) {
-          this.toast.success('Product available quantity reached!', { position: 'top-right', duration: 2000 });
-        }
-        else {
+        if (qty >= productAvailQty) {
+          this.toast.success('Product available quantity reached!', {
+            position: 'top-right',
+            duration: 2000,
+          });
+        } else {
           this.cartService
-          .increaseQtyCartItem({
-            cartId: cartId,
-          })
-          .subscribe(
-            (response: any) => {
-              this.loadCartItems()
-            },
-            (error) => {
-              console.log(error);
-            }
-          );
+            .increaseQtyCartItem({
+              cartId: cartId,
+            })
+            .subscribe(
+              (response: any) => {
+                this.loadCartItems();
+              },
+              (error) => {
+                console.log(error);
+              }
+            );
         }
       } else {
         this.cartService
@@ -97,12 +105,18 @@ export class AddToCartComponent implements OnInit {
           );
       }
     }
+
+    this.subTotal = 0
+    this.allSelectedCheck = ""
   }
 
   removeCartItem(cart_id: any) {
     this.cartService.removeCartItem(cart_id).subscribe(
       (response: any) => {
-        this.toast.success(response.message, { position: 'top-right', duration: 2000 });
+        this.toast.success(response.message, {
+          position: 'top-right',
+          duration: 2000,
+        });
 
         // refetch cart items
         this.loadCartItems();
@@ -111,6 +125,88 @@ export class AddToCartComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  checkItemIfSelected(productId: any) {
+    return this.selectedCartItems.some((item: any) => {
+      return item.productId == productId;
+    });
+  }
+
+  selectProductToCheckout(cartItemId: any) {
+    this.cartArray.map(async (cartItem: any) => {
+      if (cartItem.id == cartItemId) {
+        cartItem.isCheck = cartItem.isCheck ? '' : 'checked';
+
+        if (!this.checkItemIfSelected(cartItem.ProductId)) {
+          this.selectedCartItems.push({
+            productId: cartItem.ProductId,
+            quantity: cartItem.quantity,
+            price: cartItem.Product.product_price
+          });
+        } else {
+          this.selectedCartItems = this.selectedCartItems.filter(
+            (item: any) => item.productId !== cartItem.ProductId
+          );
+          this.allSelectedCheck = ""
+        }
+
+        this.selectedCartItems.length == this.cartArray.length ? this.allSelectedCheck = "checked" : this.allSelectedCheck = ""
+      }
+    });
+
+    this.calculateSubTotal()
+  }
+
+  async selectAllCartItems() {
+    if(this.selectedCartItems.length != this.cartArray.length) {
+
+      await this.cartArray.map((item: any) => {
+        if(!this.checkItemIfSelected(item.ProductId)) {
+          item.isCheck = item.isCheck ? '' : 'checked';
+  
+          this.selectedCartItems.push({
+            productId: item.ProductId,
+            quantity: item.quantity,
+            price: item.Product.product_price
+          })
+        }
+      })
+
+      this.calculateSubTotal()
+    }
+    else {
+      this.selectedCartItems = []
+      this.cartArray.map((item: any) => {
+        item.isCheck = ""
+      })
+
+      this.subTotal = 0
+    }
+  }
+  
+  calculateSubTotal() {
+    this.subTotal = 0
+
+    this.selectedCartItems.map((cartItem: any) => {
+      this.subTotal += cartItem.quantity * cartItem.price
+    })
+  }
+
+  //show the transaction details
+  showTransaction() {
+    this.all = 0;
+    this.AllItemQuantity = 0;
+    this.totalPrice = 0;
+    this.cartArray.map((product: any) => {
+      if (product.isCheck === 'checked') {
+        this.all += 1;
+        if (this.all != 0) {
+          this.totalPrice += product.quantity * product.Product.product_price;
+          this.AllItemQuantity += product.quantity;
+        }
+      }
+    });
   }
 
   //product quantity control
@@ -156,21 +252,6 @@ export class AddToCartComponent implements OnInit {
     });
   }
 
-  //show the transaction details
-  showTransaction() {
-    this.all = 0;
-    this.AllItemQuantity = 0;
-    this.totalPrice = 0;
-    this.cartArray.map((product: any) => {
-      if (product.isCheck === 'checked') {
-        this.all += 1;
-        if (this.all != 0) {
-          this.totalPrice += product.quantity * product.Product.product_price;
-          this.AllItemQuantity += product.quantity;
-        }
-      }
-    });
-  }
 
   hideNotification(id: number) {
     this.cartArray.map((product: any) => {
