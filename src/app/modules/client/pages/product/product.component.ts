@@ -42,7 +42,7 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart() {
-    if (this.authService.isLoggedIn() && this.quantity > 0) {
+    if (this.authService.isLoggedIn()) {
       this.isSubmitted = true
 
       this.cartService
