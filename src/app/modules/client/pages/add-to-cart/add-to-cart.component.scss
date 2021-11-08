@@ -96,10 +96,6 @@ app-add-to-cart-nav {
         border: 2px solid #fafafa;
         transition: all .3s ease;
 
-        &:hover {
-          border: 2px solid rgb(255, 92, 0);;
-        }
-
         .about-items {
           display: grid;
           grid-template-columns: 1fr auto;
@@ -166,6 +162,7 @@ app-add-to-cart-nav {
               box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
               font-size: 14px;
               margin-bottom: 2px;
+              border-radius: 8px;
 
               div {
                 width: 100%;
@@ -175,12 +172,22 @@ app-add-to-cart-nav {
 
               .increment,
               .decrement {
-                border: 1px solid #fff;
+                border: 2px solid #fff;
                 cursor: pointer;
 
                 &:hover {
-                  border: 1px solid #000;
+                  border: 2px solid rgb(255, 92, 0);
                 }
+              }
+
+              .increment {
+                border-radius: 0 8px 8px 0;
+                cursor: pointer;
+              }
+  
+              .decrement {
+                border-radius: 8px 0 0 8px;
+                cursor: pointer;
               }
             }
           }

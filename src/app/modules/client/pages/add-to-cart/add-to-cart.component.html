@@ -4,56 +4,57 @@
 <div class="cart_container">
   <div class="cart_content_container">
     <div class="cart_items_container">
-      <div class="cart_item_container" *ngFor="let product of productArray">
+      <div class="cart_item_container" *ngFor="let cart of cartArray">
         <div class="about-items">
           <input
             type="checkbox"
             name="item"
-            (click)="check(product.id)"
-            checked="{{ product.isCheck }}"
+            (click)="check(cart.id)"
+            checked="{{ cart.isCheck }}"
           />
-          <p class="edit" (click)="removeCartItem(product.id)">Remove</p>
+          <p class="edit" (click)="removeCartItem(cart.id)">Remove</p>
         </div>
         <div class="product">
           <div class="product-image">
-            <img [src]="product.Product.product_image" alt="item" />
+            <img [src]="cart.Product.product_image" alt="item" />
           </div>
           <div class="item-details">
             <div class="product-name">
-              {{ product.Product.product_name }}
+              {{ cart.Product.product_name }}
             </div>
-            <p class="stock">Stocks: {{ product.Product.product_quantity }}</p>
+            <p class="stock">Stocks: {{ cart.Product.product_quantity }}</p>
             <div class="price">
               Price:
-              <p>P{{ product.Product.product_price }}</p>
+              <p>P{{ cart.Product.product_price }}</p>
             </div>
             <div class="changer">
-              <div class="decrement" (click)="incDecCartItemQty(2, product.id, product.quantity)">
+              <div class="decrement" (click)="incDecCartItemQty(2, cart.id, cart.quantity)">
                 -
               </div>
-              <div class="">{{ product.quantity }}</div>
-              <div class="increment" (click)="incDecCartItemQty(1, product.id, product.quantity)">
+              <div class="">{{ cart.quantity }}</div>
+              <div class="increment" (click)="incDecCartItemQty(1, cart.id, cart.quantity, cart.Product.product_quantity)">
                 +
               </div>
             </div>
           </div>
         </div>
 
+
         <!-- notification -->
-        <div class="notification-container" *ngIf="product.notify">
+        <div class="notification-container" *ngIf="cart.notify">
           <div class="msg">Do you want to remove this item?</div>
           <div class="notification">
-            <span class="cancel" (click)="hideNotification(product.id)"
+            <span class="cancel" (click)="hideNotification(cart.id)"
               >Cancel</span
             >
-            <span class="delete" (click)="delete(product.id)">Remove</span>
+            <span class="delete">Remove</span>
           </div>
         </div>
 
         <div *ngIf="isMaxQty" class="max-item">
           <div class="max">
-            <p>Maximum Product Available</p>
-            <div class="ok" (click)="ok()">OK</div>
+            <p>Product available quantity reached!</p>
+            <div class="ok" (click)="showMaxQtyReachedModal()">OK</div>
           </div>
         </div>
       </div>

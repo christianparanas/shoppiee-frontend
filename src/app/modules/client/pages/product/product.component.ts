@@ -52,13 +52,13 @@ export class ProductComponent implements OnInit {
         })
         .subscribe(
           (response: any) => {
-            this.toast.success(response.message, { position: 'top-right' });
+            this.toast.success(response.message, { position: 'top-right', duration: 1500 });
             this.isSubmitted = false 
             this.navCompo.cartItemsCount()         
           },
           (error) => {
             this.isSubmitted = false
-            if(error.status == 403) this.toast.info(error.error.message, { position: 'top-right' });
+            if(error.status == 403) this.toast.info(error.error.message, { position: 'top-right', duration: 1500 });
           }
         );
     }

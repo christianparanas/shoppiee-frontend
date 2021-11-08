@@ -4,7 +4,7 @@ import { HotToastService } from '@ngneat/hot-toast';
 import { Location } from '@angular/common';
 
 // services
-import { CartService } from '../../shared/services/cart.service'
+import { CartService } from '../../shared/services/cart.service';
 
 @Component({
   selector: 'app-add-to-cart',
@@ -12,14 +12,14 @@ import { CartService } from '../../shared/services/cart.service'
   styleUrls: ['./add-to-cart.component.scss'],
 })
 export class AddToCartComponent implements OnInit {
-  isCartEmpty: boolean = false
-  productArray: any = [];
-  @Input() temporary: any = [];
-  @Input() all: number = 0;
-  @Input() AllItemQuantity: number = 0;
-  @Input() totalPrice: number = 0;
-  @Input() isAll: boolean = false;
-  @Input() isMaxQty: boolean = false;
+  isCartEmpty: boolean = false;
+  cartArray: any = [];
+  temporary: any = [];
+  all: number = 0;
+  AllItemQuantity: number = 0;
+  totalPrice: number = 0;
+  isAll: boolean = false;
+  isMaxQty: boolean = false;
 
   constructor(
     public router: Router,
@@ -33,53 +33,63 @@ export class AddToCartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadCartItems()
+    this.loadCartItems();
   }
 
   loadCartItems() {
+    this.AllItemQuantity = 0;
+    this.totalPrice = 0;
+
     this.cartService.getCartItems().subscribe(
       (response: any) => {
-        response.length == 0 ? this.isCartEmpty = true : this.isCartEmpty = false
-        this.productArray = response
+        response.length == 0
+          ? (this.isCartEmpty = true)
+          : (this.isCartEmpty = false);
+        this.cartArray = response;
+        console.log(this.cartArray);
       },
       (error) => {
-        console.log(error)
+        console.log(error);
       }
-    )
+    );
   }
 
-  incDecCartItemQty(op: any, cartId: any, qty: any) {
-    if(op != 1 && qty == 1) {
-      this.removeCartItem(cartId)
-    }
-    else {
-      if(op == 1) {
-        this.cartService.increaseQtyCartItem({
-          cartId: cartId
-        }).subscribe(
-          (response: any) => {
-            console.log(response)
-            // refetch cart items
-          this.loadCartItems()
-          },
-          (error) => {
-            console.log(error)
-          }
-        )
-      }
-      else {
-        this.cartService.reduceQtyCartItem({
-          cartId: cartId
-        }).subscribe(
-          (response: any) => {
-            console.log(response)
-            // refetch cart items
-          this.loadCartItems()
-          },
-          (error) => {
-            console.log(error)
-          }
-        )
+  incDecCartItemQty(op: any, cartId: any, qty: any, productAvailQty?: any) {
+
+    if (op != 1 && qty == 1) {
+      this.removeCartItem(cartId);
+    } else {
+      if (op == 1) {
+        if(qty >= productAvailQty) {
+          this.toast.success('Product available quantity reached!', { position: 'top-right', duration: 2000 });
+        }
+        else {
+          this.cartService
+          .increaseQtyCartItem({
+            cartId: cartId,
+          })
+          .subscribe(
+            (response: any) => {
+              this.loadCartItems()
+            },
+            (error) => {
+              console.log(error);
+            }
+          );
+        }
+      } else {
+        this.cartService
+          .reduceQtyCartItem({
+            cartId: cartId,
+          })
+          .subscribe(
+            (response: any) => {
+              this.loadCartItems();
+            },
+            (error) => {
+              console.log(error);
+            }
+          );
       }
     }
   }
@@ -87,23 +97,23 @@ export class AddToCartComponent implements OnInit {
   removeCartItem(cart_id: any) {
     this.cartService.removeCartItem(cart_id).subscribe(
       (response: any) => {
-        this.toast.success(response.message, { position: 'top-right' });
+        this.toast.success(response.message, { position: 'top-right', duration: 2000 });
 
         // refetch cart items
-        this.loadCartItems()
+        this.loadCartItems();
       },
       (error) => {
-        console.log(error)
+        console.log(error);
       }
-    )
+    );
   }
 
   //product quantity control
-  itemQuantity(qtyControl: number, id: number) {
-    return this.productArray.map((product: any) => {
+  itemQuantity(qtyControl: any, id: any) {
+    return this.cartArray.map((product: any) => {
       if (product.id == id) {
         //if product reach the maximum available item it will stop the quantityControl in increasing
-        if (product.qtyAvailable > product.quantity) {
+        if (product.Product.product_quantity > product.quantity) {
           //increase and decrease if the quantity is not equal to -1
           if (product.quantity + qtyControl == -1) product.quantity = 1;
           //show delete-message if product hits value of zero
@@ -116,7 +126,7 @@ export class AddToCartComponent implements OnInit {
         //only accept decrement qtyControl if product is already max
         else if (product.quantity == product.qtyAvailable && qtyControl == -1)
           product.quantity -= 1;
-        else this.ok();
+        else this.showMaxQtyReachedModal();
       }
       this.showTransaction();
     });
@@ -124,18 +134,18 @@ export class AddToCartComponent implements OnInit {
 
   //check only the specific product using id
   check(id: number) {
-    return this.productArray.map((product: any) => {
+    return this.cartArray.map((product: any) => {
       if (product.id == id) {
         product.isCheck = product.isCheck ? '' : 'checked';
         this.showTransaction();
       }
     });
   }
-  
+
   // if the btn select all is check every product will be uncheck
   clickAll() {
     this.isAll = !this.isAll;
-    return this.productArray.map((product: any) => {
+    return this.cartArray.map((product: any) => {
       product.isCheck = this.isAll ? 'checked' : '';
       this.showTransaction();
     });
@@ -146,33 +156,24 @@ export class AddToCartComponent implements OnInit {
     this.all = 0;
     this.AllItemQuantity = 0;
     this.totalPrice = 0;
-    this.productArray.map((product: any) => {
+    this.cartArray.map((product: any) => {
       if (product.isCheck === 'checked') {
         this.all += 1;
         if (this.all != 0) {
-          this.totalPrice += product.quantity * product.price;
+          this.totalPrice += product.quantity * product.Product.product_price;
           this.AllItemQuantity += product.quantity;
         }
       }
     });
   }
 
-  delete(id: number) {
-    this.temporary = [];
-    return this.productArray.filter((product: any) => {
-      if (product.id != id) this.temporary.push(product);
-      this.productArray = this.temporary;
-      this.showTransaction();
-    });
-  }
-
   hideNotification(id: number) {
-    this.productArray.map((product: any) => {
+    this.cartArray.map((product: any) => {
       if (product.id == id) product.notify = !product.notify;
     });
   }
 
-  ok() {
+  showMaxQtyReachedModal() {
     this.isMaxQty = !this.isMaxQty;
   }
 }
