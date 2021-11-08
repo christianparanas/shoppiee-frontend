@@ -87,9 +87,10 @@ export class AddToCartComponent implements OnInit {
                 this.cartArray.map((item: any) => {
                   if(item.id == cartId) {
                     item.quantity = response.quantity
+                    this.cdr.detectChanges();
                   } 
                 })
-                this.cdr.detectChanges();
+                
               },
               (error) => {
                 console.log(error);
@@ -106,9 +107,9 @@ export class AddToCartComponent implements OnInit {
               this.cartArray.map((item: any) => {
                 if(item.id == cartId) {
                   item.quantity = response.quantity
+                  this.cdr.detectChanges();
                 } 
               })
-              this.cdr.detectChanges();
             },
             (error) => {
               console.log(error);
