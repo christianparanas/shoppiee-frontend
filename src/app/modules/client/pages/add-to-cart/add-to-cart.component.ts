@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
 import { Location } from '@angular/common';
@@ -34,7 +34,8 @@ export class AddToCartComponent implements OnInit {
     public router: Router,
     private toast: HotToastService,
     private location: Location,
-    private cartService: CartService
+    private cartService: CartService,
+    private cdr: ChangeDetectorRef,
   ) {}
 
   goBack() {
@@ -83,7 +84,12 @@ export class AddToCartComponent implements OnInit {
             })
             .subscribe(
               (response: any) => {
-                this.loadCartItems();
+                this.cartArray.map((item: any) => {
+                  if(item.id == cartId) {
+                    item.quantity = response.quantity
+                  } 
+                })
+                this.cdr.detectChanges();
               },
               (error) => {
                 console.log(error);
@@ -97,7 +103,12 @@ export class AddToCartComponent implements OnInit {
           })
           .subscribe(
             (response: any) => {
-              this.loadCartItems();
+              this.cartArray.map((item: any) => {
+                if(item.id == cartId) {
+                  item.quantity = response.quantity
+                } 
+              })
+              this.cdr.detectChanges();
             },
             (error) => {
               console.log(error);
