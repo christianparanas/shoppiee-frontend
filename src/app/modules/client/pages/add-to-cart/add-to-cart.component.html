@@ -14,7 +14,7 @@
     </div>
 
     <div class="cart_items_container">
-      <div class="cart_item_container" *ngFor="let cart of cartArray">
+      <div class="cart_item_container" *ngFor="let cart of cartArray ;trackBy: trackByFn;">
         <div class="about-items">
           <input
             type="checkbox"
@@ -42,7 +42,7 @@
                 -
               </div>
               <div class="">{{ cart.quantity }}</div>
-              <div class="increment" (click)="incDecCartItemQty(1, cart.id, cart.quantity, cart.Product.product_quantity)">
+              <div class="increment" (click)="cart.quantity; incDecCartItemQty(1, cart.id, cart.quantity, cart.Product.product_quantity)">
                 +
               </div>
             </div>

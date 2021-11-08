@@ -85,12 +85,10 @@ export class AddToCartComponent implements OnInit {
             .subscribe(
               (response: any) => {
                 this.cartArray.map((item: any) => {
-                  if(item.id == cartId) {
-                    item.quantity = response.quantity
-                    this.cdr.detectChanges();
-                  } 
-                })
-                
+                if(cartId == item.id) {
+                  item.quantity = item.quantity + 1
+                }
+              })
               },
               (error) => {
                 console.log(error);
@@ -105,10 +103,9 @@ export class AddToCartComponent implements OnInit {
           .subscribe(
             (response: any) => {
               this.cartArray.map((item: any) => {
-                if(item.id == cartId) {
-                  item.quantity = response.quantity
-                  this.cdr.detectChanges();
-                } 
+                if(cartId == item.id) {
+                  item.quantity = item.quantity - 1
+                }
               })
             },
             (error) => {
@@ -121,6 +118,10 @@ export class AddToCartComponent implements OnInit {
     this.subTotal = 0
     this.allSelectedCheck = ""
   }
+
+
+
+
 
   removeCartItem(cart_id: any) {
     this.cartService.removeCartItem(cart_id).subscribe(
@@ -204,6 +205,11 @@ export class AddToCartComponent implements OnInit {
       this.subTotal += cartItem.quantity * cartItem.price
     })
   }
+
+  trackByFn(index: any, item: any) {
+    return item.id;
+  }
+ 
 
   //show the transaction details
   showTransaction() {
