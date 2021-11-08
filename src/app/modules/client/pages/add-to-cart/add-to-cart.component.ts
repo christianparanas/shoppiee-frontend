@@ -78,36 +78,34 @@ export class AddToCartComponent implements OnInit {
             duration: 2000,
           });
         } else {
+          this.cartArray.map((item: any) => {
+            if(cartId == item.id) {
+              item.quantity = item.quantity + 1
+            }
+          }) 
+
           this.cartService
             .increaseQtyCartItem({
               cartId: cartId,
             })
             .subscribe(
-              (response: any) => {
-                this.cartArray.map((item: any) => {
-                if(cartId == item.id) {
-                  item.quantity = item.quantity + 1
-                }
-              })
-              },
               (error) => {
                 console.log(error);
               }
             );
         }
       } else {
+        this.cartArray.map((item: any) => {
+          if(cartId == item.id) {
+            item.quantity = item.quantity - 1
+          }
+        })
+
         this.cartService
           .reduceQtyCartItem({
             cartId: cartId,
           })
           .subscribe(
-            (response: any) => {
-              this.cartArray.map((item: any) => {
-                if(cartId == item.id) {
-                  item.quantity = item.quantity - 1
-                }
-              })
-            },
             (error) => {
               console.log(error);
             }
