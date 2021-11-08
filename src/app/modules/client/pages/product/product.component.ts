@@ -9,6 +9,7 @@ import { HotToastService } from '@ngneat/hot-toast';
 import { AuthService } from '../../shared/services/auth.service';
 import { ProductService } from '../../shared/services/product.service';
 import { CartService } from '../../shared/services/cart.service';
+
 import { NavComponent } from '../../components/nav/nav.component';
 
 @Component({

@@ -18,6 +18,7 @@ export class NavComponent implements OnInit {
   isAuth: boolean = false;
   itemsCartCount: any
 
+  @Input() showlowernav: boolean = true
   @Input() currentRoute: String;
   @Input() searchquery: String;
   @Input() AddedToCart: number = 23;

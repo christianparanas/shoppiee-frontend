@@ -17,8 +17,40 @@ app-add-to-cart-nav {
 
 .cart_container {
   .cart_content_container {
+    width: 100%;
     position: relative;
-    padding: 20px 0 100px;
+    padding: 70px 0 100px;
+
+    .header-label {
+      padding: 20px;
+      display: none;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .backBtn_container {
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between; 
+      align-items: center;
+
+      .backBtn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.4);
+
+        i {
+          color: #e3e3e3;
+          text-align: center;
+          font-size: 18px;
+        }
+      }
+    }
 
     .checkout_container {
       position: fixed;
@@ -28,6 +60,7 @@ app-add-to-cart-nav {
       display: grid;
       grid-template-columns: 1fr 130px;
       background-color: #fff;
+      max-width: 1400px;
 
       .detail {
         border-top: 1px solid #e3e3e3;
@@ -74,20 +107,28 @@ app-add-to-cart-nav {
     }
 
     .emptyCart_container {
+      margin-top: 50px;
       display: flex;
       justify-content: center;
       align-items: center;
       width: 100%;
-      height: 100px;
+      height: 200px;
+
+      img {
+        width: 250px;
+        height: 250px;
+      }
     }
 
     .cart_items_container {
       display: grid;
       grid-gap: 20px;
-      padding: 100px 20px 20px;
+      padding: 20px 20px 20px;
 
       .cart_item_container {
         width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
         display: grid;
         padding: 10px;
         grid-template-columns: repeat(1fr 1fr 1fr);
@@ -300,12 +341,29 @@ app-add-to-cart-nav {
     grid-template-columns: 1fr;
 
     .cart_content_container {
-      max-width: 1400px;
-      margin: 0 auto;
+      position: relative;
+
+      .backBtn_container {
+        display: none;
+      }
+
+      .header-label {
+        display: block;
+        padding-top: 80px;
+      }
+
+      .checkout_container {
+        left: 50%;
+        transform: translateX(-50%);
+      }
 
       .cart_items_container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        padding-top: 20px;
+        max-width: 1400px;
+        margin: 0 auto;
+
 
         .cart_item_container {
           background: #fff;

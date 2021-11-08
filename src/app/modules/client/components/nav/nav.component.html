@@ -140,7 +140,7 @@
     [ngClass]="{ sidebar_navDark__open_overlay: isSideBarOpen }"
   ></div>
 
-  <div class="lowerNav__container">
+  <div class="lowerNav__container" *ngIf="showlowernav">
     <a
       routerLink="/"
       class="box"

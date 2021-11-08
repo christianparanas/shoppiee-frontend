@@ -1,7 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
 import { Location } from '@angular/common';
+
+import { NavComponent } from '../../components/nav/nav.component';
 
 // services
 import { CartService } from '../../shared/services/cart.service';
@@ -21,6 +23,8 @@ export class AddToCartComponent implements OnInit {
   isAll: boolean = false;
   isMaxQty: boolean = false;
 
+  @ViewChild(NavComponent, {static : true}) navCompo : NavComponent;
+
   constructor(
     public router: Router,
     private toast: HotToastService,
@@ -37,6 +41,7 @@ export class AddToCartComponent implements OnInit {
   }
 
   loadCartItems() {
+    this.navCompo.cartItemsCount() 
     this.AllItemQuantity = 0;
     this.totalPrice = 0;
 

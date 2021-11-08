@@ -1,8 +1,18 @@
-<!-- header -->
-<app-add-to-cart-nav currentRouter="addToCart"></app-add-to-cart-nav>
-<!-- body -->
+
 <div class="cart_container">
+  <app-nav [showlowernav]="false"></app-nav>
+
   <div class="cart_content_container">
+    <div class="backBtn_container">
+      <div class="backBtn" (click)="goBack()">
+        <i class="far fa-arrow-left"></i>
+      </div>
+      <div class=""><h5>Your cart</h5></div>
+    </div>
+    <div class="header-label">
+      <h2>Your cart</h2>
+    </div>
+
     <div class="cart_items_container">
       <div class="cart_item_container" *ngFor="let cart of cartArray">
         <div class="about-items">
@@ -61,7 +71,7 @@
     </div>
 
     <div *ngIf="isCartEmpty" class="emptyCart_container">
-      <h5>Cart is empty :(</h5>
+      <img src="../../../../../assets/svgs/emptycart.svg" alt="">
     </div>
 
     <div *ngIf="false" class="emptyCart_container">
