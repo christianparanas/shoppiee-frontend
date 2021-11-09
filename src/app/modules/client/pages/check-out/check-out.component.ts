@@ -15,6 +15,7 @@ export class CheckOutComponent implements OnInit {
   onScroll: boolean = false;
   orderDataArr: any
   itemsArr: any = []
+  totalPayment: number = 0
   isDataLoaded: boolean = false
 
   @Input() all:number
@@ -47,12 +48,17 @@ export class CheckOutComponent implements OnInit {
   }
 
   async loadCheckoutData() {
-    console.log(this.orderService.getCheckoutData())
+    // store checkout data
     this.orderDataArr = await this.orderService.getCheckoutData()
+
+    // store cart items
     this.itemsArr = await this.orderDataArr.checkoutCartItemsArr
-    console.log(this.itemsArr)
+
+    // store subtotal from cart
+    this.totalPayment = this.orderDataArr.subtotal
   }
 
+  // check if user, checkout his/her cart, if not redirect to cart
   redirectIfNoCheckoutItems() {
     if(this.orderDataArr.checkoutCartItemsArr.length == 0) {
       this.router.navigate(['/cart/']);

@@ -55,7 +55,10 @@ export class AddToCartComponent implements OnInit {
   }
 
   loadCartItems() {
+    // clean up the cartArray
     this.cartArray = [];
+
+    // call the cartItemsCount method from nav component to refresh the indicator - to sync with the changes
     this.navCompo.cartItemsCount();
 
     this.cartService.getCartItems().subscribe(
@@ -63,7 +66,11 @@ export class AddToCartComponent implements OnInit {
         response.length == 0
           ? (this.isCartEmpty = true)
           : (this.isCartEmpty = false);
+
+        // store carts to cartArray to be use in the template
         this.cartArray = response;
+
+        // clear the selectedCartItems - so that the calculations will not throw a conflict
         this.selectedCartItems = [];
       },
       (error) => {
@@ -72,7 +79,9 @@ export class AddToCartComponent implements OnInit {
     );
   }
 
+  // checkout button
   checkoutOrder() {
+    // check if selectedCartItems has items - if not reject the action and return an toast notification
     if (this.selectedCartItems.length == 0) {
       this.toast.info('Please select items', { position: 'top-right' });
     } else {
@@ -85,45 +94,71 @@ export class AddToCartComponent implements OnInit {
     }
   }
 
+  // this function is the responsible for incrementing and decrementing the cart items
+  // op: means the action, whether it is increment or decrement
+  // cartId: this is needed for comparing when selecting the right cart item
+  // qty: this is the cart item quantity
+  // productAvailQty: this is the number of stocks of the product
   incDecCartItemQty(op: any, cartId: any, qty: any, productAvailQty?: any) {
+
+    // check if op is not a increment which means, it is decrement 
+    // also check if the current cart qty is equal to 1, if it is, and that means that the cart item will be removed,  because 0 cart qty is dont have a place on the cart
     if (op != 1 && qty == 1) {
+
+      // call the method removeCartItem and pass the cartId of the cart item you want to remove
       this.removeCartItem(cartId);
     } else {
+      
+      // 1 means increment
       if (op == 1) {
+
+        // check if the cart qty reached the product stocks - throw a notification if yes
         if (qty >= productAvailQty) {
           this.toast.success('Product available quantity reached!', {
             position: 'top-right',
             duration: 2000,
           });
         } else {
+
+          // map thru cartArray and increase the cart item qty based on the cart id
           this.cartArray.map((item: any) =>
             cartId == item.id ? item.quantity++ : ''
           );
 
+          // update the selectedCartItems array because this array is the one that will be passed to the checkout page
+          // sync the data based on the selected items in the cart
           this.selectedCartItems.map((item: any) => {
             if (cartId == item.cartId) {
               item.quantity++;
+
+              // call the calculateSubTotal method to update the subtotal based on the changes
               this.calculateSubTotal();
             }
           });
 
+          // increase the cart qty on the server based on the passed cart id
           this.cartService.increaseQtyCartItem({ cartId: cartId }).subscribe(
             (response) => {},
             (error) => console.log(error)
           );
         }
       } else {
+        // decrease cart qty
         this.cartArray.map((item: any) =>
           cartId == item.id ? item.quantity-- : ''
         );
 
+        // also decrease the cartqty of the selectedCartItem arr to sync with the selected items
         this.selectedCartItems.map((item: any) => {
           if (cartId == item.cartId) {
             item.quantity--;
+
+            // call this function to sync with the calculations
             this.calculateSubTotal();
           }
         });
 
+        // decrease the cart qty on the server based on the passed cart id
         this.cartService.reduceQtyCartItem({ cartId: cartId }).subscribe(
           (response) => {},
           (error) => console.log(error)
@@ -132,6 +167,7 @@ export class AddToCartComponent implements OnInit {
     }
   }
 
+  // remove cart item based on the passed cart id
   removeCartItem(cart_id: any) {
     this.cartService.removeCartItem(cart_id).subscribe(
       (response: any) => {
@@ -140,30 +176,41 @@ export class AddToCartComponent implements OnInit {
           duration: 2000,
         });
 
-        // refetch cart items
+        // if the operation is success then reload the cart and recieve the fresh data from the server
         this.loadCartItems();
+
+        // remove the checked on the allItemsSelect checkbox
         this.allSelectedCheck = '';
+
+        // if the specific item is removed from the cart - you should also removed it in the selectedCartItems arr
+        // using the filter func - to remove the removed cart item in the arr if the item is in.
         this.selectedCartItems = this.selectedCartItems.filter(
           (item: any) => item.cartId !== cart_id
         );
 
+        // calculate subtotal to sync with the changes
         this.calculateSubTotal();
       },
       (error) => console.log(error)
     );
   }
 
+  // check if cart item is already selected
   checkItemIfSelected(productId: any) {
     return this.selectedCartItems.some((item: any) => {
       return item.productId == productId;
     });
   }
 
+  // this method will select the cart item
   selectProductToCheckout(cartItemId: any) {
+
+    // map thru cartArray and checked the checkbox of the items whose not checked yet
     this.cartArray.map(async (cartItem: any) => {
       if (cartItem.id == cartItemId) {
         cartItem.isCheck = cartItem.isCheck ? '' : 'checked';
 
+        // check if cart item is not on the selectedCartItems arr yet, if not then push it in
         if (!this.checkItemIfSelected(cartItem.ProductId)) {
           this.selectedCartItems.push({
             cartId: cartItem.id,
@@ -174,22 +221,31 @@ export class AddToCartComponent implements OnInit {
             price: cartItem.Product.product_price,
           });
         } else {
+          // if already in there, then remove it thru filter
           this.selectedCartItems = this.selectedCartItems.filter(
             (item: any) => item.productId !== cartItem.ProductId
           );
+
+          // remove the check of the cart item chcckbox
           this.allSelectedCheck = '';
         }
 
+        // check if the length of the cartArr and selectedCartItems arr are the same
+        // if yes then it means that all the cart items are selected, so enable the all selected items checkbox
         this.selectedCartItems.length == this.cartArray.length
           ? (this.allSelectedCheck = 'checked')
           : (this.allSelectedCheck = '');
       }
     });
 
+    // calculate the subtotal to sync it with the selectedCartItems arr data
     this.calculateSubTotal();
   }
 
+  // this method will select all the cart items
   async selectAllCartItems() {
+    // if all cart items are already selected, then unselect them all haha
+    // if not then store them all to the selectedCartItems arr
     if (this.selectedCartItems.length != this.cartArray.length) {
       await this.cartArray.map((item: any) => {
         if (!this.checkItemIfSelected(item.ProductId)) {
@@ -206,8 +262,11 @@ export class AddToCartComponent implements OnInit {
         }
       });
 
+      // calculate the subtotal to sync it with the selectedCartItems arr data
       this.calculateSubTotal();
     } else {
+
+      // unselect all of the selected items
       this.selectedCartItems = [];
       this.cartArray.map((item: any) => {
         item.isCheck = '';
@@ -217,6 +276,7 @@ export class AddToCartComponent implements OnInit {
     }
   }
 
+  // calculate subtotal
   calculateSubTotal() {
     this.subTotal = 0;
 
@@ -225,6 +285,7 @@ export class AddToCartComponent implements OnInit {
     });
   }
 
+  // this will track the ngFor, so that it will not rerender all the items, but only the changes
   trackByFn(index: any, item: any) {
     return item.id;
   }
