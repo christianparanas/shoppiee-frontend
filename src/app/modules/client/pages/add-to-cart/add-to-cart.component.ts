@@ -64,7 +64,10 @@ export class AddToCartComponent implements OnInit {
     );
   }
 
-  checkoutOrder() {}
+  checkoutOrder() {
+    console.log(this.selectedCartItems)
+    console.log(this.subTotal)
+  }
 
   incDecCartItemQty(op: any, cartId: any, qty: any, productAvailQty?: any) {
 
@@ -78,26 +81,33 @@ export class AddToCartComponent implements OnInit {
             duration: 2000,
           });
         } else {
-          this.cartArray.map((item: any) => {
-            if(cartId == item.id) {
-              item.quantity = item.quantity + 1
+          this.cartArray.map((item: any) => cartId == item.id ? item.quantity++ : "") 
+
+          this.selectedCartItems.map((item: any) => {
+            if(cartId == item.cartId) {
+              item.quantity++
+              this.calculateSubTotal()
             }
-          }) 
+          })
 
           this.cartService
             .increaseQtyCartItem({
               cartId: cartId,
             })
             .subscribe(
+              (response) => {},
               (error) => {
                 console.log(error);
               }
             );
         }
       } else {
-        this.cartArray.map((item: any) => {
-          if(cartId == item.id) {
+        this.cartArray.map((item: any) => cartId == item.id ? item.quantity-- : "") 
+
+        this.selectedCartItems.map((item: any) => {
+          if(cartId == item.cartId) {
             item.quantity = item.quantity - 1
+            this.calculateSubTotal()
           }
         })
 
@@ -106,19 +116,14 @@ export class AddToCartComponent implements OnInit {
             cartId: cartId,
           })
           .subscribe(
+            (response) => {},
             (error) => {
               console.log(error);
             }
           );
       }
     }
-
-    this.subTotal = 0
-    this.allSelectedCheck = ""
   }
-
-
-
 
 
   removeCartItem(cart_id: any) {
@@ -151,6 +156,7 @@ export class AddToCartComponent implements OnInit {
 
         if (!this.checkItemIfSelected(cartItem.ProductId)) {
           this.selectedCartItems.push({
+            cartId: cartItem.id,
             productId: cartItem.ProductId,
             quantity: cartItem.quantity,
             price: cartItem.Product.product_price
@@ -177,6 +183,7 @@ export class AddToCartComponent implements OnInit {
           item.isCheck = item.isCheck ? '' : 'checked';
   
           this.selectedCartItems.push({
+            cartId: item.id,
             productId: item.ProductId,
             quantity: item.quantity,
             price: item.Product.product_price

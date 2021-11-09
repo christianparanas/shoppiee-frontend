@@ -95,7 +95,7 @@
           <h5>P{{ subTotal }}</h5>
         </div>
       </div>
-      <div class="checkout_btn" routerLink="/checkout">
+      <div class="checkout_btn" (click)="checkoutOrder()">
         <div class="aa">
           <h4>Checkout</h4>
           <p>( Qty: {{ AllItemQuantity }} )</p>
