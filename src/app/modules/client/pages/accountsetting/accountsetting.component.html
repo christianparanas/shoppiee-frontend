@@ -1,113 +1,94 @@
-<div class="account_setting__container">
-  <div
-    class="dark_overlay"
-    (click)="openCloseAboutUsOverlay()"
-    [ngClass]="{ view_dark_overlay: isAboutUsOverlayOpen }"
-  ></div>
-  
-  <div
-    class="aboutus_overlay"
-    [ngClass]="{ view_aboutus_overlay: isAboutUsOverlayOpen }"
-  >
-    <div class="header">
-      <div class=""></div>
-      <div class="info">Our Team</div>
-      <div class="closeBtn">
-        <i class="far fa-times" (click)="openCloseAboutUsOverlay()"></i>
+<div class="my-profile-container">
+  <!---cheering-animation-->
+  <img
+    src="../../../../../assets/gif/man-with-computer.gif"
+    lat="man-with-computer"
+    class="man-with-computer"
+  />
+  <!------form-of-profile-editing-->
+  <div class="from-container">
+    <form (ngSubmit)="onSubmit()" [formGroup]="updateForm">
+      <div class="prof-container">
+        <div class="circle">
+          <img src="../../../../../assets/imgs/men.jpg" />
+          <input type="file" id="file" name="image" />
+        </div>
       </div>
-    </div>
 
-    <div class="content">
-      <div class="team">
-        <div class="author">
-          <img
-            src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.6435-9/199538667_2560456557434428_6360688576988264847_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeFCeCiMWWK_2XyfhcKxOa3NHFEubb2h40AcUS5tvaHjQEUzOcbfvab928_6fbVtpOkr9THZLQr-B3SGZ8oLmM_q&_nc_ohc=tPftrWFfVVgAX88rset&tn=-wxwBP_WPyFetnlM&_nc_ht=scontent.fceb2-2.fna&oh=a23402726f4d7a4cc7007f7e6bf11747&oe=61583A67"
-            alt=""
-          />
-          <div class="details">
-            <div class="name">Luigi Loreno</div>
-            <div class="role">Programmer</div>
-          </div>
-        </div>
-        <div class="author">
-          <img
-            src="https://avatars.githubusercontent.com/u/78558096?v=4"
-            alt=""
-          />
-          <div class="details">
-            <div class="name">Ruel Baldo</div>
-            <div class="role">Programmer</div>
-          </div>
-        </div>
-        <div class="author">
-          <img
-            src="https://avatars.githubusercontent.com/u/59472122?v=4"
-            alt=""
-          />
-          <div class="details">
-            <div class="name">Christian Paranas</div>
-            <div class="role">Programmer</div>
-          </div>
-        </div>
-        <div class="author last">
-          <img
-            src="https://scontent.fdvo1-1.fna.fbcdn.net/v/t1.6435-9/92830110_3763332807071604_6641068352234061824_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=174925&_nc_eui2=AeGxQoCq64Pqj0_mkLh8dw_qW-Q-vN0s_EBb5D683Sz8QAXg2W_uJqwvOKMa1Jx1NAF_tWWJm5ap5NjeiQ5teCGW&_nc_ohc=tk5oU1foxBYAX-PpbIN&tn=LBsI2EVjJvAmcLrk&_nc_ht=scontent.fdvo1-1.fna&oh=bfb568e80ecb2be50368e81f1b7e2529&oe=61595E86"
-            alt=""
-          />
-          <div class="details">
-            <div class="name">John Jefferson Lebasora</div>
-            <div class="role">Programmer</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input
+          formControlName="name"
+          type="text"
+          matInput
+          placeholder=""
+          value=""
+          required
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input
+          formControlName="email"
+          type="email"
+          matInput
+          placeholder=""
+          value=""
+          required
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input
+          formControlName="password"
+          type="password"
+          matInput
+          placeholder=""
+          value=""
+          required
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Phone no.</mat-label>
+        <input
+          formControlName="number"
+          matInput
+          placeholder="ex.0912-123-1234"
+          type="tel"
+          value=""
+          pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Address</mat-label>
+        <input
+          formControlName="address"
+          type="text"
+          matInput
+          placeholder=""
+          value=""
+          required
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Date of Birth</mat-label>
+        <input
+          formControlName="date"
+          type="date"
+          matInput
+          placeholder=""
+          value=""
+          required
+        />
+      </mat-form-field>
 
-  <div class="account_setting">
-    <div class="header">
-      <div class="backBtn" routerLink="/account">
-        <i class="far fa-arrow-left"></i>
+      <button type="submit" name="confirm" class="confirm">
+        <h4>UPDATE DATA</h4>
+      </button>
+      <div (click)="goBack()" class="cancel">
+        <h4>CANCEL</h4>
       </div>
-      <h2>ACCOUNT SETTINGS</h2>
-    </div>
-
-    <div class="content__container">
-      <div class="container">
-        <div class="header">My Account</div>
-        <div class="items">
-          <div class="item" routerLink="/account/setting/myprofile">
-            <p>My Profile</p>
-            <i class="far fa-chevron-right"></i>
-          </div>
-          <div class="item" routerLink="/account/setting/myaddress">
-            <p>My Addresses</p>
-            <i class="far fa-chevron-right"></i>
-          </div>
-          <div class="item">
-            <p>Bank Accounts/Cards</p>
-            <i class="far fa-chevron-right"></i>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="header">Support</div>
-        <div class="items">
-          <div class="item">
-            <p>Help Centre</p>
-            <i class="far fa-chevron-right"></i>
-          </div>
-          <div class="item" (click)="openCloseAboutUsOverlay()">
-            <p>About Us</p>
-            <i class="far fa-chevron-right"></i>
-          </div>
-          <div class="item">
-            <p>Request Account Deletion</p>
-            <i class="far fa-chevron-right"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="logout_btn" (click)="logout()">LOGOUT</div>
+    </form>
   </div>
 </div>

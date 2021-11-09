@@ -42,7 +42,6 @@ import { AccountsettingComponent } from './pages/accountsetting/accountsetting.c
 import { StoreComponent } from './pages/store/store.component';
 import { StoresComponent } from './pages/stores/stores.component';
 import { CategoryComponent } from './pages/category/category.component';
-import { MyprofileComponent } from './pages/myprofile/myprofile.component';
 import { MyaddressComponent } from './pages/myaddress/myaddress.component';
 import { AddToCartComponent } from './pages/add-to-cart/add-to-cart.component';
 import { UseraddproductsComponent } from './pages/useraddproducts/useraddproducts.component';
@@ -56,7 +55,6 @@ const pagesComponents = [
   HomeComponent,
   RegisterComponent,
   LogInPageComponent,
-  MyprofileComponent,
   MessagesComponent,
   SearchComponent,
   CheckOutComponent,

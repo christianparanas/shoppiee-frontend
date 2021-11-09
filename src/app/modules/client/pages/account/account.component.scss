@@ -46,9 +46,25 @@
 
       .account_options {
         color: #fff;
+        display: flex;
+        align-items: center;
 
-        i {
+        .logout {
+          border-radius: 50%;
+          background: #fa6238;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          i {
+            padding: 10px;
+            font-size: 16px;
+          }
+        }
+
+        .fa-cog {
           font-size: 25px;
+          margin-right: 20px;
           cursor: pointer;
 
           &:hover {

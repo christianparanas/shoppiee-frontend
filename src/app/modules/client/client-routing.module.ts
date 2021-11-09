@@ -18,7 +18,6 @@ import { AccountsettingComponent } from './pages/accountsetting/accountsetting.c
 import { StoreComponent } from './pages/store/store.component';
 import { StoresComponent } from './pages/stores/stores.component';
 import { CategoryComponent } from './pages/category/category.component';
-import { MyprofileComponent } from './pages/myprofile/myprofile.component';
 import { MyaddressComponent } from './pages/myaddress/myaddress.component';
 import { AddToCartComponent } from './pages/add-to-cart/add-to-cart.component';
 import { CheckOutComponent } from './pages/check-out/check-out.component';
@@ -45,7 +44,6 @@ const routes: Routes = [
     { path: 'messages', component: MessagesComponent, canActivate: [AuthGuard] },
     { path: 'account', component: AccountComponent, canActivate: [AuthGuard] },
     { path: 'account/setting', component: AccountsettingComponent, canActivate: [AuthGuard] },
-    { path: 'account/setting/myprofile', component: MyprofileComponent, canActivate: [AuthGuard] },
     { path: 'account/setting/myaddress', component: MyaddressComponent, canActivate: [AuthGuard] },
     { path: 'account/store', component: UserstoreComponent, canActivate: [AuthGuard] },
     { path: 'account/store/messages', component: MessagesComponent, canActivate: [AuthGuard] },
