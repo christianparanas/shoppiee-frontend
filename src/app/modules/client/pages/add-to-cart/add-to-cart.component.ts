@@ -7,6 +7,7 @@ import { NavComponent } from '../../components/nav/nav.component';
 
 // services
 import { CartService } from '../../shared/services/cart.service';
+import { OrdersService } from '../../shared/services/orders.service';
 
 @Component({
   selector: 'app-add-to-cart',
@@ -35,6 +36,7 @@ export class AddToCartComponent implements OnInit {
     private toast: HotToastService,
     private location: Location,
     private cartService: CartService,
+    private orderService: OrdersService,
     private cdr: ChangeDetectorRef,
   ) {}
 
@@ -67,12 +69,11 @@ export class AddToCartComponent implements OnInit {
   checkoutOrder() {
     if(this.selectedCartItems.length == 0) {
       this.toast.info("Please select items", { position: 'top-right' })
-
-      
     }
     else {
-      console.log(this.selectedCartItems)
-      console.log(this.subTotal)
+      // pass checkoutitems data to order service, to use in the checkout page
+      this.orderService.addCheckoutCartItems(this.selectedCartItems, this.subTotal)
+      this.router.navigate(['/checkout/']);
     }
   }
 

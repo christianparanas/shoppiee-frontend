@@ -1,5 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
+
+import { OrdersService } from '../../shared/services/orders.service';
+
 
 @Component({
   selector: 'app-check-out',
@@ -9,6 +13,8 @@ import { Location } from '@angular/common';
 export class CheckOutComponent implements OnInit {
   rippleColor: string = "rgb(255, 92, 0, 0.2)"
   onScroll: boolean = false;
+  orderDataArr: any
+
   @Input() all:number
   @Input() subTotal:number=0;
   @Input() name:string='Cardo Never Die'
@@ -23,7 +29,7 @@ export class CheckOutComponent implements OnInit {
     {id:6,name:'Love Lang',Price:100,amount:2},
   ]
 
-  constructor(private location: Location) {
+  constructor(private location: Location, private orderService: OrdersService, private router: Router) {
     let tempoTotal=0;
     this.productArray.map((product:any)=>{
       tempoTotal+=product.Price*product.amount;
@@ -31,8 +37,22 @@ export class CheckOutComponent implements OnInit {
     this.subTotal=tempoTotal
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
     window.addEventListener('scroll', this.listenScrollEvent);
+
+    await this.loadCheckoutData()
+    this.redirectIfNoCheckoutItems()
+  }
+
+  async loadCheckoutData() {
+    console.log(this.orderService.getCheckoutData())
+    this.orderDataArr = await this.orderService.getCheckoutData()
+  }
+
+  redirectIfNoCheckoutItems() {
+    if(this.orderDataArr.checkoutCartItemsArr.length == 0) {
+      this.router.navigate(['/cart/']);
+    }
   }
 
   listenScrollEvent = () => {
