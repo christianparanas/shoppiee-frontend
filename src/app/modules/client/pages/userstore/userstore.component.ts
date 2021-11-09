@@ -30,9 +30,7 @@ export interface UserData {
   name: string;
 }
 
-/**
- * @title Data table with sorting, pagination, and filtering.
- */
+
 @Component({
   selector: 'app-userstore',
   templateUrl: './userstore.component.html',
@@ -58,7 +56,7 @@ export class UserstoreComponent implements AfterViewInit, OnInit {
   submitLoading: boolean = false;
   isAddProductModalOpen: boolean = false;
   isSettingModalOpen: boolean = false;
-  imgFilePreview: any = '../../../assets/imgs/men.jpg';
+  imgFilePreview: any = '../../../../../assets/imgs/defaultUserImage.png';
   imgData: any = '';
 
   displayedColumns: string[] = [
@@ -173,8 +171,6 @@ export class UserstoreComponent implements AfterViewInit, OnInit {
   }
 
   openCloseSettingModal() {
-    this.imgFilePreview = 'https://raw.githubusercontent.com/christianparanas/insta-clone-frontend/main/public/Default.png';
-
     this.isBlackBgOpen = !this.isBlackBgOpen;
     this.isSettingModalOpen = !this.isSettingModalOpen;
   }

@@ -6,12 +6,12 @@
       <div class="header_inner">
         <div class="user">
           <img
-            src="https://raw.githubusercontent.com/christianparanas/insta-clone-frontend/main/public/Default.png"
+            [src]="userData.image != null ? userData.image : '../../../../../assets/imgs/defaultUserImage.png'"
             alt="Can't load the image"
           />
           <div class="details">
             <div class="name">{{ userData.name }}</div>
-            <div class="address">Tacloban City</div>
+            <div class="address">{{ userData.address }}</div>
           </div>
         </div>
         <div class="account_options">
@@ -75,10 +75,5 @@
       </div>
     </div>
   </div>
-
-  <div class="testFileUp">
-    <input type="file" (change)="imgUp($event)" #fileUpload>>
-  </div>
-
   <app-footer></app-footer>
 </div>

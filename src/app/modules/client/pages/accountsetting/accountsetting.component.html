@@ -7,84 +7,59 @@
   />
   <!------form-of-profile-editing-->
   <div class="from-container">
-    <form (ngSubmit)="onSubmit()" [formGroup]="updateForm">
-      <div class="prof-container">
-        <div class="circle">
-          <img src="../../../../../assets/imgs/men.jpg" />
-          <input type="file" id="file" name="image" />
+    <form >
+      <div class="boxImg">
+        <div class="box">
+          <img
+          *ngIf="userData"
+          [src]="userData.image == null || userData.image != userSettingForm.user_img ? imgFilePreview : userData.image"
+          alt="user image"
+        />
+        <input
+          type="file"
+          #settingImgInput
+          class="imageInput"
+          [(ngModel)]="userSettingForm.user_img"
+          [ngModelOptions]="{ standalone: true }"
+          (change)="loadInputImgToPreview($event)"
+        />
+        <i class="fal fa-camera" (click)="settingImgInput.click()"></i>
         </div>
       </div>
 
-      <mat-form-field>
-        <mat-label>Name</mat-label>
+      <div class="input-box">
+        <label for="">Name</label>
         <input
-          formControlName="name"
           type="text"
-          matInput
-          placeholder=""
-          value=""
-          required
+          placeholder="Enter your name"
+          [(ngModel)]="userSettingForm.user_name"
+          [ngModelOptions]="{ standalone: true }"
         />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Email</mat-label>
-        <input
-          formControlName="email"
-          type="email"
-          matInput
-          placeholder=""
-          value=""
-          required
-        />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Password</mat-label>
-        <input
-          formControlName="password"
-          type="password"
-          matInput
-          placeholder=""
-          value=""
-          required
-        />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Phone no.</mat-label>
-        <input
-          formControlName="number"
-          matInput
-          placeholder="ex.0912-123-1234"
-          type="tel"
-          value=""
-          pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}"
-          required
-        />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Address</mat-label>
-        <input
-          formControlName="address"
-          type="text"
-          matInput
-          placeholder=""
-          value=""
-          required
-        />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Date of Birth</mat-label>
-        <input
-          formControlName="date"
-          type="date"
-          matInput
-          placeholder=""
-          value=""
-          required
-        />
-      </mat-form-field>
+      </div>
 
-      <button type="submit" name="confirm" class="confirm">
-        <h4>UPDATE DATA</h4>
+      <div class="input-box">
+        <label for="">Email</label>
+        <input
+          type="text"
+          placeholder="Enter your email"
+          [(ngModel)]="userSettingForm.user_email"
+          [ngModelOptions]="{ standalone: true }"
+        />
+      </div>
+
+      <div class="input-box">
+          <label for="">Address</label>
+          <input
+            type="text"
+            placeholder="Enter your address"
+            [(ngModel)]="userSettingForm.user_address"
+            [ngModelOptions]="{ standalone: true }"
+          />
+        </div>
+
+      <button [disabled]="submitLoading" (click)="onSubmitUserSettingForm()" type="submit" name="confirm" class="confirm">
+        <h4 *ngIf="!submitLoading">Update Data</h4>
+        <div *ngIf="submitLoading" class="loader"></div>
       </button>
       <div (click)="goBack()" class="cancel">
         <h4>CANCEL</h4>

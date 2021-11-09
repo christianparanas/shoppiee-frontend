@@ -28,19 +28,19 @@ export class AccountComponent implements OnInit {
     this.loadAccountData();
   }
 
-  imgUp = (event: any) => {
-    const file: File = event.target.files[0];
-    console.log(file);
+  // imgUp = (event: any) => {
+  //   const file: File = event.target.files[0];
+  //   console.log(file);
 
-    this.imgUpload.imgUpload(file).subscribe(
-      (response) => {
-        console.log(response);
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
-  };
+  //   this.imgUpload.imgUpload(file).subscribe(
+  //     (response) => {
+  //       console.log(response);
+  //     },
+  //     (error) => {
+  //       console.error(error);
+  //     }
+  //   );
+  // };
 
   loadAccountData = () => {
     this.profileService.getProfileData().subscribe(
