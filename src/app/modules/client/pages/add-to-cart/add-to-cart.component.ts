@@ -65,12 +65,18 @@ export class AddToCartComponent implements OnInit {
   }
 
   checkoutOrder() {
-    console.log(this.selectedCartItems)
-    console.log(this.subTotal)
+    if(this.selectedCartItems.length == 0) {
+      this.toast.info("Please select items", { position: 'top-right' })
+
+      
+    }
+    else {
+      console.log(this.selectedCartItems)
+      console.log(this.subTotal)
+    }
   }
 
   incDecCartItemQty(op: any, cartId: any, qty: any, productAvailQty?: any) {
-
     if (op != 1 && qty == 1) {
       this.removeCartItem(cartId);
     } else {
@@ -128,6 +134,12 @@ export class AddToCartComponent implements OnInit {
 
         // refetch cart items
         this.loadCartItems();
+        this.allSelectedCheck = ""
+        this.selectedCartItems = this.selectedCartItems.filter(
+            (item: any) => item.cartId !== cart_id
+        );
+
+        this.calculateSubTotal()
       },
       (error) => console.log(error)
     );
