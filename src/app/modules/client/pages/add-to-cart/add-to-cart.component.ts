@@ -1,4 +1,10 @@
-import { ChangeDetectorRef, Component, Input, OnInit, ViewChild } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  Input,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
 import { Location } from '@angular/common';
@@ -25,9 +31,9 @@ export class AddToCartComponent implements OnInit {
   isCartEmpty: boolean = false;
   cartArray: any = [];
   selectedCartItems: any = [];
-  isAllItemSelected: boolean = false
-  allSelectedCheck: any
-  subTotal: number = 0
+  isAllItemSelected: boolean = false;
+  allSelectedCheck: any;
+  subTotal: number = 0;
 
   @ViewChild(NavComponent, { static: true }) navCompo: NavComponent;
 
@@ -37,7 +43,7 @@ export class AddToCartComponent implements OnInit {
     private location: Location,
     private cartService: CartService,
     private orderService: OrdersService,
-    private cdr: ChangeDetectorRef,
+    private cdr: ChangeDetectorRef
   ) {}
 
   goBack() {
@@ -49,7 +55,7 @@ export class AddToCartComponent implements OnInit {
   }
 
   loadCartItems() {
-    this.cartArray = []
+    this.cartArray = [];
     this.navCompo.cartItemsCount();
 
     this.cartService.getCartItems().subscribe(
@@ -58,7 +64,7 @@ export class AddToCartComponent implements OnInit {
           ? (this.isCartEmpty = true)
           : (this.isCartEmpty = false);
         this.cartArray = response;
-        this.selectedCartItems = []
+        this.selectedCartItems = [];
       },
       (error) => {
         console.log(error);
@@ -67,12 +73,14 @@ export class AddToCartComponent implements OnInit {
   }
 
   checkoutOrder() {
-    if(this.selectedCartItems.length == 0) {
-      this.toast.info("Please select items", { position: 'top-right' })
-    }
-    else {
+    if (this.selectedCartItems.length == 0) {
+      this.toast.info('Please select items', { position: 'top-right' });
+    } else {
       // pass checkoutitems data to order service, to use in the checkout page
-      this.orderService.addCheckoutCartItems(this.selectedCartItems, this.subTotal)
+      this.orderService.addCheckoutCartItems(
+        this.selectedCartItems,
+        this.subTotal
+      );
       this.router.navigate(['/checkout/']);
     }
   }
@@ -88,42 +96,41 @@ export class AddToCartComponent implements OnInit {
             duration: 2000,
           });
         } else {
-          this.cartArray.map((item: any) => cartId == item.id ? item.quantity++ : "") 
+          this.cartArray.map((item: any) =>
+            cartId == item.id ? item.quantity++ : ''
+          );
 
           this.selectedCartItems.map((item: any) => {
-            if(cartId == item.cartId) {
-              item.quantity++
-              this.calculateSubTotal()
+            if (cartId == item.cartId) {
+              item.quantity++;
+              this.calculateSubTotal();
             }
-          })
+          });
 
-          this.cartService
-            .increaseQtyCartItem({ cartId: cartId })
-            .subscribe(
-              (response) => {},
-              (error) => console.log(error)
-            );
-        }
-      } else {
-        this.cartArray.map((item: any) => cartId == item.id ? item.quantity-- : "") 
-
-        this.selectedCartItems.map((item: any) => {
-          if(cartId == item.cartId) {
-            item.quantity--
-            this.calculateSubTotal()
-          }
-        })
-
-        this.cartService
-          .reduceQtyCartItem({ cartId: cartId })
-          .subscribe(
+          this.cartService.increaseQtyCartItem({ cartId: cartId }).subscribe(
             (response) => {},
             (error) => console.log(error)
           );
+        }
+      } else {
+        this.cartArray.map((item: any) =>
+          cartId == item.id ? item.quantity-- : ''
+        );
+
+        this.selectedCartItems.map((item: any) => {
+          if (cartId == item.cartId) {
+            item.quantity--;
+            this.calculateSubTotal();
+          }
+        });
+
+        this.cartService.reduceQtyCartItem({ cartId: cartId }).subscribe(
+          (response) => {},
+          (error) => console.log(error)
+        );
       }
     }
   }
-
 
   removeCartItem(cart_id: any) {
     this.cartService.removeCartItem(cart_id).subscribe(
@@ -135,12 +142,12 @@ export class AddToCartComponent implements OnInit {
 
         // refetch cart items
         this.loadCartItems();
-        this.allSelectedCheck = ""
+        this.allSelectedCheck = '';
         this.selectedCartItems = this.selectedCartItems.filter(
-            (item: any) => item.cartId !== cart_id
+          (item: any) => item.cartId !== cart_id
         );
 
-        this.calculateSubTotal()
+        this.calculateSubTotal();
       },
       (error) => console.log(error)
     );
@@ -160,64 +167,67 @@ export class AddToCartComponent implements OnInit {
         if (!this.checkItemIfSelected(cartItem.ProductId)) {
           this.selectedCartItems.push({
             cartId: cartItem.id,
+            produtName: cartItem.Product.product_name,
+            productImg: cartItem.Product.product_image,
             productId: cartItem.ProductId,
             quantity: cartItem.quantity,
-            price: cartItem.Product.product_price
+            price: cartItem.Product.product_price,
           });
         } else {
           this.selectedCartItems = this.selectedCartItems.filter(
             (item: any) => item.productId !== cartItem.ProductId
           );
-          this.allSelectedCheck = ""
+          this.allSelectedCheck = '';
         }
 
-        this.selectedCartItems.length == this.cartArray.length ? this.allSelectedCheck = "checked" : this.allSelectedCheck = ""
+        this.selectedCartItems.length == this.cartArray.length
+          ? (this.allSelectedCheck = 'checked')
+          : (this.allSelectedCheck = '');
       }
     });
 
-    this.calculateSubTotal()
+    this.calculateSubTotal();
   }
 
   async selectAllCartItems() {
-    if(this.selectedCartItems.length != this.cartArray.length) {
-
+    if (this.selectedCartItems.length != this.cartArray.length) {
       await this.cartArray.map((item: any) => {
-        if(!this.checkItemIfSelected(item.ProductId)) {
+        if (!this.checkItemIfSelected(item.ProductId)) {
           item.isCheck = item.isCheck ? '' : 'checked';
-  
+
           this.selectedCartItems.push({
             cartId: item.id,
+            produtName: item.Product.product_name,
+            productImg: item.Product.product_image,
             productId: item.ProductId,
             quantity: item.quantity,
-            price: item.Product.product_price
-          })
+            price: item.Product.product_price,
+          });
         }
-      })
+      });
 
-      this.calculateSubTotal()
-    }
-    else {
-      this.selectedCartItems = []
+      this.calculateSubTotal();
+    } else {
+      this.selectedCartItems = [];
       this.cartArray.map((item: any) => {
-        item.isCheck = ""
-      })
+        item.isCheck = '';
+      });
 
-      this.subTotal = 0
+      this.subTotal = 0;
     }
   }
-  
+
   calculateSubTotal() {
-    this.subTotal = 0
+    this.subTotal = 0;
 
     this.selectedCartItems.map((cartItem: any) => {
-      this.subTotal += cartItem.quantity * cartItem.price
-    })
+      this.subTotal += cartItem.quantity * cartItem.price;
+    });
   }
 
   trackByFn(index: any, item: any) {
     return item.id;
   }
- 
 
   //show the transaction details
   showTransaction() {
@@ -277,7 +287,6 @@ export class AddToCartComponent implements OnInit {
       this.showTransaction();
     });
   }
-
 
   hideNotification(id: number) {
     this.cartArray.map((product: any) => {

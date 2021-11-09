@@ -14,6 +14,8 @@ export class CheckOutComponent implements OnInit {
   rippleColor: string = "rgb(255, 92, 0, 0.2)"
   onScroll: boolean = false;
   orderDataArr: any
+  itemsArr: any = []
+  isDataLoaded: boolean = false
 
   @Input() all:number
   @Input() subTotal:number=0;
@@ -47,6 +49,8 @@ export class CheckOutComponent implements OnInit {
   async loadCheckoutData() {
     console.log(this.orderService.getCheckoutData())
     this.orderDataArr = await this.orderService.getCheckoutData()
+    this.itemsArr = await this.orderDataArr.checkoutCartItemsArr
+    console.log(this.itemsArr)
   }
 
   redirectIfNoCheckoutItems() {

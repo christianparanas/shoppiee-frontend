@@ -1,13 +1,10 @@
 <div class="checkout_container">
-
   <div class="checkout_wrapper">
     <div class="top-header" [ngClass]="{ header__scrollShadow: onScroll }">
       <button class="seallBtn" (click)="goBack()" mat-icon-button>
-        <i  class="fal fa-arrow-left"></i>
+        <i class="fal fa-arrow-left"></i>
       </button>
-      <div class="title">
-        Checkout
-      </div>
+      <div class="title">Checkout</div>
     </div>
 
     <div class="placeOrderBtn_container">
@@ -27,10 +24,9 @@
             <p class="name">{{ name }} Hindi Babaero</p>
             <p class="address">{{ address }}</p>
           </div>
-          <i  class="fal fa-chevron-right"></i>
+          <i class="fal fa-chevron-right"></i>
         </div>
-        <div class="borderStripe_container">
-        </div>
+        <div class="borderStripe_container"></div>
       </div>
 
       <div class="placedItems_container">
@@ -40,17 +36,18 @@
             Placed items
           </div>
           <button class="seallBtn" mat-icon-button>
-            <i  class="fal fa-chevron-right"></i>
+            <i class="fal fa-chevron-right"></i>
           </button>
         </div>
-        <div class="content">
+
+        <div class="content" *ngFor="let item of itemsArr">
           <div class="placedProduct_container" matRipple>
-            <img src="../../../../../assets/imgs/men.jpg" alt="">
+            <img [src]="item.productImg" alt="" />
             <div class="details">
-              <div class="product_name_wrapper">Bag ng isang idolo</div>
+              <div class="product_name_wrapper">{{ item.produtName }}</div>
               <div class="price_quantity_wrapper">
-                <p>P69.00</p>
-                <p>x42</p>
+                <p>{{ item.price }}</p>
+                <p>x{{ item.quantity }}</p>
               </div>
             </div>
           </div>
@@ -59,14 +56,18 @@
 
       <div class="shippingOption_container">
         <div class="shippingOption_title">Shipping Option</div>
-        <div class="selectShippingOption_container" matRipple [matRippleColor]="rippleColor">
+        <div
+          class="selectShippingOption_container"
+          matRipple
+          [matRippleColor]="rippleColor"
+        >
           <div class="shippingOptions_details">
             <div class="title">Standard Local</div>
             <p>Recieved by 28 Oct - 4 Nov</p>
           </div>
           <div class="shippingOption_price">
             P169
-            <i  class="fal fa-chevron-right"></i>
+            <i class="fal fa-chevron-right"></i>
           </div>
         </div>
       </div>
@@ -105,7 +106,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>

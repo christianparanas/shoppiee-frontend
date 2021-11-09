@@ -1,25 +1,27 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+
+import { environment } from 'src/environments/environment';
+const baseURL = environment.baseURL;
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class OrdersService {
   checkoutData: any = {
     checkoutCartItemsArr: [],
-    subtotal: 0
-  }
+    subtotal: 0,
+  };
 
-  private _checkoutCartItemsArr: any = []
-  private _subtotal: number = 0
-
-  constructor() { }
+  constructor(private http: HttpClient) {}
 
   addCheckoutCartItems(itemsArr: any, subtotal: number) {
-    this.checkoutData.checkoutCartItemsArr = itemsArr
-    this.checkoutData.subtotal = subtotal
+    this.checkoutData.checkoutCartItemsArr = itemsArr;
+    this.checkoutData.subtotal = subtotal;
   }
 
   getCheckoutData() {
-    return this.checkoutData
+    return this.checkoutData;
   }
 }
