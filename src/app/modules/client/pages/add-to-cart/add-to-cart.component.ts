@@ -91,14 +91,10 @@ export class AddToCartComponent implements OnInit {
           })
 
           this.cartService
-            .increaseQtyCartItem({
-              cartId: cartId,
-            })
+            .increaseQtyCartItem({ cartId: cartId })
             .subscribe(
               (response) => {},
-              (error) => {
-                console.log(error);
-              }
+              (error) => console.log(error)
             );
         }
       } else {
@@ -106,20 +102,16 @@ export class AddToCartComponent implements OnInit {
 
         this.selectedCartItems.map((item: any) => {
           if(cartId == item.cartId) {
-            item.quantity = item.quantity - 1
+            item.quantity--
             this.calculateSubTotal()
           }
         })
 
         this.cartService
-          .reduceQtyCartItem({
-            cartId: cartId,
-          })
+          .reduceQtyCartItem({ cartId: cartId })
           .subscribe(
             (response) => {},
-            (error) => {
-              console.log(error);
-            }
+            (error) => console.log(error)
           );
       }
     }
@@ -137,9 +129,7 @@ export class AddToCartComponent implements OnInit {
         // refetch cart items
         this.loadCartItems();
       },
-      (error) => {
-        console.log(error);
-      }
+      (error) => console.log(error)
     );
   }
 
