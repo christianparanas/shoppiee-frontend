@@ -17,7 +17,7 @@ $shadow: rgba(0, 0, 0, 0.3);
 
   .shipping_option_modal {
     position: fixed;
-    top: 120px;
+    top: 140px;
     width: 90%;
     background: #fff;
     height: fit-content;
@@ -36,7 +36,12 @@ $shadow: rgba(0, 0, 0, 0.3);
       h5 {
         i {
           margin-right: 5px;
+          cursor: pointer;
         }
+      }
+
+      i {
+        cursor: pointer;
       }
     }
 
@@ -53,14 +58,10 @@ $shadow: rgba(0, 0, 0, 0.3);
         border: 2px solid #e3e3e3;
         border-radius: 8px;
         transition: all 0.3s ease;
+        cursor: pointer;
 
         p {
           font-size: 12px;
-        }
-
-        &:hover {
-          border: 2px solid rgb(255, 92, 0);
-          color: rgb(255, 92, 0);
         }
       }
 
@@ -260,6 +261,7 @@ $shadow: rgba(0, 0, 0, 0.3);
             display: flex;
             align-items: center;
             justify-content: space-between;
+            cursor: pointer;
 
             .shippingOptions_details {
               .title {
@@ -349,13 +351,6 @@ $shadow: rgba(0, 0, 0, 0.3);
 
       .shipModal-body {
 
-        .box {
-          &:hover {
-            border: 2px solid #8d00ca;
-            color: #8d00ca;
-          }
-        }
-
         .selectedOption {
           background-color: #8d00ca;
           color: #fff;
@@ -364,6 +359,7 @@ $shadow: rgba(0, 0, 0, 0.3);
     }
 
     .checkout-wrapper {
+      padding: 20px;
       padding-top: 80px;
       display: grid;
       grid-gap: 20px;
@@ -371,21 +367,26 @@ $shadow: rgba(0, 0, 0, 0.3);
 
       .placedItems-desk {
         display: block;
+        
+        box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
+        border-radius: 8px;
+        margin-top: 55px;
+        height: fit-content;
+
 
         .items-desk {
-          padding-top: 55px;
 
           .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-size: 15px;
-            padding: 5px 10px 5px 20px;
-            border-bottom: 1px solid #e3e3e3;
+            padding: 20px;
+            border-bottom: 1px dashed #e3e3e3;
             background-color: #fff;
             margin-bottom: 10px;
-            box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
-            border-radius: 8px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
 
             .title {
               .fa-store {
@@ -394,20 +395,28 @@ $shadow: rgba(0, 0, 0, 0.3);
             }
           }
 
-          .content {
+          .content1 {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-gap: 10px;
+            grid-gap: 15px;
+            padding: 10px 20px 20px 20px;
 
             .placedProduct_container {
-              box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
-              border-bottom: 1px solid #e3e3e3;
+              border: 2px solid #fafafa;
               background: #fff;
               display: grid;
               grid-template-columns: 100px 1fr;
               padding: 20px;
               grid-gap: 15px;
               border-radius: 8px;
+              min-height: 140px;
+              box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+              cursor: pointer;
+              transition: all .3s ease;
+
+              &:hover {
+                border: 2px solid #8d00ca;
+              }
 
               img {
                 width: 100%;
@@ -425,8 +434,9 @@ $shadow: rgba(0, 0, 0, 0.3);
                     font-size: 12px;
                   }
 
-                  h5 {
-                    font-size: 18px;
+                  h6 {
+                    font-size: 16px;
+                      color: #8d00ca;
                   }
                 }
 
@@ -438,12 +448,12 @@ $shadow: rgba(0, 0, 0, 0.3);
 
                   .price1 {
                     .price_label {
-                      color: #8d00ca;
                       font-size: 12px;
                     }
 
                     h6, h5 {
-                      font-size: 18px;
+                      font-size: 16px;
+                      color: #8d00ca;
                     }
                   }
 
@@ -494,6 +504,7 @@ $shadow: rgba(0, 0, 0, 0.3);
           .payment_container {
 
             .paymentOption_container {
+              cursor: pointer;
 
               .title {
 
@@ -516,7 +527,6 @@ $shadow: rgba(0, 0, 0, 0.3);
           .placeBtn_container {
             margin-top: 10px;
             width: 100%;
-            background: #fff;
             display: grid;
             grid-template-columns: 1fr 130px;
             z-index: 20;
@@ -529,8 +539,8 @@ $shadow: rgba(0, 0, 0, 0.3);
               padding: 14px 15px;
               box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
             border-bottom: 1px solid #e3e3e3;
-            border-top-left-radius: 8px;
             border-bottom-left-radius: 8px;
+            background: #fff;
     
               p {
                 font-size: 12px;
@@ -552,9 +562,9 @@ $shadow: rgba(0, 0, 0, 0.3);
               font-size: 15px;
               font-weight: 800;
               box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
-              border-bottom: 1px solid #8d00ca;
-              border-top-right-radius: 8px;
+              border-bottom: 4px solid #8d00ca;
               border-bottom-right-radius: 8px;
+              cursor: pointer;
             }
           }
         }

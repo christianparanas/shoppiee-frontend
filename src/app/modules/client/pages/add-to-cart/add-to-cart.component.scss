@@ -96,6 +96,7 @@ app-add-to-cart-nav {
         background-color: rgb(255, 92, 0);
         border-top: 1px solid rgb(255, 92, 0);
         color: #fff;
+        cursor: pointer;
 
         .aa {
           p {
@@ -356,7 +357,14 @@ app-add-to-cart-nav {
         left: 50%;
         transform: translateX(-50%);
 
+        
         .detail {
+
+          .selectItems {
+            input {
+              cursor: pointer;
+            }
+          }
 
           .subtotal {
             h5 {
@@ -367,6 +375,7 @@ app-add-to-cart-nav {
 
         .checkout_btn {
           background-color: #8d00ca;
+          border-top: 2px solid #8d00ca;
         }
       }
 

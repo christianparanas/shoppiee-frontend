@@ -72,23 +72,21 @@
             <i class="fal fa-store"></i>
             Placed items
           </div>
-          <button class="seallBtn" mat-icon-button>
-            <i class="fal fa-chevron-right"></i>
-          </button>
+          <div class=""></div>
         </div>
 
-        <div class="content" *ngFor="let item of itemsArr">
-          <div class="placedProduct_container" matRipple>
+        <div class="content1" >
+          <div class="placedProduct_container" matRipple *ngFor="let item of itemsArr">
             <img [src]="item.productImg" alt="" />
             <div class="details">
               <div class="product_name_wrapper">
                 <div class="label">Product name:</div>
-                <h5>{{ item.produtName }}</h5>
+                <h6>{{ item.produtName }}</h6>
               </div>
               <div class="price_quantity_wrapper">
                 <div class="price1">
                   <div class="price_label">Price:</div>
-                  <h5>P{{ item.price }}</h5>
+                  <h6>P{{ item.price }}</h6>
                 </div>
                 <div class="price1">
                   <div class="price_label">Quantity:</div>

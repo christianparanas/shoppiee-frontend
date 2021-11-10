@@ -69,7 +69,7 @@ export class CheckOutComponent implements OnInit {
     window.addEventListener('scroll', this.listenScrollEvent);
 
     await this.loadCheckoutData();
-    this.redirectIfNoCheckoutItems();
+    // this.redirectIfNoCheckoutItems();
 
     await this.loadUserData();
 
