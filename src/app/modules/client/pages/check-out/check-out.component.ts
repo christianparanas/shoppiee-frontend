@@ -3,7 +3,7 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import * as moment from 'moment';
 
-import { ProfileService } from '../../shared/services/profile.service'
+import { ProfileService } from '../../shared/services/profile.service';
 import { OrdersService } from '../../shared/services/orders.service';
 
 @Component({
@@ -12,27 +12,31 @@ import { OrdersService } from '../../shared/services/orders.service';
   styleUrls: ['./check-out.component.scss'],
 })
 export class CheckOutComponent implements OnInit {
-  isShipModalOpen: boolean = false
-  bgOverlayOpen: boolean = false
+  isShipModalOpen: boolean = false;
+  isPayModalOpen: boolean = false;
+  bgOverlayOpen: boolean = false;
   shippingOption: any = {
-    name: "Entrego",
+    name: 'Entrego',
     price: 115,
-    isSelected: true
-  }
+    isSelected: true,
+  };
+  payOption: any = {
+    name: 'Cash on Delivery',
+  };
 
   rippleColor: string = 'rgb(255, 92, 0, 0.2)';
-  currentDate: any
+  currentDate: any;
   expectedDeliveredDate: any = {
     start: null,
-    end: null
-  }
+    end: null,
+  };
 
   onScroll: boolean = false;
   orderDataArr: any;
   itemsArr: any = [];
   totalPayment: number = 0;
   isDataLoaded: boolean = false;
-  userData: any = []
+  userData: any = [];
 
   @Input() all: number;
   @Input() subTotal: number = 0;
@@ -67,18 +71,20 @@ export class CheckOutComponent implements OnInit {
     await this.loadCheckoutData();
     // this.redirectIfNoCheckoutItems();
 
-    await this.loadUserData()
+    await this.loadUserData();
 
     // generate current date
-    this.currentDate =  new Date().toLocaleString()
-    this.expectedDeliveredDate.start = moment().add(10, 'days').format("MMM DD"); 
-    this.expectedDeliveredDate.end = moment().add(17, 'days').format("MMM DD")
+    this.currentDate = new Date().toLocaleString();
+    this.expectedDeliveredDate.start = moment()
+      .add(10, 'days')
+      .format('MMM DD');
+    this.expectedDeliveredDate.end = moment().add(17, 'days').format('MMM DD');
   }
 
   async loadCheckoutData() {
     // store checkout data
     this.orderDataArr = await this.orderService.getCheckoutData();
-    console.log(this.orderDataArr)
+    console.log(this.orderDataArr);
 
     // store cart items
     this.itemsArr = await this.orderDataArr.checkoutCartItemsArr;
@@ -90,11 +96,11 @@ export class CheckOutComponent implements OnInit {
   loadUserData() {
     this.profileService.getProfileData().subscribe(
       (response: any) => {
-        console.log(response)
-        this.userData = response
-      }, 
+        console.log(response);
+        this.userData = response;
+      },
       (error) => console.log(error)
-    )
+    );
   }
 
   // check if user, checkout his/her cart, if not redirect to cart
@@ -113,19 +119,30 @@ export class CheckOutComponent implements OnInit {
   }
 
   openCloseShipModal() {
-    this.isShipModalOpen =! this.isShipModalOpen
-    this.bgOverlayOpen =! this.bgOverlayOpen
+    this.isShipModalOpen = !this.isShipModalOpen;
+    this.bgOverlayOpen = !this.bgOverlayOpen;
   }
 
   changeShipOption(op: any) {
-
-    if(op == 1) {
-      this.shippingOption.name = "Entrego"
-      this.shippingOption.price = 115
-    }
-    else {
-      this.shippingOption.name = "J&T Express"
-      this.shippingOption.price = 120
+    if (op == 1) {
+      this.shippingOption.name = 'Entrego';
+      this.shippingOption.price = 115;
+    } else {
+      this.shippingOption.name = 'J&T Express';
+      this.shippingOption.price = 120;
     }
   }
- }
+
+  changePayOption(op: any) {
+    if (op == 1) {
+      this.payOption.name = 'Cash on Delivery';
+    } else {
+      this.payOption.name = 'Credit Card';
+    }
+  }
+
+  openClosePayModal() {
+    this.isPayModalOpen = !this.isPayModalOpen;
+    this.bgOverlayOpen = !this.bgOverlayOpen;
+  }
+}

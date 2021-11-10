@@ -13,7 +13,10 @@
         (click)="changeShipOption(1); openCloseShipModal()"
       >
         <p>Entrego: P115</p>
-        <i *ngIf="shippingOption.name == 'Entrego'" class="fal fa-check-circle"></i>
+        <i
+          *ngIf="shippingOption.name == 'Entrego'"
+          class="fal fa-check-circle"
+        ></i>
       </div>
       <div
         class="box"
@@ -21,7 +24,41 @@
         (click)="changeShipOption(2); openCloseShipModal()"
       >
         <p>J&T Express: P120</p>
-        <i *ngIf="shippingOption.name == 'J&T Express'" class="fal fa-check-circle"></i>
+        <i
+          *ngIf="shippingOption.name == 'J&T Express'"
+          class="fal fa-check-circle"
+        ></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="shipping_option_modal" *ngIf="isPayModalOpen">
+    <div class="shipModal-header">
+      <h5><i class="fal fa-credit-card"></i>Payment option</h5>
+      <i class="fal fa-times" (click)="openClosePayModal()"></i>
+    </div>
+    <div class="shipModal-body">
+      <div
+        class="box"
+        [ngClass]="{ selectedOption: payOption.name == 'Cash on Delivery' }"
+        (click)="changePayOption(1); openClosePayModal()"
+      >
+        <p>Cash on Delivery</p>
+        <i
+          *ngIf="payOption.name == 'Cash on Delivery'"
+          class="fal fa-check-circle"
+        ></i>
+      </div>
+      <div
+        class="box"
+        [ngClass]="{ selectedOption: payOption.name == 'Credit Card' }"
+        (click)="changePayOption(2); openClosePayModal()"
+      >
+        <p>Credit Card</p>
+        <i
+          *ngIf="payOption.name == 'Credit Card'"
+          class="fal fa-check-circle"
+        ></i>
       </div>
     </div>
   </div>
@@ -119,14 +156,18 @@
       </div>
 
       <div class="payment_container">
-        <div class="paymentOption_container" matRipple>
+        <div
+          class="paymentOption_container"
+          matRipple
+          (click)="openClosePayModal()"
+        >
           <div class="title">
             <i class="fad fa-usd-circle"></i>
             Payment Option
           </div>
           <div class="paymentOption_changer_btn">
             <div class="btn_container">
-              Cash on Delivery
+              {{ payOption.name }}
               <i class="fal fa-chevron-right"></i>
             </div>
           </div>
