@@ -2,12 +2,6 @@
   <img width="40%" height="40%" src="./src/assets/imgs/logo.svg?raw=true">
 </p>
 
-<br />
-
-<p align="center">
- <img src="./src/assets/imgs/shoppiee.png?raw=true">
-</p>
-
 ## Installation
 
 Install Packages:
