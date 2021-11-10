@@ -355,6 +355,19 @@ app-add-to-cart-nav {
       .checkout_container {
         left: 50%;
         transform: translateX(-50%);
+
+        .detail {
+
+          .subtotal {
+            h5 {
+              color: #8d00ca;
+            }
+          }
+        }
+
+        .checkout_btn {
+          background-color: #8d00ca;
+        }
       }
 
       .cart_items_container {
