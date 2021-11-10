@@ -1,4 +1,31 @@
 <div class="checkout_container">
+  <div class="bg-overlay" *ngIf="bgOverlayOpen"></div>
+
+  <div class="shipping_option_modal" *ngIf="isShipModalOpen">
+    <div class="shipModal-header">
+      <h5><i class="fal fa-truck"></i>Shipping option</h5>
+      <i class="fal fa-times" (click)="openCloseShipModal()"></i>
+    </div>
+    <div class="shipModal-body">
+      <div
+        class="box"
+        [ngClass]="{ selectedOption: shippingOption.name == 'Entrego' }"
+        (click)="changeShipOption(1); openCloseShipModal()"
+      >
+        <p>Entrego: P115</p>
+        <i *ngIf="shippingOption.name == 'Entrego'" class="fal fa-check-circle"></i>
+      </div>
+      <div
+        class="box"
+        [ngClass]="{ selectedOption: shippingOption.name == 'J&T Express' }"
+        (click)="changeShipOption(2); openCloseShipModal()"
+      >
+        <p>J&T Express: P120</p>
+        <i *ngIf="shippingOption.name == 'J&T Express'" class="fal fa-check-circle"></i>
+      </div>
+    </div>
+  </div>
+
   <div class="checkout_wrapper">
     <div class="top-header" [ngClass]="{ header__scrollShadow: onScroll }">
       <button class="seallBtn" (click)="goBack()" mat-icon-button>
@@ -10,7 +37,9 @@
     <div class="placeOrderBtn_container">
       <div class="totalPay_container">
         <p>Total Payment</p>
-        <h5>P168</h5>
+        <h5 *ngIf="orderDataArr">
+          P{{ orderDataArr.subtotal + shippingOption.price }}
+        </h5>
       </div>
       <div class="placeOrderbtn">Place Order</div>
     </div>
@@ -21,8 +50,14 @@
           <i class="fal fa-street-view"></i>
           <div class="details">
             <div class="title">Delivery Address</div>
-            <p class="name">{{ name }} Hindi Babaero</p>
-            <p class="address">{{ address }}</p>
+            <p class="name">{{ userData.name }}</p>
+            <p class="address">
+              {{
+                userData.address == null
+                  ? "Please set your address"
+                  : userData.address
+              }}
+            </p>
           </div>
           <i class="fal fa-chevron-right"></i>
         </div>
@@ -46,7 +81,7 @@
             <div class="details">
               <div class="product_name_wrapper">{{ item.produtName }}</div>
               <div class="price_quantity_wrapper">
-                <p>{{ item.price }}</p>
+                <p class="price1">P{{ item.price }}</p>
                 <p>x{{ item.quantity }}</p>
               </div>
             </div>
@@ -60,13 +95,17 @@
           class="selectShippingOption_container"
           matRipple
           [matRippleColor]="rippleColor"
+          (click)="openCloseShipModal()"
         >
           <div class="shippingOptions_details">
-            <div class="title">Standard Local</div>
-            <p>Recieved by 28 Oct - 4 Nov</p>
+            <div class="title">{{ shippingOption.name }}</div>
+            <p>
+              Recieved by {{ expectedDeliveredDate.start }} -
+              {{ expectedDeliveredDate.end }}
+            </p>
           </div>
           <div class="shippingOption_price">
-            P169
+            P{{ shippingOption.price }}
             <i class="fal fa-chevron-right"></i>
           </div>
         </div>
@@ -74,7 +113,9 @@
 
       <div class="orderTotal_container">
         <div class="label">Order Total(4 items):</div>
-        <div class="orderTotal">P528</div>
+        <div class="orderTotal" *ngIf="orderDataArr">
+          {{ orderDataArr.subtotal }}
+        </div>
       </div>
 
       <div class="payment_container">
@@ -94,15 +135,17 @@
         <div class="totals_container">
           <div class="totals">
             <div class="label">Merchandise Subtotal</div>
-            <p>P189</p>
+            <p *ngIf="orderDataArr">{{ orderDataArr.subtotal }}</p>
           </div>
           <div class="totals">
             <div class="label">Shipping Subtotal</div>
-            <p>P189</p>
+            <p>P{{ shippingOption.price }}</p>
           </div>
           <div class="totals total">
             <div class="label">Total Payment</div>
-            <p>P589</p>
+            <p *ngIf="orderDataArr">
+              P{{ orderDataArr.subtotal + shippingOption.price }}
+            </p>
           </div>
         </div>
       </div>
