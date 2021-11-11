@@ -49,6 +49,7 @@ import { CheckOutComponent } from './pages/check-out/check-out.component';
 import { BuyAgainComponent } from './pages/buy-again/buy-again.component';
 import { MessagesComponent } from './pages/messages/messages.component';
 import { SearchComponent } from './pages/search/search.component';
+import { PaymentComponent } from './pages/payment/payment.component';
 
 // pages components
 const pagesComponents = [
@@ -90,7 +91,7 @@ const reusableComponents = [
 
 
 @NgModule({
-  declarations: [...pagesComponents, ...reusableComponents],
+  declarations: [...pagesComponents, ...reusableComponents, PaymentComponent],
   imports: [
     BrowserModule,
     CommonModule,

@@ -402,6 +402,19 @@ $shadow: rgba(0, 0, 0, 0.3);
       }
     }
 
+    .checkout_question_order {
+      width: 400px;
+
+      .chceckout_body {
+        .options {
+          .aa:nth-child(1) {
+            background-color: #8d00ca;
+            color: #fff;
+          }
+        }
+      }
+    }
+
     .checkout-wrapper {
       padding: 20px;
       padding-top: 80px;

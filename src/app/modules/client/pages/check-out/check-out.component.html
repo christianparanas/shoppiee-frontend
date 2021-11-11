@@ -37,8 +37,8 @@
     <div class="chceckout_body">
       <div class="qq">You are placing your order, are you sure?</div>
       <div class="options">
-        <div class="aa">Yes</div>
-        <div class="aa">No</div>
+        <div class="aa" (click)="placeOrder(); openConfirmModal()">Yes</div>
+        <div class="aa" (click)="openConfirmModal()">No</div>
       </div>
     </div>
   </div>

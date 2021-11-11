@@ -24,4 +24,8 @@ export class OrdersService {
   getCheckoutData() {
     return this.checkoutData;
   }
+
+  placeOrder(data: any) {
+    return this.http.post(`${baseURL}/api/orders`, data)
+  }
 }

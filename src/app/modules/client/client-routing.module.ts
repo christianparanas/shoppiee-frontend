@@ -24,6 +24,7 @@ import { CheckOutComponent } from './pages/check-out/check-out.component';
 import { BuyAgainComponent } from './pages/buy-again/buy-again.component';
 import { MessagesComponent } from './pages/messages/messages.component';
 import { SearchComponent } from './pages/search/search.component';
+import { PaymentComponent } from './pages/payment/payment.component';
 
 
 const routes: Routes = [
@@ -50,6 +51,7 @@ const routes: Routes = [
     { path: 'cart', component: AddToCartComponent, canActivate: [AuthGuard] },
     { path: 'cart/buy-again', component: BuyAgainComponent, canActivate: [AuthGuard] },
     { path: 'checkout', component: CheckOutComponent, canActivate: [AuthGuard] },
+    { path: 'checkout/payment', component: PaymentComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

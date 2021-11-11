@@ -19,7 +19,6 @@ export class CheckOutComponent implements OnInit {
   shippingOption: any = {
     name: 'Entrego',
     price: 115,
-    isSelected: true,
   };
   payOption: any = {
     name: 'Cash on Delivery',
@@ -82,17 +81,32 @@ export class CheckOutComponent implements OnInit {
     this.expectedDeliveredDate.end = moment().add(17, 'days').format('MMM DD');
   }
 
-
-  openConfirmModal() {
-    this.isConfirmModalOpen =! this.isConfirmModalOpen
-    this.bgOverlayOpen = !this.bgOverlayOpen;
+  placeOrder() {
+    this.orderService
+      .placeOrder({
+        shippingCarrier: this.shippingOption.name,
+        shippingPrice: this.shippingOption.price,
+        payingMethod: this.payOption.name,
+        totalPayment: this.totalPayment,
+        orderItems: this.itemsArr,
+      })
+      .subscribe(
+        (response: any) => {
+          console.log(response);
+          window.location.href = response.url;
+        },
+        (error: any) => console.log(error)
+      );
   }
 
+  openConfirmModal() {
+    this.isConfirmModalOpen = !this.isConfirmModalOpen;
+    this.bgOverlayOpen = !this.bgOverlayOpen;
+  }
 
   async loadCheckoutData() {
     // store checkout data
     this.orderDataArr = await this.orderService.getCheckoutData();
-    console.log(this.orderDataArr);
 
     // store cart items
     this.itemsArr = await this.orderDataArr.checkoutCartItemsArr;
@@ -104,7 +118,6 @@ export class CheckOutComponent implements OnInit {
   loadUserData() {
     this.profileService.getProfileData().subscribe(
       (response: any) => {
-        console.log(response);
         this.userData = response;
       },
       (error) => console.log(error)
@@ -155,9 +168,9 @@ export class CheckOutComponent implements OnInit {
   }
 
   closeModal() {
-    this.bgOverlayOpen = false
-    this.isConfirmModalOpen = false
-    this.isPayModalOpen = false
-    this.isShipModalOpen = false
+    this.bgOverlayOpen = false;
+    this.isConfirmModalOpen = false;
+    this.isPayModalOpen = false;
+    this.isShipModalOpen = false;
   }
 }
