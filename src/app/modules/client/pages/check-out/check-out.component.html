@@ -1,6 +1,6 @@
 <div class="checkout_container">
   <app-nav></app-nav>
-  <div class="bg-overlay" *ngIf="bgOverlayOpen"></div>
+  <div class="bg-overlay" (click)="closeModal()" *ngIf="bgOverlayOpen"></div>
 
   <div class="shipping_option_modal" *ngIf="isShipModalOpen">
     <div class="shipModal-header">
@@ -29,6 +29,16 @@
           *ngIf="shippingOption.name == 'J&T Express'"
           class="fal fa-check-circle"
         ></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="checkout_question_order" *ngIf="isConfirmModalOpen">
+    <div class="chceckout_body">
+      <div class="qq">You are placing your order, are you sure?</div>
+      <div class="options">
+        <div class="aa">Yes</div>
+        <div class="aa">No</div>
       </div>
     </div>
   </div>
@@ -113,7 +123,7 @@
             P{{ orderDataArr.subtotal + shippingOption.price }}
           </h5>
         </div>
-        <div class="placeOrderbtn">Place Order</div>
+        <div class="placeOrderbtn" (click)="openConfirmModal()">Place Order</div>
       </div>
   
       <div class="main_content_container">
@@ -233,7 +243,7 @@
               P{{ orderDataArr.subtotal + shippingOption.price }}
             </h5>
           </div>
-          <div class="placeOrderbtn">Place Order</div>
+          <div class="placeOrderbtn" (click)="openConfirmModal()">Place Order</div>
         </div>
       </div>
     </div>

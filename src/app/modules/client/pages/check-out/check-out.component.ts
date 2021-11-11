@@ -12,6 +12,7 @@ import { OrdersService } from '../../shared/services/orders.service';
   styleUrls: ['./check-out.component.scss'],
 })
 export class CheckOutComponent implements OnInit {
+  isConfirmModalOpen: boolean = false;
   isShipModalOpen: boolean = false;
   isPayModalOpen: boolean = false;
   bgOverlayOpen: boolean = false;
@@ -81,6 +82,13 @@ export class CheckOutComponent implements OnInit {
     this.expectedDeliveredDate.end = moment().add(17, 'days').format('MMM DD');
   }
 
+
+  openConfirmModal() {
+    this.isConfirmModalOpen =! this.isConfirmModalOpen
+    this.bgOverlayOpen = !this.bgOverlayOpen;
+  }
+
+
   async loadCheckoutData() {
     // store checkout data
     this.orderDataArr = await this.orderService.getCheckoutData();
@@ -144,5 +152,12 @@ export class CheckOutComponent implements OnInit {
   openClosePayModal() {
     this.isPayModalOpen = !this.isPayModalOpen;
     this.bgOverlayOpen = !this.bgOverlayOpen;
+  }
+
+  closeModal() {
+    this.bgOverlayOpen = false
+    this.isConfirmModalOpen = false
+    this.isPayModalOpen = false
+    this.isShipModalOpen = false
   }
 }
