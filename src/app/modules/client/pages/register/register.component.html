@@ -51,6 +51,19 @@
         <div class="ar">
           <input
             type="text"
+            (input)="removeWarns(5)"
+            formControlName="address"
+            placeholder="Address"
+            required
+          />
+          <div class="errorNotify4" *ngIf="submitValidate.address">
+            This field is required!
+          </div>
+        </div>
+
+        <div class="ar">
+          <input
+            type="text"
             (input)="removeWarns(3)"
             (input)="checkPass()"
             formControlName="password"

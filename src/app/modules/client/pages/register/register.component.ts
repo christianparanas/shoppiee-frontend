@@ -28,6 +28,7 @@ export class RegisterComponent implements OnInit {
     email: false,
     password: false,
     confirmpass: false,
+    address: false,
   };
 
   constructor(
@@ -51,6 +52,7 @@ export class RegisterComponent implements OnInit {
     this.registerForm = new FormGroup({
       name: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
+      address: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
       confirmPassword: new FormControl('', Validators.required),
     });
@@ -61,6 +63,7 @@ export class RegisterComponent implements OnInit {
     this.submitValidate = {
       name: this.registerForm.controls.name.value.trim() == '' ? true : false,
       email: this.registerForm.controls.email.value.trim() == '' ? true : false,
+      address: this.registerForm.controls.address.value.trim() == '' ? true : false,
       password:
         this.registerForm.controls.password.value.trim() == '' ? true : false,
       confirmpass:
@@ -76,6 +79,7 @@ export class RegisterComponent implements OnInit {
     if (val == 2) this.submitValidate.email = false;
     if (val == 3) this.submitValidate.password = false;
     if (val == 4) this.submitValidate.confirmpass = false;
+    if (val == 5) this.submitValidate.address = false;
   }
 
   // submit form
