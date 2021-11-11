@@ -16,6 +16,7 @@
       <div
         class="cart_item_container"
         *ngFor="let cart of cartArray; trackBy: trackByFn"
+        [@fadeOutLeftOnLeave]
       >
         <div class="about-items">
           <input

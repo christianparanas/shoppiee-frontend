@@ -2,7 +2,7 @@
   <app-nav></app-nav>
   <div class="bg-overlay" (click)="closeModal()" *ngIf="bgOverlayOpen"></div>
 
-  <div class="shipping_option_modal" *ngIf="isShipModalOpen">
+  <div class="shipping_option_modal" *ngIf="isShipModalOpen" [@fadeInOnEnter]>
     <div class="shipModal-header">
       <h5><i class="fal fa-truck"></i>Shipping option</h5>
       <i class="fal fa-times" (click)="openCloseShipModal()"></i>
@@ -33,7 +33,7 @@
     </div>
   </div>
 
-  <div class="checkout_question_order" *ngIf="isConfirmModalOpen">
+  <div class="checkout_question_order" *ngIf="isConfirmModalOpen" [@fadeInOnEnter]>
     <div class="chceckout_body">
       <div class="qq">You are placing your order, are you sure?</div>
       <div class="options">
@@ -43,7 +43,7 @@
     </div>
   </div>
 
-  <div class="shipping_option_modal" *ngIf="isPayModalOpen">
+  <div class="shipping_option_modal" *ngIf="isPayModalOpen" [@fadeInOnEnter]>
     <div class="shipModal-header">
       <h5><i class="fal fa-credit-card"></i>Payment option</h5>
       <i class="fal fa-times" (click)="openClosePayModal()"></i>

@@ -22,6 +22,7 @@
     "@angular/router": "~12.2.0",
     "@ngneat/hot-toast": "^3.4.1",
     "@ngneat/overview": "^2.0.2",
+    "angular-animations": "^0.11.0",
     "aos": "^2.3.4",
     "chart.js": "^2.9.4",
     "moment": "^2.29.1",

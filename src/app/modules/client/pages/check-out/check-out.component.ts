@@ -3,6 +3,9 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import * as moment from 'moment';
 
+import { fadeInOnEnterAnimation, fadeOutOnLeaveAnimation } from 'angular-animations';
+ 
+
 import { ProfileService } from '../../shared/services/profile.service';
 import { OrdersService } from '../../shared/services/orders.service';
 
@@ -10,6 +13,10 @@ import { OrdersService } from '../../shared/services/orders.service';
   selector: 'app-check-out',
   templateUrl: './check-out.component.html',
   styleUrls: ['./check-out.component.scss'],
+  animations: [
+    fadeInOnEnterAnimation(),
+    fadeOutOnLeaveAnimation()
+  ]
 })
 export class CheckOutComponent implements OnInit {
   isConfirmModalOpen: boolean = false;

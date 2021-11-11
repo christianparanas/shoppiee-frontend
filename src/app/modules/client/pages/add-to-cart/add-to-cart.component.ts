@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
 import { Location } from '@angular/common';
 
+import { fadeOutLeftOnLeaveAnimation } from 'angular-animations'
+
 import { NavComponent } from '../../components/nav/nav.component';
 
 // services
@@ -19,6 +21,9 @@ import { OrdersService } from '../../shared/services/orders.service';
   selector: 'app-add-to-cart',
   templateUrl: './add-to-cart.component.html',
   styleUrls: ['./add-to-cart.component.scss'],
+  animations: [
+    fadeOutLeftOnLeaveAnimation()
+  ]
 })
 export class AddToCartComponent implements OnInit {
   temporary: any = [];
