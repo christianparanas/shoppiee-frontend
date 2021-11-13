@@ -92,9 +92,7 @@ export class CheckOutComponent implements OnInit {
     this.orderService
       .placeOrder({
         shippingCarrier: this.shippingOption.name,
-        shippingPrice: this.shippingOption.price,
         payingMethod: this.payOption.name,
-        totalPayment: this.totalPayment,
         orderItems: this.itemsArr,
       })
       .subscribe(
