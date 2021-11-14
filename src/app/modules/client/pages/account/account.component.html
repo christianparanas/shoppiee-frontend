@@ -1,6 +1,52 @@
 <div class="account_container">
   <app-nav currentRoute="account"></app-nav>
 
+  <div (click)="closeOrderModal()" *ngIf="isOrderModalOpen" class="backdrop"></div>
+  <div *ngIf="isOrderModalOpen" class="order_modal_container">
+    <div class="order_modal_container_header">
+      <h5>Order</h5>
+      <i (click)="closeOrderModal()" class="fal fa-times"></i>
+    </div>
+    <div class="order_modal_container_body">
+      <div class="order_items_container">
+        <div class="order_item" *ngFor="let item of orderModalData.Order_items">
+          <img [src]="item.Product.product_image" alt="">
+          <div class="name_price_wrapper">
+            <div class="name">{{ item.Product.product_name }}</div>
+            <p>P{{ item.Product.product_price }}</p>
+          </div>
+          <div class="quantity">x{{ item.quantity}}</div>
+        </div>
+      </div>
+      <div class="order_details_container">
+        <div class="ord">
+          <div class="lbl">Order Ref#:</div>
+          <div class="con">{{ orderModalData.orderId }}</div>
+        </div>
+        <div class="ord">
+          <div class="lbl">Shipping courier:</div>
+          <div class="con">{{ orderModalData.order_shipping_courier }}</div>
+        </div>
+        <div class="ord">
+          <div class="lbl">Payment method:</div>
+          <div class="con">{{ orderModalData.order_payment_method }}</div>
+        </div>
+        <div class="ord">
+          <div class="lbl">Date ordered:</div>
+          <div class="con">{{ orderModalData.updatedAt | dateAgo }}</div>
+        </div>
+        <div class="ord">
+          <div class="lbl">Status:</div>
+          <div class="con status" [ngClass]="orderModalData.order_status == 'Paid' ? 'paid' : 'unpaid'">{{ orderModalData.order_status }}</div>
+        </div>
+        <div class="ord">
+          <div class="lbl">Total paid:</div>
+          <div class="con">P{{ orderModalData.order_totalpayment }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="account_content__container">
     <div class="account_header__container">
       <div class="header_inner">
@@ -41,7 +87,7 @@
               </div>
             </ng-template>
             <div class="order_wrapper">
-              <div class="order" *ngFor="let order of userOrders">
+              <div (click)="openOrderModal(order.id)" class="order" *ngFor="let order of userOrders">
                 <div class="ord">
                   <div class="lbl">Order Ref#:</div>
                   <div class="con">{{ order.orderId }}</div>
@@ -80,7 +126,7 @@
               </div>
             </ng-template>
             <div class="order_wrapper">
-              <div class="order" *ngFor="let order of paidOrders">
+              <div class="order" (click)="openOrderModal(order.id)" *ngFor="let order of paidOrders">
                 <div class="ord">
                   <div class="lbl">Order Ref#:</div>
                   <div class="con">{{ order.orderId }}</div>
@@ -115,11 +161,11 @@
             <ng-template mat-tab-label>
               <div class="" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
                 <i class="fal fa-calendar-times" style="margin-bottom: 10px;"></i>
-                <p style="margin-bottom: 10px;">Unpaid Orders</p>
+                <p style="margin-bottom: 10px; font-size: 14px;">Unpaid Orders</p>
               </div>
             </ng-template>
             <div class="order_wrapper">
-              <div class="order" *ngFor="let order of unpaidOrders">
+              <div class="order" (click)="openOrderModal(order.id)" *ngFor="let order of unpaidOrders">
                 <div class="ord">
                   <div class="lbl">Order Ref#:</div>
                   <div class="con">{{ order.orderId }}</div>

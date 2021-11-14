@@ -14,11 +14,13 @@ import { OrdersService } from '../../shared/services/orders.service';
   styleUrls: ['./account.component.scss'],
 })
 export class AccountComponent implements OnInit {
+  isOrderModalOpen: boolean = false
   userIsAuth: boolean = true;
   userData: any = [];
   userOrders: any = []
   unpaidOrders: any = []
   paidOrders: any = []
+  orderModalData: any =[]
 
 
   constructor(
@@ -54,6 +56,22 @@ export class AccountComponent implements OnInit {
         console.log(error)
       }
     )
+  }
+
+  closeOrderModal() {
+    this.isOrderModalOpen = false
+  }
+
+  openOrderModal(orderId: any) {
+
+    this.userOrders.map(async (order: any) => {
+      if(order.id == orderId) {
+        this.orderModalData = await order
+        console.log(this.orderModalData)
+        this.isOrderModalOpen = true
+      }
+    })
+
   }
 
   loadAccountData = () => {
