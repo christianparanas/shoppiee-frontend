@@ -5,7 +5,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
 // services
-import { UsersService } from "../../shared/services/users.service"
+import { OrdersService } from "../../shared/services/orders.service"
 
  @Component({
   selector: 'app-orders',
@@ -13,14 +13,14 @@ import { UsersService } from "../../shared/services/users.service"
   styleUrls: ['./orders.component.scss']
 })
 export class OrdersComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['image', 'name', 'address', 'role', 'options'];
+  displayedColumns: string[] = ['id', 'totalPayment', 'shippingCourier', 'paymentMethod', 'buyerId', 'status', 'options'];
   dataSource: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private usersService: UsersService) {
-    this.fetchUsers()
+  constructor(private ordersService: OrdersService) {
+    this.fetchOrders()
   }
 
   ngOnInit() {}
@@ -38,8 +38,8 @@ export class OrdersComponent implements OnInit, AfterViewInit {
     }
   }
 
-  fetchUsers() {
-    this.usersService.getUsers().subscribe(
+  fetchOrders() {
+    this.ordersService.getOrders().subscribe(
       (response) => {
         console.log(response)
 

@@ -16,53 +16,57 @@
     <div class="orders_content_container">
       <div class="mat-elevation-z8">
         <table mat-table [dataSource]="dataSource" matSort>
-          <ng-container matColumnDef="image">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>Image</th>
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Order Id</th>
             <td mat-cell *matCellDef="let row">
-              <img
-                class="productImage"
-                [src]="
-                  row.image == null
-                    ? '../../../../../assets/imgs/defaultUserImage.png'
-                    : row.image
-                "
-                alt=""
-              />
+              {{ row.id }}
             </td>
           </ng-container>
 
           <!-- Name Column -->
-          <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+          <ng-container matColumnDef="totalPayment">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Total Payment</th>
             <td mat-cell *matCellDef="let row">
-              {{
-                row.name.length > 10
-                  ? row.name.substring(0, 10) + " ..."
-                  : row.name
-              }}
+              {{ row.order_totalpayment }}
             </td>
           </ng-container>
 
-          <ng-container matColumnDef="address">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>Address</th>
-            <td mat-cell *matCellDef="let row">null</td>
+          <ng-container matColumnDef="paymentMethod">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Payment Method</th>
+            <td mat-cell *matCellDef="let row">
+              {{ row.order_payment_method }}
+            </td>
           </ng-container>
 
-          <ng-container matColumnDef="role">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>Role</th>
+          <ng-container matColumnDef="shippingCourier">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Courier</th>
+            <td mat-cell *matCellDef="let row">
+              {{ row.order_shipping_courier }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="buyerId">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Buyer ID</th>
+            <td mat-cell *matCellDef="let row">
+              {{ row.User.id }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
             <td mat-cell *matCellDef="let row">
               <mat-chip-list>
-                <mat-chip *ngIf="row.role == 'admin'" color="primary" selected>
-                  {{ row.role }}
+                <mat-chip *ngIf="row.order_status == 'Paid'" color="primary" selected>
+                  {{ row.order_status }}
                 </mat-chip>
               </mat-chip-list>
               <mat-chip-list>
                 <mat-chip
-                  *ngIf="row.role == 'user'"
+                  *ngIf="row.order_status == 'Unpaid'"
                   color="secondary"
                   selected
                 >
-                  {{ row.role }}
+                  {{ row.order_status }}
                 </mat-chip>
               </mat-chip-list>
             </td>
