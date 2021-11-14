@@ -28,4 +28,8 @@ export class OrdersService {
   placeOrder(data: any) {
     return this.http.post(`${baseURL}/api/orders`, data)
   }
+
+  getOrders() {
+    return this.http.get(`${baseURL}/api/orders`)
+  }
 }

@@ -6,6 +6,7 @@ import { HotToastService } from '@ngneat/hot-toast';
 import { ProfileService } from '../../shared/services/profile.service';
 import { ImgUploadService } from '../../../../core/services/img-upload.service';
 import { AuthService } from '../../shared/services/auth.service'
+import { OrdersService } from '../../shared/services/orders.service';
 
 @Component({
   selector: 'app-account',
@@ -15,32 +16,45 @@ import { AuthService } from '../../shared/services/auth.service'
 export class AccountComponent implements OnInit {
   userIsAuth: boolean = true;
   userData: any = [];
+  userOrders: any = []
+  unpaidOrders: any = []
+  paidOrders: any = []
+
 
   constructor(
     private router: Router,
     private profileService: ProfileService,
     private imgUpload: ImgUploadService,
     private authService: AuthService,
-    private toast: HotToastService
+    private toast: HotToastService,
+    private ordersService: OrdersService
   ) {}
 
   ngOnInit(): void {
     this.loadAccountData();
+    this.loadUserOrders()
   }
 
-  // imgUp = (event: any) => {
-  //   const file: File = event.target.files[0];
-  //   console.log(file);
+  loadUserOrders() {
+    this.ordersService.getOrders().subscribe(
+      (response: any) => {
+        console.log(response)
+        this.userOrders = response
 
-  //   this.imgUpload.imgUpload(file).subscribe(
-  //     (response) => {
-  //       console.log(response);
-  //     },
-  //     (error) => {
-  //       console.error(error);
-  //     }
-  //   );
-  // };
+        response.map((order: any) => {
+          if(order.order_status == "Paid") {
+            this.paidOrders.push(order)
+          }
+          else {
+            this.unpaidOrders.push(order)
+          }
+        })
+      },
+      (error) => {
+        console.log(error)
+      }
+    )
+  }
 
   loadAccountData = () => {
     this.profileService.getProfileData().subscribe(

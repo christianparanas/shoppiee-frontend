@@ -100,26 +100,79 @@
 
       .content {
         
-        .acc-tabs {
-          background: #fff;
+        .mat-tab-group {
           padding: 20px 0;
         }
-      }
-    }
 
+        
+        .mat-tab {
+        }
 
-    .userstore__container {
-      padding: 10px 20px;
-      display: grid;
-      place-items: end;
+        .order_wrapper {
+          padding: 20px;
+          display: grid;
+          grid-gap: 10px;
 
-      .toStore_btn {
-        font-size: 12px;
-        border: 1px solid #e3e3e3;
-        width: fit-content;
-        padding: 8px 10px;
-        box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
-        border-radius: 8px;
+          .order {
+            border: 1px solid #e3e3e3;
+            box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
+            padding: 10px;
+            border-radius: 8px;
+            transition: all .3s ease;
+            border: 2px solid #fafafa;
+
+            .ord {
+              display: flex;
+              font-size: 10px;
+
+              .lbl {
+                margin-right: 5px;
+              }
+            }
+
+            .bottomInfo {
+              margin-top: 10px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+
+              .total {
+
+                .lbl {
+                  font-size: 10px;
+                }
+
+                .con {
+                  font-size: 14px;
+                }
+              }
+
+              .status {
+
+                .status_con {
+                  border: 1px solid #e3e3e3;
+                  font-size: 11px;
+                  padding: 5px 7px;
+                  border-radius: 4px;
+                  box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
+                  color: #fff;
+                }
+
+                .paid {
+                  background-color: #8d00ca;
+                }
+
+                .unpaid {
+                  background-color: #fa6238;
+                }
+              }
+            }
+
+            &:hover {
+              border: 2px solid #fa6238;
+            }
+          }
+        }
       }
     }
   }
