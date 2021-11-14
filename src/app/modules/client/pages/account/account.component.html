@@ -36,8 +36,8 @@
           <mat-tab id="tab">
             <ng-template mat-tab-label>
               <div class="" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
-                <i class="fal fa-wallet"></i>
-                <p>All Orders</p>
+                <i class="fal fa-bags-shopping" style="margin-bottom: 10px;"></i>
+                <p style="margin-bottom: 10px;">All Orders</p>
               </div>
             </ng-template>
             <div class="order_wrapper">
@@ -55,7 +55,7 @@
                   <div class="con">{{ order.order_payment_method }}</div>
                 </div>
                 <div class="ord">
-                  <div class="lbl">Date</div>
+                  <div class="lbl">Date ordered:</div>
                   <div class="con">{{ order.updatedAt | dateAgo }}</div>
                 </div>
 
@@ -75,8 +75,8 @@
           <mat-tab>
             <ng-template mat-tab-label>
               <div class="" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
-                <i class="fal fa-box-alt"></i>
-                <p>Paid Orders</p>
+                <i class="fal fa-box-check" style="margin-bottom: 10px;"></i>
+                <p style="margin-bottom: 10px;">Paid Orders</p>
               </div>
             </ng-template>
             <div class="order_wrapper">
@@ -94,7 +94,7 @@
                   <div class="con">{{ order.order_payment_method }}</div>
                 </div>
                 <div class="ord">
-                  <div class="lbl">Date</div>
+                  <div class="lbl">Date ordered:</div>
                   <div class="con">{{ order.updatedAt | dateAgo }}</div>
                 </div>
 
@@ -114,8 +114,8 @@
           <mat-tab>
             <ng-template mat-tab-label>
               <div class="" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
-                <i class="fal fa-truck"></i>
-                <p>Unpaid Orders</p>
+                <i class="fal fa-calendar-times" style="margin-bottom: 10px;"></i>
+                <p style="margin-bottom: 10px;">Unpaid Orders</p>
               </div>
             </ng-template>
             <div class="order_wrapper">
@@ -133,7 +133,7 @@
                   <div class="con">{{ order.order_payment_method }}</div>
                 </div>
                 <div class="ord">
-                  <div class="lbl">Date</div>
+                  <div class="lbl">Date ordered: </div>
                   <div class="con">{{ order.updatedAt | dateAgo }}</div>
                 </div>
 
