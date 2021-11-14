@@ -3,8 +3,10 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import * as moment from 'moment';
 
-import { fadeInOnEnterAnimation, fadeOutOnLeaveAnimation } from 'angular-animations';
- 
+import {
+  fadeInOnEnterAnimation,
+  fadeOutOnLeaveAnimation,
+} from 'angular-animations';
 
 import { ProfileService } from '../../shared/services/profile.service';
 import { OrdersService } from '../../shared/services/orders.service';
@@ -13,10 +15,7 @@ import { OrdersService } from '../../shared/services/orders.service';
   selector: 'app-check-out',
   templateUrl: './check-out.component.html',
   styleUrls: ['./check-out.component.scss'],
-  animations: [
-    fadeInOnEnterAnimation(),
-    fadeOutOnLeaveAnimation()
-  ]
+  animations: [fadeInOnEnterAnimation(), fadeOutOnLeaveAnimation()],
 })
 export class CheckOutComponent implements OnInit {
   isConfirmModalOpen: boolean = false;
@@ -94,11 +93,16 @@ export class CheckOutComponent implements OnInit {
         shippingCarrier: this.shippingOption.name,
         payingMethod: this.payOption.name,
         orderItems: this.itemsArr,
+        totalPayment: this.totalPayment,
       })
       .subscribe(
         (response: any) => {
-          console.log(response);
-          window.location.href = response.url;
+          if (this.payOption.name == 'Cash on Delivery') {
+            console.log(response);
+            this.router.navigate(['/checkout/payment']);
+          } else {
+            window.location.href = response.url;
+          }
         },
         (error: any) => console.log(error)
       );
