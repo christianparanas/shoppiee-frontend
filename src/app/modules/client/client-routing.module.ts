@@ -51,7 +51,7 @@ const routes: Routes = [
     { path: 'cart', component: AddToCartComponent, canActivate: [AuthGuard] },
     { path: 'cart/buy-again', component: BuyAgainComponent, canActivate: [AuthGuard] },
     { path: 'checkout', component: CheckOutComponent, canActivate: [AuthGuard] },
-    { path: 'checkout/payment', component: PaymentComponent, canActivate: [AuthGuard] },
+    { path: 'checkout/success', component: PaymentComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

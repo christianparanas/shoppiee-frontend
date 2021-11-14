@@ -75,7 +75,7 @@ export class CheckOutComponent implements OnInit {
     window.addEventListener('scroll', this.listenScrollEvent);
 
     await this.loadCheckoutData();
-    // this.redirectIfNoCheckoutItems();
+    this.redirectIfNoCheckoutItems();
 
     await this.loadUserData();
 
@@ -99,7 +99,7 @@ export class CheckOutComponent implements OnInit {
         (response: any) => {
           if (this.payOption.name == 'Cash on Delivery') {
             console.log(response);
-            this.router.navigate(['/checkout/payment']);
+            this.router.navigate(['/checkout/success']);
           } else {
             window.location.href = response.url;
           }
