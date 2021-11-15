@@ -18,9 +18,10 @@ export class CategoriesComponent implements OnInit {
   }
 
   fetchProductsCategories() {
-    this.productService.productCategories().subscribe(
+    this.productService.getProductCategories().subscribe(
       (response) => {
         this.productCategoriesArray = response;
+        console.log(response)
       },
       (error) => {
         console.log(error);

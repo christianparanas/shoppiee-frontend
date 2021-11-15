@@ -66,16 +66,13 @@
       </div>
 
       <div class="product_category_container">
-        <label for="product_category">Product category</label>
+        <label for="CategoryId">Product category</label>
         <select
-          name="product_category"
+          name="CategoryId"
           id=""
-          formControlName="product_category"
+          formControlName="CategoryId"
         >
-          <option value="mensApparel">Men's Apparel</option>
-          <option value="mensApparel">Women's Apparel</option>
-          <option value="mensApparel">Appliances</option>
-          <option value="other">Other</option>
+          <option *ngFor="let category of categoriesArr" [value]="category.id">{{ category.name }}</option>
         </select>
       </div>
 

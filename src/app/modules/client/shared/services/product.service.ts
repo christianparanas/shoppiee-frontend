@@ -47,11 +47,11 @@ export class ProductService {
     return this.http.get(`${baseURL}/api/products`);
   }
 
-  productCategories(): Observable<any> {
-    return this.http.get(`${baseUrl}/products/categories`);
+  getProductCategories() {
+    return this.http.get(`${baseURL}/api/categories`);
   }
 
-  fetchSpecificCategoryProduct(categoryId: any): Observable<any> {
-    return this.http.get(`${baseUrl}/products/category/${categoryId}`);
+  getCategoryProducts(categoryName: any) {
+    return this.http.get(`${baseURL}/api/categories/${categoryName}`);
   }
 }

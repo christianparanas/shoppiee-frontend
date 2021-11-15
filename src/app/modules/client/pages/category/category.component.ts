@@ -12,8 +12,8 @@ import { ProductService } from '../../shared/services/product.service';
 })
 export class CategoryComponent implements OnInit {
   isImgLoaded: boolean = false;
-  categoryProductsArray = new Array(11);
-  categoryId: any;
+  categoryProductsArray: any = new Array(11);
+  category: any;
 
   constructor(
     private productService: ProductService,
@@ -21,7 +21,7 @@ export class CategoryComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.categoryId = this.route.snapshot.paramMap.get('id');
+    this.category = this.route.snapshot.paramMap.get('id');
     this.fetchCategoryProducts();
   }
 
@@ -34,8 +34,9 @@ export class CategoryComponent implements OnInit {
   }
 
   fetchCategoryProducts() {
-    this.productService.fetchSpecificCategoryProduct(this.categoryId).subscribe(
+    this.productService.getCategoryProducts(this.category).subscribe(
       (response) => {
+        console.log(response)
         this.categoryProductsArray = response;
       },
       (error) => {

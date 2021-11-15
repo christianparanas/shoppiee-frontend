@@ -14,7 +14,7 @@
     <div class="category_content__container">
       <div class="category__container">
         <div class="options">
-          <h4>{{ categoryId }}</h4>
+          <h4>{{ category }}</h4>
           <div class="sort">
             <label for="op">Sort by:</label>
 
@@ -25,9 +25,9 @@
           </div>
         </div>
 
-        <div class="container">
+        <div class="container" *ngIf="categoryProductsArray">
           <app-productpreview
-            *ngFor="let product of categoryProductsArray"
+            *ngFor="let product of categoryProductsArray.Products"
             [productArray]="product"
           ></app-productpreview>
         </div>

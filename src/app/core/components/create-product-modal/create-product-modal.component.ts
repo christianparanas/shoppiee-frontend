@@ -20,12 +20,13 @@ import { ProductService } from 'src/app/modules/client/shared/services/product.s
   styleUrls: ['./create-product-modal.component.scss'],
 })
 export class CreateProductModalComponent implements OnInit {
-  submitLoading: boolean = false
+  submitLoading: boolean = false;
+  categoriesArr: any = []
   @Output() btnClickCloseModal = new EventEmitter();
   @Output() btnClickSubmitModal = new EventEmitter();
 
   imgFilePreview: any = '../../../../assets/imgs/uploadSvg.svg';
-  imgData: any = ""
+  imgData: any = '';
   createProductForm: FormGroup;
 
   constructor(
@@ -36,6 +37,7 @@ export class CreateProductModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.initForm();
+    this.getCategories();
   }
 
   initForm() {
@@ -45,8 +47,20 @@ export class CreateProductModalComponent implements OnInit {
       product_description: new FormControl('', Validators.required),
       product_price: new FormControl('', Validators.required),
       product_quantity: new FormControl('', Validators.required),
-      product_category: new FormControl('', Validators.required),
+      CategoryId: new FormControl('', Validators.required),
     });
+  }
+
+  getCategories() {
+    this.productService.getProductCategories().subscribe(
+      (response) => {
+        console.log(response);
+        this.categoriesArr = response
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
   closeModal() {
@@ -54,59 +68,63 @@ export class CreateProductModalComponent implements OnInit {
   }
 
   onSubmitCreateProduct() {
-
     // check if form is valid, if not then the submission will not proceed
-    if(this.createProductForm.status == "VALID") {
-      this.submitLoading = true
+    if (this.createProductForm.status == 'VALID') {
+      this.submitLoading = true;
 
       // upload image to cloudinary and wait for its response for the image url that we need to reference the uploaded image
       this.imgUpload.imgUpload(this.imgData).subscribe(
         (response) => {
           // if success call the sendToServer function to save the product details to our database with the response image url of cloudinary
-          this.sendDataToServer(response)
-          this.submitLoading = false
+          this.sendDataToServer(response);
+          this.submitLoading = false;
         },
         (error) => {
           // catch error if the image uploading process got an error
-          this.toast.error("Error occured when uploading the image, please try again!", { position: 'top-right' });
+          this.toast.error(
+            'Error occured when uploading the image, please try again!',
+            { position: 'top-right' }
+          );
           console.error(error);
-          this.submitLoading = false
+          this.submitLoading = false;
         }
       );
-    }
-    else {
-      this.toast.info('Please fill out the fields and choose an image', { position: 'top-right' });
+    } else {
+      this.toast.info('Please fill out the fields and choose an image', {
+        position: 'top-right',
+      });
     }
   }
 
   // this method is the responsible for saving the product details to the database after the image got uploaded to the cloudinary
   sendDataToServer(product_img_res: any) {
-
     // store imgURL from cloundinary
-    const imgUrl = product_img_res.imgURL
+    const imgUrl = product_img_res.imgURL;
 
     // destructure the array, except for the product image on the form because we dont need to store in the db
-    const {product_image, ...noProductImg } = this.createProductForm.value
+    const { product_image, ...noProductImg } = this.createProductForm.value;
 
     // call the product service and use its addproduct method to store product details
-    this.productService.addproduct({
-      product_image: imgUrl,
-      ...noProductImg
-    }).subscribe(
-      (response: any) => {
-        this.submitLoading = false
-        this.toast.success(response.message, { position: 'top-right' });
+    this.productService
+      .addproduct({
+        product_image: imgUrl,
+        ...noProductImg,
+      })
+      .subscribe(
+        (response: any) => {
+          this.submitLoading = false;
+          this.toast.success(response.message, { position: 'top-right' });
 
-        // close the modal after product save
-        this.btnClickSubmitModal.emit()
-        this.btnClickCloseModal.emit();
-      },
-      (error) => {
-        this.submitLoading = false
-        this.toast.error(error.message, { position: 'top-right' });
-        console.error(error)
-      }
-    )
+          // close the modal after product save
+          this.btnClickSubmitModal.emit();
+          this.btnClickCloseModal.emit();
+        },
+        (error) => {
+          this.submitLoading = false;
+          this.toast.error(error.message, { position: 'top-right' });
+          console.error(error);
+        }
+      );
   }
 
   // this function will load the image preview in the template when user click upload image
