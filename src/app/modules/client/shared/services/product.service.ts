@@ -27,8 +27,8 @@ export class ProductService {
   }
 
 
-  discoverProducts(): Observable<any> {
-    return this.http.get(`${baseURL}/api/products`);
+  discoverProducts(limit: number) {
+    return this.http.get(`${baseURL}/api/products/discover?limit=${limit}`);
   }
 
   fetchUserStoreProducts(): Observable<any> {
@@ -39,8 +39,8 @@ export class ProductService {
     return this.http.get(`${baseURL}/api/products`);
   }
 
-  newProducts(): Observable<any> {
-    return this.http.get(`${baseURL}/api/products`);
+  newProducts() {
+    return this.http.get(`${baseURL}/api/products/new`);
   }
 
   simillarProducts(): Observable<any> {

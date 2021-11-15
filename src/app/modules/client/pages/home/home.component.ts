@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   discoverProductsArray: any = new Array(11);
   topProductsArray: any = new Array(7);
   newProductsArray: any = new Array(7);
+  discoverLimit: number = 1
 
   constructor(private productService: ProductService) {}
 
@@ -26,9 +27,8 @@ export class HomeComponent implements OnInit {
     this.fetchDiscoverProducts();
   }
 
-
   fetchDiscoverProducts() {
-    this.productService.discoverProducts().subscribe(
+    this.productService.discoverProducts(this.discoverLimit).subscribe(
       (response) => {
         this.discoverProductsArray = response;
       },
@@ -36,6 +36,12 @@ export class HomeComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  loadMoreDiscoverProducts() {
+    this.discoverLimit++
+
+    this.fetchDiscoverProducts()
   }
 
   fetchTopProducts() {
