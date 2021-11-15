@@ -22,6 +22,8 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   isPasswordMatch: boolean = true;
   submitLoading: boolean = false;
+  isVisibility:boolean = false;
+  isVisibilityCon:boolean = false;
 
   submitValidate: any = {
     name: false,

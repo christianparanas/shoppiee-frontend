@@ -62,28 +62,36 @@
         </div>
 
         <div class="ar">
-          <input
-            type="text"
-            (input)="removeWarns(3)"
-            (input)="checkPass()"
-            formControlName="password"
-            placeholder="Password"
-            required
-          />
+          <div class='visible'>
+            <input
+              type="text"
+              (input)="removeWarns(3)"
+              (input)="checkPass()"
+              formControlName="password"
+              placeholder="Password"
+              [type]='isVisibilityCon ? "text":"password"'
+              required
+            />
+            <mat-icon class='password-icon' (click)='isVisibilityCon=!isVisibilityCon'>{{isVisibilityCon ? 'visibility' : 'visibility_off'}}</mat-icon>
+          </div>
           <div class="errorNotify4" *ngIf="submitValidate.password">
             This field is required!
           </div>
         </div>
 
         <div class="ar">
-          <input
-            type="text"
-            (input)="removeWarns(4)"
-            (input)="checkPass()"
-            formControlName="confirmPassword"
-            placeholder="Confirm Password"
-            required
-          />
+          <div class='visible'>
+            <input
+              type="text"
+              (input)="removeWarns(4)"
+              (input)="checkPass()"
+              formControlName="confirmPassword"
+              placeholder="Confirm Password"
+              [type]='isVisibility ? "text" : "password"'
+              required
+            />
+            <mat-icon class='password-icon' (click)='isVisibility=!isVisibility'>{{isVisibility ? 'visibility' : 'visibility_off'}}</mat-icon>
+          </div>
           <div class="errorNotify4" *ngIf="!isPasswordMatch">
             Password unmatched!
           </div>

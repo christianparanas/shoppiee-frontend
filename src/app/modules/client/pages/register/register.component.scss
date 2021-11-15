@@ -39,7 +39,23 @@ $btnBgColor: #8d00ca;
         .ar {
           margin-bottom: 20px;
           position: relative;
-
+          .visible{
+            display:grid;
+            grid-template-columns: 1fr auto;
+            .password-icon{
+              box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
+              width:50px;
+              height: 50px;
+              display:flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 0px 8px 8px 0px;
+              border: 1px solid #e3e3e3;
+            }
+            input{
+              border-radius: 8px 0px 0px 8px;
+            }
+          }
           .errorNotify4 {
             padding: 2px 0 0 8px;
             position: absolute;
