@@ -14,7 +14,7 @@
 
       <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
         <input type="email" placeholder="Email" formControlName="email" />
-        <input type="text" placeholder="Password" formControlName="password" />
+        <input type="password" placeholder="Password" formControlName="password" />
         <div class="forgotpass">
           <p><a routerLink="/account/recover">Forgot your password?</a></p>
         </div>
