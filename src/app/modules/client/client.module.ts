@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClientRoutingModule } from './client-routing.module';
 import { MaterialModule } from '../material/material.module';
 import { CoreModule } from '../../core/core.module'
+import {MatIconModule} from '@angular/material/icon'
 
 // vendors
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
@@ -104,7 +105,8 @@ const reusableComponents = [
     HotToastModule.forRoot(),
     BrowserAnimationsModule,
     MaterialModule,
-    CoreModule
+    CoreModule,
+    MatIconModule,
   ],
   providers: []
 })

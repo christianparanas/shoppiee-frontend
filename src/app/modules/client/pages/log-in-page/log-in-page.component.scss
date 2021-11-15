@@ -35,7 +35,22 @@ $btnBgColor: #8d00ca;
       form {
         display: grid;
         grid-gap: 15px;
-
+        .password-icons{
+            display:grid;
+            grid-template-columns: 1fr auto;
+            .password-icon{
+              display:flex;
+              justify-content: center;
+              align-items: center;
+              width:50px; height: 50px;
+              border-radius: 0px 8px 8px 0px;
+              box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
+              border: 1px solid #e3e3e3;
+          }
+          input{
+            border-radius: 8px 0px 0px 8px;
+          }
+        }
         input {
           padding: 15px;
           border: 1px solid #e3e3e3;
@@ -45,7 +60,6 @@ $btnBgColor: #8d00ca;
           font-size: 12px;
           box-shadow: 0 2px 2px 0 RGB(43 80 237 / 20%);
         }
-
         button {
           background: $btnBgColor;
           color: #fff;

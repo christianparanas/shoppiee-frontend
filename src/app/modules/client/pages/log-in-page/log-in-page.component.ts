@@ -19,6 +19,7 @@ import { AuthService } from '../../shared/services/auth.service';
 export class LogInPageComponent implements OnInit {
   loginForm: FormGroup;
   submitLoading: boolean = false;
+  isVisibility:boolean = false
 
   constructor(
     private authService: AuthService,
