@@ -12,7 +12,7 @@ import { ProductService } from '../../shared/services/product.service';
 })
 export class CategoryComponent implements OnInit {
   isImgLoaded: boolean = false;
-  categoryProductsArray: any = new Array(11);
+  categoryProductsArray: any = [];
   category: any;
 
   constructor(
@@ -36,7 +36,7 @@ export class CategoryComponent implements OnInit {
   fetchCategoryProducts() {
     this.productService.getCategoryProducts(this.category).subscribe(
       (response) => {
-        console.log(response)
+        console.log(response);
         this.categoryProductsArray = response;
       },
       (error) => {

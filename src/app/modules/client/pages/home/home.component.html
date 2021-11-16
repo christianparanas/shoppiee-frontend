@@ -36,7 +36,7 @@
             *ngFor="let product of newProductsArray"
             [productArray]="product"
           ></app-productpreview>
-          <div class="seemorebtn" *ngIf="topProductsArray.length >= 7"><p>See More</p></div>
+          <div class="seemorebtn" *ngIf="newProductsArray.length >= 7"><p>See More</p></div>
         </div>
       </div>
     </div>

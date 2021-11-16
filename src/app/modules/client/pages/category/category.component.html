@@ -3,18 +3,16 @@
 
   <div class="category_main__container">
     <div class="category_header__container">
-      <img
-        src="../../../assets/imgs/men.jpg"
-        (load)="imgIsLoaded()"
-        (error)="detectErroImg($event)"
-        alt=""
-      />
+      <div class="label">
+        <p>Category</p>
+        <h5>{{ category }}</h5>
+      </div>
     </div>
 
     <div class="category_content__container">
-      <div class="category__container">
+      <div class="category__container" *ngIf="categoryProductsArray != null">
         <div class="options">
-          <h4>{{ category }}</h4>
+          <h4></h4>
           <div class="sort">
             <label for="op">Sort by:</label>
 
@@ -31,6 +29,10 @@
             [productArray]="product"
           ></app-productpreview>
         </div>
+      </div>
+
+      <div class="noproducts_container" *ngIf="categoryProductsArray == null">
+        <img src="../../../../../assets/imgs/noproduct.svg" alt="" />
       </div>
     </div>
   </div>
