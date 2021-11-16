@@ -317,14 +317,17 @@
           display: grid;
           grid-template-columns: 1fr 1fr;
           border-radius: 8px;
+          padding: 0;
 
           .shop__container {
             display: block;
+            padding: 20px;
 
             .viewshop_btn {
               display: none;
               width: fit-content;
-              border-radius: 0;
+              border-radius: 4px;
+              border: 2px solid #fafafa;
               font-size: 12px;
             }
 
@@ -369,6 +372,7 @@
                     border-color: #fa6238;
                     background: #fa6238;
                     color: #fff;
+                    border-radius: 4px;
                   }
                 }
               }
@@ -377,14 +381,19 @@
 
           .shop_interactions_details-desk {
             display: grid;
-            grid-template-columns: 150px 1fr 150px;
-            grid-gap: 0 10px;
-            margin-left: 20px;
+            grid-template-columns:  1fr 1fr;
+            margin-left: 10px;
+            background: #fff;
+            border-radius: 8px;
+            padding: 5px;
 
             .inter {
               display: flex;
               align-items: center;
               font-size: 12px;
+              border-radius: 2px;
+              border: 2px dashed #fafafa;
+              padding: 10px;
 
               span {
                 color: #fa6238;

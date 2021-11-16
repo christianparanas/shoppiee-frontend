@@ -136,7 +136,7 @@
         <div class="shop_interactions_details-desk">
           <div class="inter">Ratinngs: <span>1.6K</span></div>
           <div class="inter">Response Rate: <span>18%</span></div>
-          <div class="inter">Joined: <span>2 years ago</span></div>
+          <div class="inter">Joined: <span *ngIf="productArray.Store">{{ productArray.Store.createdAt | dateAgo }}</span></div>
           <div class="inter">Products: <span>99</span></div>
           <div class="inter">Response Time: <span>within minutes</span></div>
           <div class="inter">Follower: <span>999</span></div>
