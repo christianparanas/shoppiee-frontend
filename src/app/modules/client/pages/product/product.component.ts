@@ -83,7 +83,8 @@ export class ProductComponent implements OnInit {
   }
 
   itemQuantity(event: number) {
-    if (this.quantity + event == -1) this.quantity = 0;
+    if (this.quantity + event == 0) this.quantity = 1;
+    else if(this.quantity+event > this.productArray['product_quantity']) return;
     else this.quantity += event;
   }
 
@@ -91,6 +92,7 @@ export class ProductComponent implements OnInit {
     this.productService.fetchSpecificProduct(this.productId).subscribe(
       (response) => {
         this.productArray = response;
+        console.log(this.productArray)
       },
       (error) => {
         console.log(error);
