@@ -4,29 +4,40 @@
   <div class="store_content_container">
     <div class="store_header">
       <div class="store-signage">
-        <div class="img-container">
-          <img
-            *ngIf="storeData"
-            [src]="
-              storeData.store_image == null
-                ? 'https://raw.githubusercontent.com/christianparanas/insta-clone-frontend/main/public/Default.png'
-                : storeData.store_image
-            "
-            alt="store profile"
-          />
-          <p *ngIf="storeData">{{ storeData.store_name }}</p>
+        <div class="coverphoto_container">
+          <img src="../../../../../assets/svgs/storeSvg.svg" alt="">
         </div>
-        <div class="popularity-event">
-          <div class="btn-container">
-            <div (click)="isFollowed()" class="follow">
-              <i class="fal fa-user-plus"></i>
-              <p>{{ follow }}</p>
+        <div class="store_details">
+          <div class="img-container">
+            <img
+              *ngIf="storeData"
+              [src]="
+                storeData.store_image == null
+                  ? 'https://raw.githubusercontent.com/christianparanas/insta-clone-frontend/main/public/Default.png'
+                  : storeData.store_image
+              "
+              alt="store profile"
+            />
+            <div class="store_name" *ngIf="storeData">
+              <p class="name">{{ storeData.store_name }}</p>
+              <div class="owner">
+                <div class="owner_name">Christian</div>
+                <p class="label">owner</p>
+              </div>
             </div>
           </div>
-          <div class="btn-container">
-            <div class="inbox">
-              <i class="fal fa-comment-alt"></i>
-              <p>Message Us</p>
+          <div class="popularity-event">
+            <div class="btn-container">
+              <div (click)="isFollowed()" class="follow">
+                <i class="fal fa-user-plus"></i>
+                <p>{{ follow }}</p>
+              </div>
+            </div>
+            <div class="btn-container">
+              <div class="inbox">
+                <i class="fal fa-comment-alt"></i>
+                <p>Message</p>
+              </div>
             </div>
           </div>
         </div>
@@ -34,19 +45,19 @@
 
       <div class="store-details-and-activities">
         <div class="details-container">
-          <i class="fad fa-store"></i>
-          <p>following: 5</p>
+          <i class="fal fa-store"></i>
+          <p>Following: 5</p>
         </div>
         <div class="details-container">
-          <i class="fad fa-satellite-dish"></i>
-          <p>followers: 2000</p>
+          <i class="fal fa-satellite-dish"></i>
+          <p>Followers: 2000</p>
         </div>
         <div class="details-container">
-          <i class="fad fa-calendar"></i>
+          <i class="fal fa-calendar"></i>
           <p *ngIf="storeData">Created At: {{ storeData.createdAt | dateAgo }}</p>
         </div>
         <div class="details-container">
-          <i class="fad fa-box-full"></i>
+          <i class="fal fa-box-full"></i>
           <p *ngIf="storeData">Product: {{ storeData.Products.length }}</p>
         </div>
       </div>

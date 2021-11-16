@@ -48,7 +48,7 @@
           object-fit: contain;
         }
 
-       .showImg {
+        .showImg {
           display: block;
         }
 
@@ -381,7 +381,7 @@
 
           .shop_interactions_details-desk {
             display: grid;
-            grid-template-columns:  1fr 1fr;
+            grid-template-columns: 1fr 1fr;
             margin-left: 10px;
             background: #fff;
             border-radius: 8px;
@@ -392,7 +392,7 @@
               align-items: center;
               font-size: 12px;
               border-radius: 2px;
-              border: 2px dashed #fafafa;
+              border: 1px dashed #e3e3e3;
               padding: 10px;
 
               span {
