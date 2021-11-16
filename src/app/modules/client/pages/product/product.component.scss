@@ -273,14 +273,17 @@
 
         .product_image__container {
           background: #fff;
+          border-radius: 8px;
         }
 
         .product_interact {
           background: #fff;
           min-height: 360px;
+          border-radius: 8px;
 
           .product_details__container {
             padding: 20px;
+            border-radius: 8px;
 
             .price_stock__container {
               .container:nth-child(1) {
@@ -294,17 +297,17 @@
 
             .orderQuantity_changer__container {
               .changer {
-                border-radius: 0;
+                border-radius: 4px;
 
                 .increment,
                 .decrement {
-                  border-radius: 0;
+                  border-radius: 4px;
                 }
               }
             }
 
             .addtocart_btn {
-              border-radius: 0;
+              border-radius: 4px;
             }
           }
         }
@@ -313,6 +316,7 @@
           grid-column: 1 / span 2;
           display: grid;
           grid-template-columns: 1fr 1fr;
+          border-radius: 8px;
 
           .shop__container {
             display: block;
@@ -396,6 +400,7 @@
       }
 
       .similar_products__container {
+        margin-top: 50px;
         padding: 20px 0;
 
         .container {

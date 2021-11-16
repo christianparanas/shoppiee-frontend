@@ -371,7 +371,7 @@ $textHeadColor: #735c5c;
             width: 700px;
             min-width: 400px;
             padding: 10px 10px 10px 40px;
-            border-radius: 0;
+            border-radius: 4px;
             border: 1px solid #e3e3e3;
             outline: 0;
           }
@@ -391,6 +391,7 @@ $textHeadColor: #735c5c;
             height: 34px;
             top: 2px;
             right: 2px;
+            border-radius: 4px;
 
             i {
               color: #fff;
