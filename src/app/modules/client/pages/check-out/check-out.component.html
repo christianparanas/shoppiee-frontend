@@ -96,7 +96,7 @@
               <div class="price_quantity_wrapper">
                 <div class="price1">
                   <div class="price_label">Price:</div>
-                  <h6>P{{ item.price }}</h6>
+                  <h6>₱{{ item.price }}</h6>
                 </div>
                 <div class="price1">
                   <div class="price_label">Quantity:</div>
@@ -120,7 +120,7 @@
         <div class="totalPay_container">
           <p>Total Payment</p>
           <h5 *ngIf="orderDataArr">
-            P{{ orderDataArr.subtotal + shippingOption.price }}
+            ₱{{ orderDataArr.subtotal + shippingOption.price }}
           </h5>
         </div>
         <div class="placeOrderbtn" (click)="openConfirmModal()">Place Order</div>
@@ -163,7 +163,7 @@
               <div class="details">
                 <div class="product_name_wrapper">{{ item.produtName }}</div>
                 <div class="price_quantity_wrapper">
-                  <p class="price1">P{{ item.price }}</p>
+                  <p class="price1">₱{{ item.price }}</p>
                   <p>x{{ item.quantity }}</p>
                 </div>
               </div>
@@ -187,7 +187,7 @@
               </p>
             </div>
             <div class="shippingOption_price">
-              P{{ shippingOption.price }}
+              ₱{{ shippingOption.price }}
               <i class="fal fa-chevron-right"></i>
             </div>
           </div>
@@ -225,12 +225,12 @@
             </div>
             <div class="totals">
               <div class="label">Shipping Subtotal</div>
-              <p>P{{ shippingOption.price }}</p>
+              <p>₱{{ shippingOption.price }}</p>
             </div>
             <div class="totals total">
               <div class="label">Total Payment</div>
               <p *ngIf="orderDataArr">
-                P{{ orderDataArr.subtotal + shippingOption.price }}
+                ₱{{ orderDataArr.subtotal + shippingOption.price }}
               </p>
             </div>
           </div>
@@ -240,7 +240,7 @@
           <div class="totalPay_container">
             <p>Total Payment</p>
             <h5 *ngIf="orderDataArr">
-              P{{ orderDataArr.subtotal + shippingOption.price }}
+              ₱{{ orderDataArr.subtotal + shippingOption.price }}
             </h5>
           </div>
           <div class="placeOrderbtn" (click)="openConfirmModal()">Place Order</div>

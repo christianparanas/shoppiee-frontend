@@ -38,7 +38,7 @@
             <p class="stock">Stocks: {{ cart.Product.product_quantity }}</p>
             <div class="price">
               Price:
-              <p>P{{ cart.Product.product_price }}</p>
+              <p>₱{{ cart.Product.product_price }}</p>
             </div>
             <div class="changer">
               <div
@@ -108,7 +108,7 @@
         </div>
         <div class="subtotal">
           <p>Subtotal</p>
-          <h5>P{{ subTotal }}</h5>
+          <h5>₱{{ subTotal }}</h5>
         </div>
       </div>
       <div class="checkout_btn" (click)="checkoutOrder()">
