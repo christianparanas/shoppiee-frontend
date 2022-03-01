@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   discoverProductsArray: any = new Array(11);
   topProductsArray: any = new Array(7);
   newProductsArray: any = new Array(7);
-  discoverLimit: number = 1
+  discoverLimit: number = 10
 
   constructor(private productService: ProductService) {}
 
