@@ -36,7 +36,7 @@ export class ProductService {
   }
 
   topProducts(): Observable<any> {
-    return this.http.get(`${baseURL}/api/products`);
+    return this.http.get(`${baseURL}/api/products/new`);
   }
 
   newProducts() {
